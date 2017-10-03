@@ -1,0 +1,16 @@
+{
+  "name": "benwinding-hq",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node koa-app.js"
+  },
+  "dependencies": {
+    "koa": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "devDependencies": {
+    "jest": "^21.1.0"
+  }
+}
