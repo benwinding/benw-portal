@@ -5,7 +5,8 @@
     "start": "node koa-app.js"
   },
   "dependencies": {
-    "koa": "^2.3.0"
+    "koa": "^2.3.0",
+    "koa-static-server": "^1.3.2"
   },
   "engines": {
     "node": ">=6.0"
