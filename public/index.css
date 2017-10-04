@@ -5,6 +5,7 @@ body {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+  grid-area: auto / auto;
   background-color: #fff;
   color: #444;
 }
@@ -15,5 +16,8 @@ body {
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
+}
 
+.box > img {
+  width: 100%;
 }
