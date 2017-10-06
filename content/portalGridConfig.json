@@ -1,14 +1,15 @@
 {
+  "headerTitle": "Portals To Other Worlds",
+  "headerSubtitle": "Ben Winding",
+  "footerDescription": "Ben Winding 2017",
   "sites": [
-    {"title":"About", "img":"https://i.imgur.com/Bmsz9bI.gif"},
-    {"title":"Blog", "img":"https://i.imgur.com/TXxCvwD.jpg"},
-    {"title":"Wood", "img":"https://i.imgur.com/TnchC.gif"},
-    {"title":"AI", "img":"https://i.imgur.com/jFqpII3.gif"},
-    {"title":"Games", "img":"https://i.imgur.com/FYBTWbv.png"},
-    {"title":"Kite", "img":"https://i.imgur.com/jJTdLrbh.jpg"},
-    {"title":"Programming", "img":"https://i.imgur.com/POj2sCp.gif"},
-    {"title":"Stuff", "img":"https://i.imgur.com/gEkKgvdh.jpg"},
-    {"title":"Blog", "img":"https://i.imgur.com/Hj1lwOi.jpg"},
-    {"title":"About", "img":"https://i.imgur.com/MhOmr2Mh.jpg"}
+    {"title":"About", "img":"https://i.imgur.com/Bmsz9bI.gif", "link":"/about"},
+    {"title":"Blog", "img":"https://i.imgur.com/TXxCvwD.jpg", "link":"https://benw-blog.herokuapp.com"},
+    {"title":"Wood", "img":"https://i.imgur.com/TnchC.gif", "link": "/wood"},
+    {"title":"AI", "img":"https://i.imgur.com/jFqpII3.gif", "link": "/ai"},
+    {"title":"Games", "img":"https://i.imgur.com/FYBTWbv.png", "link": "/games"},
+    {"title":"Kite", "img":"https://i.imgur.com/jJTdLrbh.jpg", "link": "/kite"},
+    {"title":"Programming", "img":"https://i.imgur.com/POj2sCp.gif", "link": "/programming"},
+    {"title":"Stuff", "img":"https://i.imgur.com/gEkKgvdh.jpg", "link": "/stuff"}
   ]
 }
