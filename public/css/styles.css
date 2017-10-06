@@ -23,6 +23,10 @@ header {
   font-size: 150%;
 }
 
+.box > p {
+  margin: 0.1em;
+}
+
 .box > img {
   width: 100%;
 }

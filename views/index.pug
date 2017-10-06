@@ -1,0 +1,13 @@
+html
+head
+meta(charset='UTF-8')
+title= title
+link(rel='stylesheet', href='/css/styles.css')
+body
+
+div(class='wrapper')
+    each val in sites
+        a(href=val.link)
+            div(class='box')
+                p=val.title
+                img(src=val.img)
