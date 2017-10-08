@@ -10,6 +10,6 @@ app.get('/', function (req, res) {
   res.render('index', siteConfig)
 });
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT);
 console.log('listening on port: ' + PORT);
