@@ -24,10 +24,9 @@ footer {
     background-color: #fff;
     color: #444;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
-    grid-area: auto / auto;
-    margin: 40px;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(13em, 1fr) );
+    margin: 1em;
 }
 
 .box {
@@ -35,11 +34,11 @@ footer {
     color: #fff;
     border-radius: 5px;
     padding: 20px;
-    font-size: 150%;
+    font-size: 1.5em;
 }
 
 .box > p {
-    margin: 0.1em;
+    margin: 0em;
 }
 
 a {
@@ -65,4 +64,19 @@ a {
     content:'Click To Enter';
     text-align:center;
     width:100%;
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+    .wrapper {
+        grid-gap: 0.3em;
+        grid-template-columns: repeat(auto-fill, minmax(9em, 1fr) );
+        margin: 0.3em;
+    }
+
+    .box {
+        border-radius: 5px;
+        padding: 0.3em;
+        font-size: 1.2em
+    }
 }
