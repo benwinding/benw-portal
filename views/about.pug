@@ -1,0 +1,18 @@
+html
+head
+meta(charset='UTF-8')
+meta(name='viewport', content='width=device-width,initial-scale=1.0')
+title=title
+link(rel='stylesheet', href='/css/main.css')
+link(rel='stylesheet', href='/css/about.css')
+body
+header
+    h1=headerTitle
+    h3=headerSubtitle
+div(class='about')
+    div(class='box', id='title')=about.title
+    div(class='box', id='descriptionShort')=about.descriptionShort
+    img(id='imageMain', src=about.imageMain)
+    div(class='box', id='descriptionLong')=about.descriptionLong
+footer
+    h4=footerDescription
