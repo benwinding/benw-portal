@@ -7,8 +7,9 @@ link(rel='stylesheet', href='/css/main.css')
 link(rel='stylesheet', href='/css/portals.css')
 body
 header
-    h1=headerTitle
-    h3=headerSubtitle
+    a(href='/')
+        h1=headerTitle
+        h3=headerSubtitle
 div(class='wrapper')
     each val in sites
         a(href=val.link)

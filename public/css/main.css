@@ -11,11 +11,15 @@ header {
   text-align: center;
   padding: 13px;
   background: maroon;
-  color: white;
 }
 
 header > h1 {
   text-shadow: 0px 3px black;
+}
+
+header > a {
+  color: white;
+  text-decoration: none;
 }
 
 footer {

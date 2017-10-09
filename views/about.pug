@@ -7,8 +7,9 @@ link(rel='stylesheet', href='/css/main.css')
 link(rel='stylesheet', href='/css/about.css')
 body
 header
-    h1=headerTitle
-    h3=headerSubtitle
+    a(href='/')
+        h1=headerTitle
+        h3=headerSubtitle
 div(class='about')
     div(class='box', id='title')=about.title
     div(class='box', id='descriptionShort')=about.descriptionShort

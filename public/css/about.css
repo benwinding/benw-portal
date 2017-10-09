@@ -21,14 +21,14 @@
 }
 
 #descriptionShort {
-  grid-row: 2;
+  grid-row: 3;
   text-align: center;
   font-style: italic;
 }
 
 #imageMain {
   width: 100%;
-  grid-row: 3;
+  grid-row: 2;
   border-radius: 0.5em;
 }
 
