@@ -3,16 +3,17 @@ const path = require("path");
 const app = new express();
 
 app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const siteConfig = require('./content/portalGridConfig.json');
+const siteConfig = require('./public/portal/portal.json');
 app.get('/', function (req, res) {
-  res.render('index', siteConfig)
+  res.render('portal/portal', siteConfig)
 });
 
-const about = require('./content/about.json');
+const about = require('./public/about/about.json');
 app.get('/about', function (req, res) {
-  res.render('about', about)
+  res.render('about/about', about)
 });
 
 const PORT = process.env.PORT || 3000;
