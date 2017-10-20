@@ -37,15 +37,25 @@
 }
 
 /* Mobile */
-@media (max-width: 680px) {
+@media (max-width: 480px) {
   .about {
     grid-gap: 0.3em;
     grid-template-columns: 1fr;
-    padding: 0.3em;
+    padding: 0.3em 0.3em !important;
+  }
+
+  #imageMain {
+    width: 100%;
+    grid-row: 3;
+    border-radius: .5em;
   }
 
   #descriptionLong {
-    grid-area: 4;
+    grid-area: 2;
+  }
+
+  #descriptionShort {
+    grid-row: 4;
   }
 
   #title, #descriptionShort {
