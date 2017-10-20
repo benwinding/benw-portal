@@ -10,8 +10,8 @@ app.get('/google91ab19b9428bca2d.html', function (req, res) {
   res.renderFile('google91ab19b9428bca2d.html');
 });
 
-app.get('/nortonsw_75d56190-97d7-0.html', function (req, res) {
-  res.renderFile('nortonsw_75d56190-97d7-0.html');
+app.get('/nortonsw_c3291f30-97d8-0.html', function (req, res) {
+  res.renderFile('nortonsw_c3291f30-97d8-0.html');
 });
 
 const siteConfig = require('./public/portal/portal.json');
