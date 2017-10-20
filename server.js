@@ -10,6 +10,10 @@ app.get('/google91ab19b9428bca2d.html', function (req, res) {
   res.renderFile('google91ab19b9428bca2d.html');
 });
 
+app.get('/nortonsw_75d56190-97d7-0.html', function (req, res) {
+  res.renderFile('nortonsw_75d56190-97d7-0.html');
+});
+
 const siteConfig = require('./public/portal/portal.json');
 app.get('/', function (req, res) {
   res.render('portal/portal', siteConfig)
