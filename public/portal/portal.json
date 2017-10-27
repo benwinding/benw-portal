@@ -4,7 +4,7 @@
   "footerDescription": "Ben Winding 2017",
   "sites": [
     {"title":"About", "img":"https://i.imgur.com/9EDPzlX.jpg", "link":"/about"},
-    {"title":"Blog", "img":"https://i.imgur.com/TXxCvwD.jpg", "link":"http://blog.benwinding.com"},
+    {"title":"Blog", "img":"https://i.imgur.com/4X3gTON.png", "link":"http://blog.benwinding.com"},
     {"title":"Cricket Demo", "img":"https://i.imgur.com/HOEhfy7.jpg", "link":"http://cricketlanes-3d.benwinding.com/"}
   ],
   "not-implemented" : [
