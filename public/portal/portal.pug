@@ -16,8 +16,10 @@ html
     div(class='wrapper')
         each val in sites
             a(href=val.link)
-                div(class='box')
+                div.box
                     p=val.title
-                    img(src=val.img)
+                    img.behind(src=val.img)
+                    if val.isDemo
+                        img.overlay(src='http://www.clker.com/cliparts/x/6/q/X/1/G/silver-demo-badge-md.png')
     footer
         h4=footerDescription

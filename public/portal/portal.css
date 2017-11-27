@@ -8,6 +8,7 @@
 }
 
 .box {
+    position: relative;
     background-color: #444;
     color: #fff;
     border-radius: 1em;
@@ -40,6 +41,17 @@ a {
     content:'Click To Enter';
     text-align:center;
     width:100%;
+}
+
+img.behind {
+    position: relative;
+}
+
+img.overlay {
+    position: absolute;
+    top: 2em;
+    left: 0;
+    width: 35%;
 }
 
 /* Mobile */
