@@ -36,6 +36,13 @@
   grid-area: 1 / 2 / 5 / 2;
 }
 
+/* Medium */
+@media (min-width: 1000px) {
+  .about {
+    padding: 1em 20%;
+  }
+}
+
 /* Mobile */
 @media (max-width: 480px) {
   .about {
