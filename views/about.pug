@@ -1,20 +1,13 @@
-html
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport', content='width=device-width,initial-scale=1.0')
-        title=title
-        link(rel="icon" href="/favicon.png")
-        link(rel='stylesheet', href='/main.css')
-        link(rel='stylesheet', href='/about/about.css')
-    body
-    header
-        a(href='/')
-            h1=headerTitle
-            h3=headerSubtitle
+extends shared/layout
+
+block head
+    link(rel="stylesheet" href="/css/about.css")
+
+block content
     div(class='about')
         div(class='box', id='title')='Ben Winding'
         div(class='box', id='descriptionShort')="\"Live life like you were a dog\""
-        img(id='imageMain', src=about.imageMain)
+        img(id='imageMain', src='https://i.imgur.com/9EDPzlX.jpg')
         div(class='box', id='descriptionLong')
             h2 History
             p Growing up in Adelaide, South Australia. Ben began his life as a normal child, with all the prospects of becoming a contributing member of society.
@@ -24,6 +17,3 @@ html
             h2 Now
             p Why would you still be reading this, he's unwell, there's nothing to see here.
             a(href='/')='Tack me back'
-
-    footer
-        h4=footerDescription

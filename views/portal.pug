@@ -1,0 +1,14 @@
+extends shared/layout
+
+block head
+    link(rel="stylesheet" href="/css/portal.css")
+
+block content
+    div(class='wrapper')
+        each val in sites
+            a(href=val.link)
+                div.box
+                    p=val.title
+                    img.behind(src=val.img)
+                    if val.isDemo
+                        img.overlay(src='https://i.imgur.com/GnJ68KT.png')

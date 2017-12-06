@@ -2,27 +2,15 @@ const express = require('express');
 const path = require("path");
 const app = new express();
 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/google91ab19b9428bca2d.html', function (req, res) {
-  res.renderFile('google91ab19b9428bca2d.html');
-});
+const index = require('./routes/index');
+const about = require('./routes/about');
 
-app.get('/nortonsw_c3291f30-97d8-0.html', function (req, res) {
-  res.renderFile('nortonsw_c3291f30-97d8-0.html');
-});
-
-const siteConfig = require('./public/portal/portal.json');
-app.get('/', function (req, res) {
-  res.render('portal/portal', siteConfig)
-});
-
-const about = require('./public/about/about.json');
-app.get('/about', function (req, res) {
-  res.render('about/about', about)
-});
+app.use('/', index);
+app.use('/about', about);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
