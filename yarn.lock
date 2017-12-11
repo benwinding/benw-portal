@@ -666,6 +666,10 @@ encodeurl@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.1.tgz#79e3d58655346909fe6f0f45a5de68103b294d20"
 
+entities@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
+
 errno@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.4.tgz#b896e23a9e5e8ba33871fc996abd3635fc9a1c7d"
@@ -1673,6 +1677,12 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+jstransformer-markdown-it@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/jstransformer-markdown-it/-/jstransformer-markdown-it-2.0.0.tgz#8b44aedbc9465dc935d280be90339b671c16ceb8"
+  dependencies:
+    markdown-it "^8.0.0"
+
 jstransformer@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/jstransformer/-/jstransformer-1.0.0.tgz#ed8bf0921e2f3f1ed4d5c1a44f68709ed24722c3"
@@ -1712,6 +1722,12 @@ levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
+
+linkify-it@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.0.3.tgz#d94a4648f9b1c179d64fa97291268bdb6ce9434f"
+  dependencies:
+    uc.micro "^1.0.1"
 
 load-json-file@^1.0.0:
   version "1.1.0"
@@ -1765,6 +1781,20 @@ makeerror@1.0.x:
   resolved "https://registry.yarnpkg.com/makeerror/-/makeerror-1.0.11.tgz#e01a5c9109f2af79660e4e8b9587790184f5a96c"
   dependencies:
     tmpl "1.0.x"
+
+markdown-it@^8.0.0:
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.0.tgz#e2400881bf171f7018ed1bd9da441dac8af6306d"
+  dependencies:
+    argparse "^1.0.7"
+    entities "~1.1.1"
+    linkify-it "^2.0.0"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.3"
+
+mdurl@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -2760,6 +2790,10 @@ type-is@~1.6.15:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.15"
+
+uc.micro@^1.0.1, uc.micro@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.3.tgz#7ed50d5e0f9a9fb0a573379259f2a77458d50192"
 
 uglify-js@^2.6, uglify-js@^2.6.1:
   version "2.8.29"
