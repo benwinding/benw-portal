@@ -2,14 +2,21 @@ extends shared/layout
 
 block head
     title Home - Ben Winding
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js")
 
 block content
-    link(rel="stylesheet" href="/css/portal.css")
-    div(class='wrapper')
-        each val in sites
-            a(href=val.link)
-                div.box
-                    p=val.title
-                    img.behind(src=val.img)
-                    if val.isDemo
-                        img.overlay(src='https://i.imgur.com/GnJ68KT.png')
+    script.
+        Muuri = null
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js")
+    .grid
+        each card in cards
+            div(class="item " + categories[card.acronym])
+                .item-content
+                    p.item-index=card.index
+                    p.item-acronym=card.acronym
+                    a(href=card.link)
+                        p.item-name=card.title
+                    a(href=card.link)
+                        p.item-weight=card.weight
+
+    script(src="js/cards.js")

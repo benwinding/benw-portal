@@ -1,114 +1,142 @@
+/*MAIN*/
+html {
+  background-color: maroon;
+}
+
 h1,h2,h3,h4,h5,h6,p,div{
   font-family: Arial, Helvetica, sans-serif;
 }
-
 body {
   margin: 0px;
-  background: maroon;
+  background-color: maroon;
 }
-
 header {
   text-align: center;
   padding: 13px;
-  background: maroon;
+  background-color: maroon;
 }
-
 header > h1 {
   text-shadow: 0px 3px black;
 }
-
 header > a {
   color: white;
   text-decoration: none;
 }
-
 footer {
   text-align: center;
   padding: 20px;
   background-color: maroon;
   color: white;
 }
-
 footer > h4 {
   font-size: 1.3em;
 }
-
 footer > a {
   font-size: 1.5em;
   font-style: oblique;
   text-decoration: none;
   color: azure;
 }
-
 a > h6 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.box > img {
-  width: 100%;
-  border-radius: 0.4em;
-}
+/*
+  PORTAL
+*/
 
-/* PORTAL */
-
-.wrapper {
+.grid {
+  position: relative;
   background-color: #fdf6be;
   color: #444;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(auto-fill, minmax(13em, 1fr) );
   padding: 1em;
-}
-
-.box {
-  position: relative;
-  background-color: #444;
-  color: #fff;
-  border-radius: 1em;
-  padding: 20px;
-  font-size: 1.5em;
-  box-shadow: 0em 0.2em black;
-}
-
-.box > p {
-  margin: 0em;
+  margin:  0 auto 53px;
+  width:80%;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
-
-.box:hover {
-  color: aliceblue;
-  text-decoration: none;
-  background-color: maroon;
-  font-weight: bold;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 7px 20px 0 rgba(0, 0, 0, 1);
+.item-content > img {
+  width: 100%;
+  border-radius: 0.4em;
 }
-
-.box:after{
-  content:none;
-}
-
-.box:hover:after{
-  content:'Click To Enter';
-  text-align:center;
-  width:100%;
-}
-
 img.behind {
   position: relative;
 }
-
 img.overlay {
   position: absolute;
   top: 2em;
   left: 0;
   width: 35%;
 }
+p.item-index {
+  font-size: 2em;
+  margin: 0;
+  text-align:  right;
+}
+p.item-acronym {
+  font-size: 5em;
+  margin: 0 -0.2em 0 0;
+  font-weight: bold;
+}
+p.item-name {
+  font-size: 1.2em;
+  margin: 0;
+  font-weight:  bold;
+  color: inherit;
+}
+p.item-weight {
+  font-size: 1.2em;
+  margin: 0;
+}
 
-/*ABOUT*/
+.item.c1 {
+  background-color: #2bc5c5;
+  color: #5a3131;
+}
+.item.c2 {
+  background-color: #66CC33;
+  color: #483b3b;
+}
+.item.c3 {
+  background-color: orange;
+  color: #8c0b0b;
+}
+.item.c4 {
+  background-color: dodgerblue;
+  color: #8c0b0b;
+}
+
+.item {
+  display: block;
+  position: absolute;
+  width: 12em;
+  height: 14em;
+  margin: 5px;
+  z-index: 1;
+  border-radius:  0 2em 0 0;
+}
+.item.muuri-item-dragging {
+  z-index: 3;
+}
+.item.muuri-item-releasing {
+  z-index: 2;
+}
+.item.muuri-item-hidden {
+  z-index: 0;
+}
+.item-content {
+  position: relative;
+  padding:2em;
+  color: inherit;
+}
+
+/*
+  ABOUT
+*/
 
 .about {
   background-color: #fdf6be;
@@ -118,40 +146,38 @@ img.overlay {
   grid-template-columns: 1fr 1fr;
   padding: 1em 10%;
 }
-
 .box2 {
   background-color: lightyellow;
   border-radius: 0.5em;
   padding: 1em;
 }
-
 #aboutTitle {
   grid-row: 1;
   font-size: 2em;
   text-align: center;
   font-style: bold;
 }
-
 #descriptionShort {
   grid-row: 3;
   text-align: center;
   font-style: italic;
 }
-
 #imageMain {
   width: 100%;
   grid-row: 2;
   border-radius: 0.5em;
 }
-
 #descriptionLong {
   grid-area: 1 / 2 / 5 / 2;
 }
 
-/*MEDIA QUERIES*/
+/*
+  MEDIA QUERIES
+*/
 
 /* Mobile */
-@media (max-width: 680px) {
+@media (max-width: 700px) {
+  /*MAIN*/
   header {
     text-align: center;
     padding: 0.1em;
@@ -159,46 +185,57 @@ img.overlay {
     background: maroon;
     color: white;
   }
-
-  .wrapper {
-    grid-gap: 0.3em;
-    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr) );
-    padding: 0.3em;
+  /*PORTAL*/
+  .grid {
+    padding: 0;
+    margin:  0;
+    width: auto;
   }
-
-  .box {
-    border-radius: 0.7em;
-    padding: 0.3em;
+  .item {
+    margin: 1.5%;
+    width: 47%;
+    height: 50vw;
+  }
+  .item-content {
+    padding:1em;
+  }
+  p.item-index {
+    font-size: 1em;
+  }
+  p.item-acronym {
+    font-size: 3em;
+  }
+  p.item-name {
     font-size: 1.2em;
   }
+  p.item-weight {
+    font-size: 1em;
+  }
 
+  /*ABOUT*/
   .about {
     grid-gap: 0.3em;
     grid-template-columns: 1fr;
     padding: 0.3em 0.3em !important;
   }
-
   #imageMain {
     width: 100%;
     grid-row: 3;
     border-radius: .5em;
   }
-
   #descriptionLong {
     grid-area: 2;
   }
-
   #descriptionShort {
     grid-row: 4;
   }
-
   #title, #descriptionShort {
     padding: 0.2em;
   }
 }
-
 /* Medium */
 @media (min-width: 1000px) {
+  /*ABOUT*/
   .about {
     padding: 1em 20%;
   }
