@@ -2,6 +2,7 @@
 var grid = new Muuri('.grid', {
     dragEnabled: true,
     layoutOnInit: false,
+    layoutOnInit: true,
     sortData: {
         id: function (item, element) {
             return parseFloat(element.children[0].textContent);
