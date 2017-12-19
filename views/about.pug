@@ -2,11 +2,11 @@ extends shared/layout
 
 block head
     title About - Ben Winding
-    link(rel="stylesheet" href="/css/about.css")
 block content
+    link(rel="stylesheet" href="/css/about.css")
     div(class='about')
-        div(class='box', id='title')='Ben Winding'
-        div(class='box', id='descriptionShort')="\"Live life like you were a dog\""
+        div(class='box2', id='aboutTitle')='Ben Winding'
+        div(class='box2', id='descriptionShort')="\"Live life like you were a dog\""
         img(id='imageMain', src='https://i.imgur.com/9EDPzlX.jpg')
-        div(class='box', id='descriptionLong')
+        div(class='box2', id='descriptionLong')
             include:markdown-it about.md
