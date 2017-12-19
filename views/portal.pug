@@ -12,8 +12,11 @@ block content
         each val in sites
             .item
                 .item-content
-                    img.behind(src=val.img)
+                    p.item-index="89"
+                    p.item-acronymn="Cs"
                     a(href=val.link)
-                        p.title=val.title
+                        p.item-name=val.title
+                    a(href=val.link)
+                        p.item-weight="37.23"
 
     script(src="js/cards.js")

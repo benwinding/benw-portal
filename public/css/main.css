@@ -1,4 +1,8 @@
 /*MAIN*/
+html {
+  background: maroon;
+}
+
 h1,h2,h3,h4,h5,h6,p,div{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -67,10 +71,27 @@ img.overlay {
   left: 0;
   width: 35%;
 }
-p.title {
+p.item-index {
+  color: #929292;
+  font-size: 2.5em;
+  margin: 0;
+  text-align:  right;
+}
+p.item-acronymn {
+  color: aliceblue;
+  font-size: 7em;
+  margin: 0 0 0.2em 0;
+  font-weight: bold;
+}
+p.item-name {
+  color: aliceblue;
+  font-size: 1.8em;
+  margin: 0;
+}
+p.item-weight {
   color: aliceblue;
   font-size: 1.5em;
-  margin-top: 0;
+  margin: 0;
 }
 .item {
   display: block;
@@ -79,8 +100,9 @@ p.title {
   height: 20em;
   margin: 5px;
   z-index: 1;
-  background: #000;
+  background: #292929;
   color: #fff;
+  border-radius:  0 2em 0 0;
 }
 .item.muuri-item-dragging {
   z-index: 3;
@@ -154,13 +176,8 @@ p.title {
     width: auto;
   }
   .item {
-    display: block;
-    position: absolute;
-    width: 42%;
-    margin: 3.5%;
-    z-index: 1;
-    background: #000;
-    color: #fff;
+    margin: 1.5%;
+    width: 47%;
     height: 50vw;
   }
   /*ABOUT*/

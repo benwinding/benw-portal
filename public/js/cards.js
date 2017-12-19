@@ -22,6 +22,9 @@ Muuri.prototype._refreshDimensions = function () {
         const totalWidthPx = (qitemWidthPx * columnsCount) + (outerMarginPx * 2);
         gridEl.style.width = (totalWidthPx * 100 / qdocWidthPx) + "%";
     }
+    else {
+        gridEl.style.width = "auto";
+    }
 
     return origRefreshDimensions.call(this);
 };
