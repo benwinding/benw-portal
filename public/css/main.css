@@ -50,6 +50,106 @@ a > h6 {
   border-radius: 0.4em;
 }
 
+/* PORTAL */
+
+.wrapper {
+  background-color: #fdf6be;
+  color: #444;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(13em, 1fr) );
+  padding: 1em;
+}
+
+.box {
+  position: relative;
+  background-color: #444;
+  color: #fff;
+  border-radius: 1em;
+  padding: 20px;
+  font-size: 1.5em;
+  box-shadow: 0em 0.2em black;
+}
+
+.box > p {
+  margin: 0em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.box:hover {
+  color: aliceblue;
+  text-decoration: none;
+  background-color: maroon;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 7px 20px 0 rgba(0, 0, 0, 1);
+}
+
+.box:after{
+  content:none;
+}
+
+.box:hover:after{
+  content:'Click To Enter';
+  text-align:center;
+  width:100%;
+}
+
+img.behind {
+  position: relative;
+}
+
+img.overlay {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  width: 35%;
+}
+
+/*ABOUT*/
+
+.about {
+  background-color: #fdf6be;
+  color: #444;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr;
+  padding: 1em 10%;
+}
+
+.box2 {
+  background-color: lightyellow;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+#aboutTitle {
+  grid-row: 1;
+  font-size: 2em;
+  text-align: center;
+  font-style: bold;
+}
+
+#descriptionShort {
+  grid-row: 3;
+  text-align: center;
+  font-style: italic;
+}
+
+#imageMain {
+  width: 100%;
+  grid-row: 2;
+  border-radius: 0.5em;
+}
+
+#descriptionLong {
+  grid-area: 1 / 2 / 5 / 2;
+}
+
+/*MEDIA QUERIES*/
+
 /* Mobile */
 @media (max-width: 680px) {
   header {
@@ -58,5 +158,48 @@ a > h6 {
     margin: 0.1em;
     background: maroon;
     color: white;
+  }
+
+  .wrapper {
+    grid-gap: 0.3em;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr) );
+    padding: 0.3em;
+  }
+
+  .box {
+    border-radius: 0.7em;
+    padding: 0.3em;
+    font-size: 1.2em;
+  }
+
+  .about {
+    grid-gap: 0.3em;
+    grid-template-columns: 1fr;
+    padding: 0.3em 0.3em !important;
+  }
+
+  #imageMain {
+    width: 100%;
+    grid-row: 3;
+    border-radius: .5em;
+  }
+
+  #descriptionLong {
+    grid-area: 2;
+  }
+
+  #descriptionShort {
+    grid-row: 4;
+  }
+
+  #title, #descriptionShort {
+    padding: 0.2em;
+  }
+}
+
+/* Medium */
+@media (min-width: 1000px) {
+  .about {
+    padding: 1em 20%;
   }
 }
