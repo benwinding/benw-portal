@@ -1,19 +1,69 @@
 {
-  "headerTitle": "Portals To Other Worlds",
-  "headerSubtitle": "Ben Winding",
-  "footerDescription": "Ben Winding 2017",
-  "sites": [
-    {"title":"About", "img":"https://i.imgur.com/9EDPzlX.jpg", "link":"/about"},
-    {"title":"Blog", "img":"https://i.imgur.com/4X3gTON.png", "link":"http://blog.benwinding.com"},
-    {"title":"Cricket Lanes", "img":"https://i.imgur.com/HOEhfy7.jpg", "link":"https://benwinding.github.io/CricketNet-Demo/", "isDemo": true},
-    {"title":"Wake Park", "img":"https://i.imgur.com/XnvWfB4.png", "link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview", "isDemo": true}
+  "headerTitle":"Portals To Other Worlds",
+  "headerSubtitle":"Ben Winding",
+  "footerDescription":"Ben Winding 2017",
+  "cards":[
+    {
+      "index": "89",
+      "title":"About",
+      "acronym":"Fn",
+      "img":"https://i.imgur.com/9EDPzlX.jpg",
+      "link":"/about"
+    },
+    {
+      "index": "7",
+      "title":"Blog",
+      "acronym":"Fn",
+      "img":"https://i.imgur.com/4X3gTON.png",
+      "link":"http://blog.benwinding.com"
+    },
+    {
+      "index": "6",
+      "title":"Cricket Lanes",
+      "acronym":"Cs",
+      "img":"https://i.imgur.com/HOEhfy7.jpg",
+      "link":"https://benwinding.github.io/CricketNet-Demo/",
+      "isDemo":true
+    },
+    {
+      "index": "213",
+      "title":"Wake Park",
+      "acronym":"Fn",
+      "img":"https://i.imgur.com/XnvWfB4.png",
+      "link":"https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
+      "isDemo":true
+    }
   ],
-  "not-implemented" : [
-    {"title":"AI", "img":"https://i.imgur.com/jFqpII3.gif", "link": "/bots"},
-    {"title":"Wood", "img":"https://i.imgur.com/TnchC.gif", "link": "/wood"},
-    {"title":"Games", "img":"https://i.imgur.com/FYBTWbv.png", "link": "/games"},
-    {"title":"Kite", "img":"https://i.imgur.com/jJTdLrbh.jpg", "link": "/kite"},
-    {"title":"Programming", "img":"https://i.imgur.com/POj2sCp.gif", "link": "/programming"},
-    {"title":"Stuff", "img":"https://i.imgur.com/gEkKgvdh.jpg", "link": "/stuff"}
+  "not-implemented":[
+    {
+      "title":"AI",
+      "img":"https://i.imgur.com/jFqpII3.gif",
+      "link":"/bots"
+    },
+    {
+      "title":"Wood",
+      "img":"https://i.imgur.com/TnchC.gif",
+      "link":"/wood"
+    },
+    {
+      "title":"Games",
+      "img":"https://i.imgur.com/FYBTWbv.png",
+      "link":"/games"
+    },
+    {
+      "title":"Kite",
+      "img":"https://i.imgur.com/jJTdLrbh.jpg",
+      "link":"/kite"
+    },
+    {
+      "title":"Programming",
+      "img":"https://i.imgur.com/POj2sCp.gif",
+      "link":"/programming"
+    },
+    {
+      "title":"Stuff",
+      "img":"https://i.imgur.com/gEkKgvdh.jpg",
+      "link":"/stuff"
+    }
   ]
 }

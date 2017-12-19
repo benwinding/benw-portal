@@ -9,14 +9,14 @@ block content
         Muuri = null
     script(src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js")
     .grid
-        each val in sites
+        each card in cards
             .item
                 .item-content
-                    p.item-index="89"
-                    p.item-acronymn="Cs"
-                    a(href=val.link)
-                        p.item-name=val.title
-                    a(href=val.link)
-                        p.item-weight="37.23"
+                    p.item-index=card.index
+                    p.item-acronym=card.acronym
+                    a(href=card.link)
+                        p.item-name=card.title
+                    a(href=card.link)
+                        p.item-weight=card.weight
 
     script(src="js/cards.js")
