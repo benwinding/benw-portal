@@ -2,9 +2,9 @@ extends shared/layout
 
 block head
     title Home - Ben Winding
-    link(rel="stylesheet" href="/css/portal.css")
 
 block content
+    link(rel="stylesheet" href="/css/portal.css")
     div(class='wrapper')
         each val in sites
             a(href=val.link)
