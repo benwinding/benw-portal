@@ -10,7 +10,7 @@ block content
     script(src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js")
     .grid
         each card in cards
-            .item
+            div(class="item " + categories[card.acronym])
                 .item-content
                     p.item-index=card.index
                     p.item-acronym=card.acronym

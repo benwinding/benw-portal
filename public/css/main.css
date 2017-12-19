@@ -72,36 +72,49 @@ img.overlay {
   width: 35%;
 }
 p.item-index {
-  color: #929292;
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 0;
   text-align:  right;
 }
 p.item-acronym {
-  color: aliceblue;
-  font-size: 7em;
-  margin: 0 0 0.2em 0;
+  font-size: 5em;
+  margin: 0 -0.2em 0 0;
   font-weight: bold;
 }
 p.item-name {
-  color: aliceblue;
-  font-size: 1.8em;
+  font-size: 1.2em;
   margin: 0;
+  font-weight:  bold;
 }
 p.item-weight {
-  color: aliceblue;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0;
 }
+
+.item.c1 {
+  background-color: #2bc5c5;
+  color: #5a3131;
+}
+.item.c2 {
+  background-color: #66CC33;
+  color: #483b3b;
+}
+.item.c3 {
+  background-color: orange;
+  color: #8c0b0b;
+}
+.item.c4 {
+  background-color: dodgerblue;
+  color: #8c0b0b;
+}
+
 .item {
   display: block;
   position: absolute;
-  width: 16em;
-  height: 20em;
+  width: 12em;
+  height: 14em;
   margin: 5px;
   z-index: 1;
-  background: #292929;
-  color: #fff;
   border-radius:  0 2em 0 0;
 }
 .item.muuri-item-dragging {

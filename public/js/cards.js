@@ -14,13 +14,13 @@ var  gridEl = document.querySelector('.grid');
 var  itemEl = document.querySelector('.item');
 var  origRefreshDimensions = Muuri.prototype._refreshDimensions;
 Muuri.prototype._refreshDimensions = function () {
-    const qdocWidthPx = document.body.clientWidth;
-    if(qdocWidthPx > 700) {
-        const qitemWidthPx = itemEl.clientWidth;
+    const docWidthPx = document.body.clientWidth;
+    if(docWidthPx > 700) {
+        const itemWidthPx = itemEl.clientWidth;
         const outerMarginPx = 5;
-        const columnsCount = Math.floor(qdocWidthPx / qitemWidthPx);
-        const totalWidthPx = (qitemWidthPx * columnsCount) + (outerMarginPx * 2);
-        gridEl.style.width = (totalWidthPx * 100 / qdocWidthPx) + "%";
+        const columnsCount = Math.floor(0.9 * Math.floor(docWidthPx / itemWidthPx));
+        const totalWidthPx = (itemWidthPx * columnsCount) + (outerMarginPx * 2);
+        gridEl.style.width = (totalWidthPx * 100 / docWidthPx) + "%";
     }
     else {
         gridEl.style.width = "auto";
