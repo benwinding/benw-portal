@@ -172,6 +172,15 @@ p.item-weight {
 }
 
 /*
+  BUT HOW
+*/
+.how {
+  background-color: #fdf6be;
+  color: #444;
+  padding: 1em 10%;
+}
+
+/*
   MEDIA QUERIES
 */
 
