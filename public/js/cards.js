@@ -1,4 +1,3 @@
-// To align portal cards in grid
 var grid = new Muuri('.grid', {
     dragEnabled: true,
     layoutOnInit: true,
@@ -9,22 +8,37 @@ var grid = new Muuri('.grid', {
     }
 });
 
-// Adjusting container width to resize to align with cards exactly
-var  gridEl = document.querySelector('.grid');
-var  itemEl = document.querySelector('.item');
-var  origRefreshDimensions = Muuri.prototype._refreshDimensions;
-Muuri.prototype._refreshDimensions = function () {
-    const docWidthPx = document.body.clientWidth;
-    if(docWidthPx > 700) {
-        const itemWidthPx = itemEl.clientWidth;
-        const outerMarginPx = 5;
-        const columnsCount = Math.floor(0.9 * Math.floor(docWidthPx / itemWidthPx));
-        const totalWidthPx = (itemWidthPx * columnsCount) + (outerMarginPx * 2);
-        gridEl.style.width = (totalWidthPx * 100 / docWidthPx) + "%";
-    }
-    else {
-        gridEl.style.width = "auto";
-    }
+// var gridEl = document.querySelector('.grid');
+// var itemEl = document.querySelector('.item');
+// var origRefreshDimensions = Muuri.prototype._refreshDimensions;
+// Muuri.prototype._refreshDimensions = function () {
+//     const docWidthPx = window.innerWidth;
+//     if(docWidthPx > 700) {
+//         const itemTotalPx = itemEl.clientWidth;
+//         const columnsCount = Math.floor(0.9 * Math.floor(docWidthPx / itemTotalPx));
+//         const outerMargin = 10;
+//         const totalWidthPx = (itemTotalPx + outerMargin) * columnsCount;
+//         gridEl.style.width = totalWidthPx + "px";
+//         console.log('resized: PC', {grid: gridEl.style.width, item: itemEl.style.width});
+//     }
+//     else {
+//         gridEl.style.width = "100%";
+//         console.log('resized: Mobile', {grid: gridEl.style.width, item: itemEl.style.width});
+//     }
+//     return origRefreshDimensions.call(this);
+// };
 
-    return origRefreshDimensions.call(this);
-};
+Muuri.defaultOptions.layout.fillGaps = true;
+
+// $("#link").click(function (ev) {
+//     ev.preventDefault()
+//     $(".panel").animate({
+//         "width": "100vw",
+//         "height": "100vh",
+//         "fontSize": "10em"
+//     }, 'slow', function () {
+//         $(".panel").fadeTo("slow", 0, function () {
+//             document.location = $("#link").attr("href");
+//         })
+//     });
+// });

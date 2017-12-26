@@ -46,39 +46,24 @@ a > h6 {
   PORTAL
 */
 
-.grid {
-  position: relative;
+body, .grid, .background {
   background-color: #fdf6be;
-  color: #444;
-  padding: 1em;
-  margin:  0 auto 53px;
-  width:80%;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-.item-content > img {
-  width: 100%;
-  border-radius: 0.4em;
-}
 img.behind {
   position: relative;
-}
-img.overlay {
-  position: absolute;
-  top: 2em;
-  left: 0;
-  width: 35%;
+  width: 100%;
 }
 p.item-index {
   font-size: 2em;
   margin: 0;
-  text-align:  right;
+  text-align:  left;
 }
 p.item-acronym {
-  font-size: 5em;
+  font-size: 3em;
   margin: 0 -0.2em 0 0;
   font-weight: bold;
 }
@@ -95,43 +80,47 @@ p.item-weight {
 
 .item.c1 {
   background-color: #2bc5c5;
+  border: 2px solid #007268;
   color: #5a3131;
 }
 .item.c2 {
   background-color: #66CC33;
+  border: 2px solid #006e07;
   color: #483b3b;
 }
 .item.c3 {
   background-color: orange;
+  border: 2px solid #c06031;
   color: #8c0b0b;
 }
 .item.c4 {
   background-color: dodgerblue;
+  border: 2px solid #004b96;
   color: #8c0b0b;
 }
-
 .item {
   display: block;
-  position: absolute;
-  width: 12em;
-  height: 14em;
-  margin: 5px;
   z-index: 1;
-  border-radius:  0 2em 0 0;
-}
-.item.muuri-item-dragging {
-  z-index: 3;
-}
-.item.muuri-item-releasing {
-  z-index: 2;
-}
-.item.muuri-item-hidden {
-  z-index: 0;
+  border-radius: 6px;
+  text-align: right;
+  margin: 5px;
 }
 .item-content {
-  position: relative;
-  padding:2em;
+  width: 93%;
   color: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.item-content > img {
+  width: 100%;
+  border-radius: 0.4em;
+}
+.grid > div {
+  padding: 0px;
+}
+.container {
+  background-color: #5a3131;
 }
 
 /*
@@ -186,30 +175,8 @@ p.item-weight {
     color: white;
   }
   /*PORTAL*/
-  .grid {
-    padding: 0;
-    margin:  0;
-    width: auto;
-  }
-  .item {
-    margin: 1.5%;
-    width: 47%;
-    height: 50vw;
-  }
   .item-content {
     padding:1em;
-  }
-  p.item-index {
-    font-size: 1em;
-  }
-  p.item-acronym {
-    font-size: 3em;
-  }
-  p.item-name {
-    font-size: 1.2em;
-  }
-  p.item-weight {
-    font-size: 1em;
   }
 
   /*ABOUT*/
