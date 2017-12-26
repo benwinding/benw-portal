@@ -41,6 +41,9 @@ a > h6 {
   margin-top: 0;
   margin-bottom: 0;
 }
+a:hover {
+  text-decoration: none !important;
+}
 
 /*
   PORTAL
@@ -111,6 +114,7 @@ p.item-weight {
   position: absolute;
   top: 0;
   left: 0;
+  padding:1em;
 }
 .item-content > img {
   width: 100%;
@@ -174,11 +178,6 @@ p.item-weight {
     background: maroon;
     color: white;
   }
-  /*PORTAL*/
-  .item-content {
-    padding:1em;
-  }
-
   /*ABOUT*/
   .about {
     grid-gap: 0.3em;

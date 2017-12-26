@@ -3,15 +3,16 @@ extends shared/layout
 block head
     title Home - Ben Winding
 
-mixin portal(card)
+mixin cardTemplate(card)
     div(class="item " + categories[card.acronym])
-        a(href=card.link)
+        a#cardlink(href=card.link)
             img.behind(src='/square.svg')
             .item-content
                 p.item-index=card.index
                 p.item-acronym=card.acronym
                 p.item-name=card.title
                 p.item-weight=card.weight
+                #title
 
 
 block content
@@ -20,6 +21,31 @@ block content
             .grid.row
                 each card in cards
                     .col-lg-2.col-md-2.col-sm-3.col-xs-6
-                        +portal(card)
+                        +cardTemplate(card)
 
-    //script(src="js/cards.js")
+    script.
+        $(function () {
+            $('.item').bind('click', function (ev) {
+                ev.preventDefault();
+                var card = $(this);
+                var cardParent = card.parent();
+                cardParent.css({
+                    "zIndex": 999,
+                    "position": "absolute"
+                });
+                card.animate({
+                    "height": "100vh"
+                });
+                cardParent.animate({
+                    "top": "0",
+                    "left": "0",
+                    "width": "100%",
+                    "height": "100vh",
+                    "fontSize": "2em"
+                }, 'slow', function () {
+                    cardParent.fadeTo(500, 0, function () {
+                    })
+                    document.location = card.children().attr("href");
+                });
+            });
+        });
