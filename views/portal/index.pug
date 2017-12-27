@@ -9,21 +9,85 @@ mixin cardTemplate(card)
         a#cardlink(href=card.link)
             img.behind(src='/images/square.svg')
             .item-content
-                p.item-index=card.index
                 p.item-acronym=card.acronym
                 p.item-name=card.title
-                p.item-weight=card.weight
                 #title
 
 
 block content
+    script(src="/vendor/masonry.pkgd.min.js")
+    -
+        var categories = {
+            "Me":"c1",
+            "Xe":"c2",
+            "Bd":"c3",
+            "Fn":"c4"
+        }
+    - var colSizes =              "col-xs-6  col-sm-2 col-md-3 col-lg-2";
+    - var smallSquare = "grid-item col-xs-6  col-sm-2 col-md-3 col-lg-2";
+    - var medSquare =   "grid-item col-xs-6  col-sm-4 col-md-3 col-lg-4";
+    - var largeSquare = "grid-item col-xs-12 col-sm-8 col-md-6 col-lg-6";
+    -
+        var cards = [
+            {
+            "index":0,
+            "title":"About",
+            "acronym":"Me",
+            "link":"/about",
+            "bootstrap": largeSquare
+            },
+            {
+            "index":1,
+            "title":"Blog",
+            "acronym":"Me",
+            "link":"http://blog.benwinding.com",
+            "bootstrap": medSquare
+            },
+            {
+            "index":2,
+            "title":"Cricket Lanes",
+            "acronym":"Xe",
+            "link":"https://benwinding.github.io/CricketNet-Demo/",
+            "bootstrap": smallSquare
+            },
+            {
+            "index":3,
+            "title":"Wake Park",
+            "acronym":"Xe",
+            "link":"https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
+            "bootstrap": smallSquare
+            },
+            {
+            "index":4,
+            "acronym":"Bd",
+            "title":"Kite",
+            "link":"/Kite",
+            "bootstrap": smallSquare
+            },
+            {
+            "index":5,
+            "acronym":"Bd",
+            "title":"Wood",
+            "link":"/wood",
+            "bootstrap": medSquare
+            },
+            {
+            "index":4.1,
+            "acronym":"Bd",
+            "title":"This Site?",
+            "link":"/but-how?",
+            "bootstrap": smallSquare
+            }
+        ];
     .background
         .container
-            .grid.row
-                - cards.sort(function (a,b) { return a.index - b.index })
-                each card in cards
-                    .col-lg-2.col-md-2.col-sm-3.col-xs-6
-                        +cardTemplate(card)
+            //- cards.sort(function (a,b) { return a.index - b.index })
+            .container-fluid
+                .grid
+                    div(class="grid-sizer " + colSizes)
+                    each card in cards
+                        div(class=card.bootstrap)
+                            +cardTemplate(card)
 
     script.
         $(function () {
@@ -52,4 +116,9 @@ block content
                     document.location = card.children().attr("href");
                 });
             });
+        });
+        $('.grid').masonry({
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer',
+            percentPosition: true
         });
