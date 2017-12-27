@@ -1,0 +1,81 @@
+/*
+  PORTAL
+*/
+
+body, .grid, .background {
+    background-color: #fdf6be;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img.behind {
+    position: relative;
+    width: 100%;
+}
+p.item-index {
+    font-size: 2em;
+    margin: 0;
+    text-align:  left;
+}
+p.item-acronym {
+    font-size: 3em;
+    margin: 0 -0.2em 0 0;
+    font-weight: bold;
+}
+p.item-name {
+    font-size: 1.2em;
+    margin: 0;
+    font-weight:  bold;
+    color: inherit;
+}
+p.item-weight {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.item.c1 {
+    background-color: #2bc5c5;
+    border: 2px solid #007268;
+    color: #5a3131;
+}
+.item.c2 {
+    background-color: #66CC33;
+    border: 2px solid #006e07;
+    color: #483b3b;
+}
+.item.c3 {
+    background-color: orange;
+    border: 2px solid #c06031;
+    color: #8c0b0b;
+}
+.item.c4 {
+    background-color: dodgerblue;
+    border: 2px solid #004b96;
+    color: #8c0b0b;
+}
+.item {
+    display: block;
+    z-index: 1;
+    border-radius: 6px;
+    text-align: right;
+    margin: 5px;
+}
+.item-content {
+    width: 93%;
+    color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:1em;
+}
+.item-content > img {
+    width: 100%;
+    border-radius: 0.4em;
+}
+.grid > div {
+    padding: 0px;
+}
+.container {
+    background-color: #5a3131;
+}

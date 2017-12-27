@@ -1,0 +1,37 @@
+/*
+  ABOUT
+*/
+
+.about {
+    background-color: #fdf6be;
+    color: #444;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em 10%;
+}
+.box2 {
+    background-color: lightyellow;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+#aboutTitle {
+    grid-row: 1;
+    font-size: 2em;
+    text-align: center;
+    font-style: bold;
+}
+#descriptionShort {
+    grid-row: 3;
+    text-align: center;
+    font-style: italic;
+}
+#imageMain {
+    width: 100%;
+    grid-row: 2;
+    border-radius: 0.5em;
+}
+#descriptionLong {
+    grid-area: 1 / 2 / 5 / 2;
+}
+
