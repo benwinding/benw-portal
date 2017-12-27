@@ -4,90 +4,53 @@ block head
     title Home - Ben Winding
     link(rel='stylesheet', href='/css/portal.css')
 
-mixin cardTemplate(card)
-    div(class="item " + categories[card.acronym])
-        a#cardlink(href=card.link)
-            img.behind(src='/images/square.svg')
-            .item-content
-                p.item-acronym=card.acronym
-                p.item-name=card.title
-                #title
+mixin makeCard(bootstrapSize, img, category, acronym, title, hlink)
+    div(class=bootstrapSize + " " + category)
+        div(class="item " + category)
+            a#cardlink(href=hlink)
+                img.behind(src='/images/' + img)
+                div(class="item-content ")
+                    p.item-acronym=acronym
+                    p.item-name=title
 
 
 block content
-    script(src="/vendor/masonry.pkgd.min.js")
-    -
-        var categories = {
-            "Me":"c1",
-            "Xe":"c2",
-            "Bd":"c3",
-            "Fn":"c4"
-        }
-    - var colSizes =              "col-xs-6  col-sm-2 col-md-3 col-lg-2";
-    - var smallSquare = "grid-item col-xs-6  col-sm-2 col-md-3 col-lg-2";
-    - var medSquare =   "grid-item col-xs-6  col-sm-4 col-md-3 col-lg-4";
-    - var largeSquare = "grid-item col-xs-12 col-sm-8 col-md-6 col-lg-6";
-    -
-        var cards = [
-            {
-            "index":0,
-            "title":"About",
-            "acronym":"Me",
-            "link":"/about",
-            "bootstrap": largeSquare
-            },
-            {
-            "index":1,
-            "title":"Blog",
-            "acronym":"Me",
-            "link":"http://blog.benwinding.com",
-            "bootstrap": medSquare
-            },
-            {
-            "index":2,
-            "title":"Cricket Lanes",
-            "acronym":"Xe",
-            "link":"https://benwinding.github.io/CricketNet-Demo/",
-            "bootstrap": smallSquare
-            },
-            {
-            "index":3,
-            "title":"Wake Park",
-            "acronym":"Xe",
-            "link":"https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
-            "bootstrap": smallSquare
-            },
-            {
-            "index":4,
-            "acronym":"Bd",
-            "title":"Kite",
-            "link":"/Kite",
-            "bootstrap": smallSquare
-            },
-            {
-            "index":5,
-            "acronym":"Bd",
-            "title":"Wood",
-            "link":"/wood",
-            "bootstrap": medSquare
-            },
-            {
-            "index":4.1,
-            "acronym":"Bd",
-            "title":"This Site?",
-            "link":"/but-how?",
-            "bootstrap": smallSquare
-            }
-        ];
+    - var colSizes =           "col-xs-6  col-sm-3 col-md-3 col-lg-1";
+    - var smSquare = "grid-item col-xs-6  col-sm-3 col-md-3 col-lg-1";
+    - var mdSquare = "grid-item col-xs-6  col-sm-6 col-md-3 col-lg-2";
+    - var lgSquare = "grid-item col-xs-12 col-sm-6 col-md-6 col-lg-3";
     .background
         .container
-            //- cards.sort(function (a,b) { return a.index - b.index })
-            .container-fluid
-                .grid
-                    div(class="grid-sizer " + colSizes)
-                    each card in cards
-                        div(class=card.bootstrap)
-                            +cardTemplate(card)
+            .row#topButtons
+                .col-xs-12.text-center
+                    .btn-group#filters(role='group', aria-label='Basic example')
+                        button.btn.active(data-filter='*') All
+                        button.btn#b1(data-filter='.c1') Programming
+                        button.btn#b2(data-filter='.c2') Projects
+                        button.btn#b3(data-filter='.c3') Projects
+                        button.btn#b4(data-filter='.c4') Projects
+
+            .grid
+                div(class="grid-sizer " + colSizes)
+                +makeCard(lgSquare, "r1-c2.svg", "c1", "Me", "About", "/about")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Wood", "/wood")
+                +makeCard(smSquare, "r1-c1.svg", "c4", "Xe", "Wake Park", "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
+                +makeCard(smSquare, "r1-c1.svg", "c2", "Me", "Blog", "http://blog.benwinding.com")
+                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
+                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
+                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
+                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
+                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
+                +makeCard(lgSquare, "r1-c2.svg", "c3", "Bd", "This Site?", "/but-how?")
 
     script.
         $(function () {
@@ -98,11 +61,12 @@ block content
                 cardParent.css({
                     "zIndex": 999,
                     "position": "fixed",
-                    "margin": 0
+                    "margin": "0",
+                    "padding": "0",
+                    "opacity": "0.8"
                 });
                 card.animate({
-                    "height": "100vh",
-                    "margin": "0"
+                    "height": "100vh"
                 });
                 cardParent.animate({
                     "top": "0",
@@ -111,14 +75,44 @@ block content
                     "height": "100vh",
                     "fontSize": "2em"
                 }, 'slow', function () {
-                    cardParent.fadeTo(300, 0, function () {
+                    card.fadeTo(300, 1, function () {
                     })
-                    document.location = card.children().attr("href");
+                    setTimeout(function () {
+                        document.location = card.children().attr("href");
+                    }, 100);
                 });
             });
         });
-        $('.grid').masonry({
+        $('.grid').isotope({
             itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer',
-            percentPosition: true
+            masonry: {
+                columnWidth: '.grid-sizer'
+            },
+            hiddenStyle: {
+                opacity: 0
+            },
+            visibleStyle: {
+                opacity: 1
+            }
         });
+        setTimeout(function() {
+            $('.grid').isotope('layout')
+            setTimeout(function () {
+                $('.grid').isotope('layout')
+            }, 500);
+        }, 500);
+
+        // bind filter button click
+        $('#filters').on('click', 'button', function () {
+            var filterValue = $(this).attr('data-filter');
+            $('.grid').isotope({filter: filterValue});
+        });
+        // change is-checked class on buttons
+        $('.btn-group').each(function (i, buttonGroup) {
+            var $buttonGroup = $(buttonGroup);
+            $buttonGroup.on('click', 'button', function () {
+                $buttonGroup.find('.active').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+
