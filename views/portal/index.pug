@@ -20,6 +20,7 @@ block content
     .background
         .container
             .grid.row
+                - cards.sort((a,b) => { return a.index - b.index })
                 each card in cards
                     .col-lg-2.col-md-2.col-sm-3.col-xs-6
                         +cardTemplate(card)

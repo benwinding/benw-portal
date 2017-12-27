@@ -3,7 +3,7 @@
 */
 
 body, .grid, .background {
-    background-color: #fdf6be;
+    background-color: #ffffff;
 }
 a {
     text-decoration: none;
@@ -35,24 +35,24 @@ p.item-weight {
 }
 
 .item.c1 {
-    background-color: #2bc5c5;
-    border: 2px solid #007268;
-    color: #5a3131;
+    background-color: #ffffff;
+    border: 3px solid black;
+    color: black;
 }
 .item.c2 {
-    background-color: #66CC33;
-    border: 2px solid #006e07;
-    color: #483b3b;
+    background-color: #ffffff;
+    border: 3px solid green;
+    color: green;
 }
 .item.c3 {
-    background-color: orange;
-    border: 2px solid #c06031;
-    color: #8c0b0b;
+    background-color: #ffffff;
+    border: 3px solid blue;
+    color: blue;
 }
 .item.c4 {
-    background-color: dodgerblue;
-    border: 2px solid #004b96;
-    color: #8c0b0b;
+    background-color: #ffffff;
+    border: 2px solid red;
+    color: red;
 }
 .item {
     display: block;
