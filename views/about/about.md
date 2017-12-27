@@ -11,3 +11,10 @@ After spending thousands of hours on the web, he was unable to function normally
 Why would you still be reading this, he's unwell, there's nothing to see here.
 
 [Tack me back](/)[](/)
+
+### Social Stuff
+
+- [Facebook](https://www.facebook.com/ben.winding)
+- [Instagram](https://www.instagram.com/benwinding)
+- [Github](https://github.com/benwinding)
+- [Stack Overflow](https://stackoverflow.com/users/2419584/tyler-durden)

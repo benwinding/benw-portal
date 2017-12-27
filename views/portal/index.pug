@@ -1,4 +1,4 @@
-extends shared/layout
+extends ../shared/layout
 
 block head
     title Home - Ben Winding
@@ -7,7 +7,7 @@ block head
 mixin cardTemplate(card)
     div(class="item " + categories[card.acronym])
         a#cardlink(href=card.link)
-            img.behind(src='/square.svg')
+            img.behind(src='/images/square.svg')
             .item-content
                 p.item-index=card.index
                 p.item-acronym=card.acronym
