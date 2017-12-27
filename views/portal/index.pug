@@ -6,7 +6,7 @@ block head
 
 mixin makeCard(bootstrapSize, img, category, acronym, title, hlink)
     div(class=bootstrapSize + " " + category)
-        div(class="item " + category)
+        div(class="item " + category + " tint")
             a#cardlink(href=hlink)
                 img.behind(src='/images/' + img)
                 div(class="item-content ")

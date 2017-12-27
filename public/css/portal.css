@@ -39,23 +39,27 @@ p.item-weight {
 .item {
     border: 0px solid black;
     color: black;
+    background-image: url(https://i.imgur.com/CVaBqx1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.item.c1 {
-    background-color: #bbbbbb;
+.item.c1, .item.c1:before {
+    background-color: rgba(255, 255, 255, 0.2);
     color: black;
 }
-.item.c2 {
-    background-color: #93ff93;
+.item.c2, .item.c2:before {
+    background-color: rgba(0, 255, 0, 0.2);
     color: green;
 }
-.item.c3 {
-    background-color: #b6b6ff;
+.item.c3, .item.c3:before {
+    background-color: rgba(0, 0, 255, 0.2);
     color: blue;
 }
-.item.c4 {
-    background-color: #ffb6b6;
+.item.c4, .item.c4:before {
+    background-color: rgba(255, 0, 0, 0.2);
     color: red;
 }
+
 .btn#b1 {
     background-color: #bbbbbb;
 }
@@ -101,4 +105,28 @@ p.item-weight {
 
 .container {
     padding-bottom: 10px;
+}
+
+.tint {
+    position: relative;
+    float: left;
+}
+
+.tint:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,255,255, 0.5);
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+.tint:hover:before {
+    background: none;
 }
