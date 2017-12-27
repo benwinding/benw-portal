@@ -31,10 +31,12 @@ block content
                 var cardParent = card.parent();
                 cardParent.css({
                     "zIndex": 999,
-                    "position": "absolute"
+                    "position": "fixed",
+                    "margin": 0
                 });
                 card.animate({
-                    "height": "100vh"
+                    "height": "100vh",
+                    "margin": "0"
                 });
                 cardParent.animate({
                     "top": "0",
@@ -43,7 +45,7 @@ block content
                     "height": "100vh",
                     "fontSize": "2em"
                 }, 'slow', function () {
-                    cardParent.fadeTo(500, 0, function () {
+                    cardParent.fadeTo(300, 0, function () {
                     })
                     document.location = card.children().attr("href");
                 });
