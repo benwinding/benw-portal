@@ -98,3 +98,7 @@ p.item-weight {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.container {
+    padding-bottom: 10px;
+}
