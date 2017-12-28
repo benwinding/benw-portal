@@ -43,21 +43,24 @@ p.item-weight {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.item:before {
+    border-radius: 0.4em;
+}
 .item.c1, .item.c1:before {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: white;
 }
 .item.c2, .item.c2:before {
-    background-color: rgba(0, 255, 0, 0.2);
-    color: green;
+    background-color: rgba(0, 255, 0, 0.7);
+    color: white;
 }
 .item.c3, .item.c3:before {
-    background-color: rgba(0, 0, 255, 0.2);
-    color: blue;
+    background-color: rgba(0, 0, 255, 0.7);
+    color: white;
 }
 .item.c4, .item.c4:before {
-    background-color: rgba(255, 0, 0, 0.2);
-    color: red;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
 }
 
 .btn#b1 {
@@ -73,12 +76,17 @@ p.item-weight {
     background-color: #ffb6b6;
 }
 
+.tint > a:focus, .tint > a:hover {
+    color: #000000;
+    text-shadow: white 0px 0px 20px;
+}
+
 .item {
     display: block;
     z-index: 1;
-    border-radius: 6px;
     text-align: right;
     margin: 0px;
+    border-radius: 0.4em;
 }
 .item-content {
     width: 93%;
@@ -87,6 +95,7 @@ p.item-weight {
     top: 0;
     left: 0;
     padding:1em;
+    text-shadow: inherit;
 }
 .item-content > img {
     width: 100%;

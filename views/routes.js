@@ -13,4 +13,8 @@ router.get('/about', function(req, res, next) {
     res.render('about');
 });
 
+router.get('/engineering', function(req, res, next) {
+    res.render('engineering');
+});
+
 module.exports = router;

@@ -4,10 +4,10 @@ block head
     title Home - Ben Winding
     link(rel='stylesheet', href='/css/portal.css')
 
-mixin makeCard(bootstrapSize, img, category, acronym, title, hlink)
+mixin makeCard(bootstrapSize, img, category, acronym, title, linkUrl, imageUrl)
     div(class=bootstrapSize + " " + category)
-        div(class="item " + category + " tint")
-            a#cardlink(href=hlink)
+        div(class="item " + category + " tint",style="background-image: url("+imageUrl+");")
+            a#cardlink(href=linkUrl)
                 img.behind(src='/images/' + img)
                 div(class="item-content ")
                     p.item-acronym=acronym
@@ -29,28 +29,14 @@ block content
                         button.btn#b2(data-filter='.c2') Green
                         button.btn#b3(data-filter='.c3') Blue
                         button.btn#b4(data-filter='.c4') Red
-
             .grid
                 div(class="grid-sizer " + colSizes)
-                +makeCard(lgSquare, "r1-c2.svg", "c1", "Me", "About", "/about")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Wood", "/wood")
-                +makeCard(smSquare, "r1-c1.svg", "c4", "Xe", "Wake Park", "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "Kite", "/Kite")
-                +makeCard(smSquare, "r1-c1.svg", "c2", "Me", "Blog", "http://blog.benwinding.com")
-                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
-                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
-                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
-                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
-                +makeCard(lgSquare, "r1-c2.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/")
-                +makeCard(lgSquare, "r1-c2.svg", "c3", "Bd", "This Site?", "/but-how?")
+                +makeCard(smSquare, "r1-c1.svg", "c1", "Me", "About", "/about", "https://i.imgur.com/9EDPzlX.jpg")
+                +makeCard(smSquare, "r1-c1.svg", "c4", "Xe", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/", "https://i.imgur.com/HOEhfy7.jpg")
+                +makeCard(smSquare, "r1-c1.svg", "c3", "Bd", "This Site?", "/but-how?", "https://i.imgur.com/7TS2LVj.jpg")
+                +makeCard(smSquare, "r1-c1.svg", "c2", "Me", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/0sIeGjL.jpg")
+                +makeCard(smSquare, "r1-c1.svg", "c4", "Xe", "Wake Park", "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview", "https://i.imgur.com/XnvWfB4.png")
+                +makeCard(smSquare, "r1-c1.svg", "c1", "Me", "Engineering", "/engineering", "https://i.imgur.com/LXmM68w.gif")
 
     script.
         $(function () {
@@ -78,9 +64,9 @@ block content
                 }, 'slow', function () {
                     card.fadeTo(300, 1, function () {
                     })
-                    // setTimeout(function () {
-                    //     document.location = card.children().attr("href");
-                    // }, 100);
+                    setTimeout(function () {
+                        document.location = card.children().attr("href");
+                    }, 100);
                 });
             });
         });
