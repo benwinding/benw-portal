@@ -3,8 +3,18 @@ html {
   background-color: maroon;
 }
 
+@font-face {
+  font-family: 'hack';
+  src: url('/fonts/Hack-Regular.otf');
+  src:
+          local('Hack Regular'),
+          local('Hack-Regular'),
+          url('/fonts/Hack-Regular.otf')
+          format('opentype');
+}
+
 h1,h2,h3,h4,h5,h6,p,div{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
 }
 body {
   margin: 0px;
@@ -21,6 +31,14 @@ header > h1 {
 header > a {
   color: white;
   text-decoration: none;
+  font-family: 'hack', sans-serif
+}
+header > a:hover {
+  color: deepskyblue;
+}
+header > a:active,
+header > a:visited {
+  color: white;
 }
 footer {
   text-align: center;
