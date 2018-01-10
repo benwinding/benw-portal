@@ -13,7 +13,6 @@ img.behind {
     position: relative;
     width: 100%;
     margin: 0px;
-    /* padding: 0; */
 }
 p.item-index {
     font-size: 2em;
@@ -42,9 +41,22 @@ p.item-weight {
     background-image: url(https://i.imgur.com/CVaBqx1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    transition: background-color 1s ease-in-out, color 2s ease-in-out;
+    -moz-transition: background-color 1s ease-in-out, color 2s ease-in-out;
+    -webkit-transition: background-color 1s ease-in-out, color 2s ease-in-out;
+    -o-transition: background-color 1s ease-in-out, color 2s ease-in-out;
 }
 .item:before {
     border-radius: 0.4em;
+}
+.item.whited:before, .item.whited {
+    background-color: white !important;
+    color: white;
+    font-size: 200%;
+}
+.tint > a:focus, .tint > a:hover {
+    color: black;
+    text-shadow: white 0px 0px 20px;
 }
 .item.c1, .item.c1:before {
     background-color: rgba(255, 255, 255, 0.7);
@@ -75,12 +87,6 @@ p.item-weight {
 .btn#b4 {
     background-color: #ffb6b6;
 }
-
-.tint > a:focus, .tint > a:hover {
-    color: #000000;
-    text-shadow: white 0px 0px 20px;
-}
-
 .item {
     display: block;
     z-index: 1;

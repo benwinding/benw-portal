@@ -49,7 +49,7 @@ block content
                     "position": "fixed",
                     "margin": "0",
                     "padding": "0",
-                    "opacity": "0.8"
+                    "opacity": "1"
                 });
                 card.animate({
                     "height": "100vh",
@@ -61,13 +61,18 @@ block content
                     "width": "100%",
                     "height": "100vh",
                     "fontSize": "2em"
-                }, 'slow', function () {
-                    card.fadeTo(300, 1, function () {
-                    })
-                    setTimeout(function () {
-                        document.location = card.children().attr("href");
-                    }, 100);
                 });
+                cardParent.css({
+                    "zIndex": 999,
+                    "position": "fixed",
+                    "margin": "0",
+                    "padding": "0"
+                });
+                card.toggleClass('whited');
+                card.find('#cardlink').css({color: "grey"})
+                setTimeout(function () {
+                    document.location = card.children().attr("href");
+                }, 1000)
             });
         });
         $('.grid').isotope({
