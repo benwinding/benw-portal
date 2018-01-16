@@ -53,6 +53,7 @@ p.item-weight {
     background-color: white !important;
     color: white;
     font-size: 200%;
+    border-radius: 0em;
 }
 .tint > a:focus, .tint > a:hover {
     color: black;
