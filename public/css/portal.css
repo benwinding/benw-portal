@@ -153,5 +153,6 @@ p.item-weight {
     left: 50vw;
     top: 50vh;
     position: fixed;
-    margin: -100px 0 0 -200px;
+    margin: -100px 0 0 -100px;
+    opacity: 0.3;
 }
