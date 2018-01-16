@@ -12,6 +12,7 @@ mixin makeCard(bootstrapSize, img, category, acronym, title, linkUrl, imageUrl)
                 div(class="item-content ")
                     p.item-acronym=acronym
                     p.item-name=title
+                    div#gears
 
 
 block content
@@ -44,6 +45,7 @@ block content
                 ev.preventDefault();
                 var card = $(this);
                 var cardParent = card.parent();
+                var cardLink = card.find('#cardlink');
                 cardParent.css({
                     "zIndex": 999,
                     "position": "fixed",
@@ -69,9 +71,12 @@ block content
                     "padding": "0"
                 });
                 card.toggleClass('whited');
-                card.find('#cardlink').css({color: "grey"})
+                cardLink.css({
+                  color: "grey"
+                });
+                card.find('#gears').toggleClass('loading')
                 setTimeout(function () {
-                    document.location = card.children().attr("href");
+                    document.location = cardLink.attr("href");
                 }, 1000)
             });
         });
