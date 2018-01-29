@@ -11,6 +11,15 @@ html
         script(src='/vendor/turbolinks.js')
         script(src='/vendor/masonry.pkgd.min.js')
         script(src='/vendor/isotope.pkgd.min.js')
+        
+        // Global site tag (gtag.js) - Google Analytics
+        script(async src='https://www.googletagmanager.com/gtag/js?id=UA-38440481-1')
+        script. 
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+            gtag('config', 'UA-38440481-1');
+
         block head
     body
         header
