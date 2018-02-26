@@ -42,29 +42,32 @@ header {
   background: linear-gradient(135deg, rgba(120,0,28,1) 0%, rgba(120,0,28,1) 23%, rgba(3,150,255,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78001c', endColorstr='#0396ff', GradientType=1 );  
 }
-header > h1 {
-  text-shadow: 0px 3px black;
-}
-header > a {
-  color: white;
-  text-decoration: none;
-}
 header *#title {
   font-family: 'Megrim'; 
   font-weight: bold;
   font-size: 2.8em;
+  text-shadow: 0px 3px black;
 }
 header *#subtitle {
   font-family: sans-serif;
   font-size: 1.5em;
   font-weight: lighter; 
 }
-header > a:hover {
-  color: deepskyblue;
-}
+header > a,
 header > a:active,
 header > a:visited {
   color: white;
+}
+header > a {
+  text-decoration: none;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+header > a:hover {
+  color: #e0ff38;
 }
 footer {
   text-align: center;
@@ -95,16 +98,25 @@ a > h6 {
   margin-bottom: 0;
 }
 a:hover {
-  text-decoration: none !important;
+  text-decoration: none !important; 
 }
 
 /*
   BUT HOW
 */
-.how {
-  background-color: #fdf6be;
-  color: #444;
-  padding: 1em 10%;
+.how-link {
+  font-size: 0.7em;
+  padding: 0;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.how-link:hover {
+  color: yellow;
+  font-size: 1.5em;
 }
 
 /*
