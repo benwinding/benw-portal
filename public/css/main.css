@@ -52,6 +52,7 @@ header *#subtitle {
   font-family: sans-serif;
   font-size: 1.5em;
   font-weight: lighter; 
+  margin-top: 0.4em;
 }
 header > a,
 header > a:active,
@@ -84,7 +85,7 @@ footer {
 }
 footer > h4 {
   font-family: 'Megrim'; 
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 2em;
 }
 footer > a {
