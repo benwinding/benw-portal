@@ -70,9 +70,9 @@ p.item-weight {
     background-color: rgba(255, 235, 59, 0.7); 
     color: black; 
 }
-.item.c3, .item.c3:before, .btn#b3 { 
-    background-color: rgba(120, 0, 28, 0.7); 
-    color: black; 
+.item.c3, .item.c3:before, .btn#b3 {
+    background-color: rgba(120, 0, 28, 0.7);
+    color: white;
 }
 .item.c4, .item.c4:before, .btn#b4 { 
     background-color: rgba(255, 87, 34, 0.7); 
