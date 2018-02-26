@@ -23,7 +23,7 @@ html {
     format('opentype');
 }
 
-h1,h2,h3,h4,h5,h6,p,div{
+h1,h2,h3,h4,h5,h6,p,div, i{
   font-family: sans-serif;
 }
 body {

@@ -24,12 +24,23 @@ block content
         .container
             .row#topButtons
                 .col-xs-12.text-center
+                    h1 Periodic Table of Projects
                     .btn-group#filters(role='group', aria-label='Basic example')
-                        button.btn.active(data-filter='*') All
-                        button.btn#b1(data-filter='.c1') Me
-                        button.btn#b2(data-filter='.c2') Apps
-                        button.btn#b3(data-filter='.c3') Experiments
-                        button.btn#b4(data-filter='.c4') Misc
+                        button.btn.active(data-filter='*')
+                            i.fas.fa-asterisk  
+                            span All
+                        button.btn#b1(data-filter='.c1')
+                            i.fas.fa-user  
+                            span Me
+                        button.btn#b2(data-filter='.c2')
+                            i.fas.fa-cubes  
+                            span Apps
+                        button.btn#b3(data-filter='.c3') 
+                            i.fas.fa-flask
+                            span Experiments
+                        button.btn#b4(data-filter='.c4')
+                            i.fas.fa-folder-open
+                            span Misc
             .grid
                 div(class="grid-sizer " + colSizes)
                 +makeCard(lgSquare, "r1-c2.svg", "c1", "Me", "About", "/about", "https://i.imgur.com/9EDPzlX.jpg")
