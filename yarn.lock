@@ -762,6 +762,13 @@ expect@^21.2.1:
     jest-message-util "^21.2.1"
     jest-regex-util "^21.2.0"
 
+express-sitemap@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/express-sitemap/-/express-sitemap-1.8.0.tgz#fd9047df20e53d756546fb7559e94f9240ff78e7"
+  dependencies:
+    setheaders "0.3.0"
+    tickle "1.4.0"
+
 express@^4.16.1:
   version "4.16.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.1.tgz#6b33b560183c9b253b7b62144df33a4654ac9ed0"
@@ -2531,6 +2538,10 @@ set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
 
+setheaders@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/setheaders/-/setheaders-0.3.0.tgz#3e749f337a2ee7c186c2e0dd07f45fb472488e13"
+
 setprototypeof@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.3.tgz#66567e37043eeb4f04d91bd658c0cbefb55b8e04"
@@ -2741,6 +2752,10 @@ test-exclude@^4.1.1:
 throat@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
+
+tickle@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/tickle/-/tickle-1.4.0.tgz#b8190bc6a7045e8dfe78f4097b04d679da4242ed"
 
 tmpl@1.0.x:
   version "1.0.4"

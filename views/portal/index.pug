@@ -2,6 +2,7 @@ extends ../shared/layout
 
 block head
     title Home - Ben Winding
+    meta(name="description" content="Ben Winding's Projects and Portfolio")
     link(rel='stylesheet', href='/portal/portal.css')
 
 mixin makeCard(bootstrapSize, img, category, acronym, title, linkUrl, imageUrl)
@@ -24,7 +25,7 @@ block content
         .container
             .row#topButtons
                 .col-xs-12.text-center
-                    h1 Periodic Table of Projects
+                    h2 Periodic Table of Projects
                     .btn-group#filters(role='group', aria-label='Basic example')
                         button.btn.active(data-filter='*')
                             i.fas.fa-asterisk  

@@ -3,3 +3,5 @@
 # Useful .gitignore templates: https://github.com/github/gitignore
 /node_modules
 .idea/
+/public/sitemap.xml
+/public/robots.txt
