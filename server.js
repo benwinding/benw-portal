@@ -15,6 +15,7 @@ app.use('/', index);
 const sm = sitemap({
 	robots: 'public/robots.txt',
   sitemap: 'public/sitemap.xml',
+  sitemapSubmission: '/sitemap.xml',
   route: {
     'ALL': {
       lastmod: new Date().toLocaleDateString(),
