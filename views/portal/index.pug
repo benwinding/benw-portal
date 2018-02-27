@@ -1,7 +1,7 @@
 extends ../shared/layout
 
 block head
-    title Home - Ben Winding
+    title Ben Winding - The Periodic Table of Projects
     meta(name="description" content="Welcome to the unfinished projects and unclear visions of Ben Winding. See countless hours poured into misguided goals. Here you'll find; programming, blogs and much much less. We appreciate you stopping by out of pity. Kind regards, Ben Winding.")
     link(rel='stylesheet', href='/portal/portal.css')
 
@@ -25,7 +25,7 @@ block content
         .container
             .row#topButtons
                 .col-xs-12.text-center
-                    h2 Periodic Table of Projects
+                    h1 Periodic Table of Projects
                     .btn-group#filters(role='group', aria-label='Basic example')
                         button.btn.active(data-filter='*')
                             i.fas.fa-asterisk  
@@ -42,6 +42,9 @@ block content
                         button.btn#b4(data-filter='.c4')
                             i.fas.fa-folder-open
                             span Misc
+                    div.smallgroup
+                        h2#portal-heading [Click these to filter the failures!]
+                        i.fas.fa-level-up-alt
             .grid
                 div(class="grid-sizer " + colSizes)
                 +makeCard(lgSquare, "r1-c2.svg", "c1", "Me", "About", "/about", "https://i.imgur.com/9EDPzlX.jpg")

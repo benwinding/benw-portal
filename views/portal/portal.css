@@ -147,3 +147,10 @@ p.item-weight {
     margin: -100px 0 0 -100px;
     opacity: 0.3;
 }
+#portal-heading {
+    display: inline;
+    font-size: 1.3em;
+}
+.smallgroup {
+    margin-top: 10px
+}
