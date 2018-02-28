@@ -62,6 +62,9 @@ p.item-weight {
 .btn > span {
     margin: 0.5em;
 }
+.btn {
+    background-color: white;
+}
 .item.c1, .item.c1:before, .btn#b1 { 
     background-color: rgba(33, 150, 243, 0.7); 
     color: white;
