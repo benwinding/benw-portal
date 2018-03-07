@@ -1,9 +1,13 @@
 extends ../shared/layout
 
 block head
-    title Ben Winding - The Periodic Table of Projects
+    - var ptitle = "Ben Winding - The Periodic Table of Projects"
+    title=ptitle
     meta(name="description" content="Welcome to the unfinished projects and unclear visions of Ben Winding. See countless hours poured into misguided goals. Here you'll find; programming, blogs and much much less. We appreciate you stopping by out of pity. Kind regards, Ben Winding.")
     link(rel='stylesheet', href='/portal/portal.css')
+    meta(property="og:image" content="")
+    meta(property="og:title" content=ptitle)
+
 
 mixin makeCard(bootstrapSize, img, category, acronym, title, linkUrl, imageUrl)
     div(class=bootstrapSize + " " + category)
@@ -47,7 +51,7 @@ block content
                         i.fas.fa-level-up-alt
             .grid
                 div(class="grid-sizer " + colSizes)
-                +makeCard(lgSquare, "r1-c2.svg", "c1", "Me", "About", "/about", "https://i.imgur.com/9EDPzlX.jpg")
+                +makeCard(lgSquare, "r1-c2.svg", "c1", "Me", "About", "/about", "https://i.imgur.com/orqq5jB.jpg")
                 +makeCard(smSquare, "r1-c1.svg", "c2", "Cr", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/", "https://i.imgur.com/HOEhfy7.jpg")
                 +makeCard(smSquare, "r1-c1.svg", "c4", "Ds", "This Site?", "/but-how?", "https://i.imgur.com/7TS2LVj.jpg")
                 +makeCard(lgSquare, "r1-c2.svg", "c1", "Bg", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/0sIeGjL.jpg")
