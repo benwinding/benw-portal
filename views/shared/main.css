@@ -156,8 +156,8 @@ a:hover {
     padding: 0.2em;
   }
 }
-/* Medium */
-@media (min-width: 1000px) {
+/* Large screens! */
+@media (min-width: 1200px) {
   /*ABOUT*/
   .about {
     padding: 1em 20%;
