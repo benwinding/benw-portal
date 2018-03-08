@@ -1,5 +1,9 @@
 const sm = require('express-sitemap');
 
+function getTodaysDate() {
+  return new Date().toISOString().slice(0,10);
+}
+
 const sitemap = sm({
   robots: 'public/robots.txt',
   sitemap: 'public/sitemap.xml',
@@ -8,7 +12,7 @@ const sitemap = sm({
   sitemapSubmission: '/sitemap.xml',
   route: {
     'ALL': {
-      lastmod: new Date().toLocaleDateString(),
+      lastmod: getTodaysDate(),
       changefreq: 'always',
       priority: 1.0,
     }
