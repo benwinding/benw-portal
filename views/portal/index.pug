@@ -9,11 +9,11 @@ block head
     meta(property="og:title" content=ptitle)
 
 
-mixin makeCard(bootstrapSize, img, category, acronym, title, linkUrl, imageUrl)
+mixin makeCard(bootstrapSize, shape, category, acronym, title, linkUrl, imageUrl)
     div(class=bootstrapSize + " " + category)
         div(class="item " + category + " tint",style="background-image: url("+imageUrl+");")
             a#cardlink(href=linkUrl, title=title)
-                img.behind(src='/images/' + img, alt=acronym+' '+title)
+                img.behind(src='/images/' + shape, alt=acronym+' '+title)
                 div(class="item-content ")
                     p.item-acronym=acronym
                     p.item-name=title
