@@ -1,7 +1,7 @@
-var sitemap = require('express-sitemap');
+const sm = require('express-sitemap');
 
-const config = sitemap({
-	robots: 'public/robots.txt',
+const sitemap = sm({
+  robots: 'public/robots.txt',
   sitemap: 'public/sitemap.xml',
   http: 'https',
   url: 'benwinding.com',
@@ -15,7 +15,7 @@ const config = sitemap({
   },
 });
 
-module.exports = (app) => {
-  config.generate(app);
-  config.toFile();
-}
+module.exports = (app, router) => {
+  sitemap.generate4(router);
+  sitemap.toFile();
+};
