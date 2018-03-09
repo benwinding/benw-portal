@@ -24,29 +24,33 @@ block content
     - var c_apps = "c2"
     - var c_expe = "c3"
     - var c_misc = "c4"
+    - var c_bots = "c5"
     .background
         .container
             .row#topButtons
                 .col-xs-12.text-center
                     h1 Periodic Table of Projects
-                    .btn-group#filters(role='group', aria-label='Basic example')
+                    .btn-group#filters(role='group')
                         button.btn.active(data-filter='*')
                             i.fas.fa-asterisk  
                             span All
-                        button.btn#b1(data-filter='.' + c_me)
+                        button.btn#b1(data-filter='.' + c_me, title='Click to filter!')
                             i.fas.fa-user  
                             span Me
-                        button.btn#b2(data-filter='.' + c_apps)
+                        button.btn#b2(data-filter='.' + c_apps, title='Click to filter!')
                             i.fas.fa-cubes  
                             span Apps
-                        button.btn#b3(data-filter='.' + c_expe) 
+                        button.btn#b3(data-filter='.' + c_expe, title='Click to filter!') 
                             i.fas.fa-flask
                             span Experimental
-                        button.btn#b4(data-filter='.' + c_misc)
+                        button.btn#b5(data-filter='.' + c_bots, title='Click to filter!')
+                            i.fas.fa-comment-alt
+                            span Bots
+                        button.btn#b4(data-filter='.' + c_misc, title='Click to filter!')
                             i.fas.fa-folder-open
                             span Misc
-                    div.smallgroup
-                        h2#portal-heading [Click these to filter the failures!]
+                    div.heading-group
+                        h2#filter-heading [Click to filter] 
                         i.fas.fa-level-up-alt
             .grid
                 - var colSizes =         "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
@@ -57,17 +61,15 @@ block content
                 - var w_lg  =  "grid-item col-xs-12 col-ms-12 col-sm-9 col-md-6 col-lg-4"
                 //- Tile shapes, reference to svg size
                 - var square = "r1-c1.svg"
-                - var hrect =  "r1-c2.svg"
-                - var vrect =  "r2-c1.svg"
                 div(class="grid-sizer " + colSizes)
-                +makeCard(w_sm, square, c_apps, "Cr", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/", "https://i.imgur.com/HOEhfy7.jpg")
+                +makeCard(w_sm, square,  c_me, "Me", "About", "/about", "https://i.imgur.com/orqq5jB.jpg")
+                +makeCard(w_sm, square, c_bots, "Mb", "Meme Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/FWY5P8h.png")
+                +makeCard(w_sm, square, c_expe, "Cr", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/", "https://i.imgur.com/xGwyAEz.gif")
+                +makeCard(w_sm, square,  c_me, "Bg", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/0sIeGjL.jpg")
+                +makeCard(w_sm, square, c_bots, "Bb", "Breeze Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/BoEjyYW.png")
+                +makeCard(w_sm, square, c_expe, "Wp", "Wake Park", "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview", "https://i.imgur.com/Cpk5kkn.gif")
                 +makeCard(w_sm, square, c_misc, "Ds", "This Site?", "/but-how?", "https://i.imgur.com/7TS2LVj.jpg")
-                +makeCard(w_ml, hrect,  c_me, "Me", "About", "/about", "https://i.imgur.com/orqq5jB.jpg")
-                +makeCard(w_sm, vrect,  c_me, "Bg", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/0sIeGjL.jpg")
-                +makeCard(w_sm, square, c_expe, "Bb", "Breeze Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/BoEjyYW.png")
-                +makeCard(w_sm, square, c_expe, "Mb", "Meme Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/FWY5P8h.png")
-                +makeCard(w_sm, square, c_apps, "Wp", "Wake Park", "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview", "https://i.imgur.com/XnvWfB4.png")
-                +makeCard(w_sm, square, c_expe, "Cs", "Choiceful Stories", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/0sIeGjL.jpg")
+                +makeCard(w_sm, square, c_apps, "Cs", "Choiceful Stories", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/0sIeGjL.jpg")
 
     script.
         $(function () {

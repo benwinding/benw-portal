@@ -81,6 +81,10 @@ p.item-weight {
     background-color: rgba(255, 87, 34, 0.7); 
     color: black; 
 }
+.item.c5, .item.c5:before, .btn#b5 {
+    background-color: rgba(76, 175, 80, 0.7);
+    color: black;
+}
 
 .item {
     display: block;
@@ -150,10 +154,12 @@ p.item-weight {
     margin: -100px 0 0 -100px;
     opacity: 0.3;
 }
-#portal-heading {
+#filter-heading {
     display: inline;
     font-size: 1.3em;
+    /* padding-top: 1em; */
 }
-.smallgroup {
-    margin-top: 10px
+.heading-group {
+    margin-top: 10px;
+    color: #7b7b7b;
 }
