@@ -1,8 +1,4 @@
 /*MAIN*/
-html {
-  background-color: maroon;
-}
-
 @font-face {
   font-family: 'hack';
   src: url('/fonts/Hack-Regular.otf');
@@ -28,7 +24,8 @@ h1,h2,h3,h4,h5,h6,p,div, i{
 }
 body {
   margin: 0px;
-  background-color: maroon;
+  background: transparent;
+  height: 100vh;
 }
 header {
   text-align: center;
@@ -40,7 +37,17 @@ header {
   background: -o-linear-gradient(-45deg, rgba(120,0,28,1) 0%, rgba(120,0,28,1) 23%, rgba(3,150,255,1) 100%);
   background: -ms-linear-gradient(-45deg, rgba(120,0,28,1) 0%, rgba(120,0,28,1) 23%, rgba(3,150,255,1) 100%);
   background: linear-gradient(135deg, rgba(120,0,28,1) 0%, rgba(120,0,28,1) 23%, rgba(3,150,255,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78001c', endColorstr='#0396ff', GradientType=1 );  
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78001c', endColorstr='#0396ff', GradientType=1 );
+}
+html {
+  /* background: rgba(3,150,255,1); */
+  background: -moz-linear-gradient(-45deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(3,150,255,1)), color-stop(72%, rgba(120,0,28,1)), color-stop(100%, rgba(120,0,28,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
+  /* background: linear-gradient(135deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%); */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0396ff', endColorstr='#78001c', GradientType=1 );
 }
 header *#title {
   font-family: 'Megrim';
@@ -78,14 +85,7 @@ footer {
   text-align: center;
   padding: 20px;
   color: white;
-  background: rgba(3,150,255,1);
-  background: -moz-linear-gradient(-45deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(3,150,255,1)), color-stop(72%, rgba(120,0,28,1)), color-stop(100%, rgba(120,0,28,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
-  background: linear-gradient(135deg, rgba(3,150,255,1) 0%, rgba(120,0,28,1) 72%, rgba(120,0,28,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0396ff', endColorstr='#78001c', GradientType=1 );
+  background: #d00f0f00;
 }
 footer > h4 {
   font-family: 'Megrim'; 
