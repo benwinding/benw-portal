@@ -26,6 +26,18 @@ html
     body
         header
             include header
-        block content
+        .background
+            block content
         footer
             include footer
+    script.
+        var headerHeight = $("header").height();
+        var footerHeight = 125;
+        var contentHeight = $(".background").height();
+        var totalHeight = headerHeight + contentHeight + footerHeight;
+        var windowHeight = $(window).height();
+        if (totalHeight < windowHeight ) {
+            $('footer').css({
+                "height": windowHeight - totalHeight + footerHeight
+            });
+        }

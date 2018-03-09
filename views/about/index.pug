@@ -7,8 +7,8 @@ block head
 
 block content
     div(class='about')
-        div(class='box2', id='aboutTitle')='Ben Winding'
-        div(class='box2', id='descriptionShort')="\"Live life like you were a dog\""
-        img(id='imageMain', src='https://i.imgur.com/ippR6wp.jpg')
-        div(class='box2', id='descriptionLong')
+        div.box2#aboutTitle Ben Winding
+        div.box2#descriptionShort "Live life like you were a dog"
+        img#imageMain(src='https://i.imgur.com/ippR6wp.jpg')
+        div.box2#descriptionLong
             include:markdown-it about.md
