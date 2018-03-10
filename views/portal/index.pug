@@ -22,7 +22,7 @@ mixin makeCard(bootstrapSize, shape, category, acronym, title, linkUrl, imageUrl
 mixin makeButton(bNum, category, faIcon, buttonTitle)
     button.btn(id="b"+bNum ,data-filter='.' + category, title='Click to filter!')
         i(class="fas "+faIcon)
-        span=buttonTitle
+        span#btn-desc=buttonTitle
 
 block content
     - var c_me = "c1"

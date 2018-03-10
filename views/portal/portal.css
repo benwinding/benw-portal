@@ -167,3 +167,8 @@ p.item-weight {
     margin-top: 10px;
     color: #7b7b7b;
 }
+@media(max-width: 480px) {
+    #btn-desc {
+        display: none;
+    }
+}
