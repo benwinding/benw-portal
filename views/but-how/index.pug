@@ -4,6 +4,17 @@ block head
     title But How? - Ben Winding
     link(rel='stylesheet', href='/but-how/but-how.css')
 
+
+mixin makeItem(title, description, imageUrl)
+    - var bootSize = 'col-xs-6 col-ms-4 col-sm-3 col-md-2 col-lg-2'
+    div(class=bootSize)
+        div.how-item
+            div.how-img-wrapper(style="background-image: url("+imageUrl+");")
+                img.how-img(src='/images/r1-c1.svg')    
+            p.how-title=title
+            p.how-description=description
+
+
 block content
     div.but-how
         h1 Tech
@@ -11,15 +22,21 @@ block content
         p Yeah it's all javascript, don't be scared
 
         h2 Backend
-        li Node Js ≈ Server
-        li Pug ≈ Templates
+        .container
+            .row
+                +makeItem('Node Js', 'Server', "https://i.imgur.com/RKHO61Z.png")
+                +makeItem('Express Js', 'Web Server', "https://i.imgur.com/Bo8XjxG.png")
+                +makeItem('Pug Js', 'Templating', "https://i.imgur.com/8FLu8wd.png")
+                +makeItem('Google Analytics', 'Stats', "https://i.imgur.com/vpReKIu.png")
 
         h2 Frontend
-        li Turbolinks ≈ Fast
-        li Muuri ≈ Sort
-        li Hammer ≈ Drag
-        h1
+        .container
+            .row
+                +makeItem('Jquery', 'JS Simplification', "http://i.imgur.com/eU8Dx5z.png")
+                +makeItem('Font Awesome', 'Epic Logos', "https://i.imgur.com/qXIEueL.png")
+                +makeItem('Bootstrap', 'Pretty CSS', "https://i.imgur.com/zv2WqsD.jpg")
+                +makeItem('Turbolinks', 'Faster Page Loads', "https://i.imgur.com/gQ8fTSc.png")
+                +makeItem('Isotope JS', 'Movable Tiles!', "https://i.imgur.com/Lduuos5.png")
 
-        b Disclaimer
-        br
+        h3 Disclaimer
         i I have little style, just like functionality and the color maroon.
