@@ -25,3 +25,7 @@
   font-size: 1em;
   font-style: italic;
 }
+
+.container {
+  margin-bottom: 20px;
+}

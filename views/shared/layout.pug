@@ -13,6 +13,25 @@ html
         script(src='/vendor/isotope.pkgd.min.js')
         link(rel='stylesheet', href='/shared/main.css')
         link(rel='icon' href='/images/favicon.png')
+        script.
+            function recalculateFooter() {
+                var headerHeight = $("header").height();
+                var footerHeight = 125;
+                var contentHeight = $(".background").height();
+                var totalHeight = headerHeight + contentHeight + footerHeight;
+                var windowHeight = $(window).height();
+                var newHeight = "unset";
+                if (totalHeight < windowHeight ) {
+                    newHeight = windowHeight - totalHeight + footerHeight;
+                }
+                $('footer').css({
+                    "height": newHeight
+                });
+                console.log('Run recalculateFooter') 
+            }
+            $(document).click(function(event){
+                recalculateFooter();
+            });
         
         // Global site tag (gtag.js) - Google Analytics
         script(async src='https://www.googletagmanager.com/gtag/js?id=UA-38440481-1')
@@ -30,14 +49,3 @@ html
             block content
         footer
             include footer
-    script.
-        var headerHeight = $("header").height();
-        var footerHeight = 125;
-        var contentHeight = $(".background").height();
-        var totalHeight = headerHeight + contentHeight + footerHeight;
-        var windowHeight = $(window).height();
-        if (totalHeight < windowHeight ) {
-            $('footer').css({
-                "height": windowHeight - totalHeight + footerHeight
-            });
-        }

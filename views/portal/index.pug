@@ -25,7 +25,7 @@ mixin makeButton(bNum, category, faIcon, buttonTitle)
         span#btn-desc=buttonTitle
 
 block content
-    - var c_me = "c1"
+    - var c_meta = "c1"
     - var c_apps = "c2"
     - var c_expe = "c3"
     - var c_misc = "c4"
@@ -33,12 +33,12 @@ block content
     .container
         .row#topButtons
             .col-xs-12.text-center
-                h1 Periodic Table of Projects
+                h1 The Periodic Table of Projects
                 .btn-group#filters(role='group')
                     button.btn.active#btn-all(data-filter='*')
                         i.fas.fa-asterisk  
                         span All
-                    +makeButton(1, c_me, "fa-user", "Me")
+                    +makeButton(1, c_meta, "fa-user", "Meta")
                     +makeButton(2, c_apps, "fa-cubes", "Apps")
                     +makeButton(3, c_expe, "fa-flask", "Experimental")
                     +makeButton(5, c_bots, "fa-comment-alt", "Bots")
@@ -50,19 +50,16 @@ block content
             - var colSizes =         "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
             //- Sizes tile widths at column sizes 
             - var w_sm  =  "grid-item col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
-            - var w_md  =  "grid-item col-xs-6  col-ms-8 col-sm-6 col-md-4 col-lg-4"
-            - var w_ml  =  "grid-item col-xs-12  col-ms-8 col-sm-6 col-md-4 col-lg-4"
-            - var w_lg  =  "grid-item col-xs-12 col-ms-12 col-sm-9 col-md-6 col-lg-4"
             //- Tile shapes, reference to svg size
             - var square = "r1-c1.svg"
             div(class="grid-sizer " + colSizes)
-            +makeCard(w_sm, square,  c_me, "Me", "About", "/about", "https://i.imgur.com/orqq5jB.jpg")
+            +makeCard(w_sm, square,  c_meta, "Me", "About", "/about", "https://i.imgur.com/orqq5jB.jpg")
             +makeCard(w_sm, square, c_bots, "Mb", "Meme Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/FWY5P8h.png")
             +makeCard(w_sm, square, c_expe, "Cr", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/", "https://i.imgur.com/xGwyAEz.gif")
-            +makeCard(w_sm, square,  c_me, "Bg", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/0sIeGjL.jpg")
+            +makeCard(w_sm, square,  c_meta, "Bg", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/0sIeGjL.jpg")
             +makeCard(w_sm, square, c_bots, "Bb", "Breeze Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/BoEjyYW.png")
             +makeCard(w_sm, square, c_expe, "Wp", "Wake Park", "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview", "https://i.imgur.com/Cpk5kkn.gif")
-            +makeCard(w_sm, square, c_misc, "Ds", "This Site?", "/but-how?", "https://i.imgur.com/7TS2LVj.jpg")
+            +makeCard(w_sm, square, c_meta, "Ds", "This Site?", "/but-how?", "https://i.imgur.com/7TS2LVj.jpg")
             +makeCard(w_sm, square, c_apps, "Cs", "Choiceful Stories", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/0sIeGjL.jpg")
 
     script.
@@ -124,21 +121,6 @@ block content
                 $('.grid').isotope('layout')
             }, 500);
         }, 500);
-
-        function recalculateFooter() {
-            var headerHeight = $("header").height();
-            var footerHeight = 125;
-            var contentHeight = $(".background").height();
-            var totalHeight = headerHeight + contentHeight + footerHeight;
-            var windowHeight = $(window).height();
-            var newHeight = "unset";
-            if (totalHeight < windowHeight ) {
-                newHeight = windowHeight - totalHeight + footerHeight;
-            }
-            $('footer').css({
-                "height": newHeight
-            });                
-        }
         $('.grid').on('arrangeComplete', recalculateFooter);
         // bind filter button click
         $('#filters').on('click', 'button', function () {

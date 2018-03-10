@@ -4,39 +4,84 @@ block head
     title But How? - Ben Winding
     link(rel='stylesheet', href='/but-how/but-how.css')
 
-
 mixin makeItem(title, description, imageUrl)
     - var bootSize = 'col-xs-6 col-ms-4 col-sm-3 col-md-2 col-lg-2'
     div(class=bootSize)
         div.how-item
-            div.how-img-wrapper(style="background-image: url("+imageUrl+");")
+            div.how-img-wrapper(style='background-image: url('+imageUrl+');')
                 img.how-img(src='/images/r1-c1.svg')    
             p.how-title=title
             p.how-description=description
 
-
 block content
     div.container
-        h1 Tech
-        p Well this site was hacked together using the following technologies.
-        p Yeah it's all javascript, don't be scared
+        h1 The Architecture Of My Sites
+        ul.nav.nav-tabs
+            li
+                a(data-toggle='tab', href='#menu-all') Infastructure
+            li.active
+                a(data-toggle='tab', href='#menu-this') This
+            li
+                a(data-toggle='tab', href='#menu-blog') Blog
+        .tab-content
+            #menu-all.tab-pane.active
+                h2 The Cluster
+                p My sites attached to the benwinding.com domain are using the dokku platform. Dokku provides a system similar to Heroku, but is deployed on your own server and uses docker containers.
 
-        h2 Backend
-        .row
-            +makeItem('Node Js', 'Server', "https://i.imgur.com/RKHO61Z.png")
-            +makeItem('Express Js', 'Web Server', "https://i.imgur.com/Bo8XjxG.png")
-            +makeItem('Pug Js', 'Templating', "https://i.imgur.com/8FLu8wd.png")
-            +makeItem('Google Analytics', 'Stats', "https://i.imgur.com/vpReKIu.png")
+                .container
+                    .row
+                        .col-xs-12.text-center
+                            include sites-infastructure-v1.html 
+                    script.
+                        var diagram = $('.geDiagramContainer');
+                        var svgTag = diagram.find('svg');
+                        diagram.css({
+                            width: 'unset'
+                        })
+                        svgTag.css({
+                            width: 'unset',
+                            display: 'initial'
+                        });
 
-        h2 Frontend
-        .row
-            +makeItem('Jquery', 'JS Simplification', "http://i.imgur.com/eU8Dx5z.png")
-            +makeItem('Font Awesome', 'Epic Logos', "https://i.imgur.com/qXIEueL.png")
-            +makeItem('Bootstrap', 'Pretty CSS', "https://i.imgur.com/zv2WqsD.jpg")
-            +makeItem('Turbolinks', 'Faster Page Loads', "https://i.imgur.com/gQ8fTSc.png")
-            +makeItem('Isotope JS', 'Movable Tiles!', "https://i.imgur.com/Lduuos5.png")
+                p Click the tabs above ^ for more details.
 
-        h3 Disclaimer
-        i I have little style, just like functionality and the color maroon.
-        h3
+            #menu-blog.tab-pane
+                h2 The Blog Stack
+                p Although the content is terrible the blog is streamlined for speed. It uses precompiled html on the hexo platform. Hella fast!
 
+                h3 Backend
+                .row
+                    +makeItem('Node Js', 'Server', 'https://i.imgur.com/RKHO61Z.png')
+                    +makeItem('Express Js', 'Web Server', 'https://i.imgur.com/Bo8XjxG.png')
+                    +makeItem('Hexo Blog', 'Static Blog Framework', 'https://i.imgur.com/MhHA2ML.png')
+                i OMG it's javascript! no static type checking!! oh noooo!!!!
+
+                h3 Frontend
+                .row
+                    +makeItem('Hexo Blog', 'Static Blog Framework', 'https://i.imgur.com/MhHA2ML.png')
+                i Yep, not much else in the front end.
+
+            #menu-this.tab-pane
+                h2 This Site's Stack!
+                i How the hell does this website work?
+                p Well this site you are looking at was hacked together using the following technologies.
+
+                h3 Backend
+                .row
+                    +makeItem('Node Js', 'Server', 'https://i.imgur.com/RKHO61Z.png')
+                    +makeItem('Express Js', 'Web Server', 'https://i.imgur.com/Bo8XjxG.png')
+                    +makeItem('Pug Js', 'View Templates', 'https://i.imgur.com/8FLu8wd.png')
+                i OMG it's javascript! no static type checking!! oh noooo!!!!
+
+                h3 Frontend
+                .row
+                    +makeItem('Jquery', 'JS Simplification', 'http://i.imgur.com/eU8Dx5z.png')
+                    +makeItem('Turbolinks', 'Faster Page Loads', 'https://i.imgur.com/gQ8fTSc.png')
+                    +makeItem('Google Analytics', 'Page Statistics', 'https://i.imgur.com/vpReKIu.png')
+                    +makeItem('Bootstrap', 'Pretty CSS', 'https://i.imgur.com/zv2WqsD.jpg')
+                    +makeItem('Font Awesome', 'Epic Logos', 'https://i.imgur.com/qXIEueL.png')
+                    +makeItem('Isotope JS', 'Grid Tiling System', 'https://i.imgur.com/Lduuos5.png')
+                i Well I guess javascript's the only language for the front end...
+
+                h3 Disclaimer
+                i I have little style, just like functionality and the color maroon.
