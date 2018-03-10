@@ -16,27 +16,27 @@ mixin makeItem(title, description, imageUrl)
 
 
 block content
-    div.but-how
+    div.container
         h1 Tech
         p Well this site was hacked together using the following technologies.
         p Yeah it's all javascript, don't be scared
 
         h2 Backend
-        .container
-            .row
-                +makeItem('Node Js', 'Server', "https://i.imgur.com/RKHO61Z.png")
-                +makeItem('Express Js', 'Web Server', "https://i.imgur.com/Bo8XjxG.png")
-                +makeItem('Pug Js', 'Templating', "https://i.imgur.com/8FLu8wd.png")
-                +makeItem('Google Analytics', 'Stats', "https://i.imgur.com/vpReKIu.png")
+        .row
+            +makeItem('Node Js', 'Server', "https://i.imgur.com/RKHO61Z.png")
+            +makeItem('Express Js', 'Web Server', "https://i.imgur.com/Bo8XjxG.png")
+            +makeItem('Pug Js', 'Templating', "https://i.imgur.com/8FLu8wd.png")
+            +makeItem('Google Analytics', 'Stats', "https://i.imgur.com/vpReKIu.png")
 
         h2 Frontend
-        .container
-            .row
-                +makeItem('Jquery', 'JS Simplification', "http://i.imgur.com/eU8Dx5z.png")
-                +makeItem('Font Awesome', 'Epic Logos', "https://i.imgur.com/qXIEueL.png")
-                +makeItem('Bootstrap', 'Pretty CSS', "https://i.imgur.com/zv2WqsD.jpg")
-                +makeItem('Turbolinks', 'Faster Page Loads', "https://i.imgur.com/gQ8fTSc.png")
-                +makeItem('Isotope JS', 'Movable Tiles!', "https://i.imgur.com/Lduuos5.png")
+        .row
+            +makeItem('Jquery', 'JS Simplification', "http://i.imgur.com/eU8Dx5z.png")
+            +makeItem('Font Awesome', 'Epic Logos', "https://i.imgur.com/qXIEueL.png")
+            +makeItem('Bootstrap', 'Pretty CSS', "https://i.imgur.com/zv2WqsD.jpg")
+            +makeItem('Turbolinks', 'Faster Page Loads', "https://i.imgur.com/gQ8fTSc.png")
+            +makeItem('Isotope JS', 'Movable Tiles!', "https://i.imgur.com/Lduuos5.png")
 
         h3 Disclaimer
         i I have little style, just like functionality and the color maroon.
+        h3
+
