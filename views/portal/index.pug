@@ -2,11 +2,13 @@ extends ../shared/layout
 
 block head
     - var ptitle = "Ben Winding - The Periodic Table of Projects"
+    - var pdesc = "Welcome to the unfinished projects and unclear visions of Ben Winding. See countless hours poured into misguided goals. Here you'll find; programming, blogs and much much less. We appreciate you stopping by out of pity. Kind regards, Ben Winding."
     title=ptitle
-    meta(name="description" content="Welcome to the unfinished projects and unclear visions of Ben Winding. See countless hours poured into misguided goals. Here you'll find; programming, blogs and much much less. We appreciate you stopping by out of pity. Kind regards, Ben Winding.")
+    meta(name="description" content=pdesc)
     link(rel='stylesheet', href='/portal/portal.css')
     meta(property="og:image" content="https://i.imgur.com/orqq5jB.jpg")
     meta(property="og:title" content=ptitle)
+    meta(property="og:description" content=pdesc)
 
 
 mixin makeCard(bootstrapSize, shape, category, acronym, title, linkUrl, imageUrl)
@@ -33,6 +35,9 @@ block content
     .container
         .row#topButtons
             .col-xs-12.text-center
+                h1 Ben Winding
+            p=pdesc
+            .col-xs-12.text-center
                 h1 The Periodic Table of Projects
                 .btn-group#filters(role='group')
                     button.btn.active#btn-all(data-filter='*')
@@ -56,7 +61,7 @@ block content
             +makeCard(w_sm, square,  c_meta, "Me", "About", "/about", "https://i.imgur.com/orqq5jB.jpg")
             +makeCard(w_sm, square, c_bots, "Mb", "Meme Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/FWY5P8h.png")
             +makeCard(w_sm, square, c_expe, "Cr", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/", "https://i.imgur.com/xGwyAEz.gif")
-            +makeCard(w_sm, square,  c_meta, "Bg", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/0sIeGjL.jpg")
+            +makeCard(w_sm, square,  c_meta, "Bg", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/g1ETdvd.gif")
             +makeCard(w_sm, square, c_bots, "Bb", "Breeze Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/BoEjyYW.png")
             +makeCard(w_sm, square, c_expe, "Wp", "Wake Park", "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview", "https://i.imgur.com/Cpk5kkn.gif")
             +makeCard(w_sm, square, c_meta, "Ds", "This Site?", "/but-how?", "https://i.imgur.com/rYsGCgN.gif")
