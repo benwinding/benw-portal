@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+YAML = require('yamljs');
+// Load yaml file using YAML.load
+const portalTiles = YAML.load('./views/portal/tiles.yaml');
 
 router.get('/', function(req, res, next) {
-    res.render('portal');
+    res.render('portal', { layout : 'layout', json: portalTiles });
 });
 
 router.get('/but-how', function(req, res, next) {

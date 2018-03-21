@@ -10,17 +10,6 @@ block head
     meta(property="og:title" content=ptitle)
     meta(property="og:description" content=pdesc)
 
-
-mixin makeCard(bootstrapSize, shape, category, acronym, title, linkUrl, imageUrl)
-    div(class=bootstrapSize + " " + category)
-        div(class="item " + category + " tint",style="background-image: url("+imageUrl+");")
-            a#cardlink(href=linkUrl, title=title)
-                img.behind(src='/images/' + shape, alt=acronym+' '+title)
-                div(class="item-content ")
-                    p.item-acronym=acronym
-                    p.item-name=title
-                    div#gears
-
 mixin makeButton(bNum, category, faIcon, buttonTitle)
     button.btn(id="b"+bNum ,data-filter='.' + category, title='Click to filter!')
         i(class="fas "+faIcon)
@@ -53,19 +42,20 @@ block content
                     i.fas.fa-level-up-alt
         .grid
             - var colSizes =         "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
-            //- Sizes tile widths at column sizes 
-            - var w_sm  =  "grid-item col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
+            //- Sizes tile widths at column sizes
+            - var bootstrapSize  =  "grid-item col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
             //- Tile shapes, reference to svg size
-            - var square = "r1-c1.svg"
+            - var tileShape = "r1-c1.svg"
             div(class="grid-sizer " + colSizes)
-            +makeCard(w_sm, square,  c_meta, "Me", "About", "/about", "https://i.imgur.com/orqq5jB.jpg")
-            +makeCard(w_sm, square, c_bots, "Mb", "Meme Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/FWY5P8h.png")
-            +makeCard(w_sm, square, c_expe, "Cr", "Cricket Lanes", "https://benwinding.github.io/CricketNet-Demo/", "https://i.imgur.com/xGwyAEz.gif")
-            +makeCard(w_sm, square,  c_meta, "Bg", "Blog", "http://blog.benwinding.com", "https://i.imgur.com/g1ETdvd.gif")
-            +makeCard(w_sm, square, c_bots, "Bb", "Breeze Bot", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/BoEjyYW.png")
-            +makeCard(w_sm, square, c_expe, "Wp", "Wake Park", "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview", "https://i.imgur.com/Cpk5kkn.gif")
-            +makeCard(w_sm, square, c_meta, "Ds", "This Site?", "/but-how?", "https://i.imgur.com/rYsGCgN.gif")
-            +makeCard(w_sm, square, c_apps, "Cs", "Choiceful Stories", "https://breeze-bot-landing.herokuapp.com/", "https://i.imgur.com/0sIeGjL.jpg")
+            each tile, index in json
+                div(class=bootstrapSize + " " + tile.category)
+                    div(class="item " + tile.category + " tint",style="background-image: url(" + tile.imageUrl + ");")
+                        a#cardlink(href=tile.linkUrl, title=tile.title)
+                            img.behind(src='/images/' + tileShape, alt=tile.acronym + ' ' + tile.title)
+                            div(class="item-content ")
+                                p.item-acronym=tile.acronym
+                                p.item-name=tile.title
+                                div#gears
 
     script.
         $(function () {
