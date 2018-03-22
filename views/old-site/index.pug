@@ -13,8 +13,9 @@ block content
         h1 Previously...
         h3 On this website
         div#lightGallery
-            each image, index in inputList
-              div#item(data-src=image.imageUrl, class=colSizes)
+          each image, index in inputList
+            a(data-src=image.imageUrl)
+              div#item(class=colSizes)
                 div#background-image(style="background-image: url(" + image.imageUrl + ");")
                   img.behind(src='/images/r1-c2.svg')
                 div.caption
