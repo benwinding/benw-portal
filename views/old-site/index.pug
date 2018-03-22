@@ -10,14 +10,15 @@ block head
 block content
     - var colSizes = "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
     div.container
-        h1 Hello
+        h1 Previously...
+        h3 On this website
         div#lightGallery
             each image, index in inputList
               div#item(data-src=image.imageUrl, class=colSizes)
-                div(style="background-image: url(" + image.imageUrl + ");")
-                  img.behind(src='/images/r1-c1.svg')
+                div#background-image(style="background-image: url(" + image.imageUrl + ");")
+                  img.behind(src='/images/r1-c2.svg')
                 div.caption
-                  h4 image.caption
+                  h4=image.caption
 
     script.
       lightGallery(document.getElementById('lightGallery'));
