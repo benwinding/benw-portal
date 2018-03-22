@@ -1,0 +1,23 @@
+extends ../shared/layout
+
+block head
+    -var urlCdnBase = 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.0.2'
+    title Old Site? - Ben Winding
+    link(rel='stylesheet' href=urlCdnBase+'/dist/css/lightgallery.css')
+    script(src=urlCdnBase+'/dist/js/lightgallery.min.js')
+    link(rel='stylesheet', href='/old-site/old-site.css')    
+
+block content
+    - var colSizes = "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
+    div.container
+        h1 Hello
+        div#lightGallery
+            each image, index in inputList
+              div#item(data-src=image.imageUrl, class=colSizes)
+                div(style="background-image: url(" + image.imageUrl + ");")
+                  img.behind(src='/images/r1-c1.svg')
+                div.caption
+                  h4 image.caption
+
+    script.
+      lightGallery(document.getElementById('lightGallery'));

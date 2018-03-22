@@ -44,14 +44,12 @@ block content
             - var colSizes =         "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
             //- Sizes tile widths at column sizes
             - var bootstrapSize  =  "grid-item col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
-            //- Tile shapes, reference to svg size
-            - var tileShape = "r1-c1.svg"
             div(class="grid-sizer " + colSizes)
-            each tile, index in json
+            each tile, index in inputTiles
                 div(class=bootstrapSize + " " + tile.category)
                     div(class="item " + tile.category + " tint",style="background-image: url(" + tile.imageUrl + ");")
                         a#cardlink(href=tile.linkUrl, title=tile.title)
-                            img.behind(src='/images/' + tileShape, alt=tile.acronym + ' ' + tile.title)
+                            img.behind(src='/images/r1-c1.svg', alt=tile.acronym + ' ' + tile.title)
                             div(class="item-content ")
                                 p.item-acronym=tile.acronym
                                 p.item-name=tile.title
