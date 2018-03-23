@@ -1,0 +1,15 @@
+.card {
+  border-radius: 10px;
+}
+.card-title, .card-image {
+  border-radius: 0;
+}
+.card-title {
+  background-color: #e8dcdc;
+  color: black;
+  overflow: hidden;
+}
+.card-image {
+  background-color: grey;
+  color: white;
+}
