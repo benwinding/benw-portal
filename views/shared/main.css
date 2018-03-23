@@ -94,6 +94,9 @@ header > a:hover {
   color: #e0ff38;
   text-shadow: 0px 7px blue;
 }
+#type-here, #pre-type-here {
+  color: white;
+}
 
 /*Footer Specific*/
 
