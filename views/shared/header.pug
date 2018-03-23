@@ -5,33 +5,18 @@ a(href='/', title='Back to the periodic table of projects!')
         .type-text
           span#pre-type-here /$ 
           span#type-here
-            | I am a web developer...
-            br 
-            | I made this silly site...
-            br 
-            | Touch your nose... it's itchy
-            br 
-            | I was a mechanical engineer..
-            br 
-            | I am a hackerman...
-            br 
-            | I am a kiteboarder...
-            br 
-            | I am a low quality meme producer...
-            br 
-            | I am ...... the batman...
-            br 
-            | why tho?...
-            br 
-            | cause... that's why...
-            br 
-            | Please contact me...
-            br 
-            | Or don't...
+
+|<script>
+| var headerTypeStrings = 
+include:yaml header-type-strings.yaml
+|</script>
 
 script.
+  headerTypeStrings.sort((a,b)=>{return Math.random()-0.5})
+
   var options = {
     cursorChar: "▊",
+    strings: headerTypeStrings,
     speed: 170,
     loop: true,
     nextStringDelay: [1000, 2000],
