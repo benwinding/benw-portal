@@ -1,21 +1,42 @@
 a(href='/', title='Back to the periodic table of projects!')
   p#title='BW'
-span#pre-type-here I am a 
-span#type-here
-  | aspiring developer...
-  br 
-  | mechanical engineer...
-  br 
-  | part-time meme critic...
-  br 
-  | kiteboarding ethusist...
+.container
+  .col-xs-12.col-md-4.col-md-offset-4
+    .type-text
+      span#pre-type-here /$ 
+      span#type-here
+        | I am a web developer...
+        br 
+        | I made this silly site...
+        br 
+        | Touch your nose... it's itchy
+        br 
+        | I was a mechanical engineer...
+        br 
+        | I am a hackerman...
+        br 
+        | I am a kiteboarder...
+        br 
+        | I am a low quality meme producer...
+        br 
+        | I am ...... the batman...
+        br 
+        | why tho?...
+        br 
+        | cause... that's why...
+        br 
+        | Please contact me...
+        br 
+        | Or don't...
 
 script.
   var options = {
-    speed: 130,
+    cursorChar: "▊",
+    speed: 170,
+    loop: true,
+    nextStringDelay: [1000, 2000],
     lifeLike: true,
     autoStart: true,
     breakLines: false,
-    loop: true
   };
   new TypeIt('#type-here', options);
