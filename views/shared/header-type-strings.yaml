@@ -11,6 +11,9 @@
 - cause... that's why...
 - Please contact me...
 - Maybe don't do that?
-- rm -rf /
-- chmod 777 -R /
+- Maybe don't type any of this into your terminal...
+- reboot
+- poweroff
+- sudo rm -rf /
+- sudo chmod 777 -R /
 - telnet towel.blinkenlights.nl
