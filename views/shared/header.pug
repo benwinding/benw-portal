@@ -1,2 +1,21 @@
 a(href='/', title='Back to the periodic table of projects!')
-    p#title='BW'
+  p#title='BW'
+span I am a 
+span#type-here
+  | aspiring developer...
+  br 
+  | mechanical engineer...
+  br 
+  | part-time meme critic...
+  br 
+  | kiteboarding ethusist...
+
+script.
+  var options = {
+    speed: 130,
+    lifeLike: true,
+    autoStart: true,
+    breakLines: false,
+    loop: true
+  };
+  new TypeIt('#type-here', options);
