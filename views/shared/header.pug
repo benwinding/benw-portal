@@ -1,2 +1,27 @@
 a(href='/', title='Back to the periodic table of projects!')
-    p#title='BW'
+  p#title='BW'
+.container.type-text-container
+    .col-xs-12.col-ms-offset-3.col-ms-6.col-sm-offset-4.col-sm-4
+        .type-text
+          span#pre-type-here /$ 
+          span#type-here
+
+|<script>
+| var headerTypeStrings = 
+include:yaml header-type-strings.yaml
+|</script>
+
+script.
+  headerTypeStrings.sort((a,b)=>{return Math.random()-0.5})
+
+  var options = {
+    cursorChar: "▊",
+    strings: headerTypeStrings,
+    speed: 170,
+    loop: true,
+    nextStringDelay: [1000, 2000],
+    lifeLike: true,
+    autoStart: true,
+    breakLines: false,
+  };
+  new TypeIt('#type-here', options);

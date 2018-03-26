@@ -1,0 +1,116 @@
+mixin makeButton(bNum, category, faIcon, buttonTitle)
+    button.btn(id="b"+bNum ,data-filter='.' + category, title='Click to filter!')
+        i(class="fas "+faIcon)
+        span#btn-desc=buttonTitle
+
+- var c_meta = "c1"
+- var c_apps = "c2"
+- var c_expe = "c3"
+- var c_misc = "c4"
+- var c_bots = "c5"
+
+.container
+    .row#topButtons
+        .col-xs-12.text-center
+            h1 The Periodic Table of Projects
+            .btn-group#filters(role='group')
+                button.btn.active#btn-all(data-filter='*')
+                    i.fas.fa-asterisk  
+                    span All
+                +makeButton(1, c_meta, "fa-user", "Meta")
+                +makeButton(2, c_apps, "fa-cubes", "Apps")
+                +makeButton(3, c_expe, "fa-flask", "Experimental")
+                +makeButton(5, c_bots, "fa-comment-alt", "Bots")
+                +makeButton(4, c_misc, "fa-folder-open", "Misc")
+            div.heading-group
+                h2#filter-heading(title='not here, click above!') [Click to filter] 
+                i.fas.fa-level-up-alt
+    .grid
+        - var colSizes =         "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
+        //- Sizes tile widths at column sizes
+        - var bootstrapSize  =  "grid-item col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
+        div(class="grid-sizer " + colSizes)
+        each tile, index in inputTiles
+            div(class=bootstrapSize + " " + tile.category)
+                div(class="item " + tile.category + " tint",style="background-image: url(" + tile.imageUrl + ");")
+                    a#cardlink(href=tile.linkUrl, title=tile.title)
+                        img.behind(src='/images/r1-c1.svg', alt=tile.acronym + ' ' + tile.title)
+                        div(class="item-content ")
+                            p.item-acronym=tile.acronym
+                            p.item-name=tile.title
+                            div#gears
+
+script.
+    $(function () {
+        $('.item').bind('click', function (ev) {
+            ev.preventDefault();
+            var card = $(this);
+            var cardParent = card.parent();
+            var cardLink = card.find('#cardlink');
+            cardParent.css({
+                "zIndex": 999,
+                "position": "fixed",
+                "margin": "0",
+                "padding": "0",
+                "opacity": "1"
+            });
+            card.animate({
+                "height": "100vh",
+                "width": "100vw"
+            });
+            cardParent.animate({
+                "top": "0",
+                "left": "0",
+                "width": "100%",
+                "height": "100vh",
+                "fontSize": "2em"
+            });
+            cardParent.css({
+                "zIndex": 999,
+                "position": "fixed",
+                "margin": "0",
+                "padding": "0"
+            });
+            card.toggleClass('whited');
+            cardLink.css({
+              color: "grey"
+            });
+            card.find('#gears').toggleClass('loading')
+            setTimeout(function () {
+                document.location = cardLink.attr("href");
+            }, 1000)
+        });
+    });
+    $('.grid').isotope({
+        itemSelector: '.grid-item',
+        masonry: {
+            columnWidth: '.grid-sizer'
+        },
+        hiddenStyle: {
+            opacity: 0
+        },
+        visibleStyle: {
+            opacity: 1
+        }
+    });
+    setTimeout(function() {
+        $('.grid').isotope('layout')
+        setTimeout(function () {
+            $('.grid').isotope('layout')
+        }, 500);
+    }, 500);
+    $('.grid').on('arrangeComplete', recalculateFooter);
+    // bind filter button click
+    $('#filters').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        $('.grid').isotope({filter: filterValue});
+        recalculateFooter();
+    });
+    // change is-checked class on buttons
+    $('.btn-group').each(function (i, buttonGroup) {
+        var $buttonGroup = $(buttonGroup);
+        $buttonGroup.on('click', 'button', function () {
+            $buttonGroup.find('.active').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
