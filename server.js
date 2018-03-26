@@ -13,6 +13,10 @@ app.use('/', router);
 
 require('./sitemap')(app, router);
 
+app.use(function(req, res, next) {
+		res.status(404).render('error', {url: req.url});
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
 console.log('listening on port: ' + PORT);
