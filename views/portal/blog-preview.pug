@@ -1,16 +1,11 @@
 //- Introduction
-.container.text-center
+.container
     h1 Blog Recent
-    each post, index in blogContent
-        - var titleTrimmed = post.title.slice(0,20);
-        - var dateTrimmed = post.date.slice(0,10);
-        .col-xs-12.col-ms-6.col-sm-4
-            .card
-                .card-title
-                    a(href="https://blog.benwinding.com/" + post.path)
-                        h3(title=post.title)=titleTrimmed + " ..."
-                        h6=dateTrimmed
-                        i Read more
-
-                .card-image(style='background-image: url("https://i.imgur.com/rYsGCgN.gif");')
-                    img.behind(src='/images/r1-c1.svg')
+    ol.blog-list
+        each post, index in blogContent
+            - var titleTrimmed = post.title.slice(0,40);
+            - var dateTrimmed = post.date.slice(0,10);
+            li.blog-item
+                a(href="https://blog.benwinding.com/" + post.path)
+                    span.blog-title(title=post.title)=titleTrimmed
+                span.blog-date=dateTrimmed
