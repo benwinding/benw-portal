@@ -1,10 +1,21 @@
 const express = require('express');
 const router = express.Router();
 YAML = require('yamljs');
+var request = require('request');
+
+var blogContent = {};
+request('https://blog.benwinding.com/content.json', function (error, response, body) {
+		if (!error && response.statusCode == 200)
+				blogContent = JSON.parse(body);
+});
 
 const portalTiles = YAML.load('./views/portal/tiles.yaml');
 router.get('/', function(req, res, next) {
-    res.render('portal', { layout : 'layout', inputTiles: portalTiles });
+    res.render('portal', { 
+    	layout : 'layout', 
+    	inputTiles: portalTiles,
+    	blogContent: blogContent
+    });
 });
 
 router.get('/but-how', function(req, res, next) {
