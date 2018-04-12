@@ -12,4 +12,5 @@
 .card-image {
   background-color: grey;
   color: white;
+  background-size:  contain;
 }
