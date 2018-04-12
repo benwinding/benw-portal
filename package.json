@@ -18,7 +18,7 @@
   },
   "engines": {
     "node": "=8.6",
-    "yarn": "=1.1"
+    "yarn": "^1"
   },
   "devDependencies": {
     "jest": "^21.1.0"
