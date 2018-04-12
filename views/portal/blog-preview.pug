@@ -3,7 +3,7 @@
     h1 Recent Blog Posts
     ol.blog-list
         each post, index in blogContent
-            - var titleTrimmed = post.title.slice(0,40);
+            - var titleTrimmed = post.title;
             - var dateTrimmed = post.date.slice(0,10);
             li.blog-item
                 a(href="https://blog.benwinding.com/" + post.path)
