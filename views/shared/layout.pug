@@ -14,6 +14,11 @@ html
         script(src='/vendor/typeit.min.js')
         link(rel='stylesheet', href='/shared/main.css')
         link(rel='icon' href='/images/favicon.png')
+        script#__bs_script__.
+            //<![CDATA[
+            document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.23.6'><\\/script>".replace("HOST", location.hostname));
+            //]]>
+
         script.
             function recalculateFooter() {
                 var headerHeight = $("header").height();
