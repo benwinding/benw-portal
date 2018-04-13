@@ -1,8 +1,8 @@
 extends ../shared/layout
 
 block head
-    - var ptitle = "Ben Winding - The Periodic Table of Projects"
-    - var pdesc = "Welcome to the unfinished projects and unclear visions of Ben Winding. See countless hours poured into misguided goals. Here you'll find; programming, blogs and much much less. We appreciate you stopping by out of pity. Kind regards, Ben Winding."
+    - var ptitle = portalData.title
+    - var pdesc = portalData.description
     title=ptitle
     meta(name="description" content=pdesc)
     link(rel='stylesheet', href='/portal/projects-table.css')
@@ -18,6 +18,8 @@ block content
         .col-xs-12.text-center
             h1 Ben Winding
         p=pdesc
+        p Kind regards,
+        p Ben Winding.
 
     //- Projects
     include projects-table.pug

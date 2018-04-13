@@ -9,12 +9,14 @@ request('https://blog.benwinding.com/content.json', function (error, response, b
 				blogContent = JSON.parse(body);
 });
 
+const portalData = YAML.load('./views/portal/portal-data.yaml');
 const portalTiles = YAML.load('./views/portal/tiles.yaml');
 router.get('/', function(req, res, next) {
     res.render('portal', { 
     	layout : 'layout', 
     	inputTiles: portalTiles,
-    	blogContent: blogContent
+    	blogContent: blogContent,
+        portalData: portalData
     });
 });
 
