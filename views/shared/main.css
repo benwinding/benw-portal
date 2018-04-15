@@ -38,6 +38,12 @@ html, body {
 .background {
   background-color: #ffffff;
 }   
+.background-intro {
+  background-color: lightblue;
+}
+.background-blog {
+  background-color: lightgreen;
+}
 header {
   text-align: center;
   padding: 13px;

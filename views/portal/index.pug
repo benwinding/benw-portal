@@ -14,18 +14,20 @@ block head
 
 block content
     //- Introduction
-    .container
-        .col-xs-6.col-xs-offset-3
-            br
-            p=pdesc
-            p Kind regards,
-            p Ben Winding.
+    .background-intro
+        .container
+            .col-xs-12.col-md-6.col-md-offset-3
+                br
+                p=pdesc
+                p Kind regards,
+                p Ben Winding.
 
     //- Projects
     include projects-table.pug
 
     //- Blog Previews
-    include blog-preview.pug
+    .background-blog
+        include blog-preview.pug
 
     //- Sub Domains
     include subdomains.pug
