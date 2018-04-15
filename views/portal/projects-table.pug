@@ -9,36 +9,50 @@ mixin makeButton(bNum, category, faIcon, buttonTitle)
 - var c_misc = "c4"
 - var c_bots = "c5"
 
-.container
-    .row#topButtons
-        .col-xs-12.text-center
-            h1 The Periodic Table of Projects
-            .btn-group#filters(role='group')
-                button.btn.active#btn-all(data-filter='*')
-                    i.fas.fa-asterisk  
-                    span All
-                +makeButton(1, c_meta, "fa-user", "Meta")
-                +makeButton(2, c_apps, "fa-cubes", "Apps")
-                +makeButton(3, c_expe, "fa-flask", "Experimental")
-                +makeButton(5, c_bots, "fa-comment-alt", "Bots")
-                +makeButton(4, c_misc, "fa-folder-open", "Misc")
-            div.heading-group
-                h2#filter-heading(title='not here, click above!') [Click to filter] 
-                i.fas.fa-level-up-alt
-    .grid
-        - var colSizes =         "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
-        //- Sizes tile widths at column sizes
-        - var bootstrapSize  =  "grid-item col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
-        div(class="grid-sizer " + colSizes)
-        each tile, index in inputTiles
-            div(class=bootstrapSize + " " + tile.category)
-                div(class="item " + tile.category + " tint",style="background-image: url(" + tile.imageUrl + ");")
-                    a#cardlink(href=tile.linkUrl, title=tile.title)
-                        img.behind(src='/images/r1-c1.svg', alt=tile.acronym + ' ' + tile.title)
-                        div(class="item-content ")
-                            p.item-acronym=tile.acronym
-                            p.item-name=tile.title
-                            div#gears
+.background-projects
+    .container
+        .row#topButtons
+            .col-xs-12.text-center
+                h1 Projects
+                .btn-group#filters(role='group')
+                    button.btn.active#btn-all(data-filter='*')
+                        i.fas.fa-asterisk  
+                        span All
+                    +makeButton(2, c_apps, "fa-cubes", "Apps")
+                    +makeButton(3, c_expe, "fa-flask", "Experimental")
+                    +makeButton(5, c_bots, "fa-comment-alt", "Bots")
+                div.heading-group
+                    h2#filter-heading(title='not here, click above!') [Click to filter] 
+                    i.fas.fa-level-up-alt
+        .grid
+            - var colSizes =         "col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
+            //- Sizes tile widths at column sizes
+            - var bootstrapSize  =  "grid-item col-xs-6  col-ms-4 col-sm-3 col-md-2 col-lg-2"
+            div(class="grid-sizer " + colSizes)
+            each tile, index in inputTiles.projects
+                div(class=bootstrapSize + " " + tile.category)
+                    div(class="item " + tile.category + " tint",style="background-image: url(" + tile.imageUrl + ");")
+                        a#cardlink(href=tile.linkUrl, title=tile.title)
+                            img.behind(src='/images/r1-c1.svg', alt=tile.acronym + ' ' + tile.title)
+                            div(class="item-content ")
+                                p.item-acronym=tile.acronym
+                                p.item-name=tile.title
+                                div#gears
+.background-meta
+    .container
+        .row#topButtons
+            .col-xs-12.text-center
+                h1 Meta
+        .grid2                                
+            each tile, index in inputTiles.meta
+                div(class=bootstrapSize + " " + tile.category)
+                    div(class="item " + tile.category + " tint",style="background-image: url(" + tile.imageUrl + ");")
+                        a#cardlink(href=tile.linkUrl, title=tile.title)
+                            img.behind(src='/images/r1-c1.svg', alt=tile.acronym + ' ' + tile.title)
+                            div(class="item-content ")
+                                p.item-acronym=tile.acronym
+                                p.item-name=tile.title
+                                div#gears
 
 script.
     $(function () {

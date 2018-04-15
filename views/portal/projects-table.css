@@ -2,9 +2,6 @@
   PORTAL
 */
 
-.grid {
-    background-color: #ffffff;
-}
 a {
     text-decoration: none;
     color: inherit;
@@ -87,7 +84,7 @@ p.item-weight {
     color: black;
 }
 .item:before, .item, .item-content > img {
-    border-radius: 0.3em;
+    border-radius: 0em;
 }
 .item {
     display: block;
