@@ -1,16 +1,12 @@
 ## History
 
-Growing up in Adelaide, South Australia. Ben began his life as a normal child, with all the prospects of becoming a contributing member of society.
-
-However during his schooling he discovered the internet, which corrupted his fragile mind.
-
-After spending thousands of hours on the web, he was unable to function normally without seeing meme's everywhere.
+Growing up in Adelaide, South Australia. Ben began his life as a normal child, with all the prospects of becoming a contributing member of society. He's trying his best and will continue to do so.
 
 ## Now
 
-Why would you still be reading this, he's unwell, there's nothing to see here.
+He intends to be a successful web developer, making the internet a better place for all those who use it.
 
-[Tack me back](/)[](/)
+[Resume / CV](/Ben-Winding-2018-Resume.pdf)
 
 ### Social Stuff
 
