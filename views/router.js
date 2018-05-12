@@ -24,6 +24,10 @@ router.get('/but-how', function(req, res, next) {
     res.render('but-how');
 });
 
+router.get('/site-architecture', function(req, res, next) {
+    res.render('but-how');
+});
+
 router.get('/about', function(req, res, next) {
     res.render('about');
 });
