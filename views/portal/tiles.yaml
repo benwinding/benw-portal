@@ -55,3 +55,9 @@ projects:
     title: Choiceful Stories
     linkUrl: https://breeze-bot-landing.herokuapp.com/
     imageUrl: https://i.imgur.com/0sIeGjL.jpg
+  -
+    category: c2
+    acronym: Ni
+    title: Newsit
+    linkUrl: https://newsit.benwinding.com/
+    imageUrl: https://i.imgur.com/CnqgRJC.png
