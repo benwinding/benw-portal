@@ -31,17 +31,17 @@ block content
                 .container
                     .row
                         .col-xs-12.text-center
-                            include sites-infastructure-v1.html 
+                            iframe.infraDiagram(src="./sites-infastructure-v1.html", onload="this.style.height=this.contentDocument.body.scrollHeight + 40 +'px';")
                     script.
-                        var diagram = $('.geDiagramContainer');
-                        var svgTag = diagram.find('svg');
-                        diagram.css({
-                            width: 'unset'
+                        var diag = $('.infraDiagram');
+                        diag.css({
+                            maxWidth: '500px',
+                            width: '100%',
                         })
-                        svgTag.css({
-                            width: 'unset',
-                            display: 'initial'
-                        });
+                        diag.attr({
+                            scrolling: 'no',
+                            frameBorder: 'none'
+                        })
 
                 p Click the tabs above ^ for more details.
 
@@ -85,3 +85,17 @@ block content
 
                 h3 Disclaimer
                 i I have little style, just like functionality and the color maroon.
+
+    script.
+        // Open link to current tab in url hash
+        $(() => {
+          var hash = window.location.hash;
+          hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+          $('.nav-tabs a').click((e) => {
+            e.preventDefault();
+            $(this).tab('show');
+            var scrollmem = $('body').scrollTop();
+            window.location.hash = e.currentTarget.hash;
+            $('html,body').scrollTop(scrollmem);
+          });
+        });
