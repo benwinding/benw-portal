@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Memebot",
+    "description": "A messenger bot which finds and sends you memes.",
+    "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
+    "deploy_link": "https://memebot.lappr.com.au",
+    "tools": ["JavaScript, GraphQL, Messenger"],
+    "icons": ["devicon-javascript-plain", "fab fa-facebook-messenger"]
+  },
+  {
+    "name": "3D Cricket Lanes",
+    "description": "A 3D demo of a cricket lane system, form Quin's Sport's Nets",
+    "code_link": "https://benwinding.github.io/CricketNet-Demo/",
+    "deploy_link": "https://github.com/benwinding/CricketNet-Demo",
+    "tools": ["JavaScript, React, Three-Js"],
+    "icons": ["devicon-javascript-plain", "devicon-react-original", "fa fa-cubes"]
+  },
+  {
+    "name": "Bootleg Wakeboarding Event",
+    "description": "A demo showing some wakeboarding obstacles for an event in 2017",
+    "code_link": "https://benwinding.github.io/CricketNet-Demo/",
+    "deploy_link": "https://github.com/benwinding/CricketNet-Demo",
+    "tools": ["JavaScript, GraphQL, Messenger"],
+    "icons": ["devicon-javascript-plain", "devicon-react-original", "fa fa-cubes"]
+  },
+  {
+    "name": "Newsit",
+    "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
+    "code_link": "https://github.com/benwinding/newsit",
+    "deploy_link": "https://newsit.benwinding.com/",
+    "tools": ["JavaScript, Chrome, Firefox, Bulma"],
+    "icons": ["devicon-javascript-plain", "devicon-chrome-plain", "devicon-firefox-plain", "fa fa-cubes"]
+  },
+  {
+    "name": "Blog",
+    "description": "Checkout my blog, where I speak my mind",
+    "deploy_link": "https://blog.benwinding.com/",
+    "tools": ["JavaScript, Hexo, Static Site"],
+    "icons": ["devicon-nodejs-plain"]
+  }
+]

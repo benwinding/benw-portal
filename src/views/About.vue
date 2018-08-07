@@ -1,0 +1,67 @@
+<template>
+  <div>
+    <rainbow-text text="ABOUT"></rainbow-text>
+    <div class="bio-pic">
+      <img class="circular" src="../assets/pic.jpg" alt="selfie!">
+      <div class="about-box"><h2>History</h2>
+      <p>Growing up in Adelaide, South Australia. Ben began his life as a normal child, with all the prospects of becoming a contributing member of society. He's trying his best and will continue to do so.</p>
+      <h2>Now</h2>
+      <p>He intends to be a successful web developer, making the internet a better place for all those who use it.</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import RainbowText from "@/components/RainbowText"
+
+export default {
+  components: {
+    'rainbow-text': RainbowText,
+  } 
+}
+</script>
+
+<style lang="scss" scoped>
+p {
+  font-size: 18px;
+}
+
+.bio-pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
+.circular {
+  -ms-flex-item-align: center;
+  margin-right: 40px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  float: left;
+  margin-bottom: 20px;
+  border: 15px solid #800000bb;
+  
+  @media (max-width: 800px) {
+    margin-right: 0px;
+  }
+}
+
+.circular:hover {
+  -ms-transform: rotate(360deg); 
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition-duration: 3s;
+  -moz-transition-duration: 3s;
+  transition-duration: 3s;
+}
+</style>
+
+
+
