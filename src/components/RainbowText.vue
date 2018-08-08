@@ -46,7 +46,7 @@
     letter-spacing: -10px;
 
     @media (max-width: 500px) {
-      font-size: 80px;
+      font-size: 60px;
     }
   }
 
@@ -66,7 +66,7 @@
       font-size: 70px;
     }
     @media (max-width: 350px) {
-      font-size: 55px;
+      font-size: 50px;
     }
   }
 

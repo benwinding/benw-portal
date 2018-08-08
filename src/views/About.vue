@@ -1,6 +1,6 @@
 <template>
   <div>
-    <rainbow-text text="Contact"></rainbow-text>
+    <rainbow-text text="About"></rainbow-text>
     <div class="bio-pic">
       <img class="circular" src="../assets/pic.jpg" alt="selfie!">
       <div class="about-box"><h2>History</h2>
@@ -56,9 +56,9 @@ p {
 }
 
 .circular:hover {
-  -ms-transform: rotateX(360deg); 
-  -webkit-transform: rotateX(360deg);
-  transform: rotateX(360deg);
+  -ms-transform: rotate3d(-1,1,0,360deg); 
+  -webkit-transform: rotate3d(-1,1,0,360deg);
+  transform: rotate3d(-1,1,0,360deg);
   -webkit-transition-duration: 3s;
   -moz-transition-duration: 3s;
   transition-duration: 3s;
