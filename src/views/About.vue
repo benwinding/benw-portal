@@ -49,19 +49,20 @@ p {
   float: left;
   margin-bottom: 20px;
   border: 15px solid #800000bb;
-  
+
   @media (max-width: 800px) {
     margin-right: 0px;
   }
 }
 
 .circular:hover {
-  -ms-transform: rotate(360deg); 
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+  -ms-transform: rotateX(360deg); 
+  -webkit-transform: rotateX(360deg);
+  transform: rotateX(360deg);
   -webkit-transition-duration: 3s;
   -moz-transition-duration: 3s;
   transition-duration: 3s;
+  border: 15px solid #800000bb;
 }
 </style>
 

@@ -43,13 +43,13 @@
 
   @keyframes hoveranimation {
     50% {
-      transform: translateY(50px);
+      transform: rotateZ(10deg);
     }
   }
 
   @-webkit-keyframes hoveranimation {
     50% {
-      transform: translateY(50px);
+      transform: rotateZ(10deg);
     }
   }
 </style>
