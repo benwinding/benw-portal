@@ -60,7 +60,7 @@ export default {
   }
   .fade-enter, .fade-leave-to {
     opacity: 0;
-    transform: translateX(-30%);
+    transform: translateY(20%);
   }
 
 </style>

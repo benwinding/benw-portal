@@ -1,6 +1,6 @@
 <template>
   <div>
-    <rainbow-text text="ABOUT"></rainbow-text>
+    <rainbow-text text="Contact"></rainbow-text>
     <div class="bio-pic">
       <img class="circular" src="../assets/pic.jpg" alt="selfie!">
       <div class="about-box"><h2>History</h2>
@@ -41,8 +41,10 @@ p {
 .circular {
   -ms-flex-item-align: center;
   margin-right: 40px;
-  width: 300px;
-  height: 300px;
+  min-width: 250px;
+  max-width: 251px;
+  min-height: 250px;
+  max-height: 251px;
   border-radius: 50%;
   float: left;
   margin-bottom: 20px;

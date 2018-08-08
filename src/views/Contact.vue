@@ -4,7 +4,7 @@
     <div class="links">
       <a href="https://github.com/benwinding" class="social-link" title="Github"><i class="fab fa-github purple" aria-hidden="true"></i></a>
       <a href="https://twitter.com/benwinding" class="social-link" title="Twitter"><i class="fab fa-twitter blue" aria-hidden="true"></i></a>
-      <a href="https://dev.to/benwinding" class="social-link dev-to">
+      <a href="https://dev.to/benwinding" title="dev.to" class="social-link dev-to">
         <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" class="dev-to-img"/>
       </a>
       <a href="https://www.linkedin.com/in/benwinding" class="social-link" title="Linkedin"><i class="fab fa-linkedin dark-blue" aria-hidden="true"></i></a>
@@ -113,5 +113,6 @@ export default {
 .orange {
   color: #ff8f00;
 }
+
 </style>
 
