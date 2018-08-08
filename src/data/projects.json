@@ -5,37 +5,42 @@
     "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
     "deploy_link": "https://memebot.lappr.com.au",
     "tools": ["JavaScript, GraphQL, Messenger"],
-    "icons": ["devicon-javascript-plain", "fab fa-facebook-messenger"]
+    "icons": ["devicon-javascript-plain", "fab fa-facebook-messenger"],
+    "tags": ["chatbot"]
   },
   {
     "name": "3D Cricket Lanes",
     "description": "A 3D demo of a cricket lane system, form Quin's Sport's Nets",
-    "code_link": "https://benwinding.github.io/CricketNet-Demo/",
-    "deploy_link": "https://github.com/benwinding/CricketNet-Demo",
+    "deploy_link": "https://benwinding.github.io/CricketNet-Demo/",
+    "code_link": "https://github.com/benwinding/CricketNet-Demo",
     "tools": ["JavaScript, React, Three-Js"],
-    "icons": ["devicon-javascript-plain", "devicon-react-original", "fa fa-cubes"]
+    "icons": ["devicon-javascript-plain", "devicon-react-original", "fa fa-cubes"],
+    "tags": ["web app"]
   },
   {
     "name": "Bootleg Wakeboarding Event",
     "description": "A demo showing some wakeboarding obstacles for an event in 2017",
-    "code_link": "https://benwinding.github.io/CricketNet-Demo/",
-    "deploy_link": "https://github.com/benwinding/CricketNet-Demo",
-    "tools": ["JavaScript, GraphQL, Messenger"],
-    "icons": ["devicon-javascript-plain", "devicon-react-original", "fa fa-cubes"]
+    "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
+    "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
+    "tools": ["JavaScript, AngularJs, Three-Js"],
+    "icons": ["devicon-javascript-plain", "devicon-angularjs-plain", "fa fa-cubes"],
+    "tags": ["web app"]
   },
   {
     "name": "Newsit",
     "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
     "code_link": "https://github.com/benwinding/newsit",
     "deploy_link": "https://newsit.benwinding.com/",
-    "tools": ["JavaScript, Chrome, Firefox, Bulma"],
-    "icons": ["devicon-javascript-plain", "devicon-chrome-plain", "devicon-firefox-plain", "fa fa-cubes"]
+    "tools": ["JavaScript, Bulma, Chrome, Firefox"],
+    "icons": ["devicon-javascript-plain", "devicon-chrome-plain", "devicon-firefox-plain"],
+    "tags": ["Browser Extension"]
   },
   {
     "name": "Blog",
     "description": "Checkout my blog, where I speak my mind",
     "deploy_link": "https://blog.benwinding.com/",
     "tools": ["JavaScript, Hexo, Static Site"],
-    "icons": ["devicon-nodejs-plain"]
+    "icons": ["devicon-nodejs-plain", "fa fa-pen-alt"],
+    "tags": ["Misc"]
   }
 ]
