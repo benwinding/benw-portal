@@ -16,7 +16,7 @@ gulp.task('clean', function() {
   return del(conf.distDir);
 });
 
-gulp.task('build', shell.task('vue-cli-service build', {
+gulp.task('build-app', shell.task('vue-cli-service build', {
   env: { NODE_ENV: 'dev' },
 }));
 
@@ -53,16 +53,8 @@ gulp.task('copy-server', function() {
     .pipe(gulp.dest(conf.distDir));
 });
 
-const deployTasks = [
-  'clean',
-  'build',
-  'copy-server',
-  'git-new',
-  'git-addRemote',
-  'git-add',
-  'git-commit',
-  'git-push'
-];
+gulp.task('build', gulpSequence('clean', 'build-app', 'copy-server'));
+gulp.task('deploy-build', gulpSequence('git-new', 'git-addRemote', 'git-add', 'git-commit', 'git-push'));
 
-gulp.task('deploy', gulpSequence(...deployTasks));
-gulp.task('default', gulpSequence(...deployTasks));
+gulp.task('deploy', gulpSequence('build', 'deploy-build'));
+
