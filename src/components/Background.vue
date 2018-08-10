@@ -15,7 +15,7 @@ function setUpCanvas() {
   space.add({
     start: (bound, space) => {
       // Create world and 100 random points
-      world = new World( space.innerBound, 1, 0 );
+      world = new World( space.innerBound, 1, 600 );
       let pts = Create.distributeRandom( space.innerBound, 10 );
       // Create particles and hit them with a random impulse
       for (let i=0, len=pts.length; i<len; i++) {
@@ -35,7 +35,7 @@ function setUpCanvas() {
     },
   });
 
-  document.body.addEventListener('click', (e) => {
+  document.body.addEventListener('mousemove', (e) => {
     const px = e.clientX;
     const py = e.clientY;
     world.particle( 0 ).position = new Pt(px, py);
