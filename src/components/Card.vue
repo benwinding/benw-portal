@@ -41,12 +41,13 @@ export default {
 
 <style lang="scss" scoped>
   h5 {
-    font-size: 20px;
+    font-size: 1.2em;
     line-height: 150%;
   }
   
   a {
     color: white;
+    text-decoration: underline;
   }
 
   i {
@@ -64,26 +65,26 @@ export default {
   }
 
   .card {
-    margin: .5rem .5rem 1rem .5rem;
-    padding: .5rem 1rem 1rem 1rem;
     border-radius: 2px;
     color: #fff;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1em;
     font-family: 'Lato', sans-serif;
     transition: top .5s, left .5s; 
+    height: 100%;
+    padding: 5px;
   }
 
   .card:hover {
+    transition: box-shadow 1s, transform 1s;
+    transform: translate(-5px, -5px);
     position: relative;
-    top: -5px;
-    left: -5px;
     box-shadow: 5px 5px 5px #969696;
   }
 
   .icons {
-    margin-top: -30px;
-    margin-bottom: -10px;
+    margin-top: -10px;
+    margin-bottom: -8px;
     font-size: 40px;
   }
 </style>

@@ -1,46 +1,61 @@
-[
-  {
-    "name": "Memebot",
-    "description": "A messenger bot which finds and sends you memes.",
-    "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
-    "deploy_link": "https://memebot.lappr.com.au",
-    "tools": ["JavaScript, GraphQL, Messenger"],
-    "icons": ["fab fa-facebook-messenger"],
-    "tags": ["chatbot"]
-  },
-  {
-    "name": "3D Cricket Lanes",
-    "description": "A 3D demo of a cricket lane system, form Quin's Sport's Nets",
-    "deploy_link": "https://benwinding.github.io/CricketNet-Demo/",
-    "code_link": "https://github.com/benwinding/CricketNet-Demo",
-    "tools": ["JavaScript, React, Three-Js"],
-    "icons": ["devicon-react-original", "fa fa-cubes"],
-    "tags": ["web app"]
-  },
-  {
-    "name": "Bootleg Wakeboarding Event",
-    "description": "A demo showing some wakeboarding obstacles for an event in 2017",
-    "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
-    "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
-    "tools": ["JavaScript, AngularJs, Three-Js"],
-    "icons": ["devicon-angularjs-plain", "fa fa-cubes"],
-    "tags": ["web app"]
-  },
-  {
-    "name": "Newsit",
-    "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
-    "code_link": "https://github.com/benwinding/newsit",
-    "deploy_link": "https://newsit.benwinding.com/",
-    "tools": ["JavaScript, Bulma, Chrome, Firefox"],
-    "icons": ["devicon-chrome-plain", "devicon-firefox-plain"],
-    "tags": ["Browser Extension"]
-  },
-  {
-    "name": "Blog",
-    "description": "Checkout my blog, where I speak my mind",
-    "deploy_link": "https://blog.benwinding.com/",
-    "tools": ["JavaScript, Hexo, Static Site"],
-    "icons": ["fa fa-pen-alt"],
-    "tags": ["Misc"]
-  }
-]
+{
+  "all": [
+    {
+      "name": "Memebot",
+      "description": "A messenger bot which finds and sends you memes.",
+      "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
+      "deploy_link": "https://memebot.lappr.com.au",
+      "tools": ["JavaScript, GraphQL, Messenger"],
+      "icons": ["fab fa-facebook-messenger"],
+      "colour": "#ef5350"
+    },
+    {
+      "name": "3D Cricket Lanes",
+      "description": "A 3D demo of a cricket lane system, form Quin's Sport's Nets",
+      "deploy_link": "https://benwinding.github.io/CricketNet-Demo/",
+      "code_link": "https://github.com/benwinding/CricketNet-Demo",
+      "tools": ["JavaScript, React, Three-Js"],
+      "icons": ["devicon-react-original", "fa fa-cubes"],
+      "colour": "#ab47bc"
+    },
+    {
+      "name": "Bootleg Wakeboarding Event",
+      "description": "A demo showing some wakeboarding obstacles for an event in 2017",
+      "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
+      "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
+      "tools": ["JavaScript, AngularJs, Three-Js"],
+      "icons": ["devicon-angularjs-plain", "fa fa-cubes"],
+      "colour": "#651fff"
+    },
+    {
+      "name": "Newsit",
+      "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
+      "code_link": "https://github.com/benwinding/newsit",
+      "deploy_link": "https://newsit.benwinding.com/",
+      "tools": ["JavaScript, Bulma, Chrome, Firefox"],
+      "icons": ["devicon-chrome-plain", "devicon-firefox-plain"],
+      "colour": "#3949ab"
+    },
+    {
+      "name": "Blog",
+      "description": "Checkout my blog, where I speak my mind",
+      "deploy_link": "https://blog.benwinding.com/",
+      "tools": ["JavaScript, Hexo, Static Site"],
+      "icons": ["fa fa-pen-alt"],
+      "colour": "#2196f3"
+    }
+  ],
+  "not_implemented": [
+    "#ef5350",
+    "#ab47bc",
+    "#651fff",
+    "#3949ab",
+    "#2196f3",
+    "#00bcd4",
+    "#4caf50",
+    "#ffc107",
+    "#ff80ab",
+    "#ff8f00"
+  ]
+}
+

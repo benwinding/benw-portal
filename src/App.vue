@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-component />
-    <div class="content">
+    <div class="container">
       <transition name="fade" mode="out-in">
         <router-view />
       </transition>
@@ -25,6 +25,7 @@ export default {
 
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css?family=Lato:400,800');
+  @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
   ::-moz-selection {
     background: #b39ddb;
