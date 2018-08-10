@@ -43,9 +43,33 @@
       "tools": ["JavaScript, Hexo, Static Site"],
       "icons": ["fa fa-pen-alt"],
       "colour": "#2196f3"
+    },
+    {
+      "name": "Canvas Scraper",
+      "description": "Download all files from a specific course on the MyUni system.",
+      "deploy_link": "https://github.com/benwinding/myuni-dl",
+      "tools": ["Python, Web Scraping"],
+      "icons": ["devicon-python-plain"],
+      "colour": "#ff8f00"
     }
   ],
   "not_implemented": [
+    {
+      "name": "History",
+      "description": "A historical view of THIS website, all versions captured",
+      "deploy_link": "https://history.benwinding.com/",
+      "tools": ["JavaScript, Shell"],
+      "icons": ["fa fa-pen-alt"],
+      "colour": "#2196f3"
+    },
+    {
+      "name": "Down Subs",
+      "description": "Search videos from youtube, by text in the subtitles",
+      "deploy_link": "https://history.benwinding.com/",
+      "tools": ["JavaScript, Shell"],
+      "icons": ["fa fa-pen-alt"],
+      "colour": "#2196f3"
+    },    
     "#ef5350",
     "#ab47bc",
     "#651fff",
