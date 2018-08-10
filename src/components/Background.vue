@@ -20,6 +20,7 @@ function setUpCanvas() {
       // Create particles and hit them with a random impulse
       for (let i=0, len=pts.length; i<len; i++) {
         let p = new Particle( pts[i] ).size( (i===0) ? 30 : 3+Math.random()*space.size.x/50 );
+        p.mass = 0.1;
         p.hit( 50, 25 );
         world.add( p );
       }
@@ -58,7 +59,8 @@ export default {
     top: 0;
     z-index: -1;
     width: 100%;
-    height: 100vh;
+    height: 95vh;
     margin-left: 0em;
+    border-bottom: 10px solid #bbb;
   }
 </style>
