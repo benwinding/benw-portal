@@ -56,9 +56,9 @@ p {
 }
 
 .circular:hover {
-  -ms-transform: rotate3d(-1,1,0,360deg); 
-  -webkit-transform: rotate3d(-1,1,0,360deg);
-  transform: rotate3d(-1,1,0,360deg);
+  -ms-transform: rotate3d(0,1,0,360deg); 
+  -webkit-transform: rotate3d(0,1,0,360deg);
+  transform: rotate3d(0,1,0,360deg);
   -webkit-transition-duration: 3s;
   -moz-transition-duration: 3s;
   transition-duration: 3s;

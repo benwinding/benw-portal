@@ -6,17 +6,19 @@
         <router-view />
       </transition>
     </div>
+    <background />
   </div>
 </template>
 
 <script>
 import HeaderComponent from '@/components/HeaderComponent.vue'
-
+import Background from '@/components/Background.vue'
 
 export default {
   name: 'app',
   components: { 
-    'header-component': HeaderComponent
+    'header-component': HeaderComponent,
+    'background': Background
   }
 }
 </script>
