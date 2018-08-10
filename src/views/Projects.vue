@@ -92,22 +92,19 @@ export default {
   .filter-icon {
     height: 40px;
     width: 40px;
-  border: 0px solid grey;
+    border: 0px solid grey;
     display: inline-block;
     position: relative;
   }
 
-  .filter-icon {
-    color: black;
-  }
-
   .card-filters [type=checkbox] + span:before {
-    color: #0062ff;
     color: #00000033;
   }
 
   .card-filters [type=checkbox]:checked + span:before {
     position: absolute;
+    color: #0062ff;
+    color: blue;
     color: black;
   }
 
@@ -117,9 +114,9 @@ export default {
   }
 
   .filter-all:hover, .filter-each-icon:hover {
-    transition: box-shadow 1s;
+    transition: box-shadow 0.15s;
     position: relative;
-    box-shadow: 5px 5px 5px #969696;
+    box-shadow: 0px 0px 3px 3px blue;
   }
 
   .card-filters > .filter-all {
