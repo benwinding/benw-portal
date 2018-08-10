@@ -2,16 +2,24 @@
   <div>
     <rainbow-text text="Projects"></rainbow-text>
     <div class="card-filters">
-      <ul class="chk-all">
+
+      <ul class="filter-icon-all">
         <li>
-          <input type="checkbox" v-model="chkAll">
-          <span>All</span>
+          <label>
+            <input id="icon-input" type='checkbox' v-model="chkAll">
+            <span class="filter-icon fa fa-star-of-life"></span>
+          </label>
         </li>
       </ul>
-      <ul v-for="(tag) in tagsAll" :key="tag">
+      <ul v-for="(icon) in iconsAll" :key="icon">
         <li>
-          <input type="checkbox" :id="tag" :value="tag" v-model="tags">
-          <span>{{tag}}</span>
+          <label>
+            <input type="checkbox" 
+              :id="icon" 
+              :value="icon" 
+              v-model="icons">
+            <span v-bind:class="'filter-icon '+icon"></span>
+          </label>
         </li>
       </ul>
     </div>
@@ -28,30 +36,30 @@ import RainbowText from "@/components/RainbowText"
 import Card from "@/components/Card"
 
 import projectsAll from "../data/projects.json"
-const tags = projectsAll.map((val) => val.tags)
+const icons = projectsAll.map((val) => val.icons)
   .reduce((acc, cur) => acc.concat(cur))
-const tagsUnique = Array.from(new Set(tags))
+const iconsUnique = Array.from(new Set(icons))
 
 export default {
   data () {
     return {
-      tags: tagsUnique,
+      icons: iconsUnique,
       chkAll: true
     }
   },
   computed: {
-    tagsAll: function() {
-      return tagsUnique
+    iconsAll: function() {
+      return iconsUnique
     },
     projects: function() {
-      const activeTags = this.tags
+      const activeicons = this.icons
       const activeProjects = projectsAll.reduce((acc, cur) => {
-        for (const tag of cur.tags) {
-          if (activeTags.includes(tag)) {
-            acc.push(cur);
-            break;
+        for (const tag of cur.icons) {
+          if (!activeicons.includes(tag)) {
+            return acc;
           }
         }
+        acc.push(cur);
         return acc;
       }, [])
       return activeProjects;
@@ -60,9 +68,9 @@ export default {
   watch: {
     chkAll: function(val) {
       if (val)
-        this.tags = this.tagsAll;
+        this.icons = this.iconsAll;
       else
-        this.tags = [];
+        this.icons = [];
     }
   },
   components: {
@@ -73,29 +81,56 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .card-filters input {
+    display: none; /* hide the default checkbox */
+  }
+
+  .card-filters span {
+    height: 40px;
+    width: 40px;
+    border: 0px solid grey;
+    display: inline-block;
+    position: relative;
+    color: black;
+  }
+
+  .card-filters [type=checkbox] + span:before {
+    color: #00000033;
+  }
+
+  .card-filters [type=checkbox]:checked + span:before {
+    position: absolute;
+    color: black;
+  }
+
+  .filter-icon {
+    font-size: 40px;
+  }
+
   .card-filters {
     margin: 8px;
   }
 
-  .card-filters > .chk-all {
-    background-color: lightgrey;
+  .card-filters > .filter-icon-all {
+    background-color: yellow;
   }
   
   .card-filters ul {
     display: inline-block;
     list-style: none;
     margin: 8px 8px 0px 0px;
-    padding: 0px;
+    padding: 5px;
     vertical-align: middle;
     background-color: cyan;
   }
+
   .card-filters input {
     margin: 10px;
     vertical-align: middle;
     transform: scale(2);
   }
+  
   .card-filters span {
-    margin-right: 5px;
     vertical-align: middle;
   }
 

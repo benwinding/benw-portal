@@ -5,7 +5,7 @@
     "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
     "deploy_link": "https://memebot.lappr.com.au",
     "tools": ["JavaScript, GraphQL, Messenger"],
-    "icons": ["devicon-javascript-plain", "fab fa-facebook-messenger"],
+    "icons": ["fab fa-facebook-messenger"],
     "tags": ["chatbot"]
   },
   {
@@ -14,7 +14,7 @@
     "deploy_link": "https://benwinding.github.io/CricketNet-Demo/",
     "code_link": "https://github.com/benwinding/CricketNet-Demo",
     "tools": ["JavaScript, React, Three-Js"],
-    "icons": ["devicon-javascript-plain", "devicon-react-original", "fa fa-cubes"],
+    "icons": ["devicon-react-original", "fa fa-cubes"],
     "tags": ["web app"]
   },
   {
@@ -23,7 +23,7 @@
     "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
     "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
     "tools": ["JavaScript, AngularJs, Three-Js"],
-    "icons": ["devicon-javascript-plain", "devicon-angularjs-plain", "fa fa-cubes"],
+    "icons": ["devicon-angularjs-plain", "fa fa-cubes"],
     "tags": ["web app"]
   },
   {
@@ -32,7 +32,7 @@
     "code_link": "https://github.com/benwinding/newsit",
     "deploy_link": "https://newsit.benwinding.com/",
     "tools": ["JavaScript, Bulma, Chrome, Firefox"],
-    "icons": ["devicon-javascript-plain", "devicon-chrome-plain", "devicon-firefox-plain"],
+    "icons": ["devicon-chrome-plain", "devicon-firefox-plain"],
     "tags": ["Browser Extension"]
   },
   {
@@ -40,7 +40,7 @@
     "description": "Checkout my blog, where I speak my mind",
     "deploy_link": "https://blog.benwinding.com/",
     "tools": ["JavaScript, Hexo, Static Site"],
-    "icons": ["devicon-nodejs-plain", "fa fa-pen-alt"],
+    "icons": ["fa fa-pen-alt"],
     "tags": ["Misc"]
   }
 ]
