@@ -58,7 +58,7 @@ export default {
 }
 
 .dev-to {
-  margin-top: 5px;
+  margin-top: -10px;
 }
 
 .dev-to-img {

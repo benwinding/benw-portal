@@ -25,6 +25,7 @@ export default {
 <style lang="scss" scoped>
 p {
   font-size: 18px;
+  background-color: #FFFFFFBB;
 }
 
 .bio-pic {

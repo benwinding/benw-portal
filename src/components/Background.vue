@@ -59,8 +59,8 @@ export default {
     top: 0;
     z-index: -1;
     width: 100%;
-    height: 95vh;
+    height: 90vh;
     margin-left: 0em;
-    border-bottom: 10px solid #bbb;
+    border-bottom: 10px solid #DDD;
   }
 </style>
