@@ -48,6 +48,7 @@
       "name": "Canvas Scraper",
       "description": "Download all files from a specific course on the MyUni system.",
       "deploy_link": "https://github.com/benwinding/myuni-dl",
+      "article_link": "https://blog.benwinding.com/scraping_myuni",
       "tools": ["Python, Web Scraping"],
       "icons": ["devicon-python-plain"],
       "colour": "#ff8f00"
