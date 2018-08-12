@@ -24,9 +24,10 @@ function setUpCanvas() {
       const screenDim = space.size.y > space.size.x ? space.size.x : space.size.y;
       for (let i=0, len=pts.length; i<len; i++) {
         let p = new Particle(pts[i]);
-        p.size(3+Math.random()*screenDim/30);
-        let p_x = i*screenDim/particleCount/3;
-        let p_y = 40;
+        const p_radius = 3+Math.random()*screenDim/30;
+        p.size(p_radius);
+        let p_x = i+space.size.x/2;
+        let p_y = i+space.size.y/2;
         p.position = new Pt(p_x, p_y);
         p.previous = new Pt(p_x, p_y);
         // p.lock = true;
