@@ -55,7 +55,7 @@
     line-height: 60%;
 
     @media (max-width: 1050px) {
-      font-size: 170px;
+      font-size: 160px;
     }
 
     @media (max-width: 800px) {
