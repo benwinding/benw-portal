@@ -3,7 +3,7 @@
     <div class="v-center">
       <rainbow-text text="Ben Winding" :large="true"></rainbow-text>
 
-      <h2 class="intro">Let's make things</h2>
+      <h2 class="intro">Let's build things that people want</h2>
     </div>
   </div>
 </template>
