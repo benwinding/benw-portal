@@ -108,15 +108,19 @@ export default {
     color: black;
   }
 
+  .card-filters label {
+    margin: 0;
+  }
+
   .filter-icon {
     font-size: 40px;
     vertical-align: middle;
   }
 
   .filter-all:hover, .filter-each-icon:hover {
-    transition: box-shadow 0.15s;
+    transition: box-shadow 0.25s;
     position: relative;
-    box-shadow: 0px 0px 3px 3px blue;
+    box-shadow: 0px 0px 2px 2px cyan;
   }
 
   .card-filters > .filter-all {
