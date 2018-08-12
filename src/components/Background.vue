@@ -9,22 +9,31 @@ import {Pt, CanvasSpace, World, Create, Particle} from "pts"
 var space = new CanvasSpace("#pt_canvas");
 space.setup({ bgcolor: "#fff" });
 var world;
+var particleCount = 10;
+var mouseBallSize = 20;
 
 function setUpCanvas() {
   var form = space.getForm();
   space.add({
     start: (bound, space) => {
       // Create world and 100 random points
-      world = new World( space.innerBound, 1, 600 );
-      let pts = Create.distributeRandom( space.innerBound, 10 );
+      world = new World( space.innerBound, 1, 4000);
+      world.damping = 0.9;
+      let pts = Create.distributeRandom( space.innerBound, particleCount );
       // Create particles and hit them with a random impulse
+      const screenDim = space.size.y > space.size.x ? space.size.x : space.size.y;
       for (let i=0, len=pts.length; i<len; i++) {
-        let p = new Particle( pts[i] ).size( (i===0) ? 30 : 3+Math.random()*space.size.x/50 );
-        p.mass = 0.1;
-        p.hit( 50, 25 );
+        let p = new Particle(pts[i]);
+        p.size(3+Math.random()*screenDim/30);
+        let p_x = i*screenDim/particleCount/3;
+        let p_y = 40;
+        p.position = new Pt(p_x, p_y);
+        p.previous = new Pt(p_x, p_y);
+        // p.lock = true;
         world.add( p );
       }
-      world.particle( 0 ).lock = true; // lock it to move it by pointer later on
+      getMouseParticle().lock = true; // lock it to move it by pointer later on
+      getMouseParticle().size(mouseBallSize)
     },
 
     animate: (time, ftime) => {
@@ -36,12 +45,45 @@ function setUpCanvas() {
     },
   });
 
-  document.body.addEventListener('mousemove', (e) => {
-    const px = e.clientX;
-    const py = e.clientY;
-    world.particle( 0 ).position = new Pt(px, py);
+  function getMouseParticle() {
+    return world.particle(0);
+  }
+
+  function setMouseBall(e) {
+    if (!world)
+      return;
+    const mx = e.clientX;
+    const my = e.clientY;
+    getMouseParticle().position = new Pt(mx, my);
+  }
+
+  function setBallsToMouseLocation(e, numBalls) {
+    if (!world)
+      return;
+    const mx = e.clientX;
+    const my = e.clientY;
+    const randomNum = 1 + parseInt(Math.random() * (particleCount-1));
+    let height = mouseBallSize;
+    for (let i = 0; i < numBalls; i++) {
+      let p_i = 1 + (i + randomNum) % (particleCount-1);
+      let p = world.particle(p_i);      
+      height += p.radius*2;
+      let p_x = mx + i*3;
+      let p_y = my + height;
+      p.position = new Pt(p_x, p_y);
+      p.previous = new Pt(p_x, p_y);
+      p.lock = true;
+      setTimeout(() => {
+        p.lock = false;
+      }, 50)
+    }
+  }
+
+  document.body.addEventListener('click', (e) => {
+    setBallsToMouseLocation(e, 4);
   })
-  
+
+  document.body.addEventListener('mousemove', setMouseBall) 
   space.bindMouse().bindTouch();
   space.play();
 }
