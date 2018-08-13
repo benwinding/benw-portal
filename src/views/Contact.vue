@@ -9,7 +9,7 @@
         </a>
         <span>
           <a :href="item.link" :title="item.title" class="social-link">
-            {{ item.link }}
+            {{ item.linkText }}
           </a>          
         </span>
       </section>
@@ -28,37 +28,44 @@ export default {
     return {
       social: [
         {
-          link: "hello@benwinding.com", 
+          link: "mailto:hello@benwinding.com", 
+          linkText: "hello@benwinding.com", 
           title: "Email!",
           iclass: "fa fa-envelope red",
         },
         {
           link: "https://github.com/benwinding", 
+          linkText: "github.com/benwinding", 
           title: "Github",
           iclass: "fab fa-github purple",
         },
         {
           link: "https://twitter.com/benwinding", 
+          linkText: "twitter.com/benwinding", 
           title: "Twitter",
           iclass: "fab fa-twitter blue",
         },
         {
           link: "https://dev.to/benwinding", 
+          linkText: "dev.to/benwinding", 
           title: "Dev.to",
           imgSrc: "https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg", 
         },
         {
           link: "https://linkedin.com/in/benwinding", 
+          linkText: "linkedin.com/in/benwinding", 
           title: "LinkedIn",
           iclass: "fab fa-linkedin dark-blue",
         },
         {
           link: "https://instagram.com/benwinding", 
+          linkText: "instagram.com/benwinding", 
           title: "Instagram",
           iclass: "fab fa-instagram purple",
         },
         {
           link: "tel: 0423-225-163", 
+          linkText: "Call Me: 0423-225-163", 
           title: "Phone",
           iclass: "fa fa-phone maroon",
         },
