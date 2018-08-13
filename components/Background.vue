@@ -92,7 +92,9 @@ function setUpCanvas() {
 
 export default {
   mounted () {
-    setUpCanvas();
+    this.$nextTick(() => {
+      setUpCanvas();
+    })
   },
 }
 </script>
