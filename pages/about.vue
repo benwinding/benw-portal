@@ -9,14 +9,12 @@
         <h2>Now</h2>
         <p>He intends to be a successful web developer, making the internet a better place for all those who use it.</p>
         <h2>Writing</h2>
-        <div class="blog-item" v-for="(blog) in blogPosts" :key="blog">
-          <a class="date" :href="blog.link">{{ blog.date }}</a>
-          <a class="title" :href="blog.link">{{ blog.title }}</a>
-        </div>
-        <div class="blog-item">
-          <a class="date"></a>
-          <a class="title" href="https://blog.benwinding.com">. . . . . . </a>
-        </div>
+        <transition-group name="list" tag="p">
+          <div class="blog-item" v-for="(blog) in blogPosts" :key="blog.title">
+            <a class="date" :href="blog.link">{{ blog.date }}</a>
+            <a class="title" :href="blog.link">{{ blog.title }}</a>
+          </div>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -58,13 +56,24 @@ export default {
     this.$nextTick(() => {
       getBlogPosts()
       .then((data) => {
-        this.blogPosts = data.slice(0,6).map((item) => { 
+        let posts = data.slice(0,6).map((item) => { 
           return {
             title: item.title,
             date: new Date(item.date).toDateString(),
             link: 'https://blog.benwinding.com/' + item.path
           }
         });
+        posts.push({
+          link: 'https://blog.benwinding.com/',
+          title: '. . . . . . . .',
+        })
+        let delayMs = 0;
+        for (let post of posts) {
+          delayMs += 300;
+          setTimeout(() => {
+            this.blogPosts.push(post)
+          }, delayMs);
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -124,6 +133,14 @@ p {
     width: 70px;
     display: inline-block;
   }
+}
+
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
 
