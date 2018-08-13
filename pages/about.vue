@@ -3,10 +3,20 @@
     <rainbow-text text="About"></rainbow-text>
     <div class="bio-pic">
       <img class="circular" src="/images/pic.jpg" alt="selfie!">
-      <div class="about-box"><h2>History</h2>
-      <p>Growing up in Adelaide, South Australia. Ben began his life as a normal child, with all the prospects of becoming a contributing member of society. He's trying his best and will continue to do so.</p>
-      <h2>Now</h2>
-      <p>He intends to be a successful web developer, making the internet a better place for all those who use it.</p>
+      <div class="about-box">
+        <h2>History</h2>
+        <p>Growing up in Adelaide, South Australia. Ben began his life as a normal child, with all the prospects of becoming a contributing member of society. He's trying his best and will continue to do so.</p>
+        <h2>Now</h2>
+        <p>He intends to be a successful web developer, making the internet a better place for all those who use it.</p>
+        <h2>Writing</h2>
+        <div class="blog-item" v-for="(blog) in blogPosts" :key="blog">
+          <a class="date" :href="blog.link">{{ blog.date }}</a>
+          <a class="title" :href="blog.link">{{ blog.title }}</a>
+        </div>
+        <div class="blog-item">
+          <a class="date"></a>
+          <a class="title" href="https://blog.benwinding.com">. . . . . . </a>
+        </div>
       </div>
     </div>
   </div>
@@ -14,6 +24,18 @@
 
 <script>
 import RainbowText from "~/components/RainbowText"
+import axios from "axios"
+
+function getBlogPosts() {
+  return axios.get('https://blog.benwinding.com/feed', {
+    json: true,
+    crossdomain: true,
+  })
+  .then(function (response) {
+    console.log(response);
+    return response.data;
+  })
+}
 
 export default {
   head: {
@@ -26,6 +48,28 @@ export default {
   },
   components: {
     'rainbow-text': RainbowText,
+  },
+  data() {
+    return {
+      blogPosts: []
+    }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      getBlogPosts()
+      .then((data) => {
+        this.blogPosts = data.slice(0,6).map((item) => { 
+          return {
+            title: item.title,
+            date: new Date(item.date).toDateString(),
+            link: 'https://blog.benwinding.com/' + item.path
+          }
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    })
   },
 }
 </script>
@@ -72,6 +116,14 @@ p {
   -moz-transition-duration: 3s;
   transition-duration: 3s;
   border: 15px solid #800000bb;
+}
+
+.blog-item {
+  .date {
+    font-size: 0.5em;
+    width: 70px;
+    display: inline-block;
+  }
 }
 </style>
 
