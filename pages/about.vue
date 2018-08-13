@@ -16,12 +16,17 @@
 import RainbowText from "~/components/RainbowText"
 
 export default {
+  head: {
+    meta: [
+      { property:"og:image", content:"https://i.imgur.com/orqq5jB.jpg" },
+      { property:"og:title", content:"About - Ben Winding" },
+      { property:"og:description", content:"A web developer from Adelaide, South Australia." },
+    ],    
+    title: 'About'
+  },
   components: {
     'rainbow-text': RainbowText,
   },
-  head: {
-    title: 'About'
-  }
 }
 </script>
 

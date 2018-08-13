@@ -46,9 +46,10 @@ const iconsUnique = Array.from(new Set(icons))
 
 export default {
   head: {
-    link: [
-      { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.2.0/css/all.css" },
-      { rel: "stylesheet", href: "https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" }
+    meta: [
+      { property:"og:image", content:"https://i.imgur.com/orqq5jB.jpg" },
+      { property:"og:title", content:"Projects - Ben Winding" },
+      { property:"og:description", content:"A web developer from Adelaide, South Australia." },
     ],
     title: 'Projects'
   },

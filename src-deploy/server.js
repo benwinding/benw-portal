@@ -1,12 +1,10 @@
-var connect = require('connect');
+var express = require('express');
 var http = require('http');
 
-var history = require('connect-history-api-fallback');
-var serveStatic = require('serve-static');
-
-var app = connect();
-app.use(history());
-app.use(serveStatic("./public"));
+var app = express();
+app.use(express.static('public', {
+  redirect: true
+}))
 
 const port = process.env.PORT || 8080; 
 console.log("Listening on port: " + port);

@@ -2,7 +2,7 @@
   <div>
     <div class="v-center">
       <transition name="bounce" mode="out-in">
-        <rainbow-text v-if="loaded" text="Ben Winding" :large="true"></rainbow-text>
+        <rainbow-text v-show="loaded" text="Ben Winding" :large="true"></rainbow-text>
       </transition>
 
       <h2 class="intro">Let's build things that people want</h2>
@@ -14,12 +14,17 @@
   import RainbowText from "~/components/RainbowText"
 
   export default {
+    head: {
+      meta: [
+        { property:"og:image", content:"https://i.imgur.com/orqq5jB.jpg" },
+        { property:"og:title", content:"Home - Ben Winding" },
+        { property:"og:description", content:"A web developer from Adelaide, South Australia." },
+      ],
+      title: 'Home'
+    },
     components: {
       'rainbow-text': RainbowText,
     },    
-    head: {
-      title: 'Home'
-    },
     data() {
       return {
         loaded: false

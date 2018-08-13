@@ -27,12 +27,27 @@ module.exports = {
       { name:"msapplication-TileColor", content:"#800000" },
       { name:"msapplication-TileImage", content:"/favicons/ms-icon-144x144.png" },
       { name:"theme-color", content:"#800000" },
+
+      { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.2.0/css/all.css" },
+      { rel: "stylesheet", href: "https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" }
     ]
   },
   /*
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+
+  modules: [
+   '@nuxtjs/sitemap'
+  ],
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://benwinding.com',
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: true, // Enable me when using nuxt generate
+  },
   /*
   ** Build configuration
   */

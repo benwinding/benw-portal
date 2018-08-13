@@ -20,7 +20,7 @@
     },
     {
       "name": "Bootleg Wakeboarding Event",
-      "description": "A demo showing some wakeboarding obstacles for an event in 2017",
+      "description": "A 3D demo showcasing wakeboarding obstacles",
       "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
       "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
       "tools": ["JavaScript, AngularJs, Three-Js"],
@@ -37,7 +37,7 @@
       "colour": "#3949ab"
     },
     {
-      "name": "Blog",
+      "name": "My Blog",
       "description": "Checkout my blog, where I speak my mind",
       "deploy_link": "https://blog.benwinding.com/",
       "tools": ["JavaScript, Hexo, Static Site"],
@@ -51,6 +51,38 @@
       "article_link": "https://blog.benwinding.com/scraping_myuni",
       "tools": ["Python, Web Scraping"],
       "icons": ["devicon-python-plain"],
+      "colour": "#ff8f00"
+    },
+    {
+      "name": "Outback Odyssey Site",
+      "description": "An event website for an annual car adventure for charity.",
+      "deploy_link": "https://ozoutbackodyssey.com.au",
+      "tools": ["Wordpress"],
+      "icons": ["devicon-wordpress-plain"],
+      "colour": "#3949ab"
+    },
+    {
+      "name": "Rachel Darling's Site",
+      "description": "A portfolio website for a talented artist.",
+      "deploy_link": "https://rachelkatedarling.com",
+      "tools": ["Wordpress"],
+      "icons": ["devicon-wordpress-plain"],
+      "colour": "#ff8f00"
+    },
+    {
+      "name": "Kova Engineering Site",
+      "description": "An engineering firm in Vancouver, Canada.",
+      "deploy_link": "http://kova.com/",
+      "tools": ["Wordpress"],
+      "icons": ["devicon-wordpress-plain"],
+      "colour": "#ff8f00"
+    },
+    {
+      "name": "Seeing Sarawak Site",
+      "description": "Travel blog, created for my sister",
+      "deploy_link": "https://seeingsarawak.com/",
+      "tools": ["Wordpress"],
+      "icons": ["devicon-wordpress-plain"],
       "colour": "#ff8f00"
     }
   ],

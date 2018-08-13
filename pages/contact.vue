@@ -21,8 +21,10 @@
 
 export default {
   head: {
-    link: [
-      { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.2.0/css/all.css" }
+    meta: [
+      { property:"og:image", content:"https://i.imgur.com/orqq5jB.jpg" },
+      { property:"og:title", content:"Contact - Ben Winding" },
+      { property:"og:description", content:"A web developer from Adelaide, South Australia." },
     ],
     title: 'Contact'
   },
