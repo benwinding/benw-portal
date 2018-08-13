@@ -8,7 +8,7 @@
           <img v-if="item.imgSrc" :src="item.imgSrc" />
         </a>
         <span>
-          <a :href="item.link" :title="item.title" class="social-link">
+          <a :href="item.link" :title="item.title" >
             {{ item.linkText }}
           </a>          
         </span>
@@ -87,26 +87,46 @@ export default {
     width: 300px;
     position:relative;
 
-    :hover {
-      opacity: .5;
+    .social-icon {
+      vertical-align: middle;
+      
+      i {
+        font-size: 86px;
+      }
+
+      img {
+        width: 86px;
+      }
     }
 
     a, span {
       display: inline-block;
       width: 260px;
     }
-  }
-}
 
-.social-icon {
-  vertical-align: middle;
+    @media(max-width: 800px) {
+      padding: 10px;
+      margin: 5px;
+      width: 130px;      
   
-  i {
-    font-size: 86px;
-  }
+      a, span {
+        width: 110px;
+        font-size: 0.8em;
+      }
 
-  img {
-    width: 86px;
+      .social-icon {
+        i {
+          font-size: 40px;
+        }
+        img {
+          width: 40px;
+        }
+      }
+    }
+
+    :hover {
+      opacity: .5;
+    }
   }
 }
 
