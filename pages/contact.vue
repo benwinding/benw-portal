@@ -1,0 +1,179 @@
+<template>
+  <div>
+    <h1>CONTACT</h1>
+    <section class="card-container">
+      <section v-for="(item) in social" :key="item.link" class="card">
+        <a :href="item.link" :title="item.title" class="social-icon">
+          <i v-if="item.iclass" :class="item.iclass" aria-hidden="true"></i>
+          <img v-if="item.imgSrc" :src="item.imgSrc" />
+        </a>
+        <span>
+          <a :href="item.link" :title="item.title" >
+            {{ item.linkText }}
+          </a>          
+        </span>
+      </section>
+    </section>
+  </div>
+</template>
+
+<script>
+
+export default {
+  head: {
+    meta: [
+      { property:"og:image", content:"https://i.imgur.com/orqq5jB.jpg" },
+      { property:"og:title", content:"Contact - Ben Winding" },
+      { property:"og:description", content:"A web developer from Adelaide, South Australia." },
+    ],
+    title: 'Contact'
+  },
+  data() {
+    return {
+      social: [
+        {
+          link: "mailto:hello@benwinding.com", 
+          linkText: "hello@benwinding.com", 
+          title: "Email!",
+          iclass: "fa fa-envelope red",
+        },
+        {
+          link: "https://github.com/benwinding", 
+          linkText: "github.com/benwinding", 
+          title: "Github",
+          iclass: "fab fa-github purple",
+        },
+        {
+          link: "https://twitter.com/benwinding", 
+          linkText: "twitter.com/benwinding", 
+          title: "Twitter",
+          iclass: "fab fa-twitter blue",
+        },
+        {
+          link: "https://dev.to/benwinding", 
+          linkText: "dev.to/benwinding", 
+          title: "Dev.to",
+          imgSrc: "https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg", 
+        },
+        {
+          link: "https://linkedin.com/in/benwinding", 
+          linkText: "linkedin.com/in/benwinding", 
+          title: "LinkedIn",
+          iclass: "fab fa-linkedin dark-blue",
+        },
+        {
+          link: "https://instagram.com/benwinding", 
+          linkText: "instagram.com/benwinding", 
+          title: "Instagram",
+          iclass: "fab fa-instagram purple",
+        },
+        {
+          link: "tel: 0423-225-163", 
+          linkText: "Call Me: 0423-225-163", 
+          title: "Phone",
+          iclass: "fa fa-phone maroon",
+        },
+      ]
+    }    
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .card {
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    position:relative;
+
+    .social-icon {
+      vertical-align: middle;
+      
+      i {
+        font-size: 86px;
+      }
+
+      img {
+        width: 86px;
+      }
+    }
+
+    a, span {
+      display: inline-block;
+      width: 260px;
+    }
+
+    @media(max-width: 800px) {
+      padding: 10px;
+      margin: 5px;
+      width: 130px;      
+  
+      a, span {
+        width: 110px;
+        font-size: 0.8em;
+      }
+
+      .social-icon {
+        i {
+          font-size: 40px;
+        }
+        img {
+          width: 40px;
+        }
+      }
+    }
+
+    :hover {
+      opacity: .5;
+    }
+  }
+}
+
+.red {
+  color: #ef5350;
+}
+
+.purple {
+  color: #ab47bc;
+}
+
+.bright-blue {
+  color: #651fff;
+}
+
+.dark-blue {
+  color: #3949ab;
+}
+
+.blue {
+  color: #2196f3;
+}
+
+.teal {
+  color: #00bcd4;
+}
+
+.green {
+  color: #4caf50;
+}
+
+.yellow {
+  color: #ffc107;
+}
+
+.pink {
+  color: #ff80ab;
+}
+
+.maroon {
+  color: rgb(128, 0, 0);
+}
+
+</style>
+
