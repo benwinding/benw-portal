@@ -1,9 +1,9 @@
 <template>
   <div class="header">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/projects">Projects</router-link>
-    <router-link to="/contact">Contact</router-link>
+    <nuxt-link to="/">Home</nuxt-link>
+    <nuxt-link to="/about">About</nuxt-link>
+    <nuxt-link to="/projects">Projects</nuxt-link>
+    <nuxt-link to="/contact">Contact</nuxt-link>
   </div>
 </template>
 
@@ -33,7 +33,7 @@
     }
   }
 
-  .router-link-exact-active {
+  .nuxt-link-exact-active {
     border-bottom: 3px solid #4A4A4A;
   }
 </style>

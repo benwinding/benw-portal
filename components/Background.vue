@@ -6,13 +6,14 @@
 
 import {Pt, CanvasSpace, World, Create, Particle} from "pts"
 
-var space = new CanvasSpace("#pt_canvas");
-space.setup({ bgcolor: "#fff" });
+var space;
 var world;
 var particleCount = 10;
 var mouseBallSize = 20;
 
 function setUpCanvas() {
+  space = new CanvasSpace("#pt_canvas");
+  space.setup({ bgcolor: "#fff" });
   var form = space.getForm();
   space.add({
     start: (bound, space) => {

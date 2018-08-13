@@ -19,11 +19,14 @@ Spittel. The current technology stack is:
 </template>
 
 <script>
-  import RainbowText from "../components/RainbowText"
+  import RainbowText from "~/components/RainbowText"
 
   export default {
     components: {
       'rainbow-text': RainbowText,
+    },    
+    head: {
+      title: 'How'
     }
   }
 </script>

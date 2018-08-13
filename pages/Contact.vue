@@ -1,6 +1,6 @@
 <template>
   <div>
-    <rainbow-text text="Contact"></rainbow-text>
+    <h1>CONTACT</h1>
     <section class="card-container">
       <section v-for="(item) in social" :key="item.link" class="card">
         <a :href="item.link" :title="item.title" class="social-icon">
@@ -18,11 +18,13 @@
 </template>
 
 <script>
-import RainbowText from "@/components/RainbowText"
 
 export default {
-  components: {
-    'rainbow-text': RainbowText,
+  head: {
+    link: [
+      { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.2.0/css/all.css" }
+    ],
+    title: 'Contact'
   },
   data() {
     return {
@@ -70,12 +72,13 @@ export default {
           iclass: "fa fa-phone maroon",
         },
       ]
-    }
-  }
+    }    
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+
 .card-container {
   display: flex;
   flex-wrap: wrap;

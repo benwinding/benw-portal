@@ -1,25 +1,23 @@
-# My Portfolio Site!
+# portal3
 
-## Motivation
-My motivation for writing my personal site was to have a good place for people to get in touch with me after giving talks. Also, I don't get many excuses to write static sites so this was **so** much fun!
+> Nuxt.js project
 
-## Code Style
-I stick to standard.js for JavaScript
+## Build Setup
 
-## Features
-All of the CSS! I challenged myself to not use a framework and there's flexbox, animations, pseudoclasses, parallax, canvas, etc.! It was definitely a challenge to get everything looking great!
+``` bash
+# install dependencies
+$ npm install # Or yarn install
 
-## Stack
-* HTML5
-* CSS3
-* JavaScript
-    * P5JS for the dynamic random shapes!
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-## Deployment
-Site is deployed at https://aspittel.github.io.
+# build for production and launch server
+$ npm run build
+$ npm start
 
-## Local Installation
-```bash
-$ git clone https://github.com/aspittel/aspittel.github.io/
-$ hs
+# generate static project
+$ npm run generate
 ```
+
+For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+

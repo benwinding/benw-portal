@@ -35,19 +35,26 @@
 </template>
 
 <script>
-import RainbowText from "@/components/RainbowText"
-import Card from "@/components/Card"
+import RainbowText from "~/components/RainbowText"
+import Card from "~/components/Card"
 
-import projectsData from "../data/projects.json"
+import projectsData from "~/assets/projects.json"
 const projectsAll = projectsData.all
 const icons = projectsAll.map((val) => val.icons)
   .reduce((acc, cur) => acc.concat(cur))
 const iconsUnique = Array.from(new Set(icons))
 
 export default {
+  head: {
+    link: [
+      { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.2.0/css/all.css" },
+      { rel: "stylesheet", href: "https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" }
+    ],
+    title: 'Projects'
+  },
   data () {
     return {
-      currentFilter: 'fa fa-star-of-life'
+      currentFilter: 'fa fa-star-of-life',
     }
   },
   computed: {
@@ -106,7 +113,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   $grid-gutter-width: 10px;
-  @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+  @import '~/node_modules/bootstrap/scss/bootstrap.scss';
 
   .card-filters input {
     display: none; /* hide the default checkbox */

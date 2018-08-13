@@ -1,4 +1,11 @@
-.vscode
-.DS_store
+# dependencies
 node_modules
-dist
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist*

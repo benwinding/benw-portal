@@ -11,11 +11,14 @@
 </template>
 
 <script>
-  import RainbowText from "../components/RainbowText"
+  import RainbowText from "~/components/RainbowText"
 
   export default {
     components: {
       'rainbow-text': RainbowText,
+    },    
+    head: {
+      title: 'Home'
     },
     data() {
       return {
@@ -23,7 +26,10 @@
       }
     },
     mounted() {
-      this.loaded = true;
+      this.$nextTick(() => {
+        this.loaded = true;
+        console.log("mounted: home page, loaded=" + this.loaded);
+      })
     }
   }
 </script>
