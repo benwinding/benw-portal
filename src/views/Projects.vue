@@ -3,22 +3,24 @@
     <div class="col-12">            
       <rainbow-text text="Projects"></rainbow-text>
       <div class="card-filters">
-        <ul class="filter-all">
-          <li>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
             <label>
-              <input id="filter-input" type='checkbox' v-model="chkAll">
-              <span class="filter-icon fa fa-star-of-life"></span>
+              <i id="icon" 
+                v-bind:class="{
+                  'fa fa-star-of-life': true,
+                  'icon-selected': currentFilter == 'fa fa-star-of-life'
+                }"
+                v-on:click="clickedIcon('fa fa-star-of-life')"
+                >
+              </i>
             </label>
-          </li>
-        </ul>
-        <ul class="filter-each-icon" v-for="(icon) in iconsAll" :key="icon">
-          <li>
-            <label>
-              <input id="filter-input" type="checkbox" 
-                :id="icon" 
-                :value="icon" 
-                v-model="icons">
-              <span v-bind:class="'filter-icon '+icon"></span>
+            <label v-for="(icon) in iconsAll" :key="icon">
+              <i id="icon" 
+                v-bind:class="getClasses(icon)"
+                v-on:click="clickedIcon(icon)"
+                >
+              </i>
             </label>
           </li>
         </ul>
@@ -45,8 +47,7 @@ const iconsUnique = Array.from(new Set(icons))
 export default {
   data () {
     return {
-      icons: iconsUnique,
-      chkAll: true
+      currentFilter: 'fa fa-star-of-life'
     }
   },
   computed: {
@@ -54,25 +55,47 @@ export default {
       return iconsUnique
     },
     projects: function() {
-      const activeicons = this.icons
+      if (this.currentFilter == 'fa fa-star-of-life')
+        return projectsAll;
       const activeProjects = projectsAll.reduce((acc, cur) => {
-        for (const tag of cur.icons) {
-          if (!activeicons.includes(tag)) {
-            return acc;
-          }
-        }
-        acc.push(cur);
-        return acc;
+        if (cur.icons.includes(this.currentFilter))
+          acc.push(cur);
+        return acc;            
       }, [])
       return activeProjects;
     }
   },
   watch: {
+    chkdIcons: function(val) {
+      console.log(val);
+      if (val.length < 1)
+        return;
+      if (val.length == 1 && this.activeChkd == val[0])
+        return;
+      this.chkAll = false
+      const index = val.indexOf(this.activeChkd);
+      if (index != -1)
+        val.splice(index, 1);
+
+      this.activeChkd = val[0];
+      this.chkdIcons = [this.activeChkd];
+    },
     chkAll: function(val) {
-      if (val)
-        this.icons = this.iconsAll;
-      else
-        this.icons = [];
+      if (val == true) {
+        this.chkdIcons = []
+      }
+    }
+  },
+  methods: {
+    clickedIcon(icon) {
+      console.log("clicked", icon);
+      this.currentFilter = icon;
+    },
+    getClasses(icon) {
+      let classes = icon
+      if (icon == this.currentFilter)
+        classes += ' icon-selected'
+      return classes;
     }
   },
   components: {
@@ -89,60 +112,25 @@ export default {
     display: none; /* hide the default checkbox */
   }
 
-  .filter-icon {
-    height: 40px;
-    width: 40px;
+  #icon {
     border: 0px solid grey;
     display: inline-block;
+    color: white;
     position: relative;
-  }
-
-  .card-filters [type=checkbox] + span:before {
-    color: #00000033;
-  }
-
-  .card-filters [type=checkbox]:checked + span:before {
-    position: absolute;
-    color: #0062ff;
-    color: blue;
-    color: black;
-  }
-
-  .card-filters label {
-    margin: 0;
-  }
-
-  .filter-icon {
     font-size: 40px;
+    background-color: #33b1eb;
+    margin-right: 8px;
     vertical-align: middle;
+    padding: 4px;
+    width: 50px;
+    transition: transform 0.5s;
+    border-radius: 7px 7px 0px 0px;
+    text-align: center;
   }
 
-  .filter-all:hover, .filter-each-icon:hover {
-    transition: box-shadow 0.25s;
-    position: relative;
-    box-shadow: 0px 0px 2px 2px cyan;
-  }
-
-  .card-filters > .filter-all {
+  #icon.icon-selected {
     background-color: orange;
-  }
-
-  .card-filters > .filter-each-icon {
-    background-color: #bdffe1;
-  }
-  
-  .filter-all, .filter-each-icon {
-    display: inline-block;
-    list-style: none;
-    margin: 8px 8px 0px 0px;
-    padding: 5px;
-    vertical-align: middle;
-  }
-
-  #filter-input {
-    margin: 10px;
-    vertical-align: middle;
-    transform: scale(2);
+    transform: scale(1.2) translateY(-9%);
   }
 
   .row > div {
