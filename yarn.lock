@@ -2525,8 +2525,8 @@ es-to-primitive@^1.1.1:
     is-symbol "^1.0.1"
 
 es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
-  version "0.10.45"
-  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.45.tgz#0bfdf7b473da5919d5adf3bd25ceb754fccc3653"
+  version "0.10.46"
+  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.46.tgz#efd99f67c5a7ec789baa3daa7f79870388f7f572"
   dependencies:
     es6-iterator "~2.0.3"
     es6-symbol "~3.1.1"
@@ -6552,8 +6552,8 @@ psl@^1.1.24:
   resolved "https://registry.yarnpkg.com/psl/-/psl-1.1.29.tgz#60f580d360170bb722a797cc704411e6da850c67"
 
 pts@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/pts/-/pts-0.5.1.tgz#66f8a7d94314da8d101ddf408604f7e82a5ee3cb"
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/pts/-/pts-0.5.2.tgz#d621770c3788dc26f24fa185d0fbf536c1106c23"
 
 public-encrypt@^4.0.0:
   version "4.0.2"
