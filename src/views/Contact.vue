@@ -1,16 +1,19 @@
 <template>
   <div>
     <rainbow-text text="Contact"></rainbow-text>
-    <div class="links">
-      <a href="https://github.com/benwinding" class="social-link" title="Github"><i class="fab fa-github purple" aria-hidden="true"></i></a>
-      <a href="https://twitter.com/benwinding" class="social-link" title="Twitter"><i class="fab fa-twitter blue" aria-hidden="true"></i></a>
-      <a href="https://dev.to/benwinding" title="dev.to" class="social-link dev-to">
-        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" class="dev-to-img"/>
-      </a>
-      <a href="https://www.linkedin.com/in/benwinding" class="social-link" title="Linkedin"><i class="fab fa-linkedin dark-blue" aria-hidden="true"></i></a>
-      <a href="mailto:hello@benwinding.com" class="social-link" title="email me"><i class="fa fa-envelope red" aria-hidden="true"></i></a>
-      <a href="https://www.instagram.com/benwinding" class="social-link" title="Instagram"><i class="fab fa-instagram purple" aria-hidden="true"></i></a>
-    </div>
+    <section class="card-container">
+      <section v-for="(item) in social" :key="item.link" class="card">
+        <a :href="item.link" :title="item.title" class="social-icon">
+          <i v-if="item.iclass" :class="item.iclass" aria-hidden="true"></i>
+          <img v-if="item.imgSrc" :src="item.imgSrc" />
+        </a>
+        <span>
+          <a :href="item.link" :title="item.title" class="social-link">
+            {{ item.link }}
+          </a>          
+        </span>
+      </section>
+    </section>
   </div>
 </template>
 
@@ -20,58 +23,84 @@ import RainbowText from "@/components/RainbowText"
 export default {
   components: {
     'rainbow-text': RainbowText,
-  } 
+  },
+  data() {
+    return {
+      social: [
+        {
+          link: "hello@benwinding.com", 
+          title: "Email!",
+          iclass: "fa fa-envelope red",
+        },
+        {
+          link: "https://github.com/benwinding", 
+          title: "Github",
+          iclass: "fab fa-github purple",
+        },
+        {
+          link: "https://twitter.com/benwinding", 
+          title: "Twitter",
+          iclass: "fab fa-twitter blue",
+        },
+        {
+          link: "https://dev.to/benwinding", 
+          title: "Dev.to",
+          imgSrc: "https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg", 
+        },
+        {
+          link: "https://linkedin.com/in/benwinding", 
+          title: "LinkedIn",
+          iclass: "fab fa-linkedin dark-blue",
+        },
+        {
+          link: "https://instagram.com/benwinding", 
+          title: "Instagram",
+          iclass: "fab fa-instagram purple",
+        },
+        {
+          link: "tel: 0423-225-163", 
+          title: "Phone",
+          iclass: "fa fa-phone maroon",
+        },
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.links {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.card-container {
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 100px;
-  text-align: center;
-  margin-bottom: 100px;
   flex-wrap: wrap;
+  justify-content: center;
 
-  @media (max-width: 400px) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .card {
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    position:relative;
+
+    :hover {
+      opacity: .5;
+    }
+
+    a, span {
+      display: inline-block;
+      width: 260px;
+    }
   }
 }
 
-.social-link {
-  font-size: 100px;
+.social-icon {
+  vertical-align: middle;
   
-  @media (max-width: 700px) {
-    font-size: 50px;
+  i {
+    font-size: 86px;
   }
-}
 
-.dev-to {
-  margin-top: -10px;
-}
-
-.dev-to-img {
-  height: 85px;
-  width: 85px;
-
-  @media (max-width: 700px) {
-    height: 45px;
-    width: 45px;
+  img {
+    width: 86px;
   }
-}
-.social-link:hover {
-  opacity: .5;
 }
 
 .red {
@@ -110,8 +139,8 @@ export default {
   color: #ff80ab;
 }
 
-.orange {
-  color: #ff8f00;
+.maroon {
+  color: rgb(128, 0, 0);
 }
 
 </style>
