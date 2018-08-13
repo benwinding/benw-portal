@@ -9,7 +9,7 @@ const conf = {
   outputDir: './dist-deploy',
   serverSrcDir: './src-deploy/**/*',
   remoteBranch: 'dokku',
-  remoteUrl: 'dokku@benwinding.com:vue'
+  remoteUrl: 'dokku@benwinding.com:portal'
 };
 
 gulp.task('clean', function() {
