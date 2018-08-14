@@ -61,21 +61,4 @@
   .v-center {
     padding-top: 21vh;
   }
-
-  .bounce-enter-active {
-    animation: bouncein 1.9s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  }
-  @mixin ballb($yaxis: 0) {
-    transform: translate3d(0, $yaxis, 0);
-  }
-  @keyframes bouncein { 
-    1% { @include ballb(-400px); }
-    20%, 40%, 60%, 80%, 95%, 99%, 100% { @include ballb() }
-    30% { @include ballb(-80px); }
-    50% { @include ballb(-40px); }
-    70% { @include ballb(-30px); }
-    90% { @include ballb(-15px); }
-    97% { @include ballb(-10px); }
-  }
-
 </style>
