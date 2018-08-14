@@ -93,7 +93,6 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  align-items: center;
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -101,7 +100,6 @@ p {
 }
 
 .circular {
-  -ms-flex-item-align: center;
   margin-right: 40px;
   min-width: 250px;
   max-width: 251px;
