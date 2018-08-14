@@ -65,21 +65,18 @@ const allColors = [
   "#7f878e",
   "#8159cc",
   "#941c2f",
-
-  "#800000",
-  "#ab47bc",
-  "#651fff",
-  "#3949ab", 
-  "#2196F3",
-  "#00bcd4",
-  "#4caf50",
-  "#ff80ab",
-  "#ff8f00",
 ];
 
-let colorKey = {}
-for (let icon of iconsUnique) {
-  colorKey[icon] = allColors.pop()
+let colorKey = {
+  "devicon-angularjs-plain": "#800000",
+  "devicon-react-original": "#ab47bc",
+  "devicon-chrome-plain": "#651fff",
+  "devicon-firefox-plain": "#3949ab",
+  "fab fa-facebook-messenger": "#2196F3",
+  "devicon-wordpress-plain": "#00bcd4",
+  "devicon-python-plain": "#4caf50",
+  "fa fa-cubes": "#749cde",
+  "fa fa-pen-alt": "#2e35ff",
 }
 
 for (let project of projectsAll) {

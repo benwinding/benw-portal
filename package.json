@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "clean": "gulp clean",
+    "start": "nuxt",
     "generate": "nuxt generate",
     "deploy": "gulp deploy",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",

@@ -1,13 +1,20 @@
 {
   "all": [
     {
+      "name": "Newsit",
+      "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
+      "code_link": "https://github.com/benwinding/newsit",
+      "deploy_link": "https://newsit.benwinding.com/",
+      "tools": ["JavaScript, Bulma, Chrome, Firefox"],
+      "icons": ["devicon-chrome-plain", "devicon-firefox-plain"]
+    },
+    {
       "name": "Memebot",
       "description": "A messenger bot which finds and sends you memes.",
       "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
       "deploy_link": "https://memebot.lappr.com.au",
       "tools": ["JavaScript, GraphQL, Messenger"],
-      "icons": ["fab fa-facebook-messenger"],
-      "colour": "#FE4A49"
+      "icons": ["fab fa-facebook-messenger"]
     },
     {
       "name": "3D Cricket Lanes",
@@ -15,8 +22,7 @@
       "deploy_link": "https://benwinding.github.io/CricketNet-Demo/",
       "code_link": "https://github.com/benwinding/CricketNet-Demo",
       "tools": ["JavaScript, React, Three-Js"],
-      "icons": ["devicon-react-original", "fa fa-cubes"],
-      "colour": "#FED766"
+      "icons": ["devicon-react-original", "fa fa-cubes"]
     },
     {
       "name": "Bootleg Wakeboarding Event",
@@ -24,25 +30,14 @@
       "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
       "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
       "tools": ["JavaScript, AngularJs, Three-Js"],
-      "icons": ["devicon-angularjs-plain", "fa fa-cubes"],
-      "colour": "#00B5EF"
-    },
-    {
-      "name": "Newsit",
-      "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
-      "code_link": "https://github.com/benwinding/newsit",
-      "deploy_link": "https://newsit.benwinding.com/",
-      "tools": ["JavaScript, Bulma, Chrome, Firefox"],
-      "icons": ["devicon-chrome-plain", "devicon-firefox-plain"],
-      "colour": "#800000"
+      "icons": ["devicon-angularjs-plain", "fa fa-cubes"]
     },
     {
       "name": "My Blog",
       "description": "Checkout my blog, where I speak my mind",
       "deploy_link": "https://blog.benwinding.com/",
       "tools": ["JavaScript, Hexo, Static Site"],
-      "icons": ["fa fa-pen-alt"],
-      "colour": "#E6E6EA"
+      "icons": ["fa fa-pen-alt"]
     },
     {
       "name": "Canvas Scraper",
@@ -50,48 +45,49 @@
       "code_link": "https://github.com/benwinding/myuni-dl",
       "article_link": "https://blog.benwinding.com/scraping_myuni",
       "tools": ["Python, Web Scraping"],
-      "icons": ["devicon-python-plain"],
-      "colour": "#FE4A49"
+      "icons": ["devicon-python-plain"]
     },
     {
       "name": "Outback Odyssey Site",
       "description": "An event website for an annual car adventure for charity.",
       "deploy_link": "https://ozoutbackodyssey.com.au",
       "tools": ["Wordpress"],
-      "icons": ["devicon-wordpress-plain"],
-      "colour": "#FED766"
+      "icons": ["devicon-wordpress-plain"]
     },
     {
       "name": "Rachel Darling's Site",
       "description": "A portfolio website for a talented artist.",
       "deploy_link": "https://rachelkatedarling.com",
       "tools": ["Wordpress"],
-      "icons": ["devicon-wordpress-plain"],
-      "colour": "#00B5EF"
+      "icons": ["devicon-wordpress-plain"]
     },
     {
       "name": "Kova Engineering Site",
       "description": "An engineering firm in Vancouver, Canada.",
       "deploy_link": "http://kova.com/",
       "tools": ["Wordpress"],
-      "icons": ["devicon-wordpress-plain"],
-      "colour": "#800000"
+      "icons": ["devicon-wordpress-plain"]
     },
     {
       "name": "Down Subs",
       "description": "Search videos from youtube, by text in the subtitles",
-      "deploy_link": "https://history.benwinding.com/",
+      "deploy_link": "https://github.com/benwinding/down-subs",
       "tools": ["Python, Shell"],
-      "icons": ["devicon-python-plain"],
-      "colour": "#E6E6EA"
+      "icons": ["devicon-python-plain"]
     },    
     {
       "name": "Seeing Sarawak Site",
       "description": "Travel blog, created for my sister",
-      "deploy_link": "https://seeingsarawak.com/",
+      "code_link": "https://seeingsarawak.com/",
       "tools": ["Wordpress"],
-      "icons": ["devicon-wordpress-plain"],
-      "colour": "#800000"
+      "icons": ["devicon-wordpress-plain"]
+    },    
+    {
+      "name": "BSC Shed Maker",
+      "description": "A configurator for shed's that run's in the browser",
+      "deploy_link": "https://bsc-configurator.herokuapp.com/",
+      "tools": ["JavaScript, AngularJs, Three-Js"],
+      "icons": ["devicon-angularjs-plain", "fa fa-cubes"]
     }
   ],
   "not_implemented": [
@@ -100,25 +96,8 @@
       "description": "A historical view of THIS website, all versions captured",
       "deploy_link": "https://history.benwinding.com/",
       "tools": ["JavaScript, Shell"],
-      "icons": ["fa fa-pen-alt"],
-      "colour": "#E6E6EA"
-    },
-    "#FE4A49",
-    "#FED766",
-    "#00B5EF",
-    "#800000",
-    "#E6E6EA",
-    
-    "#ef5350",
-    "#ab47bc",
-    "#651fff",
-    "#3949ab",
-    "#2196f3",
-    "#00bcd4",
-    "#4caf50",
-    "#ffc107",
-    "#ff80ab",
-    "#ff8f00"
+      "icons": ["fa fa-pen-alt"]
+    }
   ]
 }
 

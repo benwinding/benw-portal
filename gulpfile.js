@@ -13,7 +13,7 @@ const conf = {
 };
 
 gulp.task('clean', function() {
-  return del([conf.buildSrcDir, conf.outputDir]);
+  return del([conf.buildSrcDir, conf.outputDir, '.nuxt']);
 });
 
 gulp.task('build-app', shell.task('yarn generate', {
