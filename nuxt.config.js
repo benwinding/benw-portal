@@ -57,6 +57,7 @@ module.exports = {
     */
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
+        config.devtool = '#source-map';
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
