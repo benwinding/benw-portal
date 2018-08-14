@@ -2,10 +2,11 @@
   <div>
     <div class="v-center">
       <transition name="bounce" mode="out-in">
-        <rainbow-text v-show="loaded" text="Ben Winding" :large="true"></rainbow-text>
+        <div v-show="loaded">
+          <rainbow-text text="Ben Winding" :large="true"></rainbow-text>
+          <h2 class="intro">Let's build things that people want</h2>
+        </div>
       </transition>
-
-      <h2 class="intro">Let's build things that people want</h2>
     </div>
   </div>
 </template>
@@ -52,7 +53,6 @@
     }
   }
 
-
   .intro a {
     text-decoration: none;
     color: #2196f3;
@@ -60,5 +60,13 @@
 
   .v-center {
     padding-top: 21vh;
+  }
+
+  .bounce-enter-active { 
+    animation: zoomin 1.9s; 
+  } 
+  @keyframes zoomin {  
+    0% { transform: scale(0.8); } 
+    100% { transform: scale(1); } 
   }
 </style>
