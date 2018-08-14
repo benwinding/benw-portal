@@ -11,8 +11,10 @@
         <h2>Writing</h2>
         <transition-group name="list" tag="p">
           <div class="blog-item" v-for="(blog) in blogPosts" :key="blog.title">
-            <a class="date" :href="blog.link">{{ blog.date }}</a>
-            <a class="title" :href="blog.link">{{ blog.title }}</a>
+            <a  :href="blog.link">
+              <span class="date" > {{ blog.date }} </span>
+              <span class="title" > {{ blog.title }} </span>
+            </a>
           </div>
         </transition-group>
       </div>
@@ -126,10 +128,17 @@ p {
 }
 
 .blog-item {
+  margin-bottom: 4px;
+
   .date {
+    vertical-align: middle;
     font-size: 0.5em;
-    width: 70px;
+    width: 50px;
     display: inline-block;
+  }
+  .title {
+    vertical-align: middle;
+    font-size: 1em;
   }
 }
 
