@@ -28,7 +28,7 @@
     </div>
     <transition name="fade" mode="out-in" v-for="(project, index) in projects" :key="index">
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
-        <card :project="project" v-bind:style="{backgroundColor: project.colour}"></card>
+        <card-project :project="project" v-bind:style="{backgroundColor: project.colour}"></card-project>
       </div>
     </transition>
   </div>
@@ -36,7 +36,7 @@
 
 <script>
 import RainbowText from "~/components/RainbowText"
-import Card from "~/components/Card"
+import CardProject from "~/components/CardProject"
 
 import projectsData from "~/assets/projects.json"
 const projectsAll = projectsData.all
@@ -108,7 +108,7 @@ export default {
   },
   components: {
     'rainbow-text': RainbowText,
-    'card': Card
+    'card-project': CardProject
   }
 }
 </script>
