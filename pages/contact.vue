@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>CONTACT</h1>
+    <rainbow-text text="Contact"></rainbow-text>
     <section class="card-container">
       <transition-group name="list" tag="div">
         <section v-for="(item) in social" :key="item.link" class="card">
@@ -13,6 +13,7 @@
 
 <script>
 
+import RainbowText from "~/components/RainbowText"
 import CardContact from '~/components/CardContact'
 
 const social = [
@@ -70,6 +71,7 @@ export default {
     title: 'Contact'
   },
   components: {
+    'rainbow-text': RainbowText,
     'card-contact': CardContact
   },
   data() {
@@ -120,7 +122,7 @@ export default {
   }
   .list-enter, .list-leave-to {
     opacity: 0;
-    transform: translateY(230%);
+    transform: translateY(40%);
   }
 }
 
