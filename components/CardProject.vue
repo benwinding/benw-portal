@@ -73,6 +73,26 @@ export default {
     transition: top .5s, left .5s; 
     height: 100%;
     padding: 5px;
+
+    padding: 10px;
+    margin: 0px;
+    width: 280px;
+
+    @media(max-width: 992px) {
+      width: 220px;
+    }
+
+    @media(max-width: 768px) {
+      width: 200px;
+    }
+
+    @media(max-width: 576px) {
+      width: 100%;
+    }
+
+    :hover {
+      opacity: .5;
+    }
   }
 
   .card:hover {
