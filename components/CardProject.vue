@@ -89,17 +89,13 @@ export default {
     @media(max-width: 576px) {
       width: 100%;
     }
-
-    :hover {
-      opacity: .5;
-    }
   }
 
   .card:hover {
     transition: box-shadow 1s, transform 1s;
-    transform: translate(-5px, -5px);
     position: relative;
-    box-shadow: 5px 5px 5px #969696;
+    box-shadow: 0px -5px 13px -1px #969696;
+    filter: brightness(125%);
   }
 
   .icons {

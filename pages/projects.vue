@@ -43,9 +43,49 @@ import CardProject from "~/components/CardProject"
 
 import projectsData from "~/assets/projects.json"
 const projectsAll = projectsData.all
+
 const icons = projectsAll.map((val) => val.icons)
   .reduce((acc, cur) => acc.concat(cur))
 const iconsUnique = Array.from(new Set(icons))
+
+const allColors = [
+  "#a11f64",
+  "#ff8f00",
+  "#ff8f00",
+
+  "#00b5ef",
+  "#547900",
+  "#7f878e",
+  "#8159cc",
+  "#941c2f",
+  "#ffc107",
+
+  "#00b5ef",
+  "#547900",
+  "#7f878e",
+  "#8159cc",
+  "#941c2f",
+
+  "#800000",
+  "#ab47bc",
+  "#651fff",
+  "#3949ab", 
+  "#2196F3",
+  "#00bcd4",
+  "#4caf50",
+  "#ff80ab",
+  "#ff8f00",
+];
+
+let colorKey = {}
+for (let icon of iconsUnique) {
+  colorKey[icon] = allColors.pop()
+}
+
+for (let project of projectsAll) {
+  const tag0 = project.icons[0];
+  project.colour = colorKey[tag0];
+}
 
 const FILTER_ALL = 'fa fa-star-of-life';
 
@@ -166,6 +206,11 @@ $grid-gutter-width: 10px;
 #icon.icon-selected {
   background-color: orange;
   transform: scale(1.2) translateY(-9%);
+}
+
+#icon:hover {
+  opacity: .65;
+  box-shadow: 0px -5px 10px #969696;
 }
 
 .row > div {

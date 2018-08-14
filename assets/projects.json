@@ -7,7 +7,7 @@
       "deploy_link": "https://memebot.lappr.com.au",
       "tools": ["JavaScript, GraphQL, Messenger"],
       "icons": ["fab fa-facebook-messenger"],
-      "colour": "#ef5350"
+      "colour": "#FE4A49"
     },
     {
       "name": "3D Cricket Lanes",
@@ -16,7 +16,7 @@
       "code_link": "https://github.com/benwinding/CricketNet-Demo",
       "tools": ["JavaScript, React, Three-Js"],
       "icons": ["devicon-react-original", "fa fa-cubes"],
-      "colour": "#ab47bc"
+      "colour": "#FED766"
     },
     {
       "name": "Bootleg Wakeboarding Event",
@@ -25,7 +25,7 @@
       "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
       "tools": ["JavaScript, AngularJs, Three-Js"],
       "icons": ["devicon-angularjs-plain", "fa fa-cubes"],
-      "colour": "#651fff"
+      "colour": "#00B5EF"
     },
     {
       "name": "Newsit",
@@ -34,7 +34,7 @@
       "deploy_link": "https://newsit.benwinding.com/",
       "tools": ["JavaScript, Bulma, Chrome, Firefox"],
       "icons": ["devicon-chrome-plain", "devicon-firefox-plain"],
-      "colour": "#3949ab"
+      "colour": "#800000"
     },
     {
       "name": "My Blog",
@@ -42,7 +42,7 @@
       "deploy_link": "https://blog.benwinding.com/",
       "tools": ["JavaScript, Hexo, Static Site"],
       "icons": ["fa fa-pen-alt"],
-      "colour": "#2196f3"
+      "colour": "#E6E6EA"
     },
     {
       "name": "Canvas Scraper",
@@ -51,7 +51,7 @@
       "article_link": "https://blog.benwinding.com/scraping_myuni",
       "tools": ["Python, Web Scraping"],
       "icons": ["devicon-python-plain"],
-      "colour": "#ff8f00"
+      "colour": "#FE4A49"
     },
     {
       "name": "Outback Odyssey Site",
@@ -59,7 +59,7 @@
       "deploy_link": "https://ozoutbackodyssey.com.au",
       "tools": ["Wordpress"],
       "icons": ["devicon-wordpress-plain"],
-      "colour": "#3949ab"
+      "colour": "#FED766"
     },
     {
       "name": "Rachel Darling's Site",
@@ -67,7 +67,7 @@
       "deploy_link": "https://rachelkatedarling.com",
       "tools": ["Wordpress"],
       "icons": ["devicon-wordpress-plain"],
-      "colour": "#ff8f00"
+      "colour": "#00B5EF"
     },
     {
       "name": "Kova Engineering Site",
@@ -75,15 +75,23 @@
       "deploy_link": "http://kova.com/",
       "tools": ["Wordpress"],
       "icons": ["devicon-wordpress-plain"],
-      "colour": "#ff8f00"
+      "colour": "#800000"
     },
+    {
+      "name": "Down Subs",
+      "description": "Search videos from youtube, by text in the subtitles",
+      "deploy_link": "https://history.benwinding.com/",
+      "tools": ["Python, Shell"],
+      "icons": ["devicon-python-plain"],
+      "colour": "#E6E6EA"
+    },    
     {
       "name": "Seeing Sarawak Site",
       "description": "Travel blog, created for my sister",
       "deploy_link": "https://seeingsarawak.com/",
       "tools": ["Wordpress"],
       "icons": ["devicon-wordpress-plain"],
-      "colour": "#ff8f00"
+      "colour": "#800000"
     }
   ],
   "not_implemented": [
@@ -93,16 +101,14 @@
       "deploy_link": "https://history.benwinding.com/",
       "tools": ["JavaScript, Shell"],
       "icons": ["fa fa-pen-alt"],
-      "colour": "#2196f3"
+      "colour": "#E6E6EA"
     },
-    {
-      "name": "Down Subs",
-      "description": "Search videos from youtube, by text in the subtitles",
-      "deploy_link": "https://history.benwinding.com/",
-      "tools": ["JavaScript, Shell"],
-      "icons": ["fa fa-pen-alt"],
-      "colour": "#2196f3"
-    },    
+    "#FE4A49",
+    "#FED766",
+    "#00B5EF",
+    "#800000",
+    "#E6E6EA",
+    
     "#ef5350",
     "#ab47bc",
     "#651fff",
