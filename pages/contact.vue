@@ -3,21 +3,15 @@
     <h1>CONTACT</h1>
     <section class="card-container">
       <section v-for="(item) in social" :key="item.link" class="card">
-        <a :href="item.link" :title="item.title" class="social-icon">
-          <i v-if="item.iclass" :class="item.iclass" aria-hidden="true"></i>
-          <img v-if="item.imgSrc" :src="item.imgSrc" />
-        </a>
-        <span>
-          <a :href="item.link" :title="item.title" >
-            {{ item.linkText }}
-          </a>          
-        </span>
+        <card-contact :item='item' />
       </section>
     </section>
   </div>
 </template>
 
 <script>
+
+import CardContact from '~/components/CardContact'
 
 export default {
   head: {
@@ -27,6 +21,9 @@ export default {
       { property:"og:description", content:"A web developer from Adelaide, South Australia." },
     ],
     title: 'Contact'
+  },
+  components: {
+    'card-contact': CardContact
   },
   data() {
     return {
@@ -89,90 +86,19 @@ export default {
   .card {
     padding: 20px;
     margin: 10px;
-    width: 300px;
+    width: 280px;
     position:relative;
-
-    .social-icon {
-      vertical-align: middle;
-      
-      i {
-        font-size: 86px;
-      }
-
-      img {
-        width: 86px;
-      }
-    }
-
-    a, span {
-      display: inline-block;
-      width: 260px;
-    }
 
     @media(max-width: 800px) {
       padding: 10px;
       margin: 5px;
       width: 130px;      
-  
-      a, span {
-        width: 110px;
-        font-size: 0.8em;
-      }
-
-      .social-icon {
-        i {
-          font-size: 40px;
-        }
-        img {
-          width: 40px;
-        }
-      }
     }
 
     :hover {
       opacity: .5;
     }
   }
-}
-
-.red {
-  color: #ef5350;
-}
-
-.purple {
-  color: #ab47bc;
-}
-
-.bright-blue {
-  color: #651fff;
-}
-
-.dark-blue {
-  color: #3949ab;
-}
-
-.blue {
-  color: #2196f3;
-}
-
-.teal {
-  color: #00bcd4;
-}
-
-.green {
-  color: #4caf50;
-}
-
-.yellow {
-  color: #ffc107;
-}
-
-.pink {
-  color: #ff80ab;
-}
-
-.maroon {
-  color: rgb(128, 0, 0);
 }
 
 </style>
