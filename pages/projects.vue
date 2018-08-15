@@ -77,6 +77,7 @@ let colorKey = {
   "devicon-python-plain": "#4caf50",
   "fa fa-cubes": "#749cde",
   "fa fa-pen-alt": "#2e35ff",
+  "fa fa-file-pdf": "#941c2f"
 }
 
 for (let project of projectsAll) {
