@@ -40,6 +40,13 @@
       "icons": ["fa fa-pen-alt"]
     },
     {
+      "name": "Formzy",
+      "description": "A automated PDF filler, for the Solar Industry",
+      "deploy_link": "https://formzy.herokuapp.com/",
+      "tools": ["NodeJs, PDFs"],
+      "icons": ["fa fa-file-pdf"]
+    },
+    {
       "name": "Canvas Scraper",
       "description": "Download all files from a specific course on the MyUni system.",
       "code_link": "https://github.com/benwinding/myuni-dl",
