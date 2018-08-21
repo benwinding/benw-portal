@@ -27,7 +27,7 @@ import RainbowText from "~/components/RainbowText"
 import axios from "axios"
 
 function getBlogPosts() {
-  return axios.get('https://blog.benwinding.com/feed', {
+  return axios.get('https://blog.benwinding.com/feed.json', {
     json: true,
     crossdomain: true,
   })
