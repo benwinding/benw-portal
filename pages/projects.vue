@@ -59,6 +59,7 @@ let colorKey = {
   "fa fa-cubes": "#749cde",
   "fa fa-pen-alt": "#2e35ff",
   "fab fa-hacker-news": "#ff8239",
+  "fa fa-file-pdf": "#941c2f"
 }
 
 for (let project of projectsAll) {
