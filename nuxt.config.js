@@ -28,8 +28,8 @@ module.exports = {
       { name:"msapplication-TileImage", content:"/favicons/ms-icon-144x144.png" },
       { name:"theme-color", content:"#800000" },
 
-      { rel: "stylesheet", href:"https://use.fontawesome.com/releases/v5.2.0/css/regular.css", integrity:"sha384-zkhEzh7td0PG30vxQk1D9liRKeizzot4eqkJ8gB3/I+mZ1rjgQk+BSt2F6rT2c+I", crossorigin:"anonymous" },
-      { rel: "stylesheet", href:"https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css", integrity:"sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6", crossorigin:"anonymous" },
+      { rel:"stylesheet", href:"/icons/fontawesome-free-5.2.0-web/css/all.min.css" },
+      { rel:"stylesheet", href:"/icons/devicons/devicon.min.css" },
     ]
   },
   /*
