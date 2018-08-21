@@ -48,25 +48,6 @@ const icons = projectsAll.map((val) => val.icons)
   .reduce((acc, cur) => acc.concat(cur))
 const iconsUnique = Array.from(new Set(icons))
 
-const allColors = [
-  "#a11f64",
-  "#ff8f00",
-  "#ff8f00",
-
-  "#00b5ef",
-  "#547900",
-  "#7f878e",
-  "#8159cc",
-  "#941c2f",
-  "#ffc107",
-
-  "#00b5ef",
-  "#547900",
-  "#7f878e",
-  "#8159cc",
-  "#941c2f",
-];
-
 let colorKey = {
   "devicon-angularjs-plain": "#800000",
   "devicon-react-original": "#ab47bc",
@@ -77,6 +58,7 @@ let colorKey = {
   "devicon-python-plain": "#4caf50",
   "fa fa-cubes": "#749cde",
   "fa fa-pen-alt": "#2e35ff",
+  "fab fa-hacker-news": "#ff8239",
 }
 
 for (let project of projectsAll) {

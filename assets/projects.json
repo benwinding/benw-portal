@@ -5,8 +5,17 @@
       "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
       "code_link": "https://github.com/benwinding/newsit",
       "deploy_link": "https://newsit.benwinding.com/",
+      "tools": ["JavaScript, Bulma, Chrome, Firefox, Hacker News API"],
+      "icons": ["devicon-chrome-plain", "devicon-firefox-plain", "fab fa-hacker-news"]
+    },
+    {
+      "name": "YComments",
+      "description": "Embedded discussions from Hacker News",
+      "code_link": "https://github.com/benwinding/ycomments",
+      "deploy_link": "https://ycomments.benwinding.com/",
+      "article_link": "https://blog.benwinding.com/why-i-made-ycomments/",
       "tools": ["JavaScript, Bulma, Chrome, Firefox"],
-      "icons": ["devicon-chrome-plain", "devicon-firefox-plain"]
+      "icons": ["fab fa-hacker-news"]
     },
     {
       "name": "Memebot",
