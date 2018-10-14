@@ -1,23 +1,20 @@
-# portal3
+# My Site
 
-> Nuxt.js project
+This site has taken many different incarnations, the current one is a Nuxt Js site based on [alispit's kickass portfolio!](https://alispit.tel/#/)
 
-## Build Setup
+It uses the following main JS technologies:
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+- nuxt - _a single page app framework_
+- bulma - _styling_
+- pts - _bouncing animations_
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# Features
+- Sever Side Rendering (SSR)
+- Full page, interactive animation!
+- Live blog post updates
+- Filterable projects page
 
-# build for production and launch server
-$ npm run build
-$ npm start
+# Run this!
+`yarn`
 
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
+`yarn dev`
