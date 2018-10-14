@@ -20,8 +20,11 @@ export default {
 }
 </script>
 
+<style lang="css">
+  @import "https://fonts.googleapis.com/css?family=Lato:400,800";
+</style>
+
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Lato:400,800');
   @import '~/node_modules/bootstrap/scss/bootstrap.scss';
 
   ::-moz-selection {
