@@ -12,3 +12,5 @@ dist*
 
 static/sitemap.xml*
 package-lock.json
+
+sw.*
