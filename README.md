@@ -11,8 +11,8 @@ It uses the following main JS technologies:
 # Features
 - Sever Side Rendering (SSR)
 - Full page, interactive animation!
-- Live blog post updates
-- Filterable projects page
+- Live blog post updates (/about)
+- Filterable projects page (/projects)
 
 # Run this!
 `yarn`
