@@ -3,6 +3,10 @@
 </template>
 
 <script>
+if (typeof window === 'undefined') {
+  // Added to keep SSR happy :)
+  global.window = {}
+}
 
 import {Pt, CanvasSpace, World, Create, Particle} from "pts"
 
