@@ -37,12 +37,12 @@ module.exports = {
     hostname: 'https://benwinding.com',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
-    generate: true, // Enable me when using nuxt generate
   },
   /*
   ** Build configuration
   */
   build: {
+    vendor: ['pts'],
     /*
     ** Run ESLint on save
     */
@@ -57,6 +57,9 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  plugins: [
+    { src: '~/plugins/pts.js', ssr: false }
+  ]
 }
 

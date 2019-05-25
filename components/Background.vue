@@ -3,12 +3,11 @@
 </template>
 
 <script>
-if (typeof window === 'undefined') {
-  // Added to keep SSR happy :)
-  global.window = {}
-}
 
-import {Pt, CanvasSpace, World, Create, Particle} from "pts"
+let pts
+if (process.client) {
+  pts = require('pts')
+}
 
 var space;
 var world;
@@ -16,25 +15,25 @@ var particleCount = 10;
 var mouseBallSize = 20;
 
 function setUpCanvas() {
-  space = new CanvasSpace("#pt_canvas");
+  space = new pts.CanvasSpace("#pt_canvas");
   space.setup({ bgcolor: "#fff" });
   var form = space.getForm();
   space.add({
     start: (bound, space) => {
       // Create world and 100 random points
-      world = new World( space.innerBound, 1, 4000);
+      world = new pts.World( space.innerBound, 1, 4000);
       world.damping = 0.9;
-      let pts = Create.distributeRandom( space.innerBound, particleCount );
+      let pts = pts.Create.distributeRandom( space.innerBound, particleCount );
       // Create particles and hit them with a random impulse
       const screenDim = space.size.y > space.size.x ? space.size.x : space.size.y;
       for (let i=0, len=pts.length; i<len; i++) {
-        let p = new Particle(pts[i]);
+        let p = new pts.Particle(pts[i]);
         const p_radius = 3+Math.random()*screenDim/30;
         p.size(p_radius);
         let p_x = i+space.size.x/2;
         let p_y = i+space.size.y/2;
-        p.position = new Pt(p_x, p_y);
-        p.previous = new Pt(p_x, p_y);
+        p.position = new pts.Pt(p_x, p_y);
+        p.previous = new pts.Pt(p_x, p_y);
         // p.lock = true;
         world.add( p );
       }
@@ -76,8 +75,8 @@ function setUpCanvas() {
       height += p.radius*2;
       let p_x = mx + i*3;
       let p_y = my + height;
-      p.position = new Pt(p_x, p_y);
-      p.previous = new Pt(p_x, p_y);
+      p.position = new pts.Pt(p_x, p_y);
+      p.previous = new pts.Pt(p_x, p_y);
       p.lock = true;
       setTimeout(() => {
         p.lock = false;
