@@ -28,7 +28,7 @@
     </div>
     <div class="card-container">
       <transition-group name="list" tag="div">
-        <div v-for="(project) in projectsEnabled" :key="project" >
+        <div v-for="(project) in projectsEnabled" :key="project.name" >
           <card-project :project="project" v-bind:style="{backgroundColor: project.colour}">            
           </card-project>
         </div>
