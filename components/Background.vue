@@ -23,11 +23,11 @@ function setUpCanvas() {
       // Create world and 100 random points
       world = new pts.World( space.innerBound, 1, 4000);
       world.damping = 0.9;
-      let pts = pts.Create.distributeRandom( space.innerBound, particleCount );
+      let points = pts.Create.distributeRandom( space.innerBound, particleCount );
       // Create particles and hit them with a random impulse
       const screenDim = space.size.y > space.size.x ? space.size.x : space.size.y;
-      for (let i=0, len=pts.length; i<len; i++) {
-        let p = new pts.Particle(pts[i]);
+      for (let i=0, len=points.length; i<len; i++) {
+        let p = new pts.Particle(points[i]);
         const p_radius = 3+Math.random()*screenDim/30;
         p.size(p_radius);
         let p_x = i+space.size.x/2;
@@ -59,7 +59,7 @@ function setUpCanvas() {
       return;
     const mx = e.clientX;
     const my = e.clientY;
-    getMouseParticle().position = new Pt(mx, my);
+    getMouseParticle().position = new pts.Pt(mx, my);
   }
 
   function setBallsToMouseLocation(e, numBalls) {
