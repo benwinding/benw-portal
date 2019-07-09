@@ -59,6 +59,12 @@ const social = [
     title: "Phone",
     iclass: "fa fa-phone maroon",
   },
+  {
+    link: "/Ben-Winding-2019-Resume.pdf", 
+    linkText: "Resume - Ben Winding", 
+    title: "Resume",
+    iclass: "fa fa-user-check maroon",
+  },
 ]
 
 export default {
