@@ -38,7 +38,7 @@ gulp.task('git-new', function() {
 
 gulp.task('git-add', function() {
   return gulp.src(conf.outputDir)
-    .pipe(git.add({cwd: conf.outputDir}, function (err) {
+    .pipe(git.add({cwd: conf.outputDir, args: '-f'}, function (err) {
       if (err) throw err;
     }));
 });
