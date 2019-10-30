@@ -1,26 +1,21 @@
 <template>
   <div class="row">
-    <div class="col-12">            
+    <div class="col-12">
       <rainbow-text text="Projects"></rainbow-text>
       <div class="card-filters">
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <label>
-              <i id="icon" 
-                v-bind:class="{
-                  'fa fa-star-of-life': true,
-                  'icon-selected': currentFilter == 'fa fa-star-of-life'
-                }"
-                v-on:click="clickedIcon('fa fa-star-of-life')"
-                >
-              </i>
+              <IconSelectAll
+                id="icon"
+                style="fill: black;"
+                height="40"
+                width="40"
+                v-on:click="clickedIcon('filter-all')"
+              />
             </label>
-            <label v-for="(icon) in iconsAll" :key="icon">
-              <i id="icon" 
-                v-bind:class="getClasses(icon)"
-                v-on:click="clickedIcon(icon)"
-                >
-              </i>
+            <label v-for="(iconName) in iconsAll" :key="iconName">
+              <Icon id="icon" v-bind:iconName="iconName" v-on:click="clickedIcon(iconName)" />
             </label>
           </li>
         </ul>
@@ -28,9 +23,8 @@
     </div>
     <div class="card-container">
       <transition-group name="list" tag="div">
-        <div v-for="(project) in projectsEnabled" :key="project.name" >
-          <card-project :project="project" v-bind:style="{backgroundColor: project.colour}">            
-          </card-project>
+        <div v-for="(project, index) in projectsEnabled" :key="index + project.name">
+          <card-project :project="project" :class="project.bg"></card-project>
         </div>
       </transition-group>
     </div>
@@ -38,137 +32,128 @@
 </template>
 
 <script>
-import RainbowText from "~/components/RainbowText"
-import CardProject from "~/components/CardProject"
+import RainbowText from "~/components/RainbowText";
+import CardProject from "~/components/CardProject";
 
-import projectsData from "~/assets/projects.json"
-const projectsAll = projectsData.all
+import projectsData from "~/assets/projects.json";
+import colorKeys from "~/assets/icon-color-keys.json";
 
-const icons = projectsAll.map((val) => val.icons)
-  .reduce((acc, cur) => acc.concat(cur))
-const iconsUnique = Array.from(new Set(icons))
+import Icon from "~/components/Icon";
+import IconSelectAll from "~/assets/icons/material/check-box-multiple-outline.svg";
 
-let colorKey = {
-  "devicon-angularjs-plain": "#800000",
-  "devicon-react-original": "#ab47bc",
-  "devicon-chrome-plain": "#651fff",
-  "devicon-firefox-plain": "#3949ab",
-  "fab fa-facebook-messenger": "#2196F3",
-  "devicon-wordpress-plain": "#00bcd4",
-  "devicon-python-plain": "#4caf50",
-  "fa fa-cubes": "#749cde",
-  "fa fa-pen-alt": "#2e35ff",
-  "fab fa-hacker-news": "#ff8239",
-  "fa fa-file-pdf": "#941c2f"
-}
+const projectsAll = projectsData.all;
+
+const icons = projectsAll
+  .map(val => val.icons)
+  .reduce((acc, cur) => acc.concat(cur));
+const iconsUnique = Array.from(new Set(icons));
 
 for (let project of projectsAll) {
   const tag0 = project.icons[0];
-  project.colour = colorKey[tag0];
+  project.colour = colorKeys[tag0];
 }
 
-const FILTER_ALL = 'fa fa-star-of-life';
+const FILTER_ALL = "filter-all";
 
 export default {
+  components: {
+    "rainbow-text": RainbowText,
+    "card-project": CardProject,
+    Icon: Icon,
+    IconSelectAll: IconSelectAll
+  },
   head: {
     meta: [
-      { property:"og:image", content:"https://i.imgur.com/orqq5jB.jpg" },
-      { property:"og:title", content:"Projects - Ben Winding" },
-      { property:"og:description", content:"A web developer from Adelaide, South Australia." },
+      { property: "og:image", content: "https://i.imgur.com/orqq5jB.jpg" },
+      { property: "og:title", content: "Projects - Ben Winding" },
+      {
+        property: "og:description",
+        content: "A web developer from Adelaide, South Australia."
+      }
     ],
-    title: 'Projects'
+    title: "Projects"
   },
-  data () {
+  data() {
     return {
       currentFilter: FILTER_ALL,
-      projectsEnabled: [],
-    }
+      projectsEnabled: []
+    };
   },
   mounted() {
     this.$nextTick(() => {
-      this.addAll()
-    })
+      this.addAll();
+    });
   },
   computed: {
     iconsAll: function() {
-      return iconsUnique
-    },
+      return iconsUnique;
+    }
   },
   methods: {
     addAll() {
       let delayMs = 0;
       for (const project of projectsAll) {
         delayMs += 100;
-        if (!this.isProjectEnabled(project)) {          
+        if (!this.isProjectEnabled(project)) {
           this.addProject(project, delayMs);
         }
       }
     },
     isProjectEnabled(project) {
       for (const enabledProject of this.projectsEnabled) {
-        if (enabledProject.name == project.name)
-          return true;
+        if (enabledProject.name == project.name) return true;
       }
       return false;
     },
-    addProject (project, delayMs) {
-      if (this.isProjectEnabled(project))
-        return;
+    addProject(project, delayMs) {
+      if (this.isProjectEnabled(project)) return;
       setTimeout(() => {
         // console.log('adding: ', project)
         this.projectsEnabled.push(project);
       }, delayMs);
     },
-    removeProject (project, delayMs) {
+    removeProject(project, delayMs) {
       setTimeout(() => {
         // console.log('removing: ', project)
-        this.projectsEnabled = this.projectsEnabled.filter(item => item.name !== project.name)
+        this.projectsEnabled = this.projectsEnabled.filter(
+          item => item.name !== project.name
+        );
       }, delayMs);
     },
     clickedIcon(icon) {
       this.currentFilter = icon;
       if (this.currentFilter == FILTER_ALL) {
-        this.addAll()
+        this.addAll();
         return;
       }
 
       let delayMs = 0;
       for (const project of projectsAll) {
-        if (!project.icons.includes(this.currentFilter)) {          
+        if (!project.icons.includes(this.currentFilter)) {
           delayMs += 100;
           this.removeProject(project, delayMs);
         }
-      }       
+      }
       for (const project of projectsAll) {
-        if (project.icons.includes(this.currentFilter)) {          
+        if (project.icons.includes(this.currentFilter)) {
           delayMs += 100;
           this.addProject(project, delayMs);
         }
       }
-    },
-    getClasses(icon) {
-      let classes = icon
-      if (icon == this.currentFilter)
-        classes += ' icon-selected'
-      return classes;
     }
-  },
-  components: {
-    'rainbow-text': RainbowText,
-    'card-project': CardProject
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 $grid-gutter-width: 10px;
-@import '~/node_modules/bootstrap/scss/bootstrap.scss';
+@import "~/node_modules/bootstrap/scss/bootstrap.scss";
 
 .card-filters input {
   display: none; /* hide the default checkbox */
 }
 
 #icon {
-  background-color: #33b1eb;
+  background-color: #33b1eb3d;
   border-radius: 7px 7px 0px 0px;
   border: 0px solid grey;
   color: white;
@@ -189,7 +174,7 @@ $grid-gutter-width: 10px;
 }
 
 #icon:hover {
-  opacity: .65;
+  opacity: 0.65;
   box-shadow: 0px -5px 10px #969696;
 }
 
@@ -210,21 +195,20 @@ $grid-gutter-width: 10px;
     margin: 0px 2px 8px 2px;
   }
 
-  @media(max-width: 576px) {
+  @media (max-width: 576px) {
     div {
       width: 100%;
     }
   }
 
-  .list-enter-active, .list-leave-active {
+  .list-enter-active,
+  .list-leave-active {
     transition: all 1s;
   }
-  .list-enter, .list-leave-to {
+  .list-enter,
+  .list-leave-to {
     opacity: 0;
     transform: translateY(50%);
   }
 }
-
-
 </style>
-

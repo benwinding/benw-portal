@@ -6,10 +6,7 @@ module.exports = {
     titleTemplate: '%s - Ben Winding',
     link: [
       { name:"msapplication-TileColor", content:"#800000" },
-      { name:"theme-color", content:"#800000" },
-
-      { rel:"stylesheet", href:"/vendor/fontawesome-free-5.2.0-web/css/all.min.css" },
-      { rel:"stylesheet", href:"/vendor/devicons/devicon.min.css" },
+      { name:"theme-color", content:"#800000" }
     ]
   },
   /*
@@ -19,7 +16,8 @@ module.exports = {
 
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    'nuxt-svg-loader'
   ],
 
   icon: {

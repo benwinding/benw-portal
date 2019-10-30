@@ -1,0 +1,62 @@
+{
+  "three": {
+    "src": "icons/custom/three-js.svg",
+    "color": "#777"
+  },
+  "pdf": {
+    "src": "icons/material/file-pdf.svg",
+    "color": "red"
+  },
+  "hackernews": {
+    "src": "icons/material/hackernews.svg",
+    "color": "#ff8239"
+  },
+  "pen": {
+    "src": "icons/material/lead-pencil.svg",
+    "color": "#4b924b"
+  },
+  "angular": {
+    "src": "icons/simple/angular.svg",
+    "color": "#800000"
+  },
+  "firebase": {
+    "src": "icons/simple/firebase.svg",
+    "color": "#777"
+  },
+  "instagram": {
+    "src": "icons/simple/instagram.svg",
+    "color": "#8134af"
+  },
+  "messenger": {
+    "src": "icons/simple/messenger.svg",
+    "color": "#3680f8"
+  },
+  "chrome": {
+    "src": "icons/simple/googlechrome.svg",
+    "color": "#3949ab"
+  },
+  "firefox": {
+    "src": "icons/simple/mozillafirefox.svg",
+    "color": "#f44336"
+  },
+  "python": {
+    "src": "icons/simple/python.svg",
+    "color": "#4b924b"
+  },
+  "react": {
+    "src": "icons/simple/react.svg",
+    "color": "darkred"
+  },
+  "svelte": {
+    "src": "icons/simple/svelte.svg",
+    "color": "#aa0000"
+  },
+  "vue": {
+    "src": "icons/simple/vuejs.svg",
+    "color": "#009651"
+  },
+  "wordpress": {
+    "src": "icons/simple/wordpress.svg",
+    "color": "#00bcd4"
+  }
+}

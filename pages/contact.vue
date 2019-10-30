@@ -21,49 +21,57 @@ const social = [
     link: "mailto:hello@benwinding.com", 
     linkText: "hello@benwinding.com", 
     title: "Email!",
-    iclass: "fa fa-envelope red",
+    icon: "email",
+    iconColor: '#800000'
   },
   {
     link: "https://github.com/benwinding", 
     linkText: "github.com/benwinding", 
     title: "Github",
-    iclass: "fab fa-github purple",
+    icon: "github",
+    iconColor: 'black'
   },
   {
     link: "https://twitter.com/benwinding", 
     linkText: "twitter.com/benwinding", 
     title: "Twitter",
-    iclass: "fab fa-twitter blue",
+    icon: "twitter",
+    iconColor: '#1DA1F2'
   },
   {
     link: "https://dev.to/benwinding", 
     linkText: "dev.to/benwinding", 
     title: "Dev.to",
-    imgSrc: "https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg", 
+    icon: "devto", 
+    iconColor: 'black'
   },
   {
     link: "https://linkedin.com/in/benwinding", 
     linkText: "linkedin.com/in/benwinding", 
     title: "LinkedIn",
-    iclass: "fab fa-linkedin dark-blue",
+    icon: "linkedin",
+    iconColor: '#0073b1'
   },
   {
     link: "https://instagram.com/benwinding", 
     linkText: "instagram.com/benwinding", 
     title: "Instagram",
-    iclass: "fab fa-instagram purple",
+    icon: "instagram",
+    iconColor: 'purple'
   },
   {
     link: "tel: 0423-225-163", 
     linkText: "Call Me: 0423-225-163", 
     title: "Phone",
-    iclass: "fa fa-phone maroon",
+    icon: "phone",
+    iconColor: 'darkgreen'
   },
   {
     link: "/Ben-Winding-2019-Resume.pdf", 
     linkText: "Resume - Ben Winding", 
     title: "Resume",
-    iclass: "fa fa-user-check maroon",
+    icon: "resume",
+    iconColor: 'orange'
   },
 ]
 
@@ -78,7 +86,7 @@ export default {
   },
   components: {
     'rainbow-text': RainbowText,
-    'card-contact': CardContact
+    'card-contact': CardContact,
   },
   data() {
     return {

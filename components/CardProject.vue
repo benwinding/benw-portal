@@ -2,11 +2,11 @@
   <div class="card">
     <h5>{{ project.name }}</h5>
     <div class="icons">
-      <i v-for="(icon, index) in project.icons" :key="index" :class="icon"></i>
+      <span v-for="(iconName, index) in project.icons" :key="index">
+        <Icon id="icon" v-bind:iconName="iconName" />
+      </span>
     </div>
-    <p>
-      {{ project.tools.join(', ') }}
-    </p>
+    <p>{{ project.tools.join(', ') }}</p>
     <ul>
       <li v-if="project.deploy_link">
         <a :href="project.deploy_link">View Project</a>
@@ -21,87 +21,95 @@
         <a :href="project.presentation_link">View Presentation</a>
       </li>
     </ul>
-    <p>
-      {{ project.description }}
-    </p>
+    <p>{{ project.description }}</p>
   </div>
 </template>
 
 <script>
+import colorKeys from "~/assets/icon-color-keys.json";
+
+import Icon from "~/components/Icon";
+
 export default {
-  data () {
+  data() {
     return {
       index: 0,
-      icon: ""
-    }
+      icon: "",
+      colorKeys: colorKeys
+    };
   },
-  props: ["project"]
-}
+  props: ["project"],
+  components: {
+    Icon
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-  h5 {
-    font-size: 1.2em;
-    line-height: 150%;
-  }
-  
-  a {
-    color: white;
-    text-decoration: underline;
-  }
+h5 {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 150%;
+}
 
-  i {
-    margin-left: 10px;
-  }
+a {
+  color: inherit;
+  text-decoration: underline;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+i {
+  margin-left: 10px;
+}
 
-  li {
-    line-height: 150%;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .card {
-    border-radius: 2px;
-    color: #fff;
-    text-align: center;
-    font-size: 1em;
-    font-family: 'Lato', sans-serif;
-    transition: top .5s, left .5s; 
-    height: 100%;
-    padding: 5px;
+li {
+  line-height: 150%;
+}
 
-    padding: 10px;
-    margin: 0px;
-    width: 280px;
+.card {
+  border-radius: 2px;
+  color: inherit;
+  text-align: center;
+  font-size: 1em;
+  font-family: "Lato", sans-serif;
+  transition: top 0.5s, left 0.5s;
+  height: 100%;
+  padding: 5px;
 
-    @media(max-width: 992px) {
-      width: 220px;
-    }
+  padding: 10px;
+  margin: 0px;
+  width: 280px;
 
-    @media(max-width: 768px) {
-      width: 200px;
-    }
-
-    @media(max-width: 576px) {
-      width: 100%;
-    }
+  @media (max-width: 992px) {
+    width: 220px;
   }
 
-  .card:hover {
-    transition: box-shadow 1s, transform 1s;
-    position: relative;
-    box-shadow: 0px -5px 13px -1px #969696;
-    filter: brightness(125%);
+  @media (max-width: 768px) {
+    width: 200px;
   }
 
-  .icons {
-    margin-top: -10px;
-    margin-bottom: -8px;
-    font-size: 40px;
+  @media (max-width: 576px) {
+    width: 100%;
   }
+}
+
+.card:hover {
+  transition: box-shadow 1s, transform 1s;
+  position: relative;
+  box-shadow: 0px -5px 13px -1px #969696;
+  filter: brightness(125%);
+}
+
+.icons {
+  margin-top: -10px;
+  margin-bottom: -8px;
+  font-size: 40px;
+}
+
 </style>
 
