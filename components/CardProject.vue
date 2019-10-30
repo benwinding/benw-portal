@@ -9,7 +9,7 @@
     <p>{{ project.tools.join(', ') }}</p>
     <ul>
       <li v-if="project.deploy_link">
-        <a :href="project.deploy_link">View Project</a>
+        <a :href="project.deploy_link">Live Site</a>
       </li>
       <li v-if="project.code_link">
         <a :href="project.code_link">View Code</a>

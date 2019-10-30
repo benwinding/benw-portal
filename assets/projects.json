@@ -19,8 +19,8 @@
     {
       "name": "Wealth Visualizer",
       "description": "A high-performance website for \"Frank\" my Border Collie",
-      "code_link": "https://github.com/benwinding/frank-the-collie",
-      "deploy_link": "https://benwinding.github.io/frank-the-collie/",
+      "code_link": "https://github.com/benwinding/wealth-visualizer",
+      "deploy_link": "https://benwinding.github.io/wealth-visualizer/",
       "tools": ["VueJs, Tailwind, Three-Js"],
       "icons": ["vue", "three"]
     },
