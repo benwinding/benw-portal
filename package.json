@@ -7,10 +7,10 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "clean": "gulp clean",
+    "clean": "rimraf dist",
     "start": "nuxt",
     "generate": "nuxt generate",
-    "deploy": "gulp deploy",
+    "deploy": "dokku-pages -g dokku@benwinding.com:portal -d dist",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
@@ -27,18 +27,15 @@
     "@nuxtjs/sitemap": "^1.2.0",
     "babel-eslint": "^10.0.1",
     "del": "^3.0.0",
+    "dokku-pages": "^1.0.1",
     "eslint": "^5.16.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-vue": "^5.2.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-git": "^2.8.0",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-sequence": "^1.0.0",
-    "gulp-shell": "^0.6.5",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0"
   },
-  "resolutions": { "svgo": "1.3.0" }
+  "resolutions": {
+    "svgo": "1.3.0"
+  }
 }
