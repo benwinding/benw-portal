@@ -3,7 +3,7 @@
     :is="iconName"
     height="40"
     width="40"
-    :style="{fill: colorKeys[iconName].color}"
+    :style="{fill: colorKeys[iconName] ? colorKeys[iconName].color : '#ddd'}"
     v-on:click="$emit('click')"
   />
 </template>
@@ -30,6 +30,10 @@ import svelte from "~/assets/icons/simple/svelte.svg";
 import vue from "~/assets/icons/simple/vuejs.svg";
 import wordpress from "~/assets/icons/simple/wordpress.svg";
 
+import android from "~/assets/icons/devicons/android.svg";
+import apple from "~/assets/icons/devicons/apple.svg";
+import flutter from "~/assets/icons/devicons/flutter.svg";
+
 export default {
   props: ["iconName"],
   components: {
@@ -48,7 +52,10 @@ export default {
     react,
     svelte,
     vue,
-    wordpress
+    wordpress,
+    android,
+    apple,
+    flutter,
   },
   data() {
     return {

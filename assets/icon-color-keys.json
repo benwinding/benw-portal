@@ -58,5 +58,9 @@
   "wordpress": {
     "src": "icons/simple/wordpress.svg",
     "color": "#00bcd4"
+  },
+  "apple": {
+    "src": "icons/devicons/apple.svg",
+    "color": "#333"
   }
 }
