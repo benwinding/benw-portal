@@ -2950,10 +2950,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-dokku-pages@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/dokku-pages/-/dokku-pages-1.0.1.tgz#f053fd38337f4b3ca537a7c1e46765ddfec0d155"
-  integrity sha512-zmLCxlsSKM+4aOfrWFCrdfs29bo+qnYLm/iQEcNsHsQfD80cWZuoPpZe94HNcumFZ4H21XTgGIaa/vt+jhBmHw==
+dokku-pages@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/dokku-pages/-/dokku-pages-1.0.3.tgz#3a735dc405c23103e19a9dbcf409653b6b658056"
+  integrity sha512-/o8rxUgQoNiOrg77WosSpLe0wMHJHSiQO0LQ+/Gitgcf0JqIYKU9zPLkZ0N6ZXgs7BlnDuAwq9wEELoTlu9lhg==
   dependencies:
     chalk "^4.1.0"
     commander "5.x"

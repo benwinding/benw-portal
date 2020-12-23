@@ -10,7 +10,7 @@
     "clean": "rimraf dist",
     "start": "nuxt",
     "generate": "nuxt generate",
-    "deploy": "dokku-pages deploy -g dokku@benwinding.com:portal -d dist",
+    "deploy": "dokku-pages deploy -g dokku@benwinding.com:portal -d dist --minimal",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
@@ -27,7 +27,7 @@
     "@nuxtjs/sitemap": "^1.2.0",
     "babel-eslint": "^10.0.1",
     "del": "^3.0.0",
-    "dokku-pages": "^1.0.1",
+    "dokku-pages": "^1.0.2",
     "eslint": "^5.16.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.2",
