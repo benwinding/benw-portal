@@ -214,14 +214,30 @@
 
       function makeInitialMesh() {
         const donutRadius = DONUT_RADIUS;
-        const geometry = new THREE.TorusBufferGeometry(
-          donutRadius,
-          donutRadius / 2,
-          8,
-          20
-        );
-        const torus = new THREE.Mesh(geometry, makeMaterial());
-        return torus;
+        function makeDountMesh() {
+          const geometry = new THREE.TorusBufferGeometry(
+            donutRadius,
+            donutRadius / 2,
+            8,
+            20
+          );
+          const torus = new THREE.Mesh(geometry, makeMaterial());
+          return torus;
+        }
+
+        function makePretzelMesh() {
+          const donutRadius = DONUT_RADIUS;
+          const pretzelGeometry = new THREE.TorusKnotGeometry(
+            donutRadius,
+            donutRadius / 4,
+            80,
+            12
+          );
+          const pretzel = new THREE.Mesh(pretzelGeometry, makeMaterial());
+          pretzel.position.set(0, 0, 0);
+          return pretzel;
+        }
+        return makeDountMesh();
       }
 
       function cutMesh(meshToBeCut, cutPosition) {
