@@ -23,7 +23,7 @@
         <p>He intends to be a successful web developer, making the internet a better place for all those who use it.</p>
         <h2>Development</h2>
         <p>Github contributions (<a href="https://github.com/benwinding">source</a>)</p>
-        <img width="100%" style="margin-bottom: 10px;" src="http://ghchart.rshah.org/benwinding" alt="2016rshah's Github chart" />
+        <img width="100%" style="margin-bottom: 10px;" src="https://ghchart.rshah.org/benwinding" alt="2016rshah's Github chart" />
         <h2>Writing</h2>
         <transition-group name="list" tag="p">
           <div class="blog-item" v-for="(blog) in blogPosts" :key="blog.title">
