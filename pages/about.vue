@@ -1,9 +1,9 @@
 <template>
   <div>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" />
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/caseyscarborough/github-activity@master/src/github-activity.css"
+      href="https://cdn.jsdelivr.net/gh/caseyscarborough/github-activity@0.1.5/src/github-activity.css"
     />
     <script
       type="text/javascript"
@@ -11,8 +11,8 @@
     ></script>
     <script
       type="text/javascript"
-      src="https://cdn.jsdelivr.net/gh/caseyscarborough/github-activity@master/src/github-activity.js"
-    ></script>
+      src="https://cdn.jsdelivr.net/gh/caseyscarborough/github-activity@0.1.5/src/github-activity.js"
+    ></script> -->
     <rainbow-text text="About"></rainbow-text>
     <div class="bio-pic">
       <img class="circular" src="/images/pic.jpg" alt="selfie!" />
@@ -22,7 +22,8 @@
         <h2>Now</h2>
         <p>He intends to be a successful web developer, making the internet a better place for all those who use it.</p>
         <h2>Development</h2>
-        <div id="feed"></div>
+        <p>Github contributions (<a href="https://github.com/benwinding">source</a>)</p>
+        <img width="100%" style="margin-bottom: 10px;" src="http://ghchart.rshah.org/benwinding" alt="2016rshah's Github chart" />
         <h2>Writing</h2>
         <transition-group name="list" tag="p">
           <div class="blog-item" v-for="(blog) in blogPosts" :key="blog.title">
@@ -100,11 +101,11 @@ export default {
           console.log(error);
         });
     });
-    GitHubActivity.feed({
-      username: "benwinding",
-      selector: "#feed",
-      limit: 20 // optional
-    });
+    // GitHubActivity.feed({
+    //   username: "benwinding",
+    //   selector: "#feed",
+    //   limit: 20 // optional
+    // });
   }
 };
 </script>
