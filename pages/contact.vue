@@ -67,7 +67,7 @@ const social = [
     iconColor: 'darkgreen'
   },
   {
-    link: "/Ben-Winding-2019-Resume.pdf", 
+    link: "/Ben-Winding-2021-Resume.pdf", 
     linkText: "Resume - Ben Winding", 
     title: "Resume",
     icon: "resume",
