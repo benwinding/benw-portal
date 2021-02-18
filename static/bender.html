@@ -98,9 +98,16 @@
       </svg>
     </div>
     <div id="tinder" class="w-full h-calc-container -mb-16 flex flex-col">
-      <div class="tinder--cards"></div>
-
-      <div class="flex justify-around w-full">
+      <div class="tinder--cards">
+        <div class="absolute inset-0 flex justify-around">
+          <div class="flex flex-col justify-around">
+            <button id="more" class="p-3 m-3 bg-gray-100 shadow-md rounded-full pointer">
+              More
+            </button>
+          </div>
+        </div>    
+      </div>
+      <div class="flex justify-around w-full z-50">
         <div class="flex items-center">
           <button id="nope" class="p-3 m-3 bg-gray-100 shadow-md rounded-full">
             <svg
@@ -133,10 +140,43 @@
         </div>
       </div>
     </div>
+    <div
+      id="matched-template"
+      class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50"
+      style="transition: all 0.5s;"
+    >
+      <div class="w-full flex justify-around">
+        <div class="flex flex-col items-center">
+          <h1 class="text-4xl italic text-red-700">YOU MATCHED!</h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+            class="fill-current text-green-400"
+          >
+            <path fill="none" d="M0 0H24V24H0z" />
+            <path
+              d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      id="missed-template"
+      class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50"
+      style="transition: all 0.5s;"
+    >
+      <div class="w-full flex justify-around">
+        <h1 class="text-6xl italic text-yellow-300">MISSED A MATCH!</h1>
+      </div>
+    </div>
+
     <template id="card-template">
       <div
-      class="tinder--card bg-cover shadow-md cursor-grab absolute inline-block h-calc-card w-calc-card bg-white pb-6 rounded-xl pb-4"
-      style="background-image: url('https://benwinding.com/images/pic.jpsssg')"
+        class="tinder--card bg-cover shadow-md cursor-grab absolute inline-block h-calc-card w-calc-card bg-white pb-6 rounded-xl pb-4"
+        style="background-image: url('https://benwinding.com/images/pic.jpsssg')"
       >
         <div class="absolute left-0 bottom-0">
           <div class="m-3 flex flex-col items-start text-white">
@@ -149,6 +189,47 @@
     <script>
       "use strict";
 
+      async function timeoutAsync(ms) {
+        return new Promise(res => setTimeout(res, ms));
+      }
+
+      const ma = document.getElementById("matched-template");
+      ma.addEventListener("click", () => {
+        SetHidden(ma);
+      });
+      async function OnMatch(card) {
+        EnlargeNhide(ma);
+      }
+
+      const na = document.getElementById("missed-template");
+      na.addEventListener("click", () => {
+        SetHidden(na);
+      });
+      async function OnNope(card) {
+        EnlargeNhide(na);
+      }
+
+      function SetHidden(el) {
+        el.classList.toggle("hidden", true);
+      }
+
+      async function EnlargeNhide(t) {
+        t.classList.toggle("hidden", false);
+        t.style.pointerEvents = "none";
+        t.style.transform = "scale(1)";
+        t.style.opacity = 0;
+        await timeoutAsync(400);
+        if (t.classList.contains("hidden")) return;
+        t.style.opacity = 0.8;
+        t.style.transform = "scale(1.3)";
+        await timeoutAsync(1200);
+        if (t.classList.contains("hidden")) return;
+        t.style.transform = "scale(1)";
+        t.style.opacity = 0;
+        await timeoutAsync(900);
+        t.classList.toggle("hidden", true);
+      }
+
       const cardContainer = document.querySelector(".tinder--cards");
 
       const template = document.querySelector("#card-template");
@@ -158,14 +239,31 @@
         /* ALBUM: https://imgur.com/a/SPCDyIw */
 
         "https://i.imgur.com/TAICNsV.jpg",
-        "https://benwinding.com/images/pic.jpg",
+        "https://i.imgur.com/zvkBbY9.png",
+        "https://i.imgur.com/FUK9O9b.png",
         "https://i.imgur.com/j3AX63l.jpg",
         "https://i.imgur.com/lowWHEm.jpg",
+        "https://i.imgur.com/AbQe10i.jpg",
+        "https://i.imgur.com/ksYBeB5.jpg",
         "https://i.imgur.com/dEhZGRX.jpg",
         "https://i.imgur.com/fPAYnrT.jpg",
         "https://i.imgur.com/kpRbtok.jpg",
         "https://i.imgur.com/HDnzUz6.jpg",
-        "https://i.imgur.com/Tg2i4rz.jpg"
+        "https://i.imgur.com/Tg2i4rz.jpg",
+        "https://i.imgur.com/JoyWNuj.png",
+        "https://i.imgur.com/09QZA48.jpg",
+        "https://i.imgur.com/fcGx6bj.jpg",
+        "https://i.imgur.com/F8isPaa.jpg",
+        "https://i.imgur.com/LNhNC8s.jpg",
+        "https://i.imgur.com/xKueYSY.jpg",
+        "https://i.imgur.com/6ypx2hG.jpg",
+        "https://i.imgur.com/VS15SmD.png",
+        "https://i.imgur.com/8xnlohP.jpg",
+        "https://i.imgur.com/OiWxHwt.png",
+        "https://i.imgur.com/GKPXFJ1.jpg",
+        "https://i.imgur.com/r7PNwPv.png",
+        "https://i.imgur.com/ElBlLXq.png",
+        "https://i.imgur.com/b9azBeg.jpg"
       ];
       const names = ["Benny", "Benaloney", "Benzie", "Benjamin", "Ben", "Beno"];
       images.map(img => {
@@ -182,13 +280,16 @@
       const love = document.getElementById("love");
 
       function initCards() {
-        const newCards = document.querySelectorAll(".tinder--card:not(.removed)");
+        const newCards = document.querySelectorAll(
+          ".tinder--card:not(.removed)"
+        );
 
         newCards.forEach(function(card, index) {
           card.style.zIndex = allCards.length - index;
-          card.style.transform = `scale(${(20 - index) / 20}) translateY(-${30 * index}px)`;
+          card.style.transform = `scale(${(20 - index) / 20}) translateY(-${30 *
+            index}px)`;
           card.style.opacity = (10 - index) / 10;
-          card.style.display = index> 3 ? 'none' : 'block';
+          card.style.display = index > 3 ? "none" : "block";
         });
 
         tinderContainer.classList.add("loaded");
@@ -229,28 +330,46 @@
           tinderContainer.classList.remove("tinder_love");
           tinderContainer.classList.remove("tinder_nope");
 
+          console.log({ event });
+
           const moveOutWidth = document.body.clientWidth;
-          const keep =
-            Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
+          const isNope = event.deltaX < 80;
+          const isLove = event.deltaX > 80;
 
-          event.target.classList.toggle("removed", !keep);
-          event.target.style.transition
-          if (keep) {
-            event.target.style.transform = "";
+          const isFastMove = Math.abs(event.overallVelocity) > 0.3;
+          const shouldRemove = (isNope || isLove) && isFastMove;
+          console.log({
+            moveOutWidth,
+            isNope,
+            isLove,
+            isFastMove,
+            shouldRemove
+          });
+
+          const card = event.target;
+          card.classList.toggle("removed", shouldRemove);
+          if (!shouldRemove) {
+            card.style.transform = "";
+            return;
+          }
+          const endX = Math.max(
+            Math.abs(event.velocityX) * moveOutWidth,
+            moveOutWidth
+          );
+          const toX = event.deltaX > 0 ? endX : -endX;
+          const endY = Math.abs(event.velocityY) * moveOutWidth;
+          const toY = event.deltaY > 0 ? endY : -endY;
+          const xMulti = event.deltaX * 0.03;
+          const yMulti = event.deltaY / 80;
+          const rotate = xMulti * yMulti;
+
+          card.style.transform = `translate(${toX}px, ${toY +
+            event.deltaY}px) rotate(${rotate}deg)`;
+          initCards();
+          if (isLove) {
+            OnMatch(card);
           } else {
-            const endX = Math.max(
-              Math.abs(event.velocityX) * moveOutWidth,
-              moveOutWidth
-            );
-            const toX = event.deltaX > 0 ? endX : -endX;
-            const endY = Math.abs(event.velocityY) * moveOutWidth;
-            const toY = event.deltaY > 0 ? endY : -endY;
-            const xMulti = event.deltaX * 0.03;
-            const yMulti = event.deltaY / 80;
-            const rotate = xMulti * yMulti;
-
-            event.target.style.transform = `translate(${toX}px, ${toY + event.deltaY}px) rotate(${rotate}deg)`;
-            initCards();
+            OnNope(card);
           }
         });
       });
@@ -265,14 +384,16 @@
           if (!cards.length) return false;
 
           const card = cards[0];
-          console.log({card});
+          console.log({ card });
 
           card.classList.add("removed");
 
           if (love) {
             card.style.transform = `translate(${moveOutWidth}px, -100px) rotate(30deg) `;
+            OnMatch(card);
           } else {
             card.style.transform = `translate(-${moveOutWidth}px, -100px) rotate(-30deg) `;
+            OnNope(card);
           }
 
           initCards();
@@ -281,6 +402,11 @@
         };
       }
 
+      function reloadPage() {
+        window.location.reload();
+      }
+
+      more.addEventListener("click", reloadPage);
       nope.addEventListener("click", createButtonListener(false));
       love.addEventListener("click", createButtonListener(true));
     </script>
