@@ -14,7 +14,7 @@
     <style>
       .tinder {
         width: 100vw;
-        height: calc(100vh - 87.75px);
+        height: calc(100vh - 187.75px);
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -61,15 +61,15 @@
         cursor: grab;
       }
       .h-calc-container {
-        height: calc(100vh - 4rem);
+        height: calc(100vh - 8rem);
       }
       .h-calc-card {
-        height: calc(100vh - 12rem);
+        height: calc(100vh - 17rem);
         max-height: calc(200vw);
       }
       .w-calc-card {
         width: 100%;
-        max-width: calc(50vh);
+        max-width: calc(45vh);
       }
       .bg-filter {
         filter: contrast(0.5);
@@ -104,11 +104,14 @@
       <div class="tinder--cards">
         <div class="absolute inset-0 flex justify-around">
           <div class="flex flex-col justify-around">
-            <button id="more" class="p-3 m-3 bg-gray-100 shadow-md rounded-full pointer">
+            <button
+              id="more"
+              class="p-3 m-3 bg-gray-100 shadow-md rounded-full pointer"
+            >
               More
             </button>
           </div>
-        </div>    
+        </div>
       </div>
       <div class="flex justify-around w-full z-50">
         <div class="flex items-center">
@@ -170,7 +173,7 @@
       class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50 transition-transform-05s"
     >
       <div class="w-full flex justify-around">
-        <h1 class="text-4xl italic text-yellow-300">MISSED A MATCH!</h1>
+        <h1 class="text-3xl italic text-yellow-300">MISSED A MATCH!</h1>
       </div>
     </div>
 
@@ -238,40 +241,47 @@
 
       const images = [
         /* ALBUM: https://imgur.com/a/SPCDyIw */
-
-        "https://i.imgur.com/TAICNsV.jpg",
-        "https://i.imgur.com/zvkBbY9.png",
-        "https://i.imgur.com/FUK9O9b.png",
-        "https://i.imgur.com/j3AX63l.jpg",
-        "https://i.imgur.com/lowWHEm.jpg",
-        "https://i.imgur.com/AbQe10i.jpg",
-        "https://i.imgur.com/ksYBeB5.jpg",
-        "https://i.imgur.com/dEhZGRX.jpg",
-        "https://i.imgur.com/fPAYnrT.jpg",
-        "https://i.imgur.com/kpRbtok.jpg",
-        "https://i.imgur.com/HDnzUz6.jpg",
-        "https://i.imgur.com/Tg2i4rz.jpg",
-        "https://i.imgur.com/JoyWNuj.png",
-        "https://i.imgur.com/09QZA48.jpg",
-        "https://i.imgur.com/fcGx6bj.jpg",
-        "https://i.imgur.com/F8isPaa.jpg",
-        "https://i.imgur.com/LNhNC8s.jpg",
-        "https://i.imgur.com/xKueYSY.jpg",
-        "https://i.imgur.com/6ypx2hG.jpg",
-        "https://i.imgur.com/VS15SmD.png",
-        "https://i.imgur.com/8xnlohP.jpg",
-        "https://i.imgur.com/OiWxHwt.png",
-        "https://i.imgur.com/GKPXFJ1.jpg",
-        "https://i.imgur.com/r7PNwPv.png",
-        "https://i.imgur.com/ElBlLXq.png",
-        "https://i.imgur.com/b9azBeg.jpg"
+        
+        "https://i.imgur.com/GcC8ItE.jpg",
+        "https://i.imgur.com/659LZ9n.jpg",
+        "https://i.imgur.com/NAczBmy.jpg",
+        "https://i.imgur.com/EhrYNPB.jpg",
+        "https://i.imgur.com/uNDOtJM.jpg",
+        "https://i.imgur.com/6lPJFc2.jpg",
+        "https://i.imgur.com/kJZog7F.jpg",
+        "https://i.imgur.com/olMEdks.jpg",
+        "https://i.imgur.com/7vEZJDa.jpg",
+        "https://i.imgur.com/8khND9r.jpg",
+        "https://i.imgur.com/8My1KbB.jpg",
+        "https://i.imgur.com/MYSNz9Q.jpg",
+        "https://i.imgur.com/B2dJqh2.jpg",
+        "https://i.imgur.com/CNe3w8z.jpg",
+        "https://i.imgur.com/9IvoDug.jpg",
+        "https://i.imgur.com/xoFRfKn.jpg",
+        "https://i.imgur.com/DEapCne.jpg",
+        "https://i.imgur.com/DQzArx6.jpg",
+        "https://i.imgur.com/NoHD55S.jpg",
+        "https://i.imgur.com/oti7gVl.jpg",
+        "https://i.imgur.com/QV2WBVe.jpg",
+        "https://i.imgur.com/sfknO8S.jpg",
+        "https://i.imgur.com/ufE6mtr.jpg",
+        "https://i.imgur.com/Wldf0I1.jpg",
+        "https://i.imgur.com/xatN0ez.jpg",
       ];
-      const names = ["Benny", "Benaloney", "Benzie", "Benjamin", "Ben", "Beno"];
+      const names = [
+        "Benny",
+        "Benaloney",
+        "Benzie",
+        "Benjamin",
+        "Benji",
+        "Ben",
+        "Beno"
+      ];
       images.map(img => {
         const div = document.importNode(divTemp, true);
         div.style.backgroundImage = `url('${img}')`;
         const randNameIndex = Math.floor(Math.random() * 6) + 0;
-        div.querySelector(".name-field").innerText = names[randNameIndex];
+        // div.querySelector(".name-field").innerText = names[randNameIndex];
         cardContainer.appendChild(div);
       });
 
@@ -284,12 +294,16 @@
         const newCards = document.querySelectorAll(
           ".tinder--card:not(.removed)"
         );
+        const removedCards = document.querySelectorAll(".tinder--card.removed");
+
+        removedCards.forEach(function(card) {
+          card.style.display = "none";
+        });
 
         newCards.forEach(function(card, index) {
           card.style.zIndex = allCards.length - index;
           card.style.transform = `scale(${(20 - index) / 20}) translateY(-${30 *
             index}px)`;
-          card.style.opacity = (10 - index) / 10;
           card.style.display = index > 3 ? "none" : "block";
         });
 
@@ -366,7 +380,9 @@
 
           card.style.transform = `translate(${toX}px, ${toY +
             event.deltaY}px) rotate(${rotate}deg)`;
-          initCards();
+          setTimeout(() => {
+            initCards();
+          }, 1000);
           if (isLove) {
             OnMatch(card);
           } else {
