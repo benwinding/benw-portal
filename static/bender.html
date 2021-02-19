@@ -45,10 +45,10 @@
       }
 
       .transition-transform-1s {
-        transition: transform 1s;
+        transition: all 1s;
       }
       .transition-transform-05s {
-        transition: transform 1s;
+        transition: all 1s;
       }
 
       .moving.tinder--card {
@@ -78,6 +78,10 @@
         text-shadow: 5px 5px 30px rgba(0, 0, 0, 0.719), 1px 1px 10px black,
           3px 3px 4px black;
       }
+      #match-count {
+        width: 32px;
+        height: 32px;
+      }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/hammerjs"></script>
   </head>
@@ -85,20 +89,26 @@
   <body class="overflow-hidden">
     <div class="flex justify-between p-1 items-center shadow-md h-16">
       <img style="max-width: 164px;" src="https://i.imgur.com/ejS0YoL.png" />
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 469.333 469.333"
-        width="32"
-        height="32"
-        class="mr-2 fill-current text-red-400"
-      >
-        <path
-          d="M426.667 85.333h-64V42.667C362.667 19.135 343.521 0 320 0H42.667C19.146 0 0 19.135 0 42.667v330.667a10.67 10.67 0 0 0 6.583 9.854c1.313.552 2.709.812 4.084.812 2.771 0 5.5-1.083 7.542-3.125l82.208-82.208h6.25v42.667c0 23.531 19.146 42.667 42.667 42.667h219.583l82.208 82.208a10.664 10.664 0 0 0 7.542 3.125c1.375 0 2.771-.26 4.083-.813a10.672 10.672 0 0 0 6.583-9.854V128c0-23.531-19.145-42.667-42.666-42.667zM96 277.333a10.66 10.66 0 0 0-7.542 3.125l-67.125 67.125V42.667c0-11.76 9.563-21.333 21.333-21.333H320c11.771 0 21.333 9.573 21.333 21.333V256c0 11.76-9.563 21.333-21.333 21.333H96zm352 155.584l-67.125-67.125c-2-2-4.708-3.125-7.542-3.125h-224c-11.771 0-21.333-9.573-21.333-21.333v-42.667h192c23.521 0 42.667-19.135 42.667-42.667V106.667h64C438.438 106.667 448 116.24 448 128v304.917z"
-        />
-        <path
-          d="M209.771 85.333c-9.792 0-19.458 5.031-28.438 14.677-8.979-9.646-18.646-14.677-28.438-14.677-25.5 0-46.229 22.729-46.229 50.667 0 13.302 4.667 25.865 13.146 35.406l53.583 59.719a10.69 10.69 0 0 0 7.938 3.542 10.69 10.69 0 0 0 7.938-3.542l53.625-59.76C251.333 161.865 256 149.302 256 136c0-27.938-20.729-50.667-46.229-50.667zm17.208 71.823l-45.646 50.875-45.604-50.833C130.75 151.594 128 144.062 128 136c0-16.177 11.167-29.333 24.896-29.333 5.375 0 12.688 6.188 19.542 16.552 3.958 5.979 13.833 5.979 17.792 0 6.854-10.365 14.167-16.552 19.542-16.552 13.729 0 24.896 13.156 24.896 29.333-.001 8.062-2.751 15.594-7.689 21.156z"
-        />
-      </svg>
+      <div class="flex items-center">
+        <div
+          id="match-count"
+          class="rounded-full hidden p-2 mx-2 bg-red-300 text-white"
+        ></div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 469.333 469.333"
+          width="32"
+          height="32"
+          class="mr-2 fill-current text-red-400"
+        >
+          <path
+            d="M426.667 85.333h-64V42.667C362.667 19.135 343.521 0 320 0H42.667C19.146 0 0 19.135 0 42.667v330.667a10.67 10.67 0 0 0 6.583 9.854c1.313.552 2.709.812 4.084.812 2.771 0 5.5-1.083 7.542-3.125l82.208-82.208h6.25v42.667c0 23.531 19.146 42.667 42.667 42.667h219.583l82.208 82.208a10.664 10.664 0 0 0 7.542 3.125c1.375 0 2.771-.26 4.083-.813a10.672 10.672 0 0 0 6.583-9.854V128c0-23.531-19.145-42.667-42.666-42.667zM96 277.333a10.66 10.66 0 0 0-7.542 3.125l-67.125 67.125V42.667c0-11.76 9.563-21.333 21.333-21.333H320c11.771 0 21.333 9.573 21.333 21.333V256c0 11.76-9.563 21.333-21.333 21.333H96zm352 155.584l-67.125-67.125c-2-2-4.708-3.125-7.542-3.125h-224c-11.771 0-21.333-9.573-21.333-21.333v-42.667h192c23.521 0 42.667-19.135 42.667-42.667V106.667h64C438.438 106.667 448 116.24 448 128v304.917z"
+          />
+          <path
+            d="M209.771 85.333c-9.792 0-19.458 5.031-28.438 14.677-8.979-9.646-18.646-14.677-28.438-14.677-25.5 0-46.229 22.729-46.229 50.667 0 13.302 4.667 25.865 13.146 35.406l53.583 59.719a10.69 10.69 0 0 0 7.938 3.542 10.69 10.69 0 0 0 7.938-3.542l53.625-59.76C251.333 161.865 256 149.302 256 136c0-27.938-20.729-50.667-46.229-50.667zm17.208 71.823l-45.646 50.875-45.604-50.833C130.75 151.594 128 144.062 128 136c0-16.177 11.167-29.333 24.896-29.333 5.375 0 12.688 6.188 19.542 16.552 3.958 5.979 13.833 5.979 17.792 0 6.854-10.365 14.167-16.552 19.542-16.552 13.729 0 24.896 13.156 24.896 29.333-.001 8.062-2.751 15.594-7.689 21.156z"
+          />
+        </svg>
+      </div>
     </div>
     <div id="tinder" class="w-full h-calc-container -mb-16 flex flex-col">
       <div class="tinder--cards">
@@ -146,36 +156,38 @@
         </div>
       </div>
     </div>
-    <div
-      id="matched-template"
-      class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50 transition-transform-05s"
-    >
-      <div class="w-full flex justify-around">
-        <div class="flex flex-col items-center">
-          <h1 class="text-4xl italic text-red-700">YOU MATCHED!</h1>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="50"
-            height="50"
-            class="fill-current text-green-400"
-          >
-            <path fill="none" d="M0 0H24V24H0z" />
-            <path
-              d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"
-            />
-          </svg>
+    <template id="matched-template">
+      <div
+        class="fixed inset-0 h-screen w-screen bg-white  flex items-center z-50 transition-transform-05s"
+      >
+        <div class="w-full flex justify-around">
+          <div class="flex flex-col items-center">
+            <h1 class="text-4xl italic text-red-700">YOU MATCHED!</h1>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="50"
+              height="50"
+              class="fill-current text-green-400"
+            >
+              <path fill="none" d="M0 0H24V24H0z" />
+              <path
+                d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      id="missed-template"
-      class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50 transition-transform-05s"
-    >
-      <div class="w-full flex justify-around">
-        <h1 class="text-3xl italic text-yellow-300">MISSED A MATCH!</h1>
+    </template>
+    <template id="missed-template">
+      <div
+        class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50 transition-transform-05s"
+      >
+        <div class="w-full flex justify-around">
+          <h1 class="text-3xl italic text-yellow-300">MISSED A MATCH!</h1>
+        </div>
       </div>
-    </div>
+    </template>
 
     <template id="card-template">
       <div
@@ -197,51 +209,63 @@
         return new Promise(res => setTimeout(res, ms));
       }
 
-      const ma = document.getElementById("matched-template");
-      ma.addEventListener("click", () => {
-        SetHidden(ma);
-      });
+      function getDivFromTemplate(id) {
+        const t = document.getElementById(id);
+        const d = t.content.children[0];
+        const div = document.importNode(d, true);
+        div.addEventListener("click", () => {
+          div.classList.toggle("hidden", true);
+        });
+        document.body.appendChild(div);
+        return div;
+      }
+
+      const matchImgs = [];
+      const missImgs = [];
+
+      function IncrementMatches(card) {
+        matchImgs.push(card.getAttribute("image_src"));
+        const incr = document.getElementById("match-count");
+        incr.innerText = matchImgs.length;
+        incr.classList.toggle("hidden", false);
+        incr.classList.toggle("flex", true);
+        incr.classList.toggle("items-center", true);
+        incr.classList.toggle("justify-center", true);
+      }
+
       async function OnMatch(card) {
-        EnlargeNhide(ma);
+        const div = getDivFromTemplate("matched-template");
+        await AnimateScreen(div);
+        IncrementMatches(card);
+        div.remove();
       }
 
-      const na = document.getElementById("missed-template");
-      na.addEventListener("click", () => {
-        SetHidden(na);
-      });
       async function OnNope(card) {
-        EnlargeNhide(na);
+        const div = getDivFromTemplate("missed-template");
+        missImgs.push(card.querySelector("img").src);
+        await AnimateScreen(div);
+        div.remove();
       }
 
-      function SetHidden(el) {
-        el.classList.toggle("hidden", true);
-      }
-
-      async function EnlargeNhide(t) {
+      async function AnimateScreen(t) {
         t.classList.toggle("hidden", false);
         t.style.pointerEvents = "none";
         t.style.transform = "scale(1)";
         t.style.opacity = 0;
-        await timeoutAsync(400);
+        await timeoutAsync(300);
         if (t.classList.contains("hidden")) return;
         t.style.opacity = 0.8;
         t.style.transform = "scale(1.3)";
-        await timeoutAsync(1200);
+        await timeoutAsync(1000);
         if (t.classList.contains("hidden")) return;
         t.style.transform = "scale(1)";
         t.style.opacity = 0;
-        await timeoutAsync(900);
-        t.classList.toggle("hidden", true);
+        await timeoutAsync(1000);
       }
-
-      const cardContainer = document.querySelector(".tinder--cards");
-
-      const template = document.querySelector("#card-template");
-      const divTemp = template.content.querySelector("div");
 
       const images = [
         /* ALBUM: https://imgur.com/a/SPCDyIw */
-        
+
         "https://i.imgur.com/GcC8ItE.jpg",
         "https://i.imgur.com/659LZ9n.jpg",
         "https://i.imgur.com/NAczBmy.jpg",
@@ -266,7 +290,7 @@
         "https://i.imgur.com/sfknO8S.jpg",
         "https://i.imgur.com/ufE6mtr.jpg",
         "https://i.imgur.com/Wldf0I1.jpg",
-        "https://i.imgur.com/xatN0ez.jpg",
+        "https://i.imgur.com/xatN0ez.jpg"
       ];
       const names = [
         "Benny",
@@ -277,11 +301,15 @@
         "Ben",
         "Beno"
       ];
-      images.map(img => {
+      const cardContainer = document.querySelector(".tinder--cards");
+      const template = document.querySelector("#card-template");
+      const divTemp = template.content.querySelector("div");
+      images.map(imgUrl => {
         const div = document.importNode(divTemp, true);
-        div.style.backgroundImage = `url('${img}')`;
+        div.setAttribute("image_src", imgUrl);
+        div.style.backgroundImage = `url('${imgUrl}')`;
         const randNameIndex = Math.floor(Math.random() * 6) + 0;
-        // div.querySelector(".name-field").innerText = names[randNameIndex];
+        div.querySelector(".name-field").innerText = names[randNameIndex];
         cardContainer.appendChild(div);
       });
 
@@ -328,7 +356,7 @@
 
           const xMulti = event.deltaX * 0.03;
           const yMulti = event.deltaY / 80;
-          const rotate = xMulti * yMulti;
+          const rotate = xMulti * Math.abs(yMulti);
 
           event.target.style.transform =
             "translate(" +
@@ -351,7 +379,7 @@
           const isNope = event.deltaX < 80;
           const isLove = event.deltaX > 80;
 
-          const isFastMove = Math.abs(event.overallVelocity) > 0.3;
+          const isFastMove = Math.abs(event.overallVelocity) > 0.1;
           const shouldRemove = (isNope || isLove) && isFastMove;
           console.log({
             moveOutWidth,
