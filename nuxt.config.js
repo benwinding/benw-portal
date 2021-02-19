@@ -15,7 +15,6 @@ module.exports = {
   loading: { color: '#800000' },
 
   modules: [
-    '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     'nuxt-svg-loader'
   ],
