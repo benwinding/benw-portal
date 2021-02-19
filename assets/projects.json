@@ -1,12 +1,19 @@
 {
   "all": [
     {
-      "name": "Zoomore",
-      "description": "Turn pictures into videos",
-      "code_link": "https://github.com/benwinding/zoomore",
-      "deploy_link": "https://zoomore.benwinding.com/",
-      "tools": ["Flutter, Android, IOS, Graphics"],
-      "icons": ["flutter", "android", "apple"]
+      "name": "Command Pal",
+      "description": "The hackable command palette for the web, inspired by Visual Studio Code.",
+      "code_link": "https://github.com/benwinding/command-pal",
+      "tools": ["Javascript, Svelte, hotkeys.js, fuse.js"],
+      "icons": ["svelte"]
+    },
+    {
+      "name": "Ngext",
+      "description": "A routing framework for angular inspired by React's next.js.",
+      "code_link": "https://github.com/benwinding/ngext",
+      "article_link": "https://benwinding.github.io/ngext",
+      "tools": ["Angular, SSR, Node, File-based routing"],
+      "icons": ["angular"]
     },
     {
       "name": "Newsit",
@@ -15,14 +22,6 @@
       "deploy_link": "https://newsit.benwinding.com/",
       "tools": ["JavaScript, Bulma, Chrome, Firefox, Hacker News API"],
       "icons": ["chrome", "firefox", "hackernews"]
-    },
-    {
-      "name": "Frank The Collie",
-      "description": "A high-performance website for \"Frank\" my Border Collie",
-      "code_link": "https://github.com/benwinding/frank-the-collie",
-      "deploy_link": "https://benwinding.github.io/frank-the-collie/",
-      "tools": ["Svelte, Tailwind, Instagram API"],
-      "icons": ["angular", "instagram"]
     },
     {
       "name": "Wealth Visualizer",
@@ -42,12 +41,12 @@
       "icons": ["hackernews"]
     },
     {
-      "name": "Memebot",
-      "description": "A messenger bot which finds and sends you memes.",
-      "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
-      "deploy_link": "https://memebot.lappr.com.au",
-      "tools": ["JavaScript, GraphQL, Messenger"],
-      "icons": ["messenger"]
+      "name": "benwinding.com",
+      "description": "Ben winding's web portal, to show off him and his work!",
+      "code_link": "https://github.com/benwinding/benw-portal",
+      "deploy_link": "https://benwinding.com",
+      "tools": ["Vue, nuxt, pts.js, bootstrap"],
+      "icons": ["vue"]
     },
     {
       "name": "3D Cricket Lanes",
@@ -86,6 +85,14 @@
       "article_link": "https://blog.benwinding.com/scraping_myuni",
       "tools": ["Python, Web Scraping"],
       "icons": ["python"]
+    },
+    {
+      "name": "Frank The Collie",
+      "description": "A high-performance website for \"Frank\" my Border Collie",
+      "code_link": "https://github.com/benwinding/frank-the-collie",
+      "deploy_link": "https://benwinding.github.io/frank-the-collie/",
+      "tools": ["Svelte, Tailwind, Instagram API"],
+      "icons": ["angular", "instagram"]
     },
     {
       "name": "Outback Odyssey Site",
@@ -128,6 +135,22 @@
       "deploy_link": "https://bsc-configurator.herokuapp.com/",
       "tools": ["JavaScript, AngularJs, Three-Js"],
       "icons": ["angular", "three"]
+    },
+    {
+      "name": "Zoomore",
+      "description": "Turn pictures into videos",
+      "code_link": "https://github.com/benwinding/zoomore",
+      "deploy_link": "https://zoomore.benwinding.com/",
+      "tools": ["Flutter, Android, IOS, Graphics"],
+      "icons": ["flutter", "android", "apple"]
+    },
+    {
+      "name": "Memebot",
+      "description": "A messenger bot which finds and sends you memes.",
+      "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
+      "deploy_link": "https://memebot.lappr.com.au",
+      "tools": ["JavaScript, GraphQL, Messenger"],
+      "icons": ["messenger"]
     }
   ],
   "not_implemented": [
