@@ -44,8 +44,11 @@
         z-index: 1;
       }
 
-      .tinder--card {
-        transition: all 1s;
+      .transition-transform-1s {
+        transition: transform 1s;
+      }
+      .transition-transform-05s {
+        transition: transform 1s;
       }
 
       .moving.tinder--card {
@@ -142,8 +145,7 @@
     </div>
     <div
       id="matched-template"
-      class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50"
-      style="transition: all 0.5s;"
+      class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50 transition-transform-05s"
     >
       <div class="w-full flex justify-around">
         <div class="flex flex-col items-center">
@@ -165,17 +167,16 @@
     </div>
     <div
       id="missed-template"
-      class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50"
-      style="transition: all 0.5s;"
+      class="fixed inset-0 h-screen w-screen bg-white hidden flex items-center z-50 transition-transform-05s"
     >
       <div class="w-full flex justify-around">
-        <h1 class="text-6xl italic text-yellow-300">MISSED A MATCH!</h1>
+        <h1 class="text-4xl italic text-yellow-300">MISSED A MATCH!</h1>
       </div>
     </div>
 
     <template id="card-template">
       <div
-        class="tinder--card bg-cover shadow-md cursor-grab absolute inline-block h-calc-card w-calc-card bg-white pb-6 rounded-xl pb-4"
+        class="tinder--card transition-transform-1s bg-cover shadow-md cursor-grab absolute inline-block h-calc-card w-calc-card bg-white pb-6 rounded-xl pb-4"
         style="background-image: url('https://benwinding.com/images/pic.jpsssg')"
       >
         <div class="absolute left-0 bottom-0">
