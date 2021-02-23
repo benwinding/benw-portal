@@ -16,6 +16,14 @@
       "icons": ["angular"]
     },
     {
+      "name": "Eat The Donut",
+      "description": "A 3D game where you eat a donut!",
+      "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/eat-the-donut.html",
+      "deploy_link": "http://benwinding.com/eat-the-donut.html",
+      "tools": ["Plain JavaScript"],
+      "icons": ["javascript", "tailwind", "three"]
+    },
+    {
       "name": "Newsit",
       "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
       "code_link": "https://github.com/benwinding/newsit",
@@ -45,8 +53,8 @@
       "description": "Ben winding's web portal, to show off him and his work!",
       "code_link": "https://github.com/benwinding/benw-portal",
       "deploy_link": "https://benwinding.com",
-      "tools": ["Vue, nuxt, pts.js, bootstrap"],
-      "icons": ["vue"]
+      "tools": ["Vue, nuxt, pts.js, tailwind"],
+      "icons": ["vue", "tailwind"]
     },
     {
       "name": "3D Cricket Lanes",
@@ -135,6 +143,14 @@
       "deploy_link": "https://bsc-configurator.herokuapp.com/",
       "tools": ["JavaScript, AngularJs, Three-Js"],
       "icons": ["angular", "three"]
+    },
+    {
+      "name": "Bender",
+      "description": "A dating app to meet cool guys like me, inspired by Tinder!",
+      "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/bender.html",
+      "deploy_link": "http://benwinding.com/bender.html",
+      "tools": ["Plain JavaScript, hammer.js, tailwind.css"],
+      "icons": ["javascript", "tailwind"]
     },
     {
       "name": "Zoomore",

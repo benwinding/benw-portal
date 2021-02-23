@@ -1,32 +1,33 @@
 <template>
-  <div class="row">
-    <div class="col-12">
+  <div>
+    <div class="container">
       <rainbow-text text="Projects"></rainbow-text>
-      <div class="card-filters">
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <label>
-              <IconSelectAll
-                id="icon"
-                style="fill: black;"
-                height="40"
-                width="40"
-                v-on:click="clickedIcon('filter-all')"
-              />
-            </label>
-            <label v-for="(iconName) in iconsAll" :key="iconName">
-              <Icon id="icon" v-bind:iconName="iconName" v-on:click="clickedIcon(iconName)" />
-            </label>
-          </li>
-        </ul>
+      <div class="flex flex-wrap mb-2">
+        <label>
+          <IconSelectAll
+            class="hover:shadow-xl p-1 hover:bg-gray-700"
+            style="fill: black;"
+            height="40"
+            width="40"
+            v-on:click="clickedIcon('filter-all')"
+          />
+        </label>
+        <label class="hover:shadow-xl hover:bg-gray-700" v-for="iconName in iconsAll" :key="iconName">
+          <Icon
+            class="p-1"
+            v-bind:iconName="iconName"
+            v-on:click="clickedIcon(iconName)"
+          />
+        </label>
       </div>
     </div>
-    <div class="card-container">
-      <transition-group name="list" tag="div">
-        <div v-for="(project, index) in projectsEnabled" :key="index + project.name">
-          <card-project :project="project" :class="project.bg"></card-project>
-        </div>
-      </transition-group>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+      <div
+        v-for="(project, index) in projectsEnabled"
+        :key="index + project.name"
+      >
+        <card-project :project="project" :class="project.bg"></card-project>
+      </div>
     </div>
   </div>
 </template>
@@ -93,9 +94,8 @@ export default {
     addAll() {
       let delayMs = 0;
       for (const project of projectsAll) {
-        delayMs += 100;
         if (!this.isProjectEnabled(project)) {
-          this.addProject(project, delayMs);
+          this.addProject(project);
         }
       }
     },
@@ -107,18 +107,12 @@ export default {
     },
     addProject(project, delayMs) {
       if (this.isProjectEnabled(project)) return;
-      setTimeout(() => {
-        // console.log('adding: ', project)
-        this.projectsEnabled.push(project);
-      }, delayMs);
+      this.projectsEnabled.push(project);
     },
     removeProject(project, delayMs) {
-      setTimeout(() => {
-        // console.log('removing: ', project)
-        this.projectsEnabled = this.projectsEnabled.filter(
-          item => item.name !== project.name
-        );
-      }, delayMs);
+      this.projectsEnabled = this.projectsEnabled.filter(
+        item => item.name !== project.name
+      );
     },
     clickedIcon(icon) {
       this.currentFilter = icon;
@@ -144,71 +138,3 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-$grid-gutter-width: 10px;
-@import "~/node_modules/bootstrap/scss/bootstrap.scss";
-
-.card-filters input {
-  display: none; /* hide the default checkbox */
-}
-
-#icon {
-  background-color: #33b1eb3d;
-  border-radius: 7px 7px 0px 0px;
-  border: 0px solid grey;
-  color: white;
-  display: inline-block;
-  font-size: 40px;
-  margin-right: 8px;
-  padding: 4px;
-  position: relative;
-  text-align: center;
-  transition: transform 0.5s;
-  vertical-align: middle;
-  width: 50px;
-}
-
-#icon.icon-selected {
-  background-color: orange;
-  transform: scale(1.2) translateY(-9%);
-}
-
-#icon:hover {
-  opacity: 0.65;
-  box-shadow: 0px -5px 10px #969696;
-}
-
-.row > div {
-  margin-bottom: 10px;
-}
-
-.border {
-  margin-bottom: 15px;
-}
-
-.card-container > div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  div {
-    margin: 0px 2px 8px 2px;
-  }
-
-  @media (max-width: 576px) {
-    div {
-      width: 100%;
-    }
-  }
-
-  .list-enter-active,
-  .list-leave-active {
-    transition: all 1s;
-  }
-  .list-enter,
-  .list-leave-to {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-}
-</style>

@@ -11,12 +11,8 @@ export default {};
 </style>
 
 <style lang="scss">
-@import "~/node_modules/bootstrap/scss/bootstrap.scss";
-
 html,
-body,
-#app {
-  height: 98%;
+body {
   font-family: "Lato", sans-serif;
 }
 </style>

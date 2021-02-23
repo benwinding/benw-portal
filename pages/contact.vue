@@ -1,13 +1,11 @@
 <template>
   <div>
     <rainbow-text text="Contact"></rainbow-text>
-    <section class="card-container">
-      <transition-group name="list" tag="div">
-        <section v-for="(item) in social" :key="item.link" class="card">
-          <card-contact :item='item' />
-        </section>
-      </transition-group>
-    </section>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+      <section v-for="(item) in social" :key="item.link">
+        <card-contact :item='item' />
+      </section>
+    </div>
   </div>
 </template>
 
@@ -95,50 +93,10 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      let delayMs = 0;
       for (const item of social) {
-        delayMs += 200;
-        setTimeout(() => {
-          this.social.push(item)
-        }, delayMs);
+        this.social.push(item)
       }
     })
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-.card-container > div{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  .card {
-    padding: 20px;
-    margin: 10px;
-    width: 280px;
-    position:relative;
-
-    @media(max-width: 800px) {
-      padding: 10px;
-      margin: 5px;
-      width: 130px;      
-    }
-
-    :hover {
-      opacity: .5;
-    }
-  }
-
-  .list-enter-active, .list-leave-active {
-    transition: all 1s;
-  }
-  .list-enter, .list-leave-to {
-    opacity: 0;
-    transform: translateY(40%);
-  }
-}
-
-</style>
-

@@ -1,35 +1,22 @@
 <template>
   <div>
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/caseyscarborough/github-activity@0.1.5/src/github-activity.css"
-    />
-    <script
-      type="text/javascript"
-      src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/gh/caseyscarborough/github-activity@0.1.5/src/github-activity.js"
-    ></script> -->
     <rainbow-text text="About"></rainbow-text>
-    <div class="bio-pic">
-      <img class="circular" src="/images/pic.jpg" alt="selfie!" />
-      <div class="about-box">
-        <h2>History</h2>
-        <p>Growing up in Adelaide, South Australia. Ben began his life as a normal child, with all the prospects of becoming a contributing member of society. He's trying his best and will continue to do so.</p>
-        <h2>Now</h2>
-        <p>He intends to be a successful web developer, making the internet a better place for all those who use it.</p>
-        <h2>Development</h2>
-        <p>Github contributions (<a href="https://github.com/benwinding">source</a>)</p>
+    <div class="flex flex-col md:flex-row">
+      <img class="w-64 h-64 rounded-full border-8 border-red-900 p-1 mr-6 shadow-lg shadow-2xl" src="/images/pic.jpg" alt="selfie!" />
+      <div class="w-full">
+        <h2 class="text-2xl">History</h2>
+        <p class="mb-2">Growing up in Adelaide, South Australia. Ben began his life as a normal child, with all the prospects of becoming a contributing member of society. He's trying his best and will continue to do so.</p>
+        <h2 class="text-2xl">Now</h2>
+        <p class="mb-2">He intends to be a successful web developer, making the internet a better place for all those who use it.</p>
+        <h2 class="text-2xl">Development</h2>
+        <p class="mb-2">Github contributions (<a href="https://github.com/benwinding">source</a>)</p>
         <img width="100%" style="margin-bottom: 10px;" src="https://ghchart.rshah.org/benwinding" alt="2016rshah's Github chart" />
-        <h2>Writing</h2>
+        <h2 class="text-2xl">Writing</h2>
         <transition-group name="list" tag="p">
-          <div class="blog-item" v-for="(blog) in blogPosts" :key="blog.title">
-            <a :href="blog.link">
-              <span class="date">{{ blog.date }}</span>
-              <span class="title">{{ blog.title }}</span>
+          <div class="mb-1" v-for="(blog) in blogPosts" :key="blog.title">
+            <a class="flex flex-col" :href="blog.link">
+              <p class="-mb-2 text-gray-600 text-xs">{{ blog.date }}</p>
+              <p class="m-0 title">{{ blog.title }}</p>
             </a>
           </div>
         </transition-group>
@@ -111,62 +98,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p {
-  font-size: 18px;
-  background-color: #ffffffbb;
-}
-
-.bio-pic {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
-}
-
-.circular {
-  margin-right: 40px;
-  min-width: 250px;
-  max-width: 251px;
-  min-height: 250px;
-  max-height: 251px;
-  border-radius: 50%;
-  float: left;
-  margin-bottom: 20px;
-  border: 15px solid #800000bb;
-
-  @media (max-width: 800px) {
-    margin-right: 0px;
-  }
-}
-
-.circular:hover {
-  -ms-transform: rotate3d(0, 1, 0, 360deg);
-  -webkit-transform: rotate3d(0, 1, 0, 360deg);
-  transform: rotate3d(0, 1, 0, 360deg);
-  -webkit-transition-duration: 3s;
-  -moz-transition-duration: 3s;
-  transition-duration: 3s;
-  border: 15px solid #800000bb;
-}
-
-.blog-item {
-  margin-bottom: 4px;
-
-  .date {
-    vertical-align: middle;
-    font-size: 0.5em;
-    width: 50px;
-    display: inline-block;
-  }
-  .title {
-    vertical-align: middle;
-    font-size: 1em;
-  }
-}
-
 .list-enter-active,
 .list-leave-active {
   transition: all 1s;
@@ -174,11 +105,6 @@ p {
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(30px);
-}
-
-#feed {
-  height: 300px;
-  margin-bottom: 15px;
 }
 </style>
 

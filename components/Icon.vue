@@ -29,6 +29,7 @@ import react from "~/assets/icons/simple/react.svg";
 import svelte from "~/assets/icons/simple/svelte.svg";
 import vue from "~/assets/icons/simple/vuejs.svg";
 import wordpress from "~/assets/icons/simple/wordpress.svg";
+import tailwind from "~/assets/icons/simple/tailwindcss.svg";
 
 import android from "~/assets/icons/devicons/android.svg";
 import apple from "~/assets/icons/devicons/apple.svg";
@@ -56,6 +57,7 @@ export default {
     android,
     apple,
     flutter,
+    tailwind
   },
   data() {
     return {

@@ -37,5 +37,5 @@ jobs:
           git config --global user.name "GitHub Action"          
       - name: Deploy to Dokku! 🚀
         run: |
-          yarn generate
+          yarn build
           yarn deploy

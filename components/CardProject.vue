@@ -1,27 +1,25 @@
 <template>
-  <div class="card">
-    <h5>{{ project.name }}</h5>
-    <div class="icons">
+  <div
+    class="p-3 h-full flex items-center flex-col border-2 w-full rounded-md text-center hover:border-red-700 hover:bg-gray-700 hover:text-white"
+  >
+    <p class="text-xl font-bold">{{ project.name }}</p>
+    <div class="flex">
       <span v-for="(iconName, index) in project.icons" :key="index">
-        <Icon id="icon" v-bind:iconName="iconName" />
+        <Icon class="mx-1" v-bind:iconName="iconName" />
       </span>
     </div>
-    <p>{{ project.tools.join(', ') }}</p>
-    <ul>
-      <li v-if="project.deploy_link">
-        <a :href="project.deploy_link">Live Site</a>
-      </li>
-      <li v-if="project.code_link">
-        <a :href="project.code_link">View Code</a>
-      </li>
-      <li v-if="project.article_link">
-        <a :href="project.article_link">View Article</a>
-      </li>
-      <li v-if="project.presentation_link">
-        <a :href="project.presentation_link">View Presentation</a>
-      </li>
-    </ul>
-    <p>{{ project.description }}</p>
+    <p class="my-2">{{ project.tools.join(", ") }}</p>
+    <div class="underline flex flex-col items-center">
+      <a v-if="project.deploy_link" :href="project.deploy_link">Live Site</a>
+      <a v-if="project.code_link" :href="project.code_link">View Code</a>
+      <a v-if="project.article_link" :href="project.article_link"
+        >View Article</a
+      >
+      <a v-if="project.presentation_link" :href="project.presentation_link"
+        >View Presentation</a
+      >
+    </div>
+    <p class="mt-2 mb-0">{{ project.description }}</p>
   </div>
 </template>
 
@@ -44,72 +42,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-h5 {
-  font-size: 1.2em;
-  font-weight: bold;
-  line-height: 150%;
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-i {
-  margin-left: 10px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  line-height: 150%;
-}
-
-.card {
-  border-radius: 2px;
-  color: inherit;
-  text-align: center;
-  font-size: 1em;
-  font-family: "Lato", sans-serif;
-  transition: top 0.5s, left 0.5s;
-  height: 100%;
-  padding: 5px;
-
-  padding: 10px;
-  margin: 0px;
-  width: 280px;
-
-  @media (max-width: 992px) {
-    width: 220px;
-  }
-
-  @media (max-width: 768px) {
-    width: 200px;
-  }
-
-  @media (max-width: 576px) {
-    width: 100%;
-  }
-}
-
-.card:hover {
-  transition: box-shadow 1s, transform 1s;
-  position: relative;
-  box-shadow: 0px -5px 13px -1px #969696;
-  filter: brightness(125%);
-}
-
-.icons {
-  margin-top: -10px;
-  margin-bottom: -8px;
-  font-size: 40px;
-}
-
-</style>
-

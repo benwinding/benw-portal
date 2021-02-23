@@ -62,5 +62,13 @@
   "apple": {
     "src": "icons/devicons/apple.svg",
     "color": "#333"
+  },
+  "javascript": {
+    "src": "icons/simple/javascript.svg",
+    "color": "#ffc107"
+  },
+  "tailwind": {
+    "src": "icons/simple/tailwindcss.svg",
+    "color": "#06b6d4"
   }
 }

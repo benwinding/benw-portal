@@ -1,62 +1,60 @@
 module.exports = {
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
-    titleTemplate: '%s - Ben Winding',
+    titleTemplate: "%s - Ben Winding",
     link: [
-      { name:"msapplication-TileColor", content:"#800000" },
-      { name:"theme-color", content:"#800000" }
+      { name: "msapplication-TileColor", content: "#800000" },
+      { name: "theme-color", content: "#800000" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, maximum-scale=1"
+      }
     ]
   },
   /*
-  ** Customize the progress bar color
-  */
-  loading: { color: '#800000' },
+   ** Customize the progress bar color
+   */
+  loading: { color: "#800000" },
 
-  modules: [
-    '@nuxtjs/sitemap',
-    'nuxt-svg-loader'
-  ],
+  buildModules: ["@nuxtjs/sitemap", "nuxt-svg-loader", '@nuxtjs/tailwindcss'],
 
   icon: {
-    iconSrc: 'static/icons/icon.png'
+    iconSrc: "static/icons/icon.png"
   },
 
   manifest: {
-    name: 'Ben Winding',
-    lang: 'en',
-    background_color: '#ffffff'
+    name: "Ben Winding",
+    lang: "en",
+    background_color: "#ffffff"
   },
 
   sitemap: {
-    path: '/sitemap.xml',
-    hostname: 'https://benwinding.com',
+    path: "/sitemap.xml",
+    hostname: "https://benwinding.com",
     cacheTime: 1000 * 60 * 15,
-    gzip: true,
+    gzip: true
   },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
-    vendor: ['pts'],
+    vendor: ["pts"],
     /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
+     ** Run ESLint on save
+     */
+    extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
-        config.devtool = '#source-map';
+        config.devtool = "#source-map";
         config.module.rules.push({
-          enforce: 'pre',
+          enforce: "pre",
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          loader: "eslint-loader",
           exclude: /(node_modules)/
-        })
+        });
       }
     }
   },
-  plugins: [
-    { src: '~/plugins/pts.js', ssr: false }
-  ]
-}
-
+  plugins: [{ src: "~/plugins/pts.js", ssr: false }]
+};
