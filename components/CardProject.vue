@@ -4,7 +4,11 @@
   >
     <p class="text-xl font-bold">{{ project.name }}</p>
     <div class="flex">
-      <span v-for="(iconName, index) in project.icons" :key="index">
+      <span
+        v-for="(iconName, index) in project.icons"
+        :key="index"
+        v-on:click.stop.prevent="() => clickedIcon(iconName)"
+      >
         <Icon class="mx-1" v-bind:iconName="iconName" />
       </span>
     </div>
@@ -39,6 +43,11 @@ export default {
   props: ["project"],
   components: {
     Icon
+  },
+  methods: {
+    clickedIcon(icon) {
+      this.$emit("iconClicked", icon);
+    }
   }
 };
 </script>

@@ -2,9 +2,11 @@
   <div>
     <div class="container">
       <rainbow-text text="Projects"></rainbow-text>
+      <p class="text-xs text-gray-700">Filter Projects:</p>
       <div class="flex flex-wrap mb-2">
         <label>
           <IconSelectAll
+            :class="currentFilter === FILTER_ALL ? 'bg-blue-400' : ''"
             class="hover:shadow-xl p-1 hover:bg-gray-700"
             style="fill: black;"
             height="40"
@@ -12,7 +14,12 @@
             v-on:click="clickedIcon('filter-all')"
           />
         </label>
-        <label class="hover:shadow-xl hover:bg-gray-700" v-for="iconName in iconsAll" :key="iconName">
+        <label
+          :class="currentFilter === iconName ? 'bg-blue-400' : ''"
+          class="hover:shadow-xl hover:bg-gray-700"
+          v-for="iconName in iconsAll"
+          :key="iconName"
+        >
           <Icon
             class="p-1"
             v-bind:iconName="iconName"
@@ -21,12 +28,18 @@
         </label>
       </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
+    >
       <div
         v-for="(project, index) in projectsEnabled"
         :key="index + project.name"
       >
-        <card-project :project="project" :class="project.bg"></card-project>
+        <card-project
+          :project="project"
+          :class="project.bg"
+          v-on:iconClicked="clickedIcon($event)"
+        ></card-project>
       </div>
     </div>
   </div>
@@ -77,7 +90,8 @@ export default {
   data() {
     return {
       currentFilter: FILTER_ALL,
-      projectsEnabled: []
+      projectsEnabled: [],
+      FILTER_ALL: FILTER_ALL
     };
   },
   mounted() {
