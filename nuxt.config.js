@@ -7,9 +7,11 @@ module.exports = {
     link: [
       { name: "msapplication-TileColor", content: "#800000" },
       { name: "theme-color", content: "#800000" },
+    ],
+    meta: [
       {
         name: "viewport",
-        content: "width=device-width, initial-scale=1, maximum-scale=1"
+        content: "width=device-width, initial-scale=1.0"
       }
     ]
   },

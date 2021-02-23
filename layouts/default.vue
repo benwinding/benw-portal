@@ -4,7 +4,6 @@
     <transition name="fade" mode="out-in">
       <nuxt/>      
     </transition>
-    <background-component></background-component>
   </section> 
 </template> 
 
@@ -15,7 +14,7 @@ import Background from '~/components/Background.vue'
 export default {
   components: {
     'header-component': Header,
-    'background-component': Background
+    // 'background-component': Background
   }
 }
 </script>
