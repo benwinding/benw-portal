@@ -14,14 +14,30 @@
     </div>
     <p class="my-2">{{ project.tools.join(", ") }}</p>
     <div class="underline flex flex-col items-center">
-      <a v-if="project.deploy_link" :href="project.deploy_link">Live Site</a>
-      <a v-if="project.code_link" :href="project.code_link">View Code</a>
-      <a v-if="project.article_link" :href="project.article_link"
-        >View Article</a
-      >
-      <a v-if="project.presentation_link" :href="project.presentation_link"
-        >View Presentation</a
-      >
+      <ProjectLink
+        :href="project.deploy_link"
+        label="Live Site"
+        icon="live"
+        iconColor="blue"
+      />
+      <ProjectLink
+        :href="project.code_link"
+        label="View Code"
+        icon="github"
+        iconColor="black"
+      />
+      <ProjectLink
+        :href="project.article_link"
+        label="View Docs"
+        icon="book"
+        iconColor="maroon"
+      />
+      <ProjectLink
+        :href="project.presentation_link"
+        label="View Presentation"
+        icon="play"
+        iconColor="maroon"
+      />
     </div>
     <p class="mt-2 mb-0">{{ project.description }}</p>
   </div>
@@ -31,8 +47,13 @@
 import colorKeys from "~/assets/icon-color-keys.json";
 
 import Icon from "~/components/Icon";
+import ProjectLink from "~/components/ProjectLink";
 
 export default {
+  components: {
+    Icon,
+    ProjectLink
+  },
   data() {
     return {
       index: 0,
@@ -41,9 +62,6 @@ export default {
     };
   },
   props: ["project"],
-  components: {
-    Icon
-  },
   methods: {
     clickedIcon(icon) {
       this.$emit("iconClicked", icon);

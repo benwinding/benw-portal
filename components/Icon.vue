@@ -1,9 +1,11 @@
 <template>
   <component
     :is="iconName"
-    height="40"
-    width="40"
-    :style="{fill: colorKeys[iconName] ? colorKeys[iconName].color : '#ddd'}"
+    :height="width || 40"
+    :width="width || 40"
+    :style="{
+      fill: color || (colorKeys[iconName] ? colorKeys[iconName].color : '#ddd')
+    }"
     v-on:click="$emit('click')"
   />
 </template>
@@ -29,14 +31,19 @@ import react from "~/assets/icons/simple/react.svg";
 import svelte from "~/assets/icons/simple/svelte.svg";
 import vue from "~/assets/icons/simple/vuejs.svg";
 import wordpress from "~/assets/icons/simple/wordpress.svg";
+import github from "~/assets/icons/simple/github.svg";
 import tailwind from "~/assets/icons/simple/tailwindcss.svg";
 
 import android from "~/assets/icons/devicons/android.svg";
 import apple from "~/assets/icons/devicons/apple.svg";
 import flutter from "~/assets/icons/devicons/flutter.svg";
 
+import book from "~/assets/icons/misc/book-svgrepo-com.svg";
+import live from "~/assets/icons/misc/live-svgrepo-com.svg";
+import play from "~/assets/icons/misc/play-svgrepo-com.svg";
+
 export default {
-  props: ["iconName"],
+  props: ["iconName", "color", "width"],
   components: {
     three,
     pdf,
@@ -52,12 +59,16 @@ export default {
     python,
     react,
     svelte,
+    github,
     vue,
     wordpress,
     android,
     apple,
     flutter,
-    tailwind
+    tailwind,
+    book,
+    live,
+    play
   },
   data() {
     return {
