@@ -59,6 +59,13 @@
       "icons": ["hackernews"]
     },
     {
+      "name": "Cloud HTML 2 PDF",
+      "description": "Convert HTML to PDF efficiently using google cloud infrastructure",
+      "code_link": "https://github.com/benwinding/cloud-html2pdf",
+      "tools": ["Typescript, PDF, Puppeteer, Google Cloud Run"],
+      "icons": ["pdf", "puppeteer"]
+    },
+    {
       "name": "benwinding.com",
       "description": "Ben winding's web portal, to show off him and his work!",
       "code_link": "https://github.com/benwinding/benw-portal",
