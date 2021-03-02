@@ -58,6 +58,13 @@ const social = [
     iconColor: 'purple'
   },
   {
+    link: "https://www.npmjs.com/~benwinding", 
+    linkText: "npmjs.com/~benwinding", 
+    title: "NPM Profile",
+    icon: "npm",
+    iconColor: 'red'
+  },
+  {
     link: "tel: 0423-225-163", 
     linkText: "Call Me: 0423-225-163", 
     title: "Phone",
