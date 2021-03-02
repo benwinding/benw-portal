@@ -3680,7 +3680,7 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-dokku-pages@^1.0.7:
+dokku-pages@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/dokku-pages/-/dokku-pages-1.0.8.tgz#e6d240cf67e2e2c34407d00af455247bfcb88c7e"
   integrity sha512-6DyCOnOrXDm3LbGYN4o2mHOihXY/9iwmylhvQ1u77M3M7mfilEiX1hbYkEpxLFig7az7RDpveuob2qjBV1TH+w==

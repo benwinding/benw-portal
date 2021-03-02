@@ -16,10 +16,12 @@ import linkedin from "~/assets/icons/simple/linkedin.svg";
 import instagram from "~/assets/icons/simple/instagram.svg";
 import phone from "~/assets/icons/material/cellphone-basic.svg";
 import resume from "~/assets/icons/custom/cv.svg";
+import npm from "~/assets/icons/simple/npm.svg";
 
 export default {
   components: {
     email,
+    npm,
     github,
     twitter,
     devto,
