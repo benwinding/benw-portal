@@ -43,7 +43,7 @@
     },
     {
       "name": "Wealth Visualizer",
-      "description": "A high-performance website for \"Frank\" my Border Collie",
+      "description": "A physical visualization of money!",
       "code_link": "https://github.com/benwinding/wealth-visualizer",
       "deploy_link": "https://benwinding.github.io/wealth-visualizer/",
       "tools": ["VueJs, Tailwind, Three-Js"],
