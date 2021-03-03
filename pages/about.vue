@@ -25,18 +25,22 @@
             >source</a
           >)
         </p>
-        <img
-          width="100%"
-          style="margin-bottom: 10px;"
-          src="https://ghchart.rshah.org/benwinding"
-          alt="2016rshah's Github chart"
-        />
+        <Loading
+          v-if="!ghChartLoaded"
+          text="Loading Contributions..."
+        ></Loading>
+        <a href="https://github.com/benwinding">
+          <img
+            width="100%"
+            class="mb-3 overflow-hidden"
+            :style="{ height: !ghChartLoaded ? '0px' : 'unset' }"
+            @load="() => (ghChartLoaded = true)"
+            src="https://ghchart.rshah.org/benwinding"
+            alt="Ben Winding's Github Contributions"
+          />
+        </a>
         <h2 class="text-2xl">Writing</h2>
-        <div v-if="!col1.blogPosts" class="flex flex-col items-center py-10">
-          <div class="flex flex-col items-center">
-            <h2 class="p-4 text-xl italic">Loading...</h2>
-          </div>
-        </div>
+        <Loading v-if="!blogPosts.length" text="Loading Posts..."></Loading>
         <transition-group name="list" tag="p">
           <div class="mb-1" v-for="blog in blogPosts" :key="blog.title">
             <a class="flex flex-col" :href="blog.link">
@@ -45,50 +49,48 @@
             </a>
           </div>
         </transition-group>
-        <h2 class="text-2xl">Photos</h2>
+        <div v-if="false">
+          <h2 class="text-2xl">Photos</h2>
 
-        <div v-if="!col1.length" class="flex flex-col items-center py-10">
-          <div class="flex flex-col items-center">
-            <h2 class="p-4 text-xl italic">Loading...</h2>
-          </div>
-        </div>
+          <Loading v-if="!col1.length"></Loading>
 
-        <div class="flex mb-4">
-          <div class="w-1/3">
-            <transition-group name="list" tag="p">
-              <InstaCard
-                v-for="c in col1"
-                :key="c.url"
-                :url="c.url"
-                :caption="c.caption"
-                :urlPost="c.urlPost"
-                :isVideo="c.isVideo"
-              />
-            </transition-group>
-          </div>
-          <div class="w-1/3">
-            <transition-group name="list" tag="p">
-              <InstaCard
-                v-for="c in col2"
-                :key="c.url"
-                :url="c.url"
-                :caption="c.caption"
-                :urlPost="c.urlPost"
-                :isVideo="c.isVideo"
-              />
-            </transition-group>
-          </div>
-          <div class="w-1/3">
-            <transition-group name="list" tag="p">
-              <InstaCard
-                v-for="c in col3"
-                :key="c.url"
-                :url="c.url"
-                :caption="c.caption"
-                :urlPost="c.urlPost"
-                :isVideo="c.isVideo"
-              />
-            </transition-group>
+          <div class="flex mb-4">
+            <div class="w-1/3">
+              <transition-group name="list" tag="p">
+                <InstaCard
+                  v-for="c in col1"
+                  :key="c.url"
+                  :url="c.url"
+                  :caption="c.caption"
+                  :urlPost="c.urlPost"
+                  :isVideo="c.isVideo"
+                />
+              </transition-group>
+            </div>
+            <div class="w-1/3">
+              <transition-group name="list" tag="p">
+                <InstaCard
+                  v-for="c in col2"
+                  :key="c.url"
+                  :url="c.url"
+                  :caption="c.caption"
+                  :urlPost="c.urlPost"
+                  :isVideo="c.isVideo"
+                />
+              </transition-group>
+            </div>
+            <div class="w-1/3">
+              <transition-group name="list" tag="p">
+                <InstaCard
+                  v-for="c in col3"
+                  :key="c.url"
+                  :url="c.url"
+                  :caption="c.caption"
+                  :urlPost="c.urlPost"
+                  :isVideo="c.isVideo"
+                />
+              </transition-group>
+            </div>
           </div>
         </div>
       </div>
@@ -97,6 +99,7 @@
 </template>
 
 <script>
+import Loading from "~/components/Loading";
 import RainbowText from "~/components/RainbowText";
 import InstaCard from "~/components/InstaCard";
 import axios from "axios";
@@ -127,10 +130,12 @@ export default {
   },
   components: {
     "rainbow-text": RainbowText,
-    InstaCard: InstaCard
+    InstaCard: InstaCard,
+    Loading: Loading
   },
   data() {
     return {
+      ghChartLoaded: false,
       blogPosts: [],
       col1: [],
       col2: [],
@@ -140,7 +145,10 @@ export default {
   mounted() {
     this.$nextTick(async () => {
       try {
-        await Promise.all([this.fetchWriting(), this.fetchInstagram()]);
+        await Promise.all([
+          this.fetchWriting()
+          // this.fetchInstagram()
+        ]);
       } catch (error) {
         console.log(error);
       }
@@ -169,9 +177,11 @@ export default {
       }
     },
     async fetchInstagram() {
-      let ACCESS_TOKEN =
+      const ACCESS_TOKEN =
         "IGQVJXSm5ldG5KYklDUHU1VVNDdkZAnV0FDTU9MdzlzSjFTcXpKekExLWgzYmVsTDhGY1JuTzZAOd2ZAMUkFHTDNQd284VDAxamdtdGR6blFSR0YwaFhMSWU2eGNWUkRZAX3M4a1FtQzJMTU1pSDJZAR0hwMQZDZD";
-      let urlProfile = `https://graph.instagram.com/me/media?access_token=${ACCESS_TOKEN}&fields=media_url,media_type,caption,permalink,thumbnail_url`;
+      const urlProfile = `https://graph.instagram.com/me/media?access_token=${ACCESS_TOKEN}&fields=media_url,media_type,caption,permalink,thumbnail_url`;
+
+      const ctx = this;
 
       function getImageDesc(item) {
         const isVideo = item.media_type === "VIDEO";
@@ -189,16 +199,20 @@ export default {
         const json = res.data;
         console.log("accessing instagram api:", { res });
         const images = json.data.map(item => getImageDesc(item));
+        let delayMs = 0;
         for (let i = 0; i < images.length; i += 3) {
-          this.col1 = [...this.col1, images[i + 0]].filter(v => !!v);
-          this.col2 = [...this.col2, images[i + 1]].filter(v => !!v);
-          this.col3 = [...this.col3, images[i + 2]].filter(v => !!v);
+          delayMs += 1000;
+          setTimeout(() => {
+            images[i + 0] && ctx.col1.push(images[i + 0]);
+            images[i + 1] && ctx.col2.push(images[i + 1]);
+            images[i + 2] && ctx.col3.push(images[i + 2]);
+          }, delayMs);
         }
         console.log({
           json,
-          col1: this.col1,
-          col2: this.col2,
-          col3: this.col3
+          col1: ctx.col1,
+          col2: ctx.col2,
+          col3: ctx.col3
         });
       }
       return getData();
@@ -214,6 +228,6 @@ export default {
 }
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateX(30px);
 }
 </style>
