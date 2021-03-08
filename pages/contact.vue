@@ -65,6 +65,13 @@ const social = [
     iconColor: 'red'
   },
   {
+    link: "https://leetcode.com/ben58/", 
+    linkText: "leetcode.com/ben58", 
+    title: "Leetcode Profile",
+    icon: "leetcode",
+    iconColor: 'black'
+  },
+  {
     link: "tel: 0423-225-163", 
     linkText: "Call Me: 0423-225-163", 
     title: "Phone",

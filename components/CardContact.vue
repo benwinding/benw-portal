@@ -17,6 +17,7 @@ import instagram from "~/assets/icons/simple/instagram.svg";
 import phone from "~/assets/icons/material/cellphone-basic.svg";
 import resume from "~/assets/icons/custom/cv.svg";
 import npm from "~/assets/icons/simple/npm.svg";
+import leetcode from "~/assets/icons/misc/leetcode.svg";
 
 export default {
   components: {
@@ -28,6 +29,7 @@ export default {
     linkedin,
     instagram,
     phone,
+    leetcode,
     resume
   },
   props: {
