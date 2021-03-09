@@ -4,15 +4,7 @@
       <transition name="bounce" mode="out-in" appear>
         <div>
           <rainbow-text text="Ben Winding" :large="true"></rainbow-text>
-          <h2 class="intro">Let's build things that people 
-            <span>
-              <transition name="need">
-                <div id="need" v-show="isLoaded">need</div> 
-              </transition>
-              <transition name="want">
-                <div id="want" v-show="isLoaded">want</div>
-              </transition>
-            </span> to use...
+          <h2 class="intro">Complex solutions create complex bugs...
           </h2>
         </div>
       </transition>
