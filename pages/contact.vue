@@ -65,6 +65,13 @@ const social = [
     iconColor: 'red'
   },
   {
+    link: "https://stackoverflow.com/users/2419584/ben-winding", 
+    linkText: "stackoverflow", 
+    title: "Stack Overflow",
+    icon: "stackoverflow",
+    iconColor: 'grey'
+  },
+  {
     link: "https://leetcode.com/ben58/", 
     linkText: "leetcode.com/ben58", 
     title: "Leetcode Profile",
