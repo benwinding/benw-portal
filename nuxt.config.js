@@ -6,7 +6,23 @@ module.exports = {
     titleTemplate: "%s - Ben Winding",
     link: [
       { name: "msapplication-TileColor", content: "#800000" },
-      { name: "theme-color", content: "#800000" },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "icons/favicon_io/apple-touch-icon.png"
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "icons/favicon_io/favicon-32x32.png"
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "icons/favicon_io/favicon-16x16.png"
+      },
     ],
     meta: [
       {
@@ -15,22 +31,31 @@ module.exports = {
       }
     ]
   },
+  manifest: {
+    "name": "Ben Winding",
+    "lang": "en",
+    "icons": [
+      {
+        "src": "icons/favicon_io/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icons/favicon_io/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#800000",
+    "background_color": "#ffffff",
+    "display": "standalone"
+  },
   /*
    ** Customize the progress bar color
    */
   loading: { color: "#800000" },
 
-  buildModules: ["@nuxtjs/sitemap", "nuxt-svg-loader", '@nuxtjs/tailwindcss'],
-
-  icon: {
-    iconSrc: "static/icons/icon.png"
-  },
-
-  manifest: {
-    name: "Ben Winding",
-    lang: "en",
-    background_color: "#ffffff"
-  },
+  buildModules: ["@nuxtjs/sitemap", "nuxt-svg-loader", "@nuxtjs/tailwindcss"],
 
   sitemap: {
     path: "/sitemap.xml",
