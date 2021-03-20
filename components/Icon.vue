@@ -41,6 +41,7 @@ import flutter from "~/assets/icons/devicons/flutter.svg";
 import book from "~/assets/icons/misc/book-svgrepo-com.svg";
 import live from "~/assets/icons/misc/live-svgrepo-com.svg";
 import play from "~/assets/icons/misc/play-svgrepo-com.svg";
+import puppeteer from "~/assets/icons/misc/puppeteer.svg";
 
 export default {
   props: ["iconName", "color", "width"],
@@ -68,7 +69,8 @@ export default {
     tailwind,
     book,
     live,
-    play
+    play,
+    puppeteer
   },
   data() {
     return {

@@ -2,31 +2,12 @@
   <div>
     <div class="container">
       <rainbow-text text="Projects"></rainbow-text>
-      <p class="text-xs text-gray-700">Filter Projects:</p>
-      <div class="flex flex-wrap mb-2">
-        <label>
-          <IconSelectAll
-            :class="currentFilter === FILTER_ALL ? 'bg-blue-400' : ''"
-            class="hover:shadow-xl p-1 hover:bg-gray-700"
-            style="fill: black;"
-            height="40"
-            width="40"
-            v-on:click="clickedIcon('filter-all')"
-          />
-        </label>
-        <label
-          :class="currentFilter === iconName ? 'bg-blue-400' : ''"
-          class="hover:shadow-xl hover:bg-gray-700"
-          v-for="iconName in iconsAll"
-          :key="iconName"
-        >
-          <Icon
-            class="p-1"
-            v-bind:iconName="iconName"
-            v-on:click="clickedIcon(iconName)"
-          />
-        </label>
-      </div>
+      <projects-filter
+        v-bind:filter_all="FILTER_ALL"
+        v-bind:projects_all="projectsAll"
+        v-bind:currentfilter="currentFilter"
+        v-on:iconClicked="clickedIcon($event)"
+      ></projects-filter>
     </div>
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
@@ -48,33 +29,25 @@
 <script>
 import RainbowText from "~/components/RainbowText";
 import CardProject from "~/components/CardProject";
+import ProjectsFilter from "~/components/ProjectsFilter";
 
 import projectsData from "~/assets/projects.json";
 import colorKeys from "~/assets/icon-color-keys.json";
 
-import Icon from "~/components/Icon";
-import IconSelectAll from "~/assets/icons/material/check-box-multiple-outline.svg";
-
 const projectsAll = projectsData.all;
 
-const icons = projectsAll
-  .map(val => val.icons)
-  .reduce((acc, cur) => acc.concat(cur));
-const iconsUnique = Array.from(new Set(icons));
-
-for (let project of projectsAll) {
+projectsAll.map(project => {
   const tag0 = project.icons[0];
   project.colour = colorKeys[tag0];
-}
+});
 
 const FILTER_ALL = "filter-all";
 
 export default {
   components: {
-    "rainbow-text": RainbowText,
-    "card-project": CardProject,
-    Icon: Icon,
-    IconSelectAll: IconSelectAll
+    RainbowText,
+    CardProject,
+    ProjectsFilter
   },
   head: {
     meta: [
@@ -91,7 +64,8 @@ export default {
     return {
       currentFilter: FILTER_ALL,
       projectsEnabled: [],
-      FILTER_ALL: FILTER_ALL
+      projectsAll: projectsAll,
+      FILTER_ALL: FILTER_ALL,
     };
   },
   mounted() {
@@ -99,25 +73,19 @@ export default {
       this.addAll();
     });
   },
-  computed: {
-    iconsAll: function() {
-      return iconsUnique;
-    }
-  },
   methods: {
     addAll() {
       let delayMs = 0;
-      for (const project of projectsAll) {
+      projectsAll.map(project => {
         if (!this.isProjectEnabled(project)) {
           this.addProject(project);
         }
-      }
+      });
     },
     isProjectEnabled(project) {
-      for (const enabledProject of this.projectsEnabled) {
-        if (enabledProject.name == project.name) return true;
-      }
-      return false;
+      return this.projectsEnabled.reduce((acc, enabledProject) => {
+        return acc || enabledProject.name == project.name;
+      }, false);
     },
     addProject(project, delayMs) {
       if (this.isProjectEnabled(project)) return;
