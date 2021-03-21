@@ -1,7 +1,7 @@
 <template>
   <div>
     <rainbow-text text="Projects"></rainbow-text>
-    <div class="flex flex-col sm:flex-row">
+    <div class="flex flex-col sm:flex-row items-start">
       <div class="sm:w-64 w-full pb-2 pr-0 sm:pr-2">
         <projects-filter
           v-bind:filter_all="FILTER_ALL"
@@ -77,7 +77,6 @@ export default {
   },
   methods: {
     addAll() {
-      let delayMs = 0;
       projectsAll.map(project => {
         if (!this.isProjectEnabled(project)) {
           this.addProject(project);
@@ -89,35 +88,34 @@ export default {
         return acc || enabledProject.name == project.name;
       }, false);
     },
-    addProject(project, delayMs) {
+    addProject(project) {
       if (this.isProjectEnabled(project)) return;
       this.projectsEnabled.push(project);
     },
-    removeProject(project, delayMs) {
+    removeProject(project) {
       this.projectsEnabled = this.projectsEnabled.filter(
         item => item.name !== project.name
       );
     },
     clickedIcon(icon) {
+      const isAlreadySelected = this.currentFilter === icon;
       this.currentFilter = icon;
-      if (this.currentFilter == FILTER_ALL) {
+      if (isAlreadySelected) {
+        this.currentFilter = FILTER_ALL;
+      }
+      const isAllSelected = this.currentFilter == FILTER_ALL;
+      if (isAllSelected) {
         this.addAll();
         return;
       }
 
-      let delayMs = 0;
-      for (const project of projectsAll) {
+      projectsAll.map(project => {
         if (!project.icons.includes(this.currentFilter)) {
-          delayMs += 100;
-          this.removeProject(project, delayMs);
+          this.removeProject(project);
+        } else {
+          this.addProject(project);
         }
-      }
-      for (const project of projectsAll) {
-        if (project.icons.includes(this.currentFilter)) {
-          delayMs += 100;
-          this.addProject(project, delayMs);
-        }
-      }
+      });
     }
   }
 };

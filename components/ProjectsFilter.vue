@@ -6,28 +6,22 @@
       <filter-container label="Year"></filter-container>
       <filter-container label="Tech">
         <div class="flex flex-wrap mb-2">
-          <label>
-            <IconSelectAll
-              :class="currentfilter === filter_all ? 'bg-blue-400' : ''"
-              class="hover:shadow-xl p-1 hover:bg-gray-700"
-              style="fill: black;"
-              height="40"
-              width="40"
-              v-on:click="clickedIcon('filter-all')"
-            ></IconSelectAll>
-          </label>
-          <label
-            :class="currentfilter === iconName ? 'bg-blue-400' : ''"
-            class="hover:shadow-xl hover:bg-gray-700"
+          <projects-filter-item
+            iconName="checkall"
+            iconLabel="- All -"
+            :enabled="currentfilter === filter_all"
+            v-on:clickedIcon="clickedIcon(iconName)"
+          >
+          </projects-filter-item>
+          <projects-filter-item
             v-for="iconName in iconsAll"
             :key="iconName"
+            :iconName="iconName"
+            :iconLabel="iconName"
+            :enabled="currentfilter === iconName"
+            v-on:clickedIcon="clickedIcon(iconName)"
           >
-            <Icon
-              class="p-1"
-              v-bind:iconName="iconName"
-              v-on:click="clickedIcon(iconName)"
-            ></Icon>
-          </label>
+          </projects-filter-item>
         </div>
       </filter-container>
     </div>
@@ -36,15 +30,14 @@
 
 <script>
 import Icon from "~/components/Icon";
+import ProjectsFilterItem from "~/components/ProjectsFilterItem";
 import FilterContainer from "~/components/FilterContainer";
-import IconSelectAll from "~/assets/icons/material/check-box-multiple-outline.svg";
 
 export default {
   props: ["filter_all", "projects_all", "currentfilter"],
   components: {
-    Icon,
-    IconSelectAll,
-    FilterContainer
+    FilterContainer,
+    ProjectsFilterItem
   },
   computed: {
     iconsAll() {
@@ -56,11 +49,9 @@ export default {
         .map(val => val.icons)
         .reduce((acc, cur) => acc.concat(cur));
       const iconsUnique = Array.from(new Set(icons));
+      iconsUnique.sort();
       return iconsUnique;
     }
-  },
-  data() {
-    return {};
   },
   methods: {
     clickedIcon(iconName) {

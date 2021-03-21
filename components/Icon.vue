@@ -15,6 +15,7 @@ import colorKeys from "~/assets/icon-color-keys.json";
 
 import three from "~/assets/icons/custom/three-js.svg";
 
+import checkall from "~/assets/icons/material/check-box-multiple-outline.svg";
 import pdf from "~/assets/icons/material/file-pdf.svg";
 import hackernews from "~/assets/icons/material/hackernews.svg";
 import pen from "~/assets/icons/material/lead-pencil.svg";
@@ -70,7 +71,8 @@ export default {
     book,
     live,
     play,
-    puppeteer
+    puppeteer,
+    checkall
   },
   data() {
     return {
