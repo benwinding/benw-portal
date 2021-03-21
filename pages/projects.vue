@@ -1,26 +1,28 @@
 <template>
   <div>
-    <div class="container">
-      <rainbow-text text="Projects"></rainbow-text>
-      <projects-filter
-        v-bind:filter_all="FILTER_ALL"
-        v-bind:projects_all="projectsAll"
-        v-bind:currentfilter="currentFilter"
-        v-on:iconClicked="clickedIcon($event)"
-      ></projects-filter>
-    </div>
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
-    >
-      <div
-        v-for="(project, index) in projectsEnabled"
-        :key="index + project.name"
-      >
-        <card-project
-          :project="project"
-          :class="project.bg"
+    <rainbow-text text="Projects"></rainbow-text>
+    <div class="flex flex-col sm:flex-row">
+      <div class="sm:w-64 w-full pb-2 pr-0 sm:pr-2">
+        <projects-filter
+          v-bind:filter_all="FILTER_ALL"
+          v-bind:projects_all="projectsAll"
+          v-bind:currentfilter="currentFilter"
           v-on:iconClicked="clickedIcon($event)"
-        ></card-project>
+        ></projects-filter>
+      </div>
+      <div
+        class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
+      >
+        <div
+          v-for="(project, index) in projectsEnabled"
+          :key="index + project.name"
+        >
+          <card-project
+            :project="project"
+            :class="project.bg"
+            v-on:iconClicked="clickedIcon($event)"
+          ></card-project>
+        </div>
       </div>
     </div>
   </div>
@@ -65,7 +67,7 @@ export default {
       currentFilter: FILTER_ALL,
       projectsEnabled: [],
       projectsAll: projectsAll,
-      FILTER_ALL: FILTER_ALL,
+      FILTER_ALL: FILTER_ALL
     };
   },
   mounted() {
