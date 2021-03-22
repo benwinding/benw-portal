@@ -12,7 +12,15 @@
         <Icon class="mx-1" v-bind:iconName="iconName" />
       </span>
     </div>
-    <p class="my-2">{{ project.tools.join(", ") }}</p>
+    <div class="mt-2 text-black flex justify-around">
+      <span
+        class="px-2 rounded-xl bg-gray-400"
+        v-on:click.stop.prevent="() => clickedIcon()"
+      >
+        {{ project.year }}
+      </span>
+    </div>
+    <p class="mb-2">{{ project.tools.join(", ") }}</p>
     <div class="underline flex flex-col items-center">
       <ProjectLink
         :href="project.deploy_link"

@@ -38,11 +38,6 @@ import colorKeys from "~/assets/icon-color-keys.json";
 
 const projectsAll = projectsData.all;
 
-projectsAll.map(project => {
-  const tag0 = project.icons[0];
-  project.colour = colorKeys[tag0];
-});
-
 const FILTER_ALL = "filter-all";
 
 export default {

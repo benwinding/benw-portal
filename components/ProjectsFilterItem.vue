@@ -2,7 +2,7 @@
   <div class="w-full">
     <label
       :class="enabled ? 'bg-blue-400' : ''"
-      class="cursor-pointer hover:bg-gray-700 flex items-center"
+      class="cursor-pointer hover:bg-gray-400 flex items-center"
       v-on:click="clickedIcon()"
     >
       <Icon width="28" class="p-1" v-bind:iconName="iconName"></Icon>

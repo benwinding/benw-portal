@@ -2,6 +2,8 @@
   "all": [
     {
       "name": "Command Pal",
+      "tags": ["fun", "cli"],
+      "year": 2020,
       "description": "The hackable command palette for the web, inspired by Visual Studio Code.",
       "code_link": "https://github.com/benwinding/command-pal",
       "deploy_link": "https://benwinding.github.io/command-pal/demos/cp-advanced",
@@ -11,6 +13,8 @@
     },
     {
       "name": "Ngext",
+      "tags": ["tool", "cli"],
+      "year": 2020,
       "description": "A routing framework for angular inspired by React's next.js.",
       "code_link": "https://github.com/benwinding/ngext",
       "article_link": "https://benwinding.github.io/ngext",
@@ -19,6 +23,8 @@
     },
     {
       "name": "Eat The Donut",
+      "tags": ["fun", "3d"],
+      "year": 2021,
       "description": "A 3D game where you eat a donut!",
       "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/eat-the-donut.html",
       "deploy_link": "http://benwinding.com/eat-the-donut.html",
@@ -27,6 +33,8 @@
     },
     {
       "name": "Newsit",
+      "tags": ["hn", "extension"],
+      "year": 2018,
       "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
       "code_link": "https://github.com/benwinding/newsit",
       "deploy_link": "https://newsit.benwinding.com/",
@@ -35,6 +43,8 @@
     },
     {
       "name": "SVG 2 Clipboard",
+      "tags": ["extension"],
+      "year": 2020,
       "description": "A simple browser extension to help copy SVG's directly from the web!",
       "code_link": "https://github.com/benwinding/svg-2-clipboard",
       "deploy_link": "https://chrome.google.com/webstore/detail/svg-2-clipboard/pacmblooebolmbakblffejfmhmnojece",
@@ -43,6 +53,8 @@
     },
     {
       "name": "Wealth Visualizer",
+      "tags": ["fun", "3d"],
+      "year": 2020,
       "description": "A physical visualization of money!",
       "code_link": "https://github.com/benwinding/wealth-visualizer",
       "deploy_link": "https://benwinding.github.io/wealth-visualizer/",
@@ -51,6 +63,8 @@
     },
     {
       "name": "YComments",
+      "tags": ["hn", "library"],
+      "year": 2018,
       "description": "Embedded discussions from Hacker News",
       "code_link": "https://github.com/benwinding/ycomments",
       "deploy_link": "https://ycomments.benwinding.com/",
@@ -60,13 +74,17 @@
     },
     {
       "name": "Cloud HTML 2 PDF",
+      "tags": ["cloud"],
+      "year": 2019,
       "description": "Convert HTML to PDF efficiently using google cloud infrastructure",
       "code_link": "https://github.com/benwinding/cloud-html2pdf",
       "tools": ["Typescript, PDF, Puppeteer, Google Cloud Run"],
-      "icons": ["pdf", "puppeteer"]
+      "icons": ["pdf", "puppeteer", "docker"]
     },
     {
       "name": "benwinding.com",
+      "tags": ["fun"],
+      "year": 2018,
       "description": "Ben winding's web portal, to show off him and his work!",
       "code_link": "https://github.com/benwinding/benw-portal",
       "deploy_link": "https://benwinding.com",
@@ -75,6 +93,8 @@
     },
     {
       "name": "3D Cricket Lanes",
+      "tags": ["fun"],
+      "year": 2017,
       "description": "A 3D demo of a cricket lane system, form Quin's Sport's Nets",
       "deploy_link": "https://benwinding.github.io/CricketNet-Demo/",
       "code_link": "https://github.com/benwinding/CricketNet-Demo",
@@ -83,6 +103,8 @@
     },
     {
       "name": "Bootleg Wakeboarding Event",
+      "tags": ["fun"],
+      "year": 2017,
       "description": "A 3D demo showcasing wakeboarding obstacles",
       "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
       "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
@@ -91,6 +113,8 @@
     },
     {
       "name": "My Blog",
+      "tags": ["fun"],
+      "year": 2018,
       "description": "Checkout my blog, where I speak my mind",
       "deploy_link": "https://blog.benwinding.com/",
       "tools": ["JavaScript, Hexo, Static Site"],
@@ -98,6 +122,8 @@
     },
     {
       "name": "Formzy",
+      "tags": ["fun"],
+      "year": 2017,
       "description": "A automated PDF filler, for the Solar Industry",
       "deploy_link": "https://formzy.herokuapp.com/",
       "tools": ["NodeJs, PDFs"],
@@ -105,6 +131,8 @@
     },
     {
       "name": "Canvas Scraper",
+      "tags": ["fun"],
+      "year": 2018,
       "description": "Download all files from a specific course on the MyUni system.",
       "code_link": "https://github.com/benwinding/myuni-dl",
       "article_link": "https://blog.benwinding.com/scraping_myuni",
@@ -113,6 +141,8 @@
     },
     {
       "name": "Frank The Collie",
+      "tags": ["fun"],
+      "year": 2019,
       "description": "A high-performance website for \"Frank\" my Border Collie",
       "code_link": "https://github.com/benwinding/frank-the-collie",
       "deploy_link": "https://benwinding.github.io/frank-the-collie/",
@@ -121,6 +151,8 @@
     },
     {
       "name": "Outback Odyssey Site",
+      "tags": ["fun"],
+      "year": 2017,
       "description": "An event website for an annual car adventure for charity.",
       "deploy_link": "https://ozoutbackodyssey.com.au",
       "tools": ["Wordpress"],
@@ -128,6 +160,8 @@
     },
     {
       "name": "Rachel Darling's Site",
+      "tags": ["fun"],
+      "year": 2016,
       "description": "A portfolio website for a talented artist.",
       "deploy_link": "https://rachelkatedarling.com",
       "tools": ["Wordpress"],
@@ -135,6 +169,8 @@
     },
     {
       "name": "Kova Engineering Site",
+      "tags": ["fun"],
+      "year": 2014,
       "description": "An engineering firm in Vancouver, Canada.",
       "deploy_link": "http://kova.com/",
       "tools": ["Wordpress"],
@@ -142,6 +178,8 @@
     },
     {
       "name": "Down Subs",
+      "tags": ["fun"],
+      "year": 2018,
       "description": "Search videos from youtube, by text in the subtitles",
       "deploy_link": "https://github.com/benwinding/down-subs",
       "tools": ["Python, Shell"],
@@ -149,6 +187,8 @@
     },
     {
       "name": "Seeing Sarawak Site",
+      "tags": ["fun"],
+      "year": 2017,
       "description": "Travel blog, created for my sister",
       "code_link": "https://seeingsarawak.com/",
       "tools": ["Wordpress"],
@@ -156,6 +196,8 @@
     },
     {
       "name": "BSC Shed Maker",
+      "tags": ["fun"],
+      "year": 2017,
       "description": "A configurator for shed's that run's in the browser",
       "deploy_link": "https://bsc-configurator.herokuapp.com/",
       "tools": ["JavaScript, AngularJs, Three-Js"],
@@ -163,6 +205,8 @@
     },
     {
       "name": "Bender",
+      "tags": ["fun"],
+      "year": 2021,
       "description": "A dating app to meet cool guys like me, inspired by Tinder!",
       "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/bender.html",
       "deploy_link": "http://benwinding.com/bender.html",
@@ -171,6 +215,8 @@
     },
     {
       "name": "Zoomore",
+      "tags": ["fun"],
+      "year": 2021,
       "description": "Turn pictures into videos",
       "code_link": "https://github.com/benwinding/zoomore",
       "deploy_link": "https://zoomore.benwinding.com/",
@@ -179,6 +225,8 @@
     },
     {
       "name": "Memebot",
+      "tags": ["fun"],
+      "year": 2017,
       "description": "A messenger bot which finds and sends you memes.",
       "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
       "deploy_link": "https://memebot.lappr.com.au",
@@ -189,6 +237,8 @@
   "not_implemented": [
     {
       "name": "History",
+      "tags": ["fun"],
+      "year": 2019,
       "description": "A historical view of THIS website, all versions captured",
       "deploy_link": "https://history.benwinding.com/",
       "tools": ["JavaScript, Shell"],

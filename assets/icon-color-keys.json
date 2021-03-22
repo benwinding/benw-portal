@@ -70,5 +70,9 @@
   "tailwind": {
     "src": "icons/simple/tailwindcss.svg",
     "color": "#06b6d4"
+  },
+  "checkall": {
+    "src": "icons/material/check-box-multiple-outline.svg",
+    "color": "#222222"
   }
 }

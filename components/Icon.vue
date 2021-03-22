@@ -43,11 +43,14 @@ import book from "~/assets/icons/misc/book-svgrepo-com.svg";
 import live from "~/assets/icons/misc/live-svgrepo-com.svg";
 import play from "~/assets/icons/misc/play-svgrepo-com.svg";
 import puppeteer from "~/assets/icons/misc/puppeteer.svg";
+import plus from "~/assets/icons/misc/plus.svg";
+import docker from "~/assets/icons/devicons/docker.svg";
 
 export default {
   props: ["iconName", "color", "width"],
   components: {
     three,
+    docker,
     pdf,
     hackernews,
     pen,
@@ -72,7 +75,8 @@ export default {
     live,
     play,
     puppeteer,
-    checkall
+    checkall,
+    plus
   },
   data() {
     return {
