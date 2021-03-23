@@ -1,5 +1,3 @@
-import * as data from "./projects.json";
-
 interface Project {
   name: string;
   description: string;
@@ -13,10 +11,10 @@ interface Project {
   icons?: string[];
 }
 
-const projectsAll = data.all as Project[];
-projectsAll.sort((a, b) => b.year - a.year);
-
 export function GetProjectsAll() {
+  const data = require('./projects.json');
+  const projectsAll = data.all as Project[];
+  // projectsAll.sort((a, b) => b.year - a.year)
   return projectsAll;
 }
 
@@ -31,7 +29,7 @@ export function FilterProjects(
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size;
   if (HasNoFilters) {
-    return projectsAll;
+    return GetProjectsAll();
   }
 
   function MatchItem(p: Project): boolean {
@@ -46,6 +44,6 @@ export function FilterProjects(
     }
     return false;
   }
-  const projectsFiltered = projectsAll.filter(p => MatchItem(p));
+  const projectsFiltered = GetProjectsAll().filter(p => MatchItem(p));
   return projectsFiltered;
 }

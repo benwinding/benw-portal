@@ -47,6 +47,10 @@
     "src": "icons/simple/react.svg",
     "color": "darkred"
   },
+  "flutter": {
+    "src": "icons/simple/devicons.svg",
+    "color": "#3fb6d3"
+  },
   "svelte": {
     "src": "icons/simple/svelte.svg",
     "color": "#aa0000"

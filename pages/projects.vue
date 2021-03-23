@@ -8,6 +8,14 @@
           :projectsall="projectsAll"
           v-on:filterChanged="filterChanged($event)"
         ></projects-filter>
+        <projects-order
+          :projectsall="projectsAll"
+          v-on:orderChanged="filterChanged($event)"
+        ></projects-order>
+        <projects-group
+          :projectsall="projectsAll"
+          v-on:orderChanged="filterChanged($event)"
+        ></projects-group>
       </div>
       <div
         class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
@@ -16,7 +24,10 @@
           v-for="(project, index) in projectsEnabled"
           :key="index + project.name"
         >
-          <card-project :project="project" :class="project.bg"></card-project>
+          <card-project
+            :key="index + project.name"
+            :project="project"
+          ></card-project>
         </div>
       </div>
     </div>
@@ -28,18 +39,19 @@ import RainbowText from "~/components/RainbowText";
 import {
   CardProject,
   ProjectsFilter,
+  ProjectsOrder,
+  ProjectsGroup,
   GetProjectsAll,
-  FilterProjects,
-  FILTER_ALL
+  FilterProjects
 } from "~/components/projects";
-
-const projectsAll = GetProjectsAll();
 
 export default {
   components: {
     RainbowText,
     CardProject,
-    ProjectsFilter
+    ProjectsFilter,
+    ProjectsOrder,
+    ProjectsGroup
   },
   head: {
     meta: [
@@ -54,16 +66,14 @@ export default {
   },
   data() {
     return {
-      currentFilter: FILTER_ALL,
-      projectsEnabled: projectsAll,
-      projectsAll: projectsAll,
-      FILTER_ALL: FILTER_ALL
+      projectsEnabled: GetProjectsAll(),
+      projectsAll: GetProjectsAll()
     };
   },
   methods: {
     filterChanged(filterObj) {
       const { years, tags, icons } = filterObj;
-      this.projectsEnabled = FilterProjects(years, tags, icons)
+      // this.projectsEnabled = FilterProjects(years, tags, icons);
     }
   }
 };

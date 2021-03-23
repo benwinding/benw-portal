@@ -1,11 +1,6 @@
 <template>
-  <a
-    v-if="href"
-    :href="href"
-    class="flex items-center"
-    target="_blank"
-  >
-    <Icon class="mr-2" :iconName="icon" :color="iconColor" width="20" />
+  <a v-if="href" :href="href" class="flex items-center" target="_blank">
+    <Icon class="mr-2" :iconName="iconName" :color="iconColor" width="20" />
     <span>{{ label }}</span>
   </a>
 </template>
@@ -17,6 +12,6 @@ export default {
   components: {
     Icon
   },
-  props: ["href", "label", "icon", "iconColor"]
+  props: ["href", "label", "iconName", "iconColor"]
 };
 </script>
