@@ -22,7 +22,7 @@ module.exports = {
         type: "image/png",
         sizes: "16x16",
         href: "icons/favicon_io/favicon-16x16.png"
-      },
+      }
     ],
     meta: [
       {
@@ -32,30 +32,35 @@ module.exports = {
     ]
   },
   manifest: {
-    "name": "Ben Winding",
-    "lang": "en",
-    "icons": [
+    name: "Ben Winding",
+    lang: "en",
+    icons: [
       {
-        "src": "icons/favicon_io/android-chrome-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
+        src: "icons/favicon_io/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png"
       },
       {
-        "src": "icons/favicon_io/android-chrome-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
+        src: "icons/favicon_io/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png"
       }
     ],
-    "theme_color": "#800000",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    theme_color: "#800000",
+    background_color: "#ffffff",
+    display: "standalone"
   },
   /*
    ** Customize the progress bar color
    */
   loading: { color: "#800000" },
 
-  buildModules: ["@nuxtjs/sitemap", "nuxt-svg-loader", "@nuxtjs/tailwindcss"],
+  buildModules: [
+    "@nuxtjs/sitemap",
+    "nuxt-svg-loader",
+    "@nuxtjs/tailwindcss",
+    "@nuxt/typescript-build"
+  ],
 
   sitemap: {
     path: "/sitemap.xml",

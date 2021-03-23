@@ -55,7 +55,7 @@
 import colorKeys from "~/assets/icon-color-keys.json";
 
 import Icon from "~/components/Icon";
-import ProjectLink from "~/components/ProjectLink";
+import ProjectLink from "./ProjectLink";
 
 export default {
   components: {

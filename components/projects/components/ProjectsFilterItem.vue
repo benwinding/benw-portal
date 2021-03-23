@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     clickedIcon() {
-      this.$emit("clickedIcon", this.iconName);
+      this.$emit("clickedItem", this.iconName);
     }
   }
 };

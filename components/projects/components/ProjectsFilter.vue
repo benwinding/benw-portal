@@ -8,6 +8,7 @@
             v-for="tag in tagsAll"
             :key="tag"
             :iconLabel="tag"
+            v-on:clickedItem="clickedTag(tag)"
           >
           </projects-filter-tag>
         </div>
@@ -19,6 +20,7 @@
             :key="year"
             iconName="plus"
             :iconLabel="year"
+            v-on:clickedItem="clickedYear(year)"
           >
           </projects-filter-item>
         </div>
@@ -27,9 +29,9 @@
         <div class="flex flex-col">
           <projects-filter-item
             iconName="checkall"
-            :iconLabel="filter_all"
-            :enabled="currentfilter === filter_all"
-            v-on:clickedIcon="clickedIcon(filter_all)"
+            :iconLabel="filterall"
+            :enabled="currentfilter === filterall"
+            v-on:clickedItem="clickedIcon(filterall)"
           >
           </projects-filter-item>
           <projects-filter-item
@@ -38,7 +40,7 @@
             :iconName="iconName"
             :iconLabel="iconName"
             :enabled="currentfilter === iconName"
-            v-on:clickedIcon="clickedIcon(iconName)"
+            v-on:clickedItem="clickedIcon(iconName)"
           >
           </projects-filter-item>
         </div>
@@ -49,20 +51,27 @@
 
 <script>
 import Icon from "~/components/Icon";
-import ProjectsFilterItem from "~/components/ProjectsFilterItem";
-import ProjectsFilterTag from "~/components/ProjectsFilterTag";
-import FilterContainer from "~/components/FilterContainer";
+import ProjectsFilterItem from "./ProjectsFilterItem";
+import ProjectsFilterTag from "./ProjectsFilterTag";
+import FilterContainer from "./FilterContainer";
 
 export default {
-  props: ["filter_all", "projects_all", "currentfilter"],
+  props: ["filterall", "projectsall", "currentfilter"],
   components: {
     FilterContainer,
     ProjectsFilterItem,
-    ProjectsFilterTag
+    ProjectsFilterTag,
+  },
+  data() {
+    return {
+      selectedYears: new Set(),
+      selectedTags: new Set(),
+      selectedIcons: new Set(),
+    }
   },
   computed: {
     projectsAllSafe() {
-      const all = this.projects_all;
+      const all = this.projectsall;
       if (!all || !all.length) {
         return [];
       }
@@ -71,7 +80,7 @@ export default {
     iconsAll() {
       const icons = this.projectsAllSafe
         .map(val => val.icons)
-        .reduce((acc, cur) => acc.concat(cur));
+        .reduce((acc, cur) => acc.concat(cur), []);
       const iconsUnique = Array.from(new Set(icons));
       iconsUnique.sort();
       return iconsUnique;
@@ -86,15 +95,39 @@ export default {
     tagsAll() {
       const tags = this.projectsAllSafe
         .map(val => val.tags)
-        .reduce((acc, cur) => acc.concat(cur));
+        .reduce((acc, cur) => acc.concat(cur), []);
       const tagsUnique = Array.from(new Set(tags));
       tagsUnique.sort();
       return tagsUnique;
     }
   },
   methods: {
+    toggle(inputSet, inputVal) {
+      if (inputSet.has(inputVal)) {
+        inputSet.delete(inputVal);
+      } else {
+        inputSet.add(inputVal);
+      }
+    },
     clickedIcon(iconName) {
-      this.$emit("iconClicked", iconName);
+      this.toggle(this.selectedIcons, iconName)
+      this.emitChanged()
+    },
+    clickedYear(year) {
+      this.toggle(this.selectedYears, year)
+      this.emitChanged()
+    },
+    clickedTag(tag) {
+      this.toggle(this.selectedTags, tag)
+      this.emitChanged()
+    },
+    emitChanged() {
+      const filterChangedEvent = {
+        years: Array.from(this.selectedYears),
+        tags: Array.from(this.selectedTags),
+        icons: Array.from(this.selectedIcons),
+      }
+      this.$emit("filterChanged", filterChangedEvent);
     }
   }
 };

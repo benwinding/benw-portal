@@ -8,7 +8,7 @@
       "code_link": "https://github.com/benwinding/command-pal",
       "deploy_link": "https://benwinding.github.io/command-pal/demos/cp-advanced",
       "article_link": "https://benwinding.github.io/command-pal/docs",
-      "tools": ["Javascript, Svelte, hotkeys.js, fuse.js"],
+      "tools": ["Javascript", "Svelte", "hotkeys.js", "fuse.js"],
       "icons": ["svelte"]
     },
     {
@@ -18,7 +18,7 @@
       "description": "A routing framework for angular inspired by React's next.js.",
       "code_link": "https://github.com/benwinding/ngext",
       "article_link": "https://benwinding.github.io/ngext",
-      "tools": ["Angular, SSR, Node, File-based routing"],
+      "tools": ["Angular", "SSR", "Node", "File-based routing"],
       "icons": ["angular"]
     },
     {
@@ -38,7 +38,7 @@
       "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
       "code_link": "https://github.com/benwinding/newsit",
       "deploy_link": "https://newsit.benwinding.com/",
-      "tools": ["JavaScript, Bulma, Chrome, Firefox, Hacker News API"],
+      "tools": ["JavaScript", "Bulma", "Chrome", "Firefox", "Hacker News API"],
       "icons": ["chrome", "firefox", "hackernews"]
     },
     {
@@ -48,7 +48,7 @@
       "description": "A simple browser extension to help copy SVG's directly from the web!",
       "code_link": "https://github.com/benwinding/svg-2-clipboard",
       "deploy_link": "https://chrome.google.com/webstore/detail/svg-2-clipboard/pacmblooebolmbakblffejfmhmnojece",
-      "tools": ["JavaScript, SVG, Chrome, Firefox"],
+      "tools": ["JavaScript", "SVG", "Chrome", "Firefox"],
       "icons": ["chrome", "firefox"]
     },
     {
@@ -58,7 +58,7 @@
       "description": "A physical visualization of money!",
       "code_link": "https://github.com/benwinding/wealth-visualizer",
       "deploy_link": "https://benwinding.github.io/wealth-visualizer/",
-      "tools": ["VueJs, Tailwind, Three-Js"],
+      "tools": ["VueJs", "Tailwind", "Three-Js"],
       "icons": ["vue", "three"]
     },
     {
@@ -69,7 +69,7 @@
       "code_link": "https://github.com/benwinding/ycomments",
       "deploy_link": "https://ycomments.benwinding.com/",
       "article_link": "https://blog.benwinding.com/why-i-made-ycomments/",
-      "tools": ["JavaScript, Bulma, Chrome, Firefox"],
+      "tools": ["JavaScript", "Bulma", "Chrome", "Firefox"],
       "icons": ["hackernews"]
     },
     {
@@ -78,7 +78,7 @@
       "year": 2019,
       "description": "Convert HTML to PDF efficiently using google cloud infrastructure",
       "code_link": "https://github.com/benwinding/cloud-html2pdf",
-      "tools": ["Typescript, PDF, Puppeteer, Google Cloud Run"],
+      "tools": ["Typescript", "PDF", "Puppeteer", "Google Cloud Run"],
       "icons": ["pdf", "puppeteer", "docker"]
     },
     {
@@ -88,7 +88,7 @@
       "description": "Ben winding's web portal, to show off him and his work!",
       "code_link": "https://github.com/benwinding/benw-portal",
       "deploy_link": "https://benwinding.com",
-      "tools": ["Vue, nuxt, pts.js, tailwind"],
+      "tools": ["Vue", "nuxt", "pts.js", "tailwind"],
       "icons": ["vue", "tailwind"]
     },
     {
@@ -98,7 +98,7 @@
       "description": "A 3D demo of a cricket lane system, form Quin's Sport's Nets",
       "deploy_link": "https://benwinding.github.io/CricketNet-Demo/",
       "code_link": "https://github.com/benwinding/CricketNet-Demo",
-      "tools": ["JavaScript, React, Three-Js"],
+      "tools": ["JavaScript", "React", "Three-Js"],
       "icons": ["react", "three"]
     },
     {
@@ -108,7 +108,7 @@
       "description": "A 3D demo showcasing wakeboarding obstacles",
       "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
       "deploy_link": "https://benwinding.github.io/angular2-wakepark-teaser/#/parkPreview",
-      "tools": ["JavaScript, AngularJs, Three-Js"],
+      "tools": ["JavaScript", "AngularJs", "Three-Js"],
       "icons": ["angular", "three"]
     },
     {
@@ -117,7 +117,7 @@
       "year": 2018,
       "description": "Checkout my blog, where I speak my mind",
       "deploy_link": "https://blog.benwinding.com/",
-      "tools": ["JavaScript, Hexo, Static Site"],
+      "tools": ["JavaScript", "Hexo", "Static Site"],
       "icons": ["pen"]
     },
     {
@@ -126,7 +126,7 @@
       "year": 2017,
       "description": "A automated PDF filler, for the Solar Industry",
       "deploy_link": "https://formzy.herokuapp.com/",
-      "tools": ["NodeJs, PDFs"],
+      "tools": ["NodeJs", "PDFs"],
       "icons": ["pdf"]
     },
     {
@@ -136,7 +136,7 @@
       "description": "Download all files from a specific course on the MyUni system.",
       "code_link": "https://github.com/benwinding/myuni-dl",
       "article_link": "https://blog.benwinding.com/scraping_myuni",
-      "tools": ["Python, Web Scraping"],
+      "tools": ["Python", "Web Scraping"],
       "icons": ["python"]
     },
     {
@@ -146,7 +146,7 @@
       "description": "A high-performance website for \"Frank\" my Border Collie",
       "code_link": "https://github.com/benwinding/frank-the-collie",
       "deploy_link": "https://benwinding.github.io/frank-the-collie/",
-      "tools": ["Svelte, Tailwind, Instagram API"],
+      "tools": ["Svelte", "Tailwind", "Instagram API"],
       "icons": ["angular", "instagram"]
     },
     {
@@ -182,7 +182,7 @@
       "year": 2018,
       "description": "Search videos from youtube, by text in the subtitles",
       "deploy_link": "https://github.com/benwinding/down-subs",
-      "tools": ["Python, Shell"],
+      "tools": ["Python", "Shell"],
       "icons": ["python"]
     },
     {
@@ -200,7 +200,7 @@
       "year": 2017,
       "description": "A configurator for shed's that run's in the browser",
       "deploy_link": "https://bsc-configurator.herokuapp.com/",
-      "tools": ["JavaScript, AngularJs, Three-Js"],
+      "tools": ["JavaScript", "AngularJs", "Three-Js"],
       "icons": ["angular", "three"]
     },
     {
@@ -210,7 +210,7 @@
       "description": "A dating app to meet cool guys like me, inspired by Tinder!",
       "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/bender.html",
       "deploy_link": "http://benwinding.com/bender.html",
-      "tools": ["Plain JavaScript, hammer.js, tailwind.css"],
+      "tools": ["Plain JavaScript", "hammer.js", "tailwind.css"],
       "icons": ["javascript", "tailwind"]
     },
     {
@@ -220,7 +220,7 @@
       "description": "Turn pictures into videos",
       "code_link": "https://github.com/benwinding/zoomore",
       "deploy_link": "https://zoomore.benwinding.com/",
-      "tools": ["Flutter, Android, IOS, Graphics"],
+      "tools": ["Flutter", "Android", "IOS", "Graphics"],
       "icons": ["flutter", "android", "apple"]
     },
     {
@@ -230,7 +230,7 @@
       "description": "A messenger bot which finds and sends you memes.",
       "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
       "deploy_link": "https://memebot.lappr.com.au",
-      "tools": ["JavaScript, GraphQL, Messenger"],
+      "tools": ["JavaScript", "GraphQL", "Messenger"],
       "icons": ["messenger"]
     }
   ],
@@ -241,7 +241,7 @@
       "year": 2019,
       "description": "A historical view of THIS website, all versions captured",
       "deploy_link": "https://history.benwinding.com/",
-      "tools": ["JavaScript, Shell"],
+      "tools": ["JavaScript", "Shell"],
       "icons": ["pen"]
     }
   ]
