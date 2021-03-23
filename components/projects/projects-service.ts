@@ -13,8 +13,11 @@ interface Project {
   icons?: string[];
 }
 
+const projectsAll = data.all as Project[];
+projectsAll.sort((a, b) => b.year - a.year);
+
 export function GetProjectsAll() {
-  return data.all as Project[];
+  return projectsAll;
 }
 
 export function FilterProjects(
@@ -25,8 +28,6 @@ export function FilterProjects(
   const yearsSet = new Set(years);
   const tagsSet = new Set(tags);
   const iconsSet = new Set(icons);
-
-  const projectsAll = data.all;
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size;
   if (HasNoFilters) {
