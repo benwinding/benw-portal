@@ -10,12 +10,14 @@
         ></projects-filter>
         <projects-order
           :projectsall="projectsAll"
-          v-on:orderChanged="filterChanged($event)"
+          v-on:orderChanged="orderChanged($event)"
         ></projects-order>
+        <!--
         <projects-group
           :projectsall="projectsAll"
-          v-on:orderChanged="filterChanged($event)"
+          v-on:groupChanged="groupChanged($event)"
         ></projects-group>
+        -->
       </div>
       <div
         class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
@@ -51,7 +53,7 @@ export default {
     CardProject,
     ProjectsFilter,
     ProjectsOrder,
-    ProjectsGroup
+    // ProjectsGroup
   },
   head: {
     meta: [
@@ -67,13 +69,37 @@ export default {
   data() {
     return {
       projectsEnabled: GetProjectsAll(),
-      projectsAll: GetProjectsAll()
+      projectsAll: GetProjectsAll(),
+      currentFilter: {},
+      currentOrder: {},
+      currentGroup: {}
     };
   },
   methods: {
     filterChanged(filterObj) {
-      const { years, tags, icons } = filterObj;
-      // this.projectsEnabled = FilterProjects(years, tags, icons);
+      this.currentFilter = filterObj;
+      this.updateEnabled();
+    },
+    orderChanged(orderObj) {
+      this.currentOrder = orderObj;
+      this.updateEnabled();
+    },
+    groupChanged(groupObj) {
+      this.currentGroup = groupObj;
+      this.updateEnabled();
+    },
+    updateEnabled() {
+      const { years, tags, icons } = this.currentFilter;
+      const { order, isReversed } = this.currentOrder;
+      const { group } = this.currentGroup;
+      this.projectsEnabled = FilterProjects(
+        years,
+        tags,
+        icons,
+        order,
+        isReversed,
+        group
+      );
     }
   }
 };

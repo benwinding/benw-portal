@@ -12,7 +12,7 @@ interface Project {
 }
 
 export function GetProjectsAll() {
-  const data = require('./projects.json');
+  const data = require("./projects.json");
   const projectsAll = data.all as Project[];
   // projectsAll.sort((a, b) => b.year - a.year)
   return projectsAll;
@@ -21,15 +21,21 @@ export function GetProjectsAll() {
 export function FilterProjects(
   years: number[],
   tags: string[],
-  icons: string[]
+  icons: string[],
+  order: string,
+  isReversed: boolean,
+  group: string
 ) {
   const yearsSet = new Set(years);
   const tagsSet = new Set(tags);
   const iconsSet = new Set(icons);
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size;
+  const allProjects = GetProjectsAll();
+
   if (HasNoFilters) {
-    return GetProjectsAll();
+    OrderArr(allProjects, order, isReversed);
+    return allProjects;
   }
 
   function MatchItem(p: Project): boolean {
@@ -44,6 +50,16 @@ export function FilterProjects(
     }
     return false;
   }
-  const projectsFiltered = GetProjectsAll().filter(p => MatchItem(p));
+  const projectsFiltered = allProjects.filter(p => MatchItem(p));
+  OrderArr(projectsFiltered, order, isReversed);
   return projectsFiltered;
+}
+
+function OrderArr(arr: any[], field: string, reverse?: boolean): void {
+  function SortByField(a: any, b: any) {
+    const aVal = (a[field] + "").toLowerCase();
+    const bVal = (b[field] + "").toLowerCase();
+    return aVal > bVal ? (reverse ? 1 : -1) : reverse ? -1 : 1;
+  }
+  arr.sort(SortByField);
 }
