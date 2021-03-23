@@ -25,6 +25,14 @@ export function FilterProjects(
   const yearsSet = new Set(years);
   const tagsSet = new Set(tags);
   const iconsSet = new Set(icons);
+
+  const projectsAll = data.all;
+
+  const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size;
+  if (HasNoFilters) {
+    return projectsAll;
+  }
+
   function MatchItem(p: Project): boolean {
     if (yearsSet.has(p.year)) {
       return true;
@@ -37,7 +45,6 @@ export function FilterProjects(
     }
     return false;
   }
-  const projectsAll = data.all;
   const projectsFiltered = projectsAll.filter(p => MatchItem(p));
   return projectsFiltered;
 }
