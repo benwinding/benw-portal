@@ -1,10 +1,11 @@
 <template>
   <div>
     <rainbow-text text="Projects"></rainbow-text>
-    <div class="flex flex-col sm:flex-row items-start">
-      <div class="sm:w-64 w-full pb-2 pr-0 sm:pr-2">
+    <div class="flex flex-col md:flex-row items-start">
+      <div class="md:w-64 w-full pb-2 pr-0 md:pr-2">
         <projects-filter
-          v-bind:projectsall="projectsAll"
+          :foundCount="projectsEnabled.length"
+          :projectsall="projectsAll"
           v-on:filterChanged="filterChanged($event)"
         ></projects-filter>
       </div>

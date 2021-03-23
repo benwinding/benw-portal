@@ -1,6 +1,47 @@
 <template>
   <div class="border-2 rounded-md">
-    <p class="text-gray-700 m-1 my-0">Filter Projects:</p>
+    <div class="m-1">
+      <p class="text-gray-700 -mt-1">Filter Projects:</p>
+      <div>
+        <div class="flex flex-wrap items-center">
+          <span class="text-xs mb-1">Filters: </span>
+          <projects-filter-tag
+            v-for="tag in selectedTags"
+            :key="tag"
+            :iconLabel="tag"
+            :enabled="tag"
+            v-on:clickedItem="clickedTagStr(tag)"
+          >
+          </projects-filter-tag>
+          <projects-filter-tag
+            v-for="year in selectedYears"
+            :key="year"
+            :iconLabel="year"
+            :enabled="year"
+            v-on:clickedItem="clickedYearStr(year)"
+          >
+          </projects-filter-tag>
+          <projects-filter-tag
+            v-for="icon in selectedIcons"
+            :key="icon"
+            :iconLabel="icon"
+            :enabled="icon"
+            v-on:clickedItem="clickedIconStr(icon)"
+          >
+          </projects-filter-tag>
+          <projects-filter-tag
+            v-if="hasAnyEnabled"
+            iconLabel="clear all"
+            color="orange"
+            :enabled="true"
+            v-on:clickedItem="clickedClearAll()"
+          >
+          </projects-filter-tag>
+          <span class="mb-1 ml-1" v-if="!hasAnyEnabled">-</span>
+        </div>
+        <div class="text-xs">Found: {{ foundCount }} projects</div>
+      </div>
+    </div>
     <div>
       <filter-container label="Type">
         <div class="flex flex-wrap">
@@ -51,7 +92,7 @@ import ProjectsFilterTag from "./ProjectsFilterTag";
 import FilterContainer from "./FilterContainer";
 
 export default {
-  props: ["projectsall"],
+  props: ["projectsall", "foundCount"],
   components: {
     FilterContainer,
     ProjectsFilterItem,
@@ -59,12 +100,12 @@ export default {
   },
   data() {
     return {
-      selectedYears: new Set(),
-      selectedTags: new Set(),
-      selectedIcons: new Set(),
+      selectedYears: [],
+      selectedTags: [],
+      selectedIcons: [],
       allYears: [],
       allTags: [],
-      allIcons: [],
+      allIcons: []
     };
   },
   watch: {
@@ -75,7 +116,7 @@ export default {
         this.allTags = this.MakeAllTags();
         this.allIcons = this.MakeAllIcons();
       }
-    },
+    }
   },
   computed: {
     projectsAllSafe() {
@@ -84,6 +125,13 @@ export default {
         return [];
       }
       return all;
+    },
+    hasAnyEnabled() {
+      return (
+        !!this.selectedYears.length ||
+        !!this.selectedTags.length ||
+        !!this.selectedIcons.length
+      );
     }
   },
   methods: {
@@ -91,7 +139,7 @@ export default {
       const years = this.projectsAllSafe.map(val => val.year);
       const unique = Array.from(new Set(years));
       unique.sort((a, b) => b - a);
-      const uniqueObj = this.ConvertToEnabledObjs(unique) 
+      const uniqueObj = ConvertToEnabledObjs(unique);
       return uniqueObj;
     },
     MakeAllTags() {
@@ -100,7 +148,7 @@ export default {
         .reduce((acc, cur) => acc.concat(cur), []);
       const unique = Array.from(new Set(tags));
       unique.sort();
-      const uniqueObj = this.ConvertToEnabledObjs(unique) 
+      const uniqueObj = ConvertToEnabledObjs(unique);
       return uniqueObj;
     },
     MakeAllIcons() {
@@ -109,50 +157,86 @@ export default {
         .reduce((acc, cur) => acc.concat(cur), []);
       const unique = Array.from(new Set(icons));
       unique.sort();
-      const uniqueObj = this.ConvertToEnabledObjs(unique) 
+      const uniqueObj = ConvertToEnabledObjs(unique);
       return uniqueObj;
     },
-    ConvertToEnabledObjs(unique) {
-      return unique.map(u => {
-        return {
-          key: u,
-          enabled: false
-        }
-      })
-    },
-    toggle(inputSet, inputVal) {
-      if (inputSet.has(inputVal)) {
+    toggle(inputArr, inputVal) {
+      const index = inputArr.findIndex(a => a === inputVal.key);
+      if (index >= 0) {
         inputVal.enabled = false;
-        inputSet.delete(inputVal);
+        inputArr.splice(index, 1);
       } else {
         inputVal.enabled = true;
-        inputSet.add(inputVal);
+        inputArr.push(inputVal.key);
       }
     },
+    clickedIconStr(iconStr) {
+      const icon = this.allIcons.find(i => i.key === iconStr);
+      this.toggleIcon(icon);
+    },
+    clickedYearStr(yearStr) {
+      const year = this.allYears.find(i => i.key === yearStr);
+      this.toggleYear(year);
+    },
+    clickedTagStr(tagStr) {
+      const tag = this.allTags.find(i => i.key === tagStr);
+      this.toggleTag(tag);
+    },
     clickedIcon(icon) {
-      this.toggle(this.selectedIcons, icon);
-      this.emitChanged();
+      this.toggleIcon(icon);
     },
     clickedYear(year) {
-      this.toggle(this.selectedYears, year);
-      this.emitChanged();
+      this.toggleYear(year);
     },
     clickedTag(tag) {
+      this.toggleTag(tag);
+    },
+    toggleIcon(icon) {
+      this.toggle(this.selectedIcons, icon);
+      this.selectedIcons = this.selectedIcons;
+      this.emitChanged();
+    },
+    toggleYear(year) {
+      this.toggle(this.selectedYears, year);
+      this.selectedYears = this.selectedYears;
+      this.emitChanged();
+    },
+    toggleTag(tag) {
       this.toggle(this.selectedTags, tag);
+      this.selectedTags = this.selectedTags;
+      this.emitChanged();
+    },
+    clickedClearAll() {
+      this.allYears.map(a => a.enabled = false);
+      this.allTags.map(a => a.enabled = false);
+      this.allIcons.map(a => a.enabled = false);
+      this.selectedYears = [];
+      this.selectedTags = [];
+      this.selectedIcons = [];
       this.emitChanged();
     },
     emitChanged() {
-      function GetVal(inputSet) {
-        return [...inputSet].map(a => a.key);
-      }
       const filterChangedEvent = {
-        years: GetVal(this.selectedYears),
-        tags: GetVal(this.selectedTags),
-        icons: GetVal(this.selectedIcons)
+        years: this.selectedYears,
+        tags: this.selectedTags,
+        icons: this.selectedIcons
       };
-      console.log('emitChanged', {filterChangedEvent})
+      console.log("emitChanged", { filterChangedEvent });
       this.$emit("filterChanged", filterChangedEvent);
     }
   }
 };
+
+function GetVal(inputSet) {
+  return [...inputSet].map(a => a.key);
+}
+
+function ConvertToEnabledObjs(unique) {
+  return unique.map(u => {
+    return {
+      key: u,
+      enabled: false
+    };
+  });
+}
 </script>

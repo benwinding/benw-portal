@@ -1,5 +1,6 @@
 <template>
   <div
+    :style="{ 'background-color': color }"
     :class="enabled ? 'bg-blue-400' : ''"
     class="rounded-xl cursor-pointer bg-gray-400 mb-1 ml-1 flex items-center"
     v-on:click="clickedIcon()"
@@ -28,7 +29,7 @@
 
 <script>
 export default {
-  props: ["enabled", "iconName", "iconLabel"],
+  props: ["enabled", "iconName", "iconLabel", "color"],
   methods: {
     clickedIcon() {
       this.$emit("clickedItem", this.iconName);
