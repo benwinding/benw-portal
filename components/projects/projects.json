@@ -1,6 +1,15 @@
 {
   "all": [
     {
+      "name": "Task Barrel",
+      "tags": ["productivity", "web app"],
+      "year": 2021,
+      "description": "Simple task collaboration, inspired by 'Github Issues'",
+      "deploy_link": "https://taskbarrel.com",
+      "tools": ["Javascript", "React", "nuxt"],
+      "icons": ["react", "javascript"]
+    },
+    {
       "name": "Command Pal",
       "tags": ["fun", "cli"],
       "year": 2020,
