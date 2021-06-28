@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen" style="overflow-y: overlay" >
+  <div class="h-screen w-screen" style="overflow-y: overlay; padding-right: 10px;" >
     <section class="container mx-auto p-2">
       <header-component></header-component>
       <transition name="fade" mode="out-in">

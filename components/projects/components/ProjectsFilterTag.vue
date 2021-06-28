@@ -1,15 +1,15 @@
 <template>
   <div
-    :style="{ 'background-color': color }"
+    :style="{ 'background-color': color, 'gap': '0.25em' }"
     :class="enabled ? 'bg-blue-400' : ''"
-    class="rounded-xl cursor-pointer bg-gray-400 mb-1 ml-1 flex items-center"
+    class="rounded-xl cursor-pointer bg-gray-400 px-2 mb-1 ml-1 flex items-center"
     v-on:click="clickedIcon()"
   >
-    <span class="px-2">{{ iconLabel }}</span>
+    <span class="">{{ iconLabel }}</span>
+    <span v-if="count" style="font-size: 0.6em; font-weight: bold; color: #666;">{{ count }}</span>
     <span>
       <svg
         v-if="enabled"
-        class="mr-2"
         id="i-close"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  props: ["enabled", "iconName", "iconLabel", "color"],
+  props: ["enabled", "iconName", "iconLabel", "count", "color"],
   methods: {
     clickedIcon() {
       this.$emit("clickedItem", this.iconName);

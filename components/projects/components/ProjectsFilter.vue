@@ -49,6 +49,7 @@
             v-for="tag in allTags"
             :key="tag.key"
             :iconLabel="tag.key"
+            :count="tag.count"
             :enabled="tag.enabled"
             v-on:clickedItem="clickedTag(tag)"
           >
@@ -146,9 +147,19 @@ export default {
       const tags = this.projectsAllSafe
         .map(val => val.tags)
         .reduce((acc, cur) => acc.concat(cur), []);
-      const unique = Array.from(new Set(tags));
-      unique.sort();
-      const uniqueObj = ConvertToEnabledObjs(unique);
+      const tagsMap = tags.reduce((acc, cur) => {
+        if (!Number.isFinite(acc[cur])) {
+          acc[cur] = 0;
+        } 
+        acc[cur]++;
+        return acc;
+      }, {})
+      const tagsArr = Object.entries(tagsMap).map(([tag,count]) => {
+        return {key: tag, count};
+      })
+      tagsArr.sort((a, b) => b.count - a.count);
+      const uniqueObj = ConvertToEnabledObjs2(tagsArr);
+      console.log({tagsArr, uniqueObj})
       return uniqueObj;
     },
     MakeAllIcons() {
@@ -235,6 +246,15 @@ function ConvertToEnabledObjs(unique) {
   return unique.map(u => {
     return {
       key: u,
+      enabled: false
+    };
+  });
+}
+
+function ConvertToEnabledObjs2(unique) {
+  return unique.map(u => {
+    return {
+      ...u,
       enabled: false
     };
   });
