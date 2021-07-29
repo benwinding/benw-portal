@@ -4,8 +4,7 @@
       <transition name="bounce" mode="out-in" appear>
         <div>
           <rainbow-text text="Ben Winding" :large="true"></rainbow-text>
-          <h2 class="intro">Complex solutions create complex bugs...
-          </h2>
+          <h2 class="intro">Complex solutions create complex bugs...</h2>
         </div>
       </transition>
     </div>
@@ -22,25 +21,25 @@ export default {
       { property: "og:title", content: "Home - Ben Winding" },
       {
         property: "og:description",
-        content: "A web developer from Adelaide, South Australia."
-      }
+        content: "A web developer from Adelaide, South Australia.",
+      },
     ],
-    title: "Home"
+    title: "Home",
   },
   components: {
-    "rainbow-text": RainbowText
+    "rainbow-text": RainbowText,
   },
   data() {
     return {
-      isLoaded: false
-    }
+      isLoaded: false,
+    };
   },
   mounted() {
-    this.$nextTick(() => {      
+    this.$nextTick(() => {
       this.isLoaded = true;
       console.log("mounted: home page, loaded");
     });
-  }
+  },
 };
 </script>
 
@@ -75,43 +74,11 @@ export default {
 @keyframes zoomin {
   0% {
     transform: scale(0.8);
+    opacity: 0;
   }
   100% {
     transform: scale(1);
-  }
-}
-
-
-#need {
-  text-decoration: line-through;
-
-  &.need-enter-to {
-    text-decoration: line-through;
-    text-decoration-color: auto;
-  }
-  &.need-enter {
-    text-decoration: none;
-    text-decoration-color: #FFFFFF00;
-  }
-  &.need-enter-active {
-    transition: all 6.0s;
-  }
-}
-
-#want {
-  font-style: italic;
-  color: #000;
-  margin-top: -10px;
-
-  &.want-enter {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  &.want-enter-to {
     opacity: 1;
-  }
-  &.want-enter-active {
-    transition: all 3.0s;
   }
 }
 </style>
