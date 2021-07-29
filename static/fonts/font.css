@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Latino.ttf") format("truetype");
+  /* src: url("/fonts/Latinotype-Queulat-Regular.otf") format("truetype"); */
+}
+
+* {
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}

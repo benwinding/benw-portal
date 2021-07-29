@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="v-center">
-      <transition name="bounce" mode="out-in" appear>
-        <div>
-          <rainbow-text text="Ben Winding" :large="true"></rainbow-text>
-          <h2 class="intro">Complex solutions create complex bugs...</h2>
-        </div>
-      </transition>
+      <div class="zoom-me">
+        <rainbow-text text="Ben Winding" :large="true"></rainbow-text>
+        <h2 class="intro">
+          Complex solutions create complex bugs...
+        </h2>
+      </div>
     </div>
   </div>
 </template>
@@ -28,17 +28,6 @@ export default {
   },
   components: {
     "rainbow-text": RainbowText,
-  },
-  data() {
-    return {
-      isLoaded: false,
-    };
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.isLoaded = true;
-      console.log("mounted: home page, loaded");
-    });
   },
 };
 </script>
@@ -68,9 +57,11 @@ export default {
   padding-top: 21vh;
 }
 
-.bounce-enter-active {
+.zoom-me {
+  transition: 1s;
   animation: zoomin 1.9s;
 }
+
 @keyframes zoomin {
   0% {
     transform: scale(0.8);

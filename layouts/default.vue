@@ -21,10 +21,6 @@ export default {
 };
 </script>
 
-<style lang="css">
-@import "https://fonts.googleapis.com/css?family=Lato:400,800";
-</style>
-
 <style lang="scss">
 .fade-enter-active,
 .fade-leave-active {

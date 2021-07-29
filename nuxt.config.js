@@ -22,7 +22,8 @@ module.exports = {
         type: "image/png",
         sizes: "16x16",
         href: "icons/favicon_io/favicon-16x16.png"
-      }
+      },
+      { rel: "stylesheet", href: "/fonts/font.css" },
     ],
     meta: [
       {

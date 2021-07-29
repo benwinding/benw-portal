@@ -38,9 +38,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css?family=Lato:400,800');
-    
+<style lang="scss" scoped>    
   div > span > span {
     font-size: 80px;
     letter-spacing: -10px;
