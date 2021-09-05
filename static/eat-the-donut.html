@@ -93,7 +93,7 @@
         messageEl.innerHTML = "";
         volumeEl.innerHTML = "";
         againEl.hidden = true;
-        BITE_COUNT = -1;
+        BITE_COUNT = -2;
         updateBiteCount();
         init();
       }
@@ -153,7 +153,8 @@
         // Interaction
         new THREE.Interaction(renderer, scene, camera);
 
-        const cutPosition = new THREE.Vector3(-12, 14, 0);
+        const cutPosition = new THREE.Vector3(-20, 20, 0);
+        // const cutPosition = new THREE.Vector3(-12, 14, 0);
         const [mesh] = cutMesh(makeInitialMesh(), cutPosition);
         scene.add(mesh);
 
@@ -199,10 +200,8 @@
 
       function makeMaterial() {
         const textureLoader = new THREE.TextureLoader();
-        const m = textureLoader.load(
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Donut_texture%2C_Doughnut.jpg/640px-Donut_texture%2C_Doughnut.jpg"
-        );
-        m.wrapS = THREE.RepeatWrapping;
+        const m = textureLoader.load(" ./eat-the-donut-texture.jpg");
+         m.wrapS = THREE.RepeatWrapping;
         m.wrapT = THREE.RepeatWrapping;
         m.repeat.set(3, 3);
         let material = new THREE.MeshPhongMaterial({
