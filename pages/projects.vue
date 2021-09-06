@@ -89,7 +89,7 @@ export default {
       this.updateEnabled();
     },
     updateEnabled() {
-      const { years, tags, icons } = this.currentFilter;
+      const { years, tags, icons, searchText } = this.currentFilter;
       const { order, isReversed } = this.currentOrder;
       const { group } = this.currentGroup;
       this.projectsEnabled = FilterProjects(
@@ -98,7 +98,8 @@ export default {
         icons,
         order,
         isReversed,
-        group
+        group,
+        searchText
       );
     }
   }

@@ -2,6 +2,28 @@
   <div class="border-2 rounded-md">
     <div class="m-1">
       <p class="text-gray-700 -mt-1">Filter Projects:</p>
+      <div class="mx-0 relative">
+        <input
+          @keydown="onTextChanged"
+          class="text-xl pl-10 px-2 py-1 rounded w-full border-2"
+          type="text"
+          placeholder="Filter projects"
+        />
+        <svg
+          class="absolute left-0 top-0 mt-2 ml-2 text-gray-400"
+          viewBox="0 0 32 32"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentcolor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        >
+          <circle cx="14" cy="14" r="12" />
+          <path d="M23 23 L30 30" />
+        </svg>
+      </div>
       <div>
         <div class="flex flex-wrap items-center">
           <span class="text-xs mb-1">Filters: </span>
@@ -87,7 +109,6 @@
 </template>
 
 <script>
-import Icon from "~/components/Icon";
 import ProjectsFilterItem from "./ProjectsFilterItem";
 import ProjectsFilterTag from "./ProjectsFilterTag";
 import FilterContainer from "./FilterContainer";
@@ -97,7 +118,7 @@ export default {
   components: {
     FilterContainer,
     ProjectsFilterItem,
-    ProjectsFilterTag
+    ProjectsFilterTag,
   },
   data() {
     return {
@@ -106,7 +127,8 @@ export default {
       selectedIcons: [],
       allYears: [],
       allTags: [],
-      allIcons: []
+      allIcons: [],
+      searchText: "",
     };
   },
   watch: {
@@ -116,8 +138,8 @@ export default {
         this.allYears = this.MakeAllYears();
         this.allTags = this.MakeAllTags();
         this.allIcons = this.MakeAllIcons();
-      }
-    }
+      },
+    },
   },
   computed: {
     projectsAllSafe() {
@@ -133,11 +155,11 @@ export default {
         !!this.selectedTags.length ||
         !!this.selectedIcons.length
       );
-    }
+    },
   },
   methods: {
     MakeAllYears() {
-      const years = this.projectsAllSafe.map(val => val.year);
+      const years = this.projectsAllSafe.map((val) => val.year);
       const unique = Array.from(new Set(years));
       unique.sort((a, b) => b - a);
       const uniqueObj = ConvertToEnabledObjs(unique);
@@ -145,26 +167,26 @@ export default {
     },
     MakeAllTags() {
       const tags = this.projectsAllSafe
-        .map(val => val.tags)
+        .map((val) => val.tags)
         .reduce((acc, cur) => acc.concat(cur), []);
       const tagsMap = tags.reduce((acc, cur) => {
         if (!Number.isFinite(acc[cur])) {
           acc[cur] = 0;
-        } 
+        }
         acc[cur]++;
         return acc;
-      }, {})
-      const tagsArr = Object.entries(tagsMap).map(([tag,count]) => {
-        return {key: tag, count};
-      })
+      }, {});
+      const tagsArr = Object.entries(tagsMap).map(([tag, count]) => {
+        return { key: tag, count };
+      });
       tagsArr.sort((a, b) => b.count - a.count);
       const uniqueObj = ConvertToEnabledObjs2(tagsArr);
-      console.log({tagsArr, uniqueObj})
+      console.log({ tagsArr, uniqueObj });
       return uniqueObj;
     },
     MakeAllIcons() {
       const icons = this.projectsAllSafe
-        .map(val => val.icons)
+        .map((val) => val.icons)
         .reduce((acc, cur) => acc.concat(cur), []);
       const unique = Array.from(new Set(icons));
       unique.sort();
@@ -172,7 +194,7 @@ export default {
       return uniqueObj;
     },
     toggle(inputArr, inputVal) {
-      const index = inputArr.findIndex(a => a === inputVal.key);
+      const index = inputArr.findIndex((a) => a === inputVal.key);
       if (index >= 0) {
         inputVal.enabled = false;
         inputArr.splice(index, 1);
@@ -182,15 +204,15 @@ export default {
       }
     },
     clickedIconStr(iconStr) {
-      const icon = this.allIcons.find(i => i.key === iconStr);
+      const icon = this.allIcons.find((i) => i.key === iconStr);
       this.toggleIcon(icon);
     },
     clickedYearStr(yearStr) {
-      const year = this.allYears.find(i => i.key === yearStr);
+      const year = this.allYears.find((i) => i.key === yearStr);
       this.toggleYear(year);
     },
     clickedTagStr(tagStr) {
-      const tag = this.allTags.find(i => i.key === tagStr);
+      const tag = this.allTags.find((i) => i.key === tagStr);
       this.toggleTag(tag);
     },
     clickedIcon(icon) {
@@ -218,44 +240,47 @@ export default {
       this.emitChanged();
     },
     clickedClearAll() {
-      this.allYears.map(a => a.enabled = false);
-      this.allTags.map(a => a.enabled = false);
-      this.allIcons.map(a => a.enabled = false);
+      this.allYears.map((a) => (a.enabled = false));
+      this.allTags.map((a) => (a.enabled = false));
+      this.allIcons.map((a) => (a.enabled = false));
       this.selectedYears = [];
       this.selectedTags = [];
       this.selectedIcons = [];
       this.emitChanged();
     },
+    onTextChanged(e) {
+      setTimeout(() => {
+        this.searchText = e.target.value;
+        this.emitChanged();
+      });
+    },
     emitChanged() {
       const filterChangedEvent = {
         years: this.selectedYears,
         tags: this.selectedTags,
-        icons: this.selectedIcons
+        icons: this.selectedIcons,
+        searchText: this.searchText,
       };
-      console.log("emitChanged", { filterChangedEvent });
+      // console.log("emitChanged", { filterChangedEvent });
       this.$emit("filterChanged", filterChangedEvent);
-    }
-  }
+    },
+  },
 };
 
-function GetVal(inputSet) {
-  return [...inputSet].map(a => a.key);
-}
-
 function ConvertToEnabledObjs(unique) {
-  return unique.map(u => {
+  return unique.map((u) => {
     return {
       key: u,
-      enabled: false
+      enabled: false,
     };
   });
 }
 
 function ConvertToEnabledObjs2(unique) {
-  return unique.map(u => {
+  return unique.map((u) => {
     return {
       ...u,
-      enabled: false
+      enabled: false,
     };
   });
 }

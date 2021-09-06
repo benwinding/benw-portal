@@ -24,13 +24,14 @@ export function FilterProjects(
   icons: string[],
   order: string,
   isReversed: boolean,
-  group: string
+  group: string,
+  searchText: string
 ) {
   const yearsSet = new Set(years);
   const tagsSet = new Set(tags);
   const iconsSet = new Set(icons);
 
-  const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size;
+  const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size && !searchText;
   const allProjects = GetProjectsAll();
 
   if (HasNoFilters) {
@@ -39,6 +40,16 @@ export function FilterProjects(
   }
 
   function MatchItem(p: Project): boolean {
+    if (
+      TextMatches(
+        searchText,
+        p.tags,
+        p.year,
+        p.name + " " + p.description
+      )
+    ) {
+      return true;
+    }
     if (yearsSet.has(p.year)) {
       return true;
     }
@@ -53,6 +64,28 @@ export function FilterProjects(
   const projectsFiltered = allProjects.filter(p => MatchItem(p));
   OrderArr(projectsFiltered, order, isReversed);
   return projectsFiltered;
+}
+
+function TextMatches(
+  input: string,
+  tags: string[] | undefined,
+  year: number,
+  title: string
+): boolean {
+  if (!input) {
+    return true;
+  }
+  const str1 = `${(tags || []).join(" ")} | ${year} | ${title}`
+  if (IsInputIncluded(input, str1)) {
+    return true;
+  }
+  return false;
+}
+
+function IsInputIncluded(input: string, b: string): boolean {
+  const inputSafe = (input || "").toString().toLowerCase();
+  const bSafe = (b || '').toString().toLowerCase();
+  return bSafe.includes(inputSafe);
 }
 
 function OrderArr(arr: any[], field: string, reverse?: boolean): void {
