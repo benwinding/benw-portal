@@ -199,7 +199,7 @@
       "tags": ["fun", "web site"],
       "year": 2017,
       "description": "Travel blog, created for my sister",
-      "code_link": "https://seeingsarawak.com/",
+      "deploy_link": "https://seeingsarawak.com/",
       "tools": ["Wordpress"],
       "icons": ["wordpress"]
     },
