@@ -10,6 +10,15 @@
       "icons": ["react", "javascript"]
     },
     {
+      "name": "PDF Stamp",
+      "tags": ["cli", "pdf"],
+      "year": 2017,
+      "description": "Automate adding signatures to a PDF via terminal.",
+      "code_link": "https://github.com/benwinding/pdfstamp",
+      "tools": ["Typescript", "PDFkit", "ImageMagick"],
+      "icons": ["typescript", "pdf"]
+    },
+    {
       "name": "Command Pal",
       "tags": ["fun", "cli", "library"],
       "year": 2020,
@@ -131,7 +140,7 @@
     },
     {
       "name": "Formzy",
-      "tags": ["fun", "web app"],
+      "tags": ["fun", "web app", "pdf"],
       "year": 2017,
       "description": "A automated PDF filler, for the Solar Industry",
       "deploy_link": "https://formzy.herokuapp.com/",
