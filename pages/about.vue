@@ -221,7 +221,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .list-enter-active,
 .list-leave-active {
   transition: all 1s;

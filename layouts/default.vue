@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="css">
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 1s, transform 1s;

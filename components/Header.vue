@@ -13,7 +13,7 @@
 
 <script></script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .nuxt-link-exact-active {
   border-bottom: 2px solid #2c5282;
 }

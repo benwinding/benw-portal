@@ -25,6 +25,3 @@ Spittel. The current technology stack is:
     }
   }
 </script>
-
-<style lang="scss">
-</style>

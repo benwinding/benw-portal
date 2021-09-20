@@ -38,12 +38,13 @@
   }
 </script>
 
-<style lang="scss" scoped>    
+<style lang="css" scoped>    
   div > span > span {
     font-size: 80px;
     letter-spacing: -10px;
-
-    @media (max-width: 500px) {
+  }
+  @media (max-width: 500px) {
+    div > span > span {
       font-size: 60px;
     }
   }
@@ -51,19 +52,24 @@
   .large > span > span {
     font-size: 200px;
     line-height: 60%;
-
-    @media (max-width: 1050px) {
+  }
+  @media (max-width: 1050px) {
+    .large > span > span {
       font-size: 160px;
     }
-
-    @media (max-width: 800px) {
+  }
+  @media (max-width: 800px) {
+    .large > span > span {
       font-size: 120px;
     }
-
-    @media (max-width: 600px) {
+  }
+  @media (max-width: 600px) {
+    .large > span > span {
       font-size: 70px;
     }
-    @media (max-width: 350px) {
+  }
+  @media (max-width: 350px) {
+    .large > span > span {
       font-size: 50px;
     }
   }

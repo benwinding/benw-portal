@@ -21,7 +21,7 @@
   }
 </script>
 
-<style scoped lang="scss">  
+<style scoped lang="css">  
   span {
     font-weight: 800;
     letter-spacing: -20px;
@@ -30,8 +30,9 @@
     opacity: 0.8;
     font-size: 20px;
     text-transform: uppercase;
-
-    @media (max-width: 650px) {
+  }
+  @media (max-width: 650px) {
+    span {
       letter-spacing: -10px;
     }
   }

@@ -32,19 +32,20 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="css">
 .intro {
   margin-bottom: -10px;
   font-size: 2em;
   font-weight: normal;
   color: #4a4a4a;
+}
+.intro > span {
+  display: inline-grid;
+}
 
-  @media (max-width: 650px) {
+@media (max-width: 650px) {
+  .intro {
     font-size: 1.5em;
-  }
-
-  span {
-    display: inline-grid;
   }
 }
 

@@ -102,7 +102,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="css">
   body > div > canvas {
     position: fixed;
     top: 0;
