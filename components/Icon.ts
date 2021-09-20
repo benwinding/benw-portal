@@ -23,6 +23,7 @@ export { default as tailwind } from "~/assets/icons/simple/tailwindcss.svg";
 export { default as android } from "~/assets/icons/devicons/android.svg";
 export { default as apple } from "~/assets/icons/devicons/apple.svg";
 export { default as flutter } from "~/assets/icons/devicons/flutter.svg";
+export { default as typescript } from "~/assets/icons/devicons/typescript.svg";
 
 export { default as book } from "~/assets/icons/misc/book-svgrepo-com.svg";
 export { default as live } from "~/assets/icons/misc/live-svgrepo-com.svg";
