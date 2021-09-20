@@ -40,8 +40,7 @@ export function FilterProjects(
   }
 
   function MatchItem(p: Project): boolean {
-    if (
-      TextMatches(
+    if (searchText && TextMatches(
         searchText,
         p.tags,
         p.year,
