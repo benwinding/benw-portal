@@ -89,5 +89,4 @@ module.exports = {
       }
     }
   },
-  plugins: [{ src: "~/plugins/pts.js", ssr: false }]
 };

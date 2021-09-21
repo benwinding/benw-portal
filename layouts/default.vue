@@ -11,12 +11,10 @@
 
 <script>
 import Header from "~/components/Header.vue";
-import Background from "~/components/Background.vue";
 
 export default {
   components: {
     "header-component": Header,
-    // 'background-component': Background
   }
 };
 </script>
