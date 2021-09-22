@@ -5,6 +5,7 @@
       <nuxt-link class="mr-3" to="/about">About</nuxt-link>
       <nuxt-link class="mr-3" to="/projects">Projects</nuxt-link>
       <nuxt-link class="mr-3" to="/contact">Contact</nuxt-link>
+      <a class="mr-3" href="/3d/">3D</a>
       <span v-if="false" title="more of ben">[More]</span>
     </div>
     <a class="fixed border-8 border-red-400 opacity-50 bottom-0 left-0 w-6 h-6 m-2 rounded-full" href="/eat-the-donut.html"></a>

@@ -64,9 +64,9 @@ function Model(props) {
             >
               <div className="wrapper">
                 <iframe
-                  height={500}
+                  height={413}
                   width={650}
-                  src="https://benwinding.com/"
+                  src={location.origin}
                 />
               </div>
             </Html>
