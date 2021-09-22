@@ -8,7 +8,7 @@
     "dev": "nuxt",
     "clean": "rimraf dist",
     "start": "nuxt",
-    "build": "nuxt generate",
+    "build": "rm -rf dist && nuxt generate",
     "build-3d": "yarn webpack -c ./static/3d/webpack.config.js",
     "deploy": "dokku-pages deploy -g dokku@benwinding.com:portal -d dist --minimal --allow-cors '.+\\.benwinding.com|localhost:.+'",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
@@ -18,8 +18,7 @@
     "axios": "^0.21.1",
     "color-interpolate": "^1.0.2",
     "nuxt": "^2.15.0",
-    "nuxt-svg-loader": "^1.2.0",
-    "pts": "^0.10.2"
+    "nuxt-svg-loader": "^1.2.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.6",

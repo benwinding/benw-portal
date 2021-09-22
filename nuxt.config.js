@@ -69,11 +69,14 @@ module.exports = {
     cacheTime: 1000 * 60 * 15,
     gzip: true
   },
+  generate: {
+    exclude: ['/3d'],
+    fallback: '404.html'
+  },
   /*
    ** Build configuration
    */
   build: {
-    vendor: ["pts"],
     /*
      ** Run ESLint on save
      */

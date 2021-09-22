@@ -5,8 +5,7 @@ This site has taken many different incarnations, the current one is a Nuxt Js si
 It uses the following main JS technologies:
 
 - nuxt - _a single page app framework_
-- bulma - _styling_
-- pts - _bouncing animations_
+- tailwind.css - _styling_
 
 # Features
 - Sever Side Rendering (SSR)
