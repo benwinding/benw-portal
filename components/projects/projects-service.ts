@@ -9,6 +9,7 @@ interface Project {
   presentation_link?: string;
   tools?: string[];
   icons?: string[];
+  open_same_page?: boolean;
 }
 
 export function GetProjectsAll() {

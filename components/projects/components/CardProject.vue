@@ -24,6 +24,7 @@
     <div class="underline flex flex-col items-center">
       <ProjectLink
         :href="project.deploy_link"
+        :samePage="project.open_same_page"
         label="Live Site"
         iconName="live"
         iconColor="blue"

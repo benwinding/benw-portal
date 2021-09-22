@@ -47,7 +47,8 @@
       "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/3d/",
       "deploy_link": "http://benwinding.com/3d",
       "tools": ["React", "Three-Js"],
-      "icons": ["react", "three"]
+      "icons": ["react", "three"],
+      "open_same_page": true
     },
     {
       "name": "Eat The Donut",
