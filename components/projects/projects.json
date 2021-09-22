@@ -40,6 +40,16 @@
       "icons": ["angular"]
     },
     {
+      "name": "3D Laptop",
+      "tags": ["fun", "3d", "web app"],
+      "year": 2021,
+      "description": "A 3D version of this website!",
+      "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/3d/",
+      "deploy_link": "http://benwinding.com/3d",
+      "tools": ["React", "Three-Js"],
+      "icons": ["react", "three"]
+    },
+    {
       "name": "Eat The Donut",
       "tags": ["fun", "3d", "web app", "game"],
       "year": 2021,
