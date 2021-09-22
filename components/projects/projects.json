@@ -45,7 +45,7 @@
       "year": 2021,
       "description": "A 3D version of this website!",
       "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/3d/",
-      "deploy_link": "http://benwinding.com/3d",
+      "deploy_link": "https://benwinding.com/3d",
       "tools": ["React", "Three-Js"],
       "icons": ["react", "three"],
       "open_same_page": true
