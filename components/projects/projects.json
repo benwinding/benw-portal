@@ -56,7 +56,7 @@
       "year": 2021,
       "description": "A 3D game where you eat a donut!",
       "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/eat-the-donut.html",
-      "deploy_link": "http://benwinding.com/eat-the-donut.html",
+      "deploy_link": "https://benwinding.com/eat-the-donut.html",
       "tools": ["Plain JavaScript"],
       "icons": ["javascript", "tailwind", "three"]
     },
