@@ -4,8 +4,9 @@
       <p class="text-gray-700 -mt-1">Filter Projects:</p>
       <div class="mx-0 relative">
         <input
+          v-bind:value="searchText"
           @keydown="onTextChanged"
-          class="text-xl pl-10 px-2 py-1 mb-1 rounded w-full border-2"
+          :class="'text-xl pl-10 py-1 mb-1 rounded w-full border-2 transition-all ' + (hasText ? 'pr-10' : 'pr-0') "
           type="text"
           placeholder="Filter projects"
         />
@@ -22,6 +23,20 @@
         >
           <circle cx="14" cy="14" r="12" />
           <path d="M23 23 L30 30" />
+        </svg>
+        <svg
+          :class="'absolute right-0 top-0 mt-3 mr-2 transition-all duration-500 ' + (hasText ? 'text-gray-900' : 'text-transparent')"
+          @click="clickedClearSearch"
+          viewBox="0 0 32 32"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentcolor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="4"
+        >
+          <path d="M2 30 L30 2 M30 30 L2 2" />
         </svg>
       </div>
       <div>
@@ -156,6 +171,9 @@ export default {
         !!this.selectedIcons.length
       );
     },
+    hasText() {
+      return !!this.searchText;
+    }
   },
   methods: {
     MakeAllYears() {
@@ -202,6 +220,10 @@ export default {
         inputVal.enabled = true;
         inputArr.push(inputVal.key);
       }
+    },
+    clickedClearSearch() {
+      this.searchText = '';
+      this.emitChanged();
     },
     clickedIconStr(iconStr) {
       const icon = this.allIcons.find((i) => i.key === iconStr);
