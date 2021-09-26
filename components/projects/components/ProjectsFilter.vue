@@ -5,7 +5,7 @@
       <div class="mx-0 relative">
         <input
           @keydown="onTextChanged"
-          class="text-xl pl-10 px-2 py-1 rounded w-full border-2"
+          class="text-xl pl-10 px-2 py-1 mb-1 rounded w-full border-2"
           type="text"
           placeholder="Filter projects"
         />
