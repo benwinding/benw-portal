@@ -25,7 +25,7 @@
           <path d="M23 23 L30 30" />
         </svg>
         <svg
-          :class="'absolute right-0 top-0 mt-3 mr-2 transition-all duration-500 ' + (hasText ? 'text-gray-900' : 'text-transparent')"
+          :class="'absolute cursor-pointer right-0 top-0 mt-3 mr-2 transition-all duration-500 ' + (hasText ? 'text-gray-900' : 'text-transparent')"
           @click="clickedClearSearch"
           viewBox="0 0 32 32"
           width="20"
