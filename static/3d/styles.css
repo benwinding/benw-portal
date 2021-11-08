@@ -34,6 +34,10 @@ body {
   align-items: center;
 }
 
+.loader-inner iframe {
+  border: none;
+}
+
 .loader-inner h1 {
   color: white;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
