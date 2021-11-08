@@ -30,6 +30,15 @@ module.exports = {
         name: "viewport",
         content: "width=device-width, initial-scale=1.0"
       }
+    ],
+    script: [
+      {
+        async: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=UA-38440481-1'
+      },
+      {
+        src: '/google-analytics.js'
+      },
     ]
   },
   manifest: {
