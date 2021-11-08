@@ -3,11 +3,11 @@
     <div class="p-1 flex justify-between">
       <p class="text-gray-700 -mt-1">Order Projects:</p>
     </div>
-    <div class="m-1 flex flex-wrap items-center">
+    <div class="m-1 flex flex-wrap items-center gap-x-1">
       <span
         :key="order"
         v-for="order in orderby"
-        class="cursor-pointer px-1 py-0 bg-gray-400 rounded-2xl mr-1"
+        class="cursor-pointer px-2 py-0 bg-gray-400 rounded-2xl"
         :class="order === orderSelected ? 'bg-green-400' : ''"
         v-on:click="clickOrderBy(order)"
       >

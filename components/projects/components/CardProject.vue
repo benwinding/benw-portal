@@ -2,7 +2,7 @@
   <div
     class="p-3 h-full flex items-center flex-col border-2 w-full rounded-md text-center hover:border-red-700 hover:bg-gray-700 hover:text-white"
   >
-    <p class="text-xl font-bold">{{ project.name }}</p>
+    <p class="text-xl font-bold truncate w-full" :title="project.name">{{ project.name }}</p>
     <div class="flex">
       <div
         v-for="(iconName, index) in project.icons"
