@@ -20,6 +20,26 @@ body {
   background: #202025;
 }
 
+#loader {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader-inner h1 {
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: -20px;
+}
+
 .content {
   width: 334px;
   height: 216px;

@@ -8,7 +8,7 @@ import {
   ContactShadows,
   OrbitControls
 } from "@react-three/drei";
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom";
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
@@ -16,6 +16,13 @@ function Model(props) {
   const group = useRef();
   const base = ''; // window.location.href;
   const { nodes, materials } = useGLTF(base + "./mac-draco.glb");
+
+  React.useEffect(() => {
+    const loader = document.getElementById('loader');
+    if (nodes && loader) {
+      loader.style.display = 'none';
+    }
+  }, [nodes])
 
   useFrame(state => {
     const t = state.clock.getElapsedTime();
