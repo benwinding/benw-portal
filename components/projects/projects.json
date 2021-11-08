@@ -10,6 +10,15 @@
       "icons": ["react", "javascript"]
     },
     {
+      "name": "WolfpackDogTraining.com",
+      "tags": ["web site"],
+      "year": 2021,
+      "description": "Website for a friend's dog training business",
+      "deploy_link": "https://wolfpackdogtraining.com",
+      "tools": ["NextJs", "Contentful"],
+      "icons": ["next", "contentful"]
+    },
+    {
       "name": "PDF Stamp",
       "tags": ["cli", "pdf"],
       "year": 2017,

@@ -31,3 +31,5 @@ export { default as play } from "~/assets/icons/misc/play-svgrepo-com.svg";
 export { default as puppeteer } from "~/assets/icons/misc/puppeteer.svg";
 export { default as plus } from "~/assets/icons/misc/plus.svg";
 export { default as docker } from "~/assets/icons/devicons/docker.svg";
+export { default as next } from "~/assets/icons/devicons/next.svg";
+export { default as contentful } from "~/assets/icons/devicons/contentful.svg";

@@ -78,5 +78,9 @@
   "checkall": {
     "src": "icons/material/check-box-multiple-outline.svg",
     "color": "#222222"
+  },
+  "next": {
+    "src": "icons/devicons/next.svg",
+    "color": "#000"
   }
 }
