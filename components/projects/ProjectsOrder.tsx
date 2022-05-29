@@ -5,7 +5,7 @@ import { ProjectOrderType } from "./projects-service";
 
 export type OrderChangedEvent = {
   orderBy?: ProjectOrderType,
-  reversed?: boolean,
+  ascending?: boolean,
 }
 
 const orderByArray: ProjectOrderType[] = [
@@ -15,7 +15,7 @@ const orderByArray: ProjectOrderType[] = [
 
 export function ProjectsOrder(props: { orderChangedEvent: (event: OrderChangedEvent) => void }) {
   const [orderSelected, setOrderSelected] = React.useState<ProjectOrderType>(ProjectOrderType.YEAR)
-  const [orderReversed, setOrderReversed] = React.useState(true);
+  const [orderReversed, setOrderReversed] = React.useState(false);
 
   function clickOrderBy(order: ProjectOrderType) {
     const alreadySelected = order === orderSelected;
@@ -31,7 +31,7 @@ export function ProjectsOrder(props: { orderChangedEvent: (event: OrderChangedEv
   }
 
   React.useEffect(() => {
-    props.orderChangedEvent({ orderBy: orderSelected, reversed: orderReversed });
+    props.orderChangedEvent({ orderBy: orderSelected, ascending: orderReversed });
   }, [orderSelected, orderReversed]);
 
   return <div className="border-2 rounded-md mt-2">

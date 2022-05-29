@@ -1,7 +1,7 @@
 import { FilterProjects, GetProjectsAll, Project, ProjectsFilter, ProjectsOrder } from "components/projects"
 import { AddFilterEvent, CardProject } from "components/projects/components/CardProject"
-import { FilterChangedEvent } from "components/projects/components/ProjectsFilter";
-import { OrderChangedEvent } from "components/projects/components/ProjectsOrder";
+import { FilterChangedEvent } from "components/projects/ProjectsFilter";
+import { OrderChangedEvent } from "components/projects/ProjectsOrder";
 import { RainbowText } from "components/RainbowText"
 import Head from "next/head"
 import React from "react";
@@ -16,17 +16,19 @@ export default function Page() {
 
   React.useEffect(() => {
     const { years, tags, icons, searchText } = filterEvent;
-    const { orderBy, reversed } = orderEvent;
+    const { orderBy, ascending } = orderEvent;
     const group = undefined;
     const filteredProjects = FilterProjects(
       projectsAll,
-      years,
-      tags,
-      icons,
-      orderBy,
-      reversed,
-      group,
-      searchText
+      {
+        years,
+        tags,
+        icons,
+        order: orderBy,
+        ascending,
+        group,
+        searchText
+      }
     );
     setProjectsEnabled(filteredProjects);
   }, [filterEvent, orderEvent])

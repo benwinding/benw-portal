@@ -1,4 +1,5 @@
 import { IconName } from 'components/icons/icons';
+import { OrderArr } from '../utils/OrderArr';
 import projects from './projects.json';
 
 export interface Project {
@@ -26,24 +27,34 @@ export function GetProjectsAll() {
   return projectsAll;
 }
 
-export function FilterProjects(
-  allProjects: Project[],
+type FilterObj = {
   years: number[],
   tags: string[],
   icons: string[],
   order: ProjectOrderType,
-  isReversed: boolean,
+  ascending: boolean,
   group: string | undefined,
-  searchText: string
-) {
+  searchText: string,
+}
+
+export function FilterProjects(allProjects: Project[], args: FilterObj) {
+  const {
+    years,
+    tags,
+    icons,
+    order,
+    ascending,
+    searchText,
+  } = args;
   const yearsSet = new Set(years);
   const tagsSet = new Set(tags);
   const iconsSet = new Set(icons);
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size && !searchText;
 
+  console.log('FilterProjects', {args, allProjects, HasNoFilters});
   if (HasNoFilters) {
-    OrderArr(allProjects, order, isReversed);
+    OrderArr(allProjects, order, ascending);
     return allProjects;
   }
 
@@ -69,7 +80,7 @@ export function FilterProjects(
     return false;
   }
   const projectsFiltered = allProjects.filter(p => MatchItem(p));
-  OrderArr(projectsFiltered, order, isReversed);
+  OrderArr(projectsFiltered, order, ascending);
   return projectsFiltered;
 }
 
@@ -93,13 +104,4 @@ function IsInputIncluded(input: string, b: string): boolean {
   const inputSafe = (input || "").toString().toLowerCase();
   const bSafe = (b || '').toString().toLowerCase();
   return bSafe.includes(inputSafe);
-}
-
-function OrderArr(arr: any[], field: string, reverse?: boolean): void {
-  function SortByField(a: any, b: any) {
-    const aVal = (a[field] + "").toLowerCase();
-    const bVal = (b[field] + "").toLowerCase();
-    return aVal > bVal ? (reverse ? 1 : -1) : reverse ? -1 : 1;
-  }
-  arr.sort(SortByField);
 }

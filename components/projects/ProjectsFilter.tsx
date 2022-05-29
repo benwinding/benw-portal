@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Icon, IconName } from "components/icons/icons";
+import { OrderArr } from "components/utils/OrderArr";
 import React from "react";
 import { FilterContainer } from "./components/FilterContainer";
 import { ProjectsFilterItem } from "./components/ProjectsFilterItem";
@@ -24,9 +25,10 @@ export function ProjectsFilter(props: {
 
   React.useEffect(() => {
     const projectsSafe = props.projectsAll || []
-    setAllYears(MakeAllYears(projectsSafe));
-    setAllTags(MakeAllTags(projectsSafe));
-    setAllIcons(MakeAllIcons(projectsSafe));
+    const res = MakeAll(projectsSafe);
+    setAllYears(res.years);
+    setAllTags(res.tags);
+    setAllIcons(res.icons);
   }, [props.projectsAll]);
 
   const [selectedYears, setSelectedYears] = React.useState<string[]>([]);
@@ -80,9 +82,9 @@ export function ProjectsFilter(props: {
       <div>
         <div className="flex flex-wrap items-center">
           <span className="text-xs mb-1">Filters: </span>
-          <ProjectFiltersSelectedTags items={allTags} selected={selectedTags} clickedItem={clickedTagStr}/>
-          <ProjectFiltersSelectedTags items={allYears} selected={selectedYears} clickedItem={clickedYearStr}/>
-          <ProjectFiltersSelectedTags items={allIcons} selected={selectedIcons} clickedItem={clickedIconStr}/>
+          <ProjectFiltersSelectedTags items={allTags} selected={selectedTags} clickedItem={clickedTagStr} />
+          <ProjectFiltersSelectedTags items={allYears} selected={selectedYears} clickedItem={clickedYearStr} />
+          <ProjectFiltersSelectedTags items={allIcons} selected={selectedIcons} clickedItem={clickedIconStr} />
           {hasAnyEnabled && <ProjectsFilterTag
             iconLabel="clear all"
             color="orange"
@@ -97,17 +99,17 @@ export function ProjectsFilter(props: {
     <div>
       <FilterContainer label="Type">
         <div className="flex flex-wrap">
-          <ProjectsFilterTagList items={allTags} clickedItem={clickedTagStr} selected={undefined} />
+          <ProjectsFilterTagList items={allTags} clickedItem={clickedTagStr} selected={selectedTags} />
         </div>
       </FilterContainer>
       <FilterContainer label="Year">
         <div className="flex flex-col">
-          <ProjectsFilterItemList items={allYears} clickedItem={clickedYearStr} selected={undefined} />
+          <ProjectsFilterItemList items={allYears} clickedItem={clickedYearStr} selected={selectedYears} />
         </div>
       </FilterContainer>
       <FilterContainer label="Tech">
         <div className="flex flex-col">
-          <ProjectsFilterItemList items={allIcons} clickedItem={clickedIconStr} selected={undefined} />
+          <ProjectsFilterItemList items={allIcons} clickedItem={clickedIconStr} selected={selectedIcons} />
         </div>
       </FilterContainer>
     </div>
@@ -177,61 +179,60 @@ function SearchField(props: { searchText: string, onTextChanged: (text: string) 
 type FilterItem = {
   key: string,
   label: string,
-  count: number | undefined,
-  iconName: IconName | undefined,
+  count?: number,
+  iconName?: IconName,
 }
 
-function MakeAllYears(projectsAll: Project[]): FilterItem[] {
-  const years = projectsAll.map((val) => val.year);
-  const unique = Array.from(new Set(years));
-  unique.sort((a, b) => b - a);
-  return unique.map((u) => {
-    return {
-      key: str(u),
-      label: str(u),
-      iconName: undefined,
-    } as FilterItem;
+function MakeAll(projectsAll: Project[]) {
+  const yearsUnique = new Set<string>();
+  const tagsUniqueCount: Record<string, number> = {};
+  const iconsUnique = new Set<IconName>();
+  projectsAll.map((project) => {
+    yearsUnique.add(str(project.year));
+    project.tags?.map(tag => {
+      if (!tagsUniqueCount[tag]) tagsUniqueCount[tag] = 0;
+      tagsUniqueCount[tag]++;
+    })
+    project.icons?.map(icon => iconsUnique.add(icon))
   });
-}
-
-function MakeAllTags(projectsAll: Project[]): FilterItem[] {
-  const tags = projectsAll
-    .map((val) => val.tags)
-    .flat();
-  const tagsMap: Partial<Record<IconName, number>> = tags.reduce((acc, cur) => {
-    if (!Number.isFinite(acc[cur])) {
-      acc[cur] = 0;
+  const yearsStrings = Array.from(yearsUnique).sort();
+  const iconsString = Array.from(iconsUnique).sort();
+  const tagCounts = Object.entries(tagsUniqueCount).map(([key, count]) => {
+    return {key, count} as KeyCount;
+  });
+  OrderArr(tagCounts, 'count', false);
+  // Years
+  function YearToFilter(year: string): FilterItem {
+    return {
+      key: str(year),
+      label: str(year),
     }
-    acc[cur]++;
-    return acc;
-  }, {});
-  const tagsArr: KeyCount[] = Object.entries(tagsMap).map(([tag, count]: [IconName, number]) => {
-    return { key: tag, count };
-  });
-  tagsArr.sort((a, b) => b.count - a.count);
-  return tagsArr.map((u) => {
+  }
+  const years = yearsStrings.map(YearToFilter)
+  // Tags
+  function TagToFilter(tag: KeyCount): FilterItem {
     return {
-      key: str(u.key),
-      count: u.count,
-      label: str(u.key),
-      iconName: undefined,
-    } as FilterItem;
-  });
-}
+      key: str(tag.key),
+      label: str(tag.key),
+      count: tag.count,
+    }
+  }
+  const tags = tagCounts.map(TagToFilter)
+  // Icons
+  function IconToFilter(iconName: IconName): FilterItem {
+    return {
+      key: str(iconName),
+      label: str(iconName),
+      iconName,
+    }
+  }
+  const icons = iconsString.map(IconToFilter)
 
-function MakeAllIcons(projectsAll: Project[]): FilterItem[] {
-  const icons: IconName[] = projectsAll
-    .map((val) => val.icons)
-    .reduce((acc, cur) => acc.concat(cur), []);
-  const unique = Array.from(new Set(icons));
-  unique.sort();
-  return unique.map((u) => {
-    return {
-      key: str(u),
-      label: str(u),
-      iconName: u,
-    } as FilterItem;
-  });
+  return {
+    years,
+    tags,
+    icons,
+  };
 }
 
 type KeyCount = {
@@ -247,6 +248,6 @@ function toggleInArray<T>(set: T[], value: T) {
   }
 }
 
-function str(input: number | string | undefined) : string {
+function str(input: number | string | undefined): string {
   return (input || '') + '';
 }

@@ -1,8 +1,22 @@
+import classNames from "classnames";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
+function useIsActiveRoute(href: string): boolean {
+  const [isActive, setIsActive] = React.useState(false);
+  const router = useRouter();
+  React.useEffect(() => {
+    if (router.route === href) {
+      setIsActive(true);
+    }
+  }, [router.route]);
+  return isActive;
+}
+
 function HeadLink(props: { href: string, children: React.ReactNode }) {
-  return <Link href={props.href}><a className="mr-3">{props.children}</a></Link>
+  const isActive = useIsActiveRoute(props.href);
+  return <Link href={props.href}><a className={classNames("mr-3", isActive && 'border-b-2 border-blue-800')}>{props.children}</a></Link>
 }
 
 // TODO current link higlighted 
