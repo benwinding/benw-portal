@@ -1,0 +1,22 @@
+.letter {
+  mix-blend-mode: darken;
+  letter-spacing: -0.15em;
+  display: inline-block;
+}
+
+.hovered {
+  -webkit-animation: hoveranimation ease 3s;
+  animation: hoveranimation ease 3s;
+}
+
+@keyframes hoveranimation {
+  50% {
+    transform: rotateZ(10deg);
+  }
+}
+
+@-webkit-keyframes hoveranimation {
+  50% {
+    transform: rotateZ(10deg);
+  }
+}

@@ -1,4 +1,7 @@
-interface Project {
+import { IconName } from 'components/icons/icons';
+import projects from './projects.json';
+
+export interface Project {
   name: string;
   description: string;
   year: number;
@@ -8,24 +11,29 @@ interface Project {
   article_link?: string;
   presentation_link?: string;
   tools?: string[];
-  icons?: string[];
+  icons?: IconName[];
   open_same_page?: boolean;
 }
 
+export enum ProjectOrderType {
+  NAME = 'name',
+  YEAR = 'year',
+}
+
 export function GetProjectsAll() {
-  const data = require("./projects.json");
-  const projectsAll = data.all as Project[];
+  const projectsAll = projects.all as Project[];
   // projectsAll.sort((a, b) => b.year - a.year)
   return projectsAll;
 }
 
 export function FilterProjects(
+  allProjects: Project[],
   years: number[],
   tags: string[],
   icons: string[],
-  order: string,
+  order: ProjectOrderType,
   isReversed: boolean,
-  group: string,
+  group: string | undefined,
   searchText: string
 ) {
   const yearsSet = new Set(years);
@@ -33,7 +41,6 @@ export function FilterProjects(
   const iconsSet = new Set(icons);
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size && !searchText;
-  const allProjects = GetProjectsAll();
 
   if (HasNoFilters) {
     OrderArr(allProjects, order, isReversed);
