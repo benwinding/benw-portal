@@ -1258,6 +1258,11 @@
   resolved "https://registry.yarnpkg.com/@chevrotain/utils/-/utils-9.0.2.tgz#6f28fd41d2168c21e441e1a4ad6a0097e4d351f5"
   integrity sha512-iTju1VpbGruWagXS/XswuqeimOCRNeDvrXLlWHYsHp1qTU8sJfAfLiX5vs7DNxB1px6N8VWVI0SD8vMUksNBYw==
 
+"@corex/deepmerge@^4.0.14":
+  version "4.0.14"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-4.0.14.tgz#d927bac61c24aaf4028df707896f3b85f4f5ce3f"
+  integrity sha512-Sh6eHsEwxHVKu6Cu90I+nJ/6Ql1MuHqjNuFQVBOuFHpUDtv2rL5FYlhAfd/Gfj6W76nBt9zqj5lBPHhwrFxU9g==
+
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.5.tgz#9283c9ce5b289a3c4f61c12757469e59377f81f3"
@@ -3176,7 +3181,7 @@ minimist@0.0.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
   integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
 
-minimist@^1.1.1:
+minimist@^1.1.1, minimist@^1.2.6:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
@@ -3229,6 +3234,14 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+next-sitemap@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.0.2.tgz#cc7eabaccf5e9de0a4eadab6d8dc78f23f5a8fe8"
+  integrity sha512-65PufQuQiaF2I2r4by5pu+47YDk04Wwzgwn30UZ3ieQft8MOaG5JXsNqhTu2/NvR0BlWdOwPhShxeTrxZYdunQ==
+  dependencies:
+    "@corex/deepmerge" "^4.0.14"
+    minimist "^1.2.6"
 
 next@12.1.6:
   version "12.1.6"

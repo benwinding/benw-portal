@@ -8,8 +8,9 @@
     "dev": "NODE_OPTIONS=\"--max_old_space_size=4096 --inspect\" next dev",
     "clean": "rimraf dist",
     "start": "next dev",
-    "build": "rm -rf dist && next build",
+    "build": "rm -rf dist && next build && next export -o dist",
     "build-3d": "yarn webpack -c ./public/3d/webpack.config.js",
+    "build-sitemap": "next-sitemap --config ./next-sitemap.config.mjs",
     "deploy": "dokku-pages deploy -g dokku@benwinding.com:portal -d dist --minimal --allow-cors '.+\\.benwinding.com|localhost:.+'",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
@@ -34,6 +35,7 @@
     "eslint-loader": "^2.1.2",
     "eslint-plugin-vue": "^5.2.2",
     "next": "12.1.6",
+    "next-sitemap": "^3.0.2",
     "postcss": "^8.4.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
