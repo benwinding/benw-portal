@@ -3,7 +3,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export function DefaultLayout(props: { children: React.ReactNode }) {
   return <div className="h-screen w-screen" style={{ overflowY: 'overlay' as any, paddingRight: '10px' }} >
-    <section className="container mx-auto p-2">
+    <section className="max-w-6xl mx-auto p-2">
       <Header />
       <TransitionGroup>
           <CSSTransition
