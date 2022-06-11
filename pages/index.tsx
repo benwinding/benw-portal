@@ -10,7 +10,7 @@ export default function Page() {
       <meta property="og:title" content="Home - Ben Winding"></meta>
       <meta property="og:description" content="A web developer from Adelaide, South Australia."></meta>
     </Head>
-    <div className="absolute left-0" style={{
+    <div className="absolute left-0 m-0 sm:ml-3" style={{
       top: '50%',
       transform: 'translateY(-50%)',
     }}>

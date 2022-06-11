@@ -1,6 +1,6 @@
 .letter {
   mix-blend-mode: darken;
-  letter-spacing: -0.15em;
+  letter-spacing: -0.6rem;
   display: inline-block;
 }
 

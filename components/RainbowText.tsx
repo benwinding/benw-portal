@@ -9,8 +9,8 @@ export function RainbowText(props: {
 }) {
   return <div className={classNames('uppercase', 
     props.large
-    ? 'text-6xl sm:text-8xl'
-    : 'text-6xl'
+    ? 'text-6xl xs:text-10xl sm:text-12xl'
+    : 'text-5xl sm:text-8xl'
   )}>
     {Array.from(props.text).map((letter, index) =>
     (<span key={index}>
