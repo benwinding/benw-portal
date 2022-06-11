@@ -97,7 +97,7 @@ export function ProjectsFilter(props: {
       </div>
     </div>
     <div>
-      <FilterContainer label="Type">
+      <FilterContainer label="Tags">
         <div className="flex flex-wrap">
           <ProjectsFilterTagList items={allTags} clickedItem={clickedTagStr} selected={selectedTags} />
         </div>
