@@ -4,6 +4,8 @@ import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import axios from "axios";
 import { DefaultLayout } from "layouts/default";
+import styles from "./index.module.css";
+import classNames from "classnames";
 
 type BlogPost = {
   title: string,
@@ -69,7 +71,7 @@ export default function Page() {
         <h2 className="text-2xl">Now</h2>
         <p className="mb-2">
           He intends to be a successful web developer, making the internet a
-          better place for all those who use it.
+          better place for all those who use it. <a className="link" href="/projects/">See projects!</a>
         </p>
         <h2 className="text-2xl">Development</h2>
         <p className="mb-2">
@@ -85,8 +87,11 @@ export default function Page() {
           {blogPosts.map((blog) =>
             <CSSTransition
               key={blog.title}
-              timeout={TRANSITION_DELAY}
-              classNames="item"
+              timeout={1000}
+              classNames={{
+                enterActive: styles.MyClassEnterActive,
+                enterDone: styles.MyClassEnterDone,
+              }}
             >
               <div className="mb-1" key={blog.title}>
                 <a className="flex flex-col" href={blog.link}>

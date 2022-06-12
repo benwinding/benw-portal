@@ -1,0 +1,9 @@
+.MyClassEnterActive {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.MyClassEnterDone {
+  transition: all 300ms ease-in;
+  opacity: 1;
+  transform: translateX(0px);
+}
