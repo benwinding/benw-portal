@@ -1,13 +1,24 @@
 {
   "all": [
     {
+      "name": "Surprise Bread",
+      "tags": ["web site", "fun"],
+      "year": 2022,
+      "description": "Delicious handmade sourdough bread, delivered to your door!",
+      "deploy_link": "https://surprisebread.com.au",
+      "tools": ["Javascript", "React", "NextJs", "Tailwind"],
+      "icons": ["react", "javascript"],
+      "wip": true
+    },
+    {
       "name": "Task Barrel",
       "tags": ["productivity", "web app"],
       "year": 2021,
       "description": "Simple task collaboration, inspired by 'Github Issues'",
       "deploy_link": "https://taskbarrel.com",
-      "tools": ["Javascript", "React", "nuxt"],
-      "icons": ["react", "javascript"]
+      "tools": ["Javascript", "React", "NextJs", "Tailwind"],
+      "icons": ["react", "javascript"],
+      "wip": true
     },
     {
       "name": "WolfpackDogTraining.com",

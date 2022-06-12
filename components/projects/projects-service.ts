@@ -6,6 +6,7 @@ export interface Project {
   name: string;
   description: string;
   year: number;
+  wip?: boolean;
   tags?: string[];
   code_link?: string;
   deploy_link?: string;

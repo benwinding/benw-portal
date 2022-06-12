@@ -1,7 +1,9 @@
+import classNames from "classnames";
 import { Icon, IconName } from "components/icons/icons";
 import React from "react";
 
 import { Project } from "../projects-service";
+import styles from "./CardProject.module.css";
 
 export type AddFilterEvent = {
   icon?: IconName,
@@ -37,7 +39,11 @@ export function CardProject({ project, onAddFilterClick }: { project: Project, o
     },
   ];
 
-  return <div className="p-3 h-full flex items-center flex-col border-2 w-full rounded-md text-center hover:border-red-700 hover:bg-gray-700 hover:text-white">
+  return <div className={classNames(
+    {[styles.hazardBorder]: project.wip}, 
+    "p-3 h-full flex items-center flex-col border-2 w-full rounded-md text-center hover:border-red-700 hover:bg-gray-700 hover:text-white")
+  }>
+    {project.wip && <p className="text-xs -mt-3 italic text-orange-600">^ Work In Progress</p>}
     <p className="text-xl font-bold truncate w-full" title="project.name">{project.name}</p>
     <div className="flex">
       {project.icons?.map(icon => <div key={icon} className="mx-1">
