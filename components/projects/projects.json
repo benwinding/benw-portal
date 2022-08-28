@@ -1,6 +1,15 @@
 {
   "all": [
     {
+      "name": "Everything's Normal",
+      "tags": ["web site", "3d", "fun"],
+      "year": 2022,
+      "description": "Visualize a rotating normal map",
+      "deploy_link": "https://benwinding.com/everythings-normal/",
+      "tools": ["Javascript", "Three-Js"],
+      "icons": ["three", "javascript"]
+    },
+    {
       "name": "Surprise Bread",
       "tags": ["web site", "fun"],
       "year": 2022,
