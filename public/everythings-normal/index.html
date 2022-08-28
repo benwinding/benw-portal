@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Everything's Normal</title>
+  <!--  Simple reset to delete the margins  -->
+  <style>
+    body { margin: 0; }
+    canvas { width: 100%; height: 100% }
+  </style>
+  <!--  Three.js CDN  -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.121.1/examples/js/controls/OrbitControls.js"></script>
+  <style>
+    /* https://stackoverflow.com/a/65211073/2419584 */
+    canvas {
+      outline: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!--  Our code  -->
+  <script src="app.js"></script>
+
+  <!-- Trigger/Open The Modal -->
+  <button id="aboutBtn">?</button>
+
+  <!-- The Modal -->
+  <div id="aboutModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>WTF is this?</h2>
+      </div>
+      <div class="modal-body">
+        <p>This is an interactive rendering of a rotating normal map</p>
+        <img src="./normal-map.png" width="500px"/>
+        <p>Intended to calm and relax the audience</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://benwinding.com"><h3>Built by Ben Winding</h3></a>
+      </div>
+    </div>
+
+  </div>
+  <link href="./popup.css" rel="stylesheet"/>
+  <script src="./popup.js" ></script>
+</body>
+</html>
