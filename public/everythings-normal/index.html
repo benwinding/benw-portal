@@ -16,10 +16,34 @@
       outline: none;
       border: none;
     }
+    .tinyContainer {
+      position: absolute;
+      z-index: 99;
+      left: 0;
+      bottom: 0;
+      margin-left: 10px;
+      margin-bottom: 40px;
+    }
+    .tinyContainer p {
+      bottom: -40;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      background-color: rgba(255, 255, 255, 0.544);
+    }
   </style>
 </head>
 <body>
-  <!--  Our code  -->
+  <!-- Tiny View -->
+  <div class="tinyContainer" style="">
+    <canvas id="tinyCanvas"></canvas>
+    <p style="">Normal Map Orientation</p>
+  </div>
+
   <script src="app.js"></script>
 
   <!-- Trigger/Open The Modal -->
