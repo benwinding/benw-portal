@@ -59,11 +59,11 @@ function MakeCapPoints2(scaleX, scaleY) {
 }
 
 const stalkCurveBefore = new THREE.CatmullRomCurve3(MakeStalkPoints(), false);
-const POINTSCOUNT = 200;
+const POINTSCOUNT = 100;
 
 function DrawMushroom({ t, group, growthRate, rootPosition }) {
-  const tFactored = t * growthRate;
-  const pointsCount = Math.ceil(tFactored * POINTSCOUNT);
+  const tt = t * growthRate;
+  const pointsCount = Math.ceil(tt * POINTSCOUNT);
   if (pointsCount < 2) {
     return;
   }
@@ -77,16 +77,30 @@ function DrawMushroom({ t, group, growthRate, rootPosition }) {
       bevelEnabled: false,
       extrudePath: stalkCurve,
     };
-    const circW = 3 + Math.pow(tFactored, 2);
+    const circW = 3 + Math.pow(tt, 2);
     const geometry = new THREE.ExtrudeGeometry(CircleShape(circW, 20), extrudeSettings1);
     const material = new THREE.MeshPhongMaterial({ color: 0xaeb0b6, wireframe: false, shininess: 1 });
     const mesh = new THREE.Mesh(geometry, material);
     return mesh;
   }
 
+  function easeInOutExpo(x1) {
+    const a = 2;
+    const b = 0.4;
+    const x = x1 - b;
+    if (x < 0.5) return Math.pow(a, 20 * x - 10) / 2;
+    else return (2 - Math.pow(a, -20 * x + 10)) / 2;
+  }
+
   function CreateCap() {
-    const capW = 0.08 * Math.pow(tFactored, 3) + 0.005;
-    const capH = 0.02 * Math.pow(tFactored, 2) + 0.01;
+    function GetCapW() {
+      return 0.007 + 0.05 * easeInOutExpo(tt);
+    }
+    function GetCapH() {
+      return 0.014 * Math.pow(2, tt);
+    }
+    const capW = GetCapW();
+    const capH = GetCapH();
     const capPoints = MakeCapPoints2(capW, capH);
     const capCurve = new THREE.SplineCurve(capPoints);
     const geometry = new THREE.LatheGeometry(capCurve.getPoints(30), 30);
