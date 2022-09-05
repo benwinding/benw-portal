@@ -136,18 +136,22 @@ controls.minAzimuthAngle = THREE.MathUtils.degToRad(-45);
 controls.maxAzimuthAngle = THREE.MathUtils.degToRad(45);
 
 // Render Loop
-var deg = 0;
+let deg = 0;
 var render = function () {
   requestAnimationFrame( render );
-  deg += 0.02;
-  if (deg >= 2 * Math.PI) {
+  deg += 1;
+  if (deg >= 360) {
     deg = 0;
   }
-  lights.rotation.set(deg, deg - Math.PI/2, deg + Math.PI/2);
+  const xRad = THREE.MathUtils.degToRad(deg);
+  const yRad = THREE.MathUtils.degToRad(deg - Math.PI/2);
+  const zRad = THREE.MathUtils.degToRad(deg + Math.PI/2);
+  // Render main view
+  lights.rotation.set(xRad, yRad, zRad);
   camera.lookAt(new THREE.Vector3(0, 0, 0));
   renderer.render(scene, camera);
   // Render tiny view
-  sceneTiny.rotation.set(deg, deg - Math.PI/2, deg + Math.PI/2);
+  sceneTiny.rotation.set(xRad, yRad, zRad);
   cameraTiny.position.set(camera.position.x, camera.position.y, camera.position.z);
   cameraTiny.lookAt(new THREE.Vector3(0, 0, 0));
   rendererTiny.render(sceneTiny, cameraTiny);
