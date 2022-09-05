@@ -1,7 +1,6 @@
 var scene = new THREE.Scene();
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setClearColor(new THREE.Color('rgb(255, 255, 255)'));
-renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 const lights = new THREE.Group();
@@ -45,6 +44,7 @@ const loader = new THREE.FontLoader();
 function addText(text, opts, positionXYZ) {
   loader.load( 'Arial_Bold.json', function ( font ) {
     // use -> https://gero3.github.io/facetype.js/
+    // Also choose restricted characters
     const geometry = new THREE.TextGeometry( text, {
       font: font,
       size: 0.7,
@@ -120,6 +120,15 @@ camera.position.z = 4;
 camera.position.x = -2;
 camera.position.y = 1;
 
+// Size canvas
+SetRenderSize();
+function SetRenderSize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize( window.innerWidth, window.innerHeight );
+}
+window.addEventListener('resize', SetRenderSize);
+
 // Controls
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.target.set(0, 0, 0);
@@ -137,11 +146,19 @@ controls.maxAzimuthAngle = THREE.MathUtils.degToRad(45);
 
 // Render Loop
 let deg = 0;
-var render = function () {
+let t = 0;
+let now_last = performance.now();
+const SPIN_RATE = 3 / 100;
+const render = function () {
   requestAnimationFrame( render );
-  deg += 1;
+  // time calcs
+  const now = performance.now();
+  const delta = now_last - now;
+  deg += 1 * delta * SPIN_RATE;
+  now_last = now;
   if (deg >= 360) {
     deg = 0;
+    t = 0;
   }
   const xRad = THREE.MathUtils.degToRad(deg);
   const yRad = THREE.MathUtils.degToRad(deg - Math.PI/2);
