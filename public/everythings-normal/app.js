@@ -92,13 +92,14 @@ cameraTiny.position.y = 1;
 
 function AddTinySphere() {
   const geometry = new THREE.SphereGeometry(2, 15, 15);
-  const textureLoader = new THREE.TextureLoader()
   const material = new THREE.MeshPhongMaterial({
     color: new THREE.Color('rgb(255,255,255)')
     // map: texture,
   });
   const mesh = new THREE.Mesh(geometry, material);
   mesh.position.set(0, 0, 0);
+  const axesHelper = new THREE.AxesHelper( 5 );
+  sceneTiny.add(axesHelper);
   sceneTiny.add(mesh);
 }
 
