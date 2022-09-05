@@ -125,6 +125,16 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.target.set(0, 0, 0);
 controls.update();
 
+// How far you can orbit vertically, upper and lower limits.
+// Range is 0 to Math.PI radians.
+controls.minPolarAngle = THREE.MathUtils.degToRad(45);
+controls.maxPolarAngle = THREE.MathUtils.degToRad(135);
+
+// How far you can orbit horizontally, upper and lower limits.
+// If set, must be a sub-interval of the interval [ - Math.PI, Math.PI ].
+controls.minAzimuthAngle = THREE.MathUtils.degToRad(-45);
+controls.maxAzimuthAngle = THREE.MathUtils.degToRad(45);
+
 // Render Loop
 var deg = 0;
 var render = function () {
