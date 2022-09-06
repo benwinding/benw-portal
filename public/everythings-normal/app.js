@@ -98,9 +98,15 @@ function AddTinySphere() {
   });
   const mesh = new THREE.Mesh(geometry, material);
   mesh.position.set(0, 0, 0);
-  const axesHelper = new THREE.AxesHelper( 5 );
-  sceneTiny.add(axesHelper);
   sceneTiny.add(mesh);
+  // Axes
+  var arrowPos = new THREE.Vector3( 0,0,0 );
+  const headLength = 0.8;
+  const headWidth = 0.4;
+  const length = 3.2;
+  sceneTiny.add( new THREE.ArrowHelper( new THREE.Vector3( 1,0,0 ), arrowPos, length, 0x7F2020, headLength, headWidth ) );
+  sceneTiny.add( new THREE.ArrowHelper( new THREE.Vector3( 0,1,0 ), arrowPos, length, 0x207F20, headLength, headWidth ) );
+  sceneTiny.add( new THREE.ArrowHelper( new THREE.Vector3( 0,0,1 ), arrowPos, length, 0x20207F, headLength, headWidth ) );
 }
 
 function AddTinyLights() {
