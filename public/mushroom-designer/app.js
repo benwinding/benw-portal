@@ -4,6 +4,10 @@ renderer.setClearColor(new THREE.Color('rgb(0,0,0)'));
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+/**
+ * READING === https://hackernoon.com/how-to-draw-generative-nft-mushrooms-with-threejs
+ */
+
 function AddLights() {
   function AddLight(colorStr, positionXYZ) {
     const color = new THREE.Color(colorStr);
