@@ -265,10 +265,11 @@
       "name": "BSC Shed Maker",
       "tags": ["fun", "web app"],
       "year": 2017,
-      "description": "A configurator for shed's that run's in the browser",
-      "deploy_link": "https://bsc-configurator.herokuapp.com/",
+      "description": "A demo 3D shed builder that runs in the browser",
+      "deploy_link": "https://benwinding.github.io/BSC-Shed-Configurator/",
       "tools": ["JavaScript", "AngularJs", "Three-Js"],
-      "icons": ["angular", "three"]
+      "icons": ["angular", "three"],
+      "open_same_page": false
     },
     {
       "name": "Bender",
