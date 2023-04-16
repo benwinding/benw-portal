@@ -4,6 +4,8 @@ module.exports = {
   experimental: {
     appDir: true,
   },
+  output: 'export',
+  distDir: 'dist',
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

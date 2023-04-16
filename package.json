@@ -8,7 +8,7 @@
     "dev": "NODE_OPTIONS=\"--max_old_space_size=4096 --inspect\" next dev",
     "clean": "rimraf dist",
     "start": "next dev",
-    "build": "rm -rf dist && next build && next export -o dist",
+    "build": "rm -rf dist && next build",
     "build-3d": "yarn webpack -c ./public/3d/webpack.config.js",
     "build-sitemap": "next-sitemap --config ./next-sitemap.config.mjs",
     "deploy": "dokku-pages deploy -g dokku@benwinding.com:portal -d dist --minimal --allow-cors '.+\\.benwinding.com|localhost:.+'",

@@ -23,8 +23,7 @@ export function RainbowText(props: {
             <RainbowLetter
               letter={letter}
               color={getColor(index, props.text.length)}
-            >
-            </RainbowLetter>
+            />
           )}
         </span>
       ))}
