@@ -8,9 +8,7 @@ function useIsActiveRoute(href: string): boolean {
   const [isActive, setIsActive] = React.useState(false);
   const pathname = usePathname();
   React.useEffect(() => {
-    if (pathname === href) {
-      setIsActive(true);
-    }
+    setIsActive(pathname === href);
   }, [pathname]);
   return isActive;
 }
@@ -24,15 +22,14 @@ function HeadLink(props: { href: string; children: React.ReactNode }) {
   );
 }
 
-// TODO current link higlighted
 export function Header() {
   return (
     <div>
       <div className="text-right text-blue-800 text md:text-2xl mt-4">
         <HeadLink href="/">Home</HeadLink>
-        <HeadLink href="/about">About</HeadLink>
-        <HeadLink href="/projects">Projects</HeadLink>
-        <HeadLink href="/contact">Contact</HeadLink>
+        <HeadLink href="/about/">About</HeadLink>
+        <HeadLink href="/projects/">Projects</HeadLink>
+        <HeadLink href="/contact/">Contact</HeadLink>
         <a className="mr-3" href="/3d/">3D</a>
       </div>
       <a
