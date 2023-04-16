@@ -1,5 +1,5 @@
-export { CardProject } from './components/CardProject';
-export { ProjectsFilter } from './ProjectsFilter';
-export { ProjectsOrder } from './ProjectsOrder';
-export { ProjectsGroup } from './ProjectsGroup';
-export * from './projects-service';
+export { CardProject } from "./components/CardProject";
+export * from "./projects-service";
+export { ProjectsFilter } from "./ProjectsFilter";
+export { ProjectsGroup } from "./ProjectsGroup";
+export { ProjectsOrder } from "./ProjectsOrder";

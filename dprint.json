@@ -1,0 +1,20 @@
+{
+  "typescript": {
+    "arguments.trailingCommas": "onlyMultiLine"
+  },
+  "json": {
+  },
+  "includes": ["**/*.{ts,tsx,js,jsx,cjs,mjs,json}"],
+  "excludes": [
+    "**/node_modules",
+    "assets",
+    "public",
+    "dist*",
+    "**/*-lock.json",
+    ".next"
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/typescript-0.83.0.wasm",
+    "https://plugins.dprint.dev/json-0.17.0.wasm"
+  ]
+}

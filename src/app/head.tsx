@@ -1,4 +1,4 @@
-const THEME_COLOR = '#800000'
+const THEME_COLOR = "#800000";
 
 export default function Head() {
   return (

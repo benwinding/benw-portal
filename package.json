@@ -12,10 +12,10 @@
     "build-3d": "yarn webpack -c ./public/3d/webpack.config.js",
     "build-sitemap": "next-sitemap --config ./next-sitemap.config.mjs",
     "deploy": "dokku-pages deploy -g dokku@benwinding.com:portal -d dist --minimal --allow-cors '.+\\.benwinding.com|localhost:.+'",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "lint": "dprint fmt"
   },
   "dependencies": {
+    "dprint": "^0.35.3",
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",

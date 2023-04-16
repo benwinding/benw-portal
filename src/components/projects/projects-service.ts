@@ -1,6 +1,6 @@
-import { IconName } from 'components/icons/icons';
-import { OrderArr } from '../utils/OrderArr';
-import projects from './projects.json';
+import { IconName } from "components/icons/icons";
+import { OrderArr } from "../utils/OrderArr";
+import projects from "./projects.json";
 
 export interface Project {
   name: string;
@@ -18,8 +18,8 @@ export interface Project {
 }
 
 export enum ProjectOrderType {
-  NAME = 'name',
-  YEAR = 'year',
+  NAME = "name",
+  YEAR = "year",
 }
 
 export function GetProjectsAll() {
@@ -29,14 +29,14 @@ export function GetProjectsAll() {
 }
 
 type FilterObj = {
-  years: number[],
-  tags: string[],
-  icons: string[],
-  order: ProjectOrderType,
-  ascending: boolean,
-  group: string | undefined,
-  searchText: string,
-}
+  years: number[];
+  tags: string[];
+  icons: string[];
+  order: ProjectOrderType;
+  ascending: boolean;
+  group: string | undefined;
+  searchText: string;
+};
 
 export function FilterProjects(allProjects: Project[], args: FilterObj) {
   const {
@@ -53,18 +53,19 @@ export function FilterProjects(allProjects: Project[], args: FilterObj) {
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size && !searchText;
 
-  console.log('FilterProjects', {args, allProjects, HasNoFilters});
+  console.log("FilterProjects", { args, allProjects, HasNoFilters });
   if (HasNoFilters) {
     OrderArr(allProjects, order, ascending);
     return allProjects;
   }
 
   function MatchItem(p: Project): boolean {
-    if (searchText && TextMatches(
+    if (
+      searchText && TextMatches(
         searchText,
         p.tags,
         p.year,
-        p.name + " " + p.description
+        p.name + " " + p.description,
       )
     ) {
       return true;
@@ -89,12 +90,12 @@ function TextMatches(
   input: string,
   tags: string[] | undefined,
   year: number,
-  title: string
+  title: string,
 ): boolean {
   if (!input) {
     return true;
   }
-  const str1 = `${(tags || []).join(" ")} | ${year} | ${title}`
+  const str1 = `${(tags || []).join(" ")} | ${year} | ${title}`;
   if (IsInputIncluded(input, str1)) {
     return true;
   }
@@ -103,6 +104,6 @@ function TextMatches(
 
 function IsInputIncluded(input: string, b: string): boolean {
   const inputSafe = (input || "").toString().toLowerCase();
-  const bSafe = (b || '').toString().toLowerCase();
+  const bSafe = (b || "").toString().toLowerCase();
   return bSafe.includes(inputSafe);
 }

@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
@@ -8,13 +8,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      'xs': '450px',
+      "xs": "450px",
       ...defaultTheme.screens,
     },
     extend: {
       fontSize: {
-        '10xl': '5rem',
-        '12xl': '6.5rem',
+        "10xl": "5rem",
+        "12xl": "6.5rem",
       },
     },
   },

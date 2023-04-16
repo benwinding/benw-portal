@@ -3,18 +3,20 @@ import styles from "./icons.module.css";
 
 export type IconName = keyof typeof IconRequireMap;
 
-type IconProps = { className?: string, onClick?: () => void, iconName: IconName, color?: string, width?: number };
+type IconProps = { className?: string; onClick?: () => void; iconName: IconName; color?: string; width?: number };
 export function Icon(props: IconProps) {
   const icon = IconRequireMap[props.iconName];
-  const color = props.color || IconColorMap[props.iconName] || '#ddd';
+  const color = props.color || IconColorMap[props.iconName] || "#ddd";
   const width = props.width || 40;
-  return <div
-    className={classNames(styles.svgWrapper, "p-0", props.className)}
-    dangerouslySetInnerHTML={{ __html: icon }}
-    style={{ fill: color, width: width, height: width, display: 'flex' }}
-    onClick={props.onClick}
-  >
-  </div>
+  return (
+    <div
+      className={classNames(styles.svgWrapper, "p-0", props.className)}
+      dangerouslySetInnerHTML={{ __html: icon }}
+      style={{ fill: color, width: width, height: width, display: "flex" }}
+      onClick={props.onClick}
+    >
+    </div>
+  );
 }
 
 type FullIconColorMap = Record<IconName, string>;
@@ -43,7 +45,7 @@ const IconColorMap: Partial<FullIconColorMap> = {
 
   apple: "#333",
   next: "#000",
-}
+};
 
 const IconRequireMap = {
   three: require("assets/icons/custom/three-js.svg"),
@@ -85,4 +87,4 @@ const IconRequireMap = {
   puppeteer: require("assets/icons/misc/puppeteer.svg"),
   search: require("assets/icons/misc/search.svg"),
   uparrow: require("assets/icons/misc/uparrow.svg"),
-}
+};

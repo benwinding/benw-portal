@@ -1,4 +1,3 @@
-
 export function OrderArr(arr: any[], field: string, ascending?: boolean): void {
   function SortByField(a: any, b: any) {
     const aVal = (a[field] + "").toLowerCase();
