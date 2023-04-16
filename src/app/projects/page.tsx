@@ -1,3 +1,4 @@
+"use client"
 import { FilterProjects, GetProjectsAll, Project, ProjectsFilter, ProjectsOrder } from "components/projects"
 import { AddFilterEvent, CardProject } from "components/projects/components/CardProject"
 import { FilterChangedEvent } from "components/projects/ProjectsFilter";
@@ -5,7 +6,6 @@ import { OrderChangedEvent } from "components/projects/ProjectsOrder";
 import { RainbowText } from "components/RainbowText"
 import Head from "next/head"
 import React from "react";
-import { DefaultLayout } from "~/layouts/default"
 
 const projectsAll = GetProjectsAll();
 
@@ -50,7 +50,7 @@ export default function Page() {
     setFilterEvent(filterEvent);
   }
 
-  return <DefaultLayout>
+  return <>
     <Head>
       <title>Home</title>
       <meta property="og:image" content="https://i.imgur.com/orqq5jB.jpg"></meta>
@@ -86,5 +86,5 @@ export default function Page() {
         </div>)}
       </div>
     </div>
-  </DefaultLayout>
+  </>
 }

@@ -1,11 +1,10 @@
+"use client"
 import { Loading } from "components/Loading";
 import { RainbowText } from "components/RainbowText";
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import axios from "axios";
-import { DefaultLayout } from "layouts/default";
-import styles from "./index.module.css";
-import classNames from "classnames";
+import styles from "./about.module.css";
 
 type BlogPost = {
   title: string,
@@ -53,7 +52,7 @@ export default function Page() {
     }
   }, []);
 
-  return <DefaultLayout>
+  return <>
     <RainbowText text="About"></RainbowText>
     <div className="flex flex-col md:flex-row">
       <img
@@ -104,7 +103,7 @@ export default function Page() {
         </TransitionGroup>
       </div>
     </div>
-  </DefaultLayout>;
+  </>;
 }
 
 function GithubContributions() {

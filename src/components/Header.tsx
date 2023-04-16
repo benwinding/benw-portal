@@ -1,16 +1,17 @@
+"use client"
 import classNames from "classnames";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 function useIsActiveRoute(href: string): boolean {
   const [isActive, setIsActive] = React.useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
   React.useEffect(() => {
-    if (router.route === href) {
+    if (pathname === href) {
       setIsActive(true);
     }
-  }, [router.route]);
+  }, [pathname]);
   return isActive;
 }
 

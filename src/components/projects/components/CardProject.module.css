@@ -1,4 +1,4 @@
-.hazardBorder {
+div.hazardBorder {
   border: 10px solid pink;
   border-image: repeating-linear-gradient(
     -55deg,

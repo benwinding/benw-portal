@@ -1,9 +1,8 @@
 import { RainbowText } from "components/RainbowText";
 import Head from "next/head";
-import { DefaultLayout } from "~/layouts/default";
 
 export default function Page() {
-  return <DefaultLayout>
+  return <>
     <Head>
       <title>Home</title>
       <meta property="og:image" content="https://i.imgur.com/orqq5jB.jpg"></meta>
@@ -19,5 +18,5 @@ export default function Page() {
         <p className="ml-2">Complex solutions create complex bugs...</p>
       </div>
     </div>
-  </DefaultLayout>;
+  </>;
 }

@@ -1,9 +1,7 @@
-import { RainbowText } from "components/RainbowText";
 import Head from "next/head";
-import { DefaultLayout } from "~/layouts/default";
 
 export default function Page() {
-  return <DefaultLayout>
+  return <>
     <Head>
       <title>Meta - How?</title>
       <meta property="og:image" content="https://i.imgur.com/orqq5jB.jpg"></meta>
@@ -22,5 +20,5 @@ export default function Page() {
       <li>Sass</li>
       <li>Font Awesome</li>
     </ul>
-  </DefaultLayout>;
+  </>;
 }

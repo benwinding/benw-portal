@@ -1,3 +1,4 @@
+"use client"
 import interpolate from 'color-interpolate'
 import React from "react";
 import styles from './RainbowText.module.css';

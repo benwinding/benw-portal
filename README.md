@@ -1,10 +1,10 @@
 # My Site
 
-This site has taken many different incarnations, the current one is a Nuxt Js site based on [alispit's kickass portfolio!](https://alispit.tel/#/)
+This site has taken many different incarnations...
 
 It uses the following main JS technologies:
 
-- nuxt - _a single page app framework_
+- next - _a JS framework_
 - tailwind.css - _styling_
 
 # Features
