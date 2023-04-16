@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 
 export type Contact = {
@@ -11,7 +10,7 @@ export type Contact = {
 
 export function CardContact({ item }: { item: Contact }) {
   return (
-    <Link
+    <a
       href={item.link}
       title={item.title}
       className="border-2 rounded p-2 cursor-pointer flex flex-col"
@@ -23,6 +22,6 @@ export function CardContact({ item }: { item: Contact }) {
       >
       </span>
       <span className="p-0 m-0 mt-1">{item.linkText}</span>
-    </Link>
+    </a>
   );
 }
