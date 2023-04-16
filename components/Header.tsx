@@ -16,7 +16,7 @@ function useIsActiveRoute(href: string): boolean {
 
 function HeadLink(props: { href: string, children: React.ReactNode }) {
   const isActive = useIsActiveRoute(props.href);
-  return <Link href={props.href}><a className={classNames("mr-3", isActive && 'border-b-2 border-blue-800')}>{props.children}</a></Link>
+  return <Link href={props.href} className={classNames("mr-3", isActive && 'border-b-2 border-blue-800')}>{props.children}</Link>
 }
 
 // TODO current link higlighted 
