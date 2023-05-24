@@ -1,6 +1,15 @@
 {
   "all": [
     {
+      "name": "Saltbush Farm",
+      "tags": ["web site", "airbnb"],
+      "year": 2022,
+      "description": "Luxury farmhouse accomodation",
+      "deploy_link": "https://saltbush.farm",
+      "tools": ["Typescript", "NextJs", "NodeJs", "Tailwind"],
+      "icons": ["next", "typescript", "tailwind"]
+    },
+    {
       "name": "Trickhub",
       "tags": ["web site", "fun"],
       "year": 2022,
