@@ -54,7 +54,7 @@ export default function Page() {
     <>
       <Head>
         <title>Home</title>
-        <meta property="og:image" content="https://i.imgur.com/orqq5jB.jpg"></meta>
+        <meta property="og:image" content="/imgur/orqq5jB.jpg"></meta>
         <meta property="og:title" content="Home - Ben Winding"></meta>
         <meta property="og:description" content="A web developer from Adelaide, South Australia."></meta>
       </Head>
