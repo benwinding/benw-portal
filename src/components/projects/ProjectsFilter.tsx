@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Icon, IconName } from "components/icons/icons";
-import { OrderArr } from "components/utils/OrderArr";
+import { orderBy } from "lodash";
 import React from "react";
 import { FilterContainer } from "./components/FilterContainer";
 import { ProjectsFilterItem } from "./components/ProjectsFilterItem";
@@ -227,7 +227,6 @@ function MakeAll(projectsAll: Project[]) {
   const tagCounts = Object.entries(tagsUniqueCount).map(([key, count]) => {
     return { key, count } as KeyCount;
   });
-  OrderArr(tagCounts, "count", false);
   // Years
   function YearToFilter(year: string): FilterItem {
     return {
@@ -244,7 +243,8 @@ function MakeAll(projectsAll: Project[]) {
       count: tag.count,
     };
   }
-  const tags = tagCounts.map(TagToFilter);
+  const tagCountsSorted = orderBy(tagCounts, "count", 'asc');
+  const tags = tagCountsSorted.map(TagToFilter);
   // Icons
   function IconToFilter(iconName: IconName): FilterItem {
     return {

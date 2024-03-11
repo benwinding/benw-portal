@@ -11,7 +11,7 @@ const projectsAll = GetProjectsAll();
 
 const DEFAULT_ORDER: OrderChangedEvent = {
   orderBy: ProjectOrderType.YEAR,
-  ascending: true,
+  ascending: false,
 };
 
 const DEFAULT_FILTER: ProjectFilterValue = {

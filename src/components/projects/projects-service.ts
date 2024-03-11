@@ -1,5 +1,5 @@
 import { IconName } from "components/icons/icons";
-import { OrderArr } from "../utils/OrderArr";
+import { orderBy } from "lodash";
 import projects from "./projects.json";
 
 export interface Project {
@@ -24,7 +24,8 @@ export enum ProjectOrderType {
 
 export function GetProjectsAll() {
   const projectsAll = projects.all as Project[];
-  return projectsAll;
+  const projectsOrdered = orderBy(projectsAll, ["year", "name"], ['desc', 'asc'])
+  return projectsOrdered;
 }
 
 type FilterObj = {
@@ -53,8 +54,7 @@ export function FilterProjects(_allProjects: Project[], args: FilterObj) {
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size && !searchText;
   if (HasNoFilters) {
-    OrderArr(allProjects, order, ascending);
-    return allProjects;
+    return orderBy(allProjects, [order], [ascending? "asc" : "desc"]);
   }
 
   function MatchItem(p: Project): boolean {
@@ -80,8 +80,7 @@ export function FilterProjects(_allProjects: Project[], args: FilterObj) {
     return false;
   }
   const projectsFiltered = allProjects.filter(p => MatchItem(p));
-  OrderArr(projectsFiltered, order, ascending);
-  return projectsFiltered;
+  return orderBy(projectsFiltered, [order], [ascending? "asc" : "desc"]);
 }
 
 function TextMatches(
