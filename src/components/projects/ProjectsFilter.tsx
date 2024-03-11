@@ -7,7 +7,7 @@ import { ProjectsFilterItem } from "./components/ProjectsFilterItem";
 import { ProjectsFilterTag } from "./components/ProjectsFilterTag";
 import { Project } from "./projects-service";
 
-export type FilterChangedEvent = {
+export type ProjectFilterValue = {
   years?: number[];
   tags?: string[];
   icons?: string[];
@@ -17,59 +17,52 @@ export type FilterChangedEvent = {
 export function ProjectsFilter(props: {
   projectsAll: Project[];
   foundCount: number;
-  onFilterChanged: (event: FilterChangedEvent) => void;
+  value: ProjectFilterValue,
+  onFilterChanged: (value: ProjectFilterValue) => void;
 }) {
-  const [allYears, setAllYears] = React.useState<FilterItem[]>([]);
-  const [allTags, setAllTags] = React.useState<FilterItem[]>([]);
-  const [allIcons, setAllIcons] = React.useState<FilterItem[]>([]);
-
-  React.useEffect(() => {
+  const {
+    years: allYears,
+    tags: allTags,
+    icons: allIcons,
+  } = React.useMemo(() => {
     const projectsSafe = props.projectsAll || [];
-    const res = MakeAll(projectsSafe);
-    setAllYears(res.years);
-    setAllTags(res.tags);
-    setAllIcons(res.icons);
+    return MakeAll(projectsSafe);
   }, [props.projectsAll]);
 
-  const [selectedYears, setSelectedYears] = React.useState<string[]>([]);
-  const [selectedTags, setSelectedTags] = React.useState<string[]>([]);
-  const [selectedIcons, setSelectedIcons] = React.useState<string[]>([]);
-  const [searchText, setSearchText] = React.useState<string>("");
+  const {
+    years: selectedYears,
+    tags: selectedTags,
+    icons: selectedIcons,
+    searchText,
+  } = props.value;
 
   const hasAnyEnabled = selectedYears?.length || selectedTags?.length || selectedIcons?.length;
 
-  const toggleIcon = (key: string) => {
-    toggleInArray(selectedIcons, key);
-    setSelectedIcons([...selectedIcons]);
-  };
-  const toggleYear = (key: string) => {
-    toggleInArray(selectedYears, key);
-    setSelectedYears([...selectedYears]);
-  };
-  const toggleTag = (key: string) => {
-    toggleInArray(selectedTags, key);
-    setSelectedTags([...selectedTags]);
-  };
+  const onTextChanged = (text: string) => props.onFilterChanged({
+    searchText: text,
+  });
+  const clickedClearSearch = () => props.onFilterChanged({
+    searchText: '',
+  });
+  const clickedIconStr = (icon: string) => props.onFilterChanged({ 
+    icons: toggleInArray(selectedIcons, icon)
+  });
+  const clickedYearStr = (year: string) => props.onFilterChanged({ 
+    years: toggleInArray(selectedYears, parseInt(year))
+  });
+  const clickedTagStr = (tag: string) => props.onFilterChanged({ 
+    tags: toggleInArray(selectedTags, tag)
+  });
 
-  const clickedClearSearch = () => setSearchText("");
-  const clickedIconStr = (icon: string) => toggleIcon(icon);
-  const clickedYearStr = (year: string) => toggleYear(year);
-  const clickedTagStr = (tag: string) => toggleTag(tag);
+  const selectedYearsStr = selectedYears.map(y => y+'');
 
   const clickedClearAll = () => {
-    setSelectedIcons([]);
-    setSelectedYears([]);
-    setSelectedTags([]);
-  };
-
-  React.useEffect(() => {
     props.onFilterChanged({
-      years: selectedYears.map(y => parseInt(y)),
-      icons: selectedIcons,
-      tags: selectedTags,
-      searchText,
-    });
-  }, [selectedIcons, selectedTags, selectedYears, searchText]);
+      years: [],
+      tags: [],
+      icons: [],
+    })
+  };
 
   return (
     <div className="border-2 rounded-md">
@@ -78,13 +71,13 @@ export function ProjectsFilter(props: {
         <SearchField
           searchText={searchText}
           clickedClearSearch={clickedClearSearch}
-          onTextChanged={text => setSearchText(text)}
+          onTextChanged={onTextChanged}
         />
         <div>
           <div className="flex flex-wrap items-center">
             <span className="text-xs mb-1">Filters:</span>
             <ProjectFiltersSelectedTags items={allTags} selected={selectedTags} clickedItem={clickedTagStr} />
-            <ProjectFiltersSelectedTags items={allYears} selected={selectedYears} clickedItem={clickedYearStr} />
+            <ProjectFiltersSelectedTags items={allYears} selected={selectedYearsStr} clickedItem={clickedYearStr} />
             <ProjectFiltersSelectedTags items={allIcons} selected={selectedIcons} clickedItem={clickedIconStr} />
             {hasAnyEnabled && (
               <ProjectsFilterTag
@@ -107,7 +100,7 @@ export function ProjectsFilter(props: {
         </FilterContainer>
         <FilterContainer label="Year">
           <div className="flex flex-col">
-            <ProjectsFilterItemList items={allYears} clickedItem={clickedYearStr} selected={selectedYears} />
+            <ProjectsFilterItemList items={allYears} clickedItem={clickedYearStr} selected={selectedYearsStr} />
           </div>
         </FilterContainer>
         <FilterContainer label="Tech">
@@ -274,12 +267,14 @@ type KeyCount = {
   count: number;
 };
 
-function toggleInArray<T>(set: T[], value: T) {
-  if (set.includes(value)) {
-    set.splice(set.findIndex(v => v === value), 1);
+function toggleInArray<T>(arr: T[], value: T) {
+  const arrCopy = [...arr];
+  if (arrCopy.includes(value)) {
+    arrCopy.splice(arrCopy.findIndex(v => v === value), 1);
   } else {
-    set.push(value);
+    arrCopy.push(value);
   }
+  return arrCopy;
 }
 
 function str(input: number | string | undefined): string {

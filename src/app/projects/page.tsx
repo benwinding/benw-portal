@@ -1,7 +1,7 @@
 "use client";
 import { FilterProjects, GetProjectsAll, ProjectOrderType, ProjectsFilter, ProjectsOrder } from "components/projects";
 import { AddFilterEvent, CardProject } from "components/projects/components/CardProject";
-import { FilterChangedEvent } from "components/projects/ProjectsFilter";
+import { ProjectFilterValue } from "components/projects/ProjectsFilter";
 import { OrderChangedEvent } from "components/projects/ProjectsOrder";
 import { RainbowText } from "components/RainbowText";
 import Head from "next/head";
@@ -14,7 +14,7 @@ const DEFAULT_ORDER: OrderChangedEvent = {
   ascending: true,
 };
 
-const DEFAULT_FILTER: FilterChangedEvent = {
+const DEFAULT_FILTER: ProjectFilterValue = {
   tags: [],
   years: [],
   icons: [],
@@ -22,7 +22,7 @@ const DEFAULT_FILTER: FilterChangedEvent = {
 }
 
 export default function Page() {
-  const [filterEvent, setFilterEvent] = React.useState<FilterChangedEvent>(DEFAULT_FILTER);
+  const [filterEvent, setFilterEvent] = React.useState<ProjectFilterValue>(DEFAULT_FILTER);
   const [orderEvent, setOrderEvent] = React.useState<OrderChangedEvent>(DEFAULT_ORDER);
 
   const projectsEnabled = React.useMemo(() => {
@@ -45,12 +45,12 @@ export default function Page() {
     return filteredProjects;
   }, [filterEvent, orderEvent]);
 
-  function onFilterChanged(event: FilterChangedEvent) {
-    setFilterEvent(event);
+  function onFilterChanged(newValue: ProjectFilterValue) {
+    setFilterEvent(curValue => ({...curValue, ...newValue}));
   }
 
-  function onOrderChanged(event: OrderChangedEvent): void {
-    setOrderEvent(event);
+  function onOrderChanged(newValue: OrderChangedEvent): void {
+    setOrderEvent(curValue => ({...curValue, ...newValue}));
   }
 
   function onAddFilterClick(event: AddFilterEvent): void {
@@ -77,6 +77,7 @@ export default function Page() {
           <ProjectsFilter
             foundCount={projectsEnabled.length}
             projectsAll={projectsAll}
+            value={filterEvent}
             onFilterChanged={onFilterChanged}
           />
           <ProjectsOrder
@@ -90,7 +91,7 @@ export default function Page() {
           }
         </div>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-          {projectsAll.map((project) => (
+          {projectsEnabled.map((project) => (
             <div
               v-for="(project, index) in projectsEnabled"
               key={project.name}
