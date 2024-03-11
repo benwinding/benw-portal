@@ -87,4 +87,6 @@ const IconRequireMap = {
   puppeteer: require("assets/icons/misc/puppeteer.svg"),
   search: require("assets/icons/misc/search.svg"),
   uparrow: require("assets/icons/misc/uparrow.svg"),
+  opengl: require("assets/icons/misc/Opengl-logo.svg"),
+  cpp: require("assets/icons/misc/cpp-icon.svg"),
 };

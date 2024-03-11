@@ -26,7 +26,7 @@ export function ProjectsFilter(props: {
     icons: allIcons,
   } = React.useMemo(() => {
     const projectsSafe = props.projectsAll || [];
-    return MakeAll(projectsSafe);
+    return parseProjectsIntoTags(projectsSafe);
   }, [props.projectsAll]);
 
   const {
@@ -210,7 +210,7 @@ type FilterItem = {
   iconName?: IconName;
 };
 
-function MakeAll(projectsAll: Project[]) {
+function parseProjectsIntoTags(projectsAll: Project[]) {
   const yearsUnique = new Set<string>();
   const tagsUniqueCount: Record<string, number> = {};
   const iconsUnique = new Set<IconName>();
@@ -222,7 +222,7 @@ function MakeAll(projectsAll: Project[]) {
     });
     project.icons?.map(icon => iconsUnique.add(icon));
   });
-  const yearsStrings = Array.from(yearsUnique).sort();
+  const yearsStrings = Array.from(yearsUnique).sort().reverse();
   const iconsString = Array.from(iconsUnique).sort();
   const tagCounts = Object.entries(tagsUniqueCount).map(([key, count]) => {
     return { key, count } as KeyCount;

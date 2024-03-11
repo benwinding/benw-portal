@@ -1,6 +1,15 @@
 {
   "all": [
     {
+      "name": "Open GL - Terrain Demo",
+      "tags": ["3d", "fun", "demo"],
+      "year": 2024,
+      "description": "A 3D demo of an open world with procedural terrain",
+      "code_link": "https://github.com/benwinding/open-gl-terrain-example",
+      "tools": ["C++", "OpenGL", "Clang", "Make"],
+      "icons": ["cpp", "opengl"]
+    },
+    {
       "name": "Saltbush Farm",
       "tags": ["web site", "airbnb"],
       "year": 2022,
