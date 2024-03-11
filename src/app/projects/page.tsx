@@ -1,5 +1,5 @@
 "use client";
-import { FilterProjects, GetProjectsAll, Project, ProjectsFilter, ProjectsOrder } from "components/projects";
+import { FilterProjects, GetProjectsAll, ProjectOrderType, ProjectsFilter, ProjectsOrder } from "components/projects";
 import { AddFilterEvent, CardProject } from "components/projects/components/CardProject";
 import { FilterChangedEvent } from "components/projects/ProjectsFilter";
 import { OrderChangedEvent } from "components/projects/ProjectsOrder";
@@ -9,15 +9,27 @@ import React from "react";
 
 const projectsAll = GetProjectsAll();
 
-export default function Page() {
-  const [projectsEnabled, setProjectsEnabled] = React.useState<Project[]>(projectsAll);
-  const [filterEvent, setFilterEvent] = React.useState<FilterChangedEvent>({});
-  const [orderEvent, setOrderEvent] = React.useState<OrderChangedEvent>({});
+const DEFAULT_ORDER: OrderChangedEvent = {
+  orderBy: ProjectOrderType.YEAR,
+  ascending: true,
+};
 
-  React.useEffect(() => {
+const DEFAULT_FILTER: FilterChangedEvent = {
+  tags: [],
+  years: [],
+  icons: [],
+  searchText: undefined,
+}
+
+export default function Page() {
+  const [filterEvent, setFilterEvent] = React.useState<FilterChangedEvent>(DEFAULT_FILTER);
+  const [orderEvent, setOrderEvent] = React.useState<OrderChangedEvent>(DEFAULT_ORDER);
+
+  const projectsEnabled = React.useMemo(() => {
     const { years, tags, icons, searchText } = filterEvent;
     const { orderBy, ascending } = orderEvent;
     const group = undefined;
+    console.log({ filterEvent, orderEvent });
     const filteredProjects = FilterProjects(
       projectsAll,
       {
@@ -30,7 +42,7 @@ export default function Page() {
         searchText,
       },
     );
-    setProjectsEnabled(filteredProjects);
+    return filteredProjects;
   }, [filterEvent, orderEvent]);
 
   function onFilterChanged(event: FilterChangedEvent) {
@@ -78,7 +90,7 @@ export default function Page() {
           }
         </div>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-          {projectsEnabled?.map((project) => (
+          {projectsAll.map((project) => (
             <div
               v-for="(project, index) in projectsEnabled"
               key={project.name}

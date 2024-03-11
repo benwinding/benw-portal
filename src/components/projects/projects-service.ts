@@ -24,7 +24,6 @@ export enum ProjectOrderType {
 
 export function GetProjectsAll() {
   const projectsAll = projects.all as Project[];
-  // projectsAll.sort((a, b) => b.year - a.year)
   return projectsAll;
 }
 
@@ -38,7 +37,8 @@ type FilterObj = {
   searchText: string;
 };
 
-export function FilterProjects(allProjects: Project[], args: FilterObj) {
+export function FilterProjects(_allProjects: Project[], args: FilterObj) {
+  const allProjects = [..._allProjects];
   const {
     years,
     tags,
@@ -52,8 +52,6 @@ export function FilterProjects(allProjects: Project[], args: FilterObj) {
   const iconsSet = new Set(icons);
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size && !searchText;
-
-  console.log("FilterProjects", { args, allProjects, HasNoFilters });
   if (HasNoFilters) {
     OrderArr(allProjects, order, ascending);
     return allProjects;
