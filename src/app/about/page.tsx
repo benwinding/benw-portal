@@ -1,40 +1,37 @@
 "use client";
-import { getBlogPosts } from "components/blog/useBlog";
+import { useBlogPosts } from "components/blog/useBlogPosts";
 import { Loading } from "components/Loading";
 import { RainbowText } from "components/RainbowText";
 import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styles from "./about.module.css";
 
+function useTimeoutCount(delayMs: number, onInterval: () => void) {
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      onInterval();
+    }, delayMs);
+    return () => {
+      clearInterval(interval);
+    }
+  }, [delayMs, onInterval]);
+}
+
 const TRANSITION_DELAY = 300;
 
 export default function Page() {
-  const [blogPosts, setBlogPosts] = React.useState([]);
-
-  React.useEffect(() => {
-    let mounted = true;
-    getBlogPosts().then(data => {
-      let posts = data.slice(0, 6).map(item => {
-        return {
-          title: item.title,
-          date: new Date(item.date).toDateString(),
-          link: "https://blog.benwinding.com/" + item.path,
-        };
-      });
-      console.log(posts);
-      let delayMs = 0;
-      for (let i = 0; i < posts.length; i++) {
-        delayMs += TRANSITION_DELAY;
-        setTimeout(() => {
-          mounted && setBlogPosts(posts.slice(0, i));
-        }, delayMs);
-        if (!mounted) return;
-      }
-    });
-    return () => {
-      mounted = false;
-    };
-  }, []);
+  const blogPostsAll = useBlogPosts();
+  const [showCount, setShowCount] = React.useState(0);
+  useTimeoutCount(TRANSITION_DELAY, () => {
+    if (blogPostsAll.length && showCount <= 6) {
+      setShowCount(c => c + 1);
+    }
+  });
+  const posts = React.useMemo(() => blogPostsAll.slice(0, showCount).map(item => ({
+    title: item.title,
+    date: new Date(item.date).toDateString(),
+    link: "https://blog.benwinding.com/" + item.path,
+  })), [blogPostsAll, showCount]);
 
   return (
     <>
@@ -66,9 +63,9 @@ export default function Page() {
           </p>
           <GithubContributions />
           <h2 className="text-2xl">Writing</h2>
-          {!blogPosts?.length && <Loading text="Loading Posts..."></Loading>}
+          {!posts?.length && <Loading text="Loading Posts..."></Loading>}
           <TransitionGroup>
-            {blogPosts.map((blog) => (
+            {posts.map((blog) => (
               <CSSTransition
                 key={blog.title}
                 timeout={1000}
