@@ -1,26 +1,10 @@
 "use client";
-import axios from "axios";
+import { getBlogPosts } from "components/blog/useBlog";
 import { Loading } from "components/Loading";
 import { RainbowText } from "components/RainbowText";
 import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styles from "./about.module.css";
-
-type BlogPost = {
-  title: string;
-  link: string;
-  path: string;
-  date: string;
-};
-
-async function getBlogPosts() {
-  const response = await axios
-    .get("https://blog.benwinding.com/feed.json", {
-      responseType: "json",
-    });
-  console.log(response);
-  return response.data as BlogPost[];
-}
 
 const TRANSITION_DELAY = 300;
 
