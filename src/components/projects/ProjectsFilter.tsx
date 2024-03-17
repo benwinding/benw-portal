@@ -30,9 +30,9 @@ export function ProjectsFilter(props: {
   }, [props.projectsAll]);
 
   const {
-    years: selectedYears,
-    tags: selectedTags,
-    icons: selectedIcons,
+    years: selectedYears = [],
+    tags: selectedTags = [],
+    icons: selectedIcons = [],
     searchText,
   } = props.value;
 
@@ -123,7 +123,7 @@ function ProjectsFilterItemList(
           key={item.label}
           iconName={item.iconName}
           iconLabel={item.label}
-          enabled={props.selected?.includes(item.key)}
+          enabled={props.selected.includes(item.key)}
           clickedItem={() => props.clickedItem(item.key)}
         />
       ))}
@@ -138,7 +138,7 @@ function ProjectsFilterTagList(props: { items: FilterItem[]; selected: string[];
         <ProjectsFilterTag
           key={item.label}
           iconLabel={item.label}
-          enabled={props.selected?.includes(item.key)}
+          enabled={props.selected.includes(item.key)}
           clickedItem={() => props.clickedItem(item.key)}
           count={str(item.count)}
           color={""}
@@ -170,7 +170,7 @@ function ProjectFiltersSelectedTags(
 }
 
 function SearchField(
-  props: { searchText: string; onTextChanged: (text: string) => void; clickedClearSearch: () => void },
+  props: { searchText: string | undefined; onTextChanged: (text: string) => void; clickedClearSearch: () => void },
 ) {
   const hasText = !!props.searchText;
   return (

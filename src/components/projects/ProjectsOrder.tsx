@@ -4,8 +4,8 @@ import React from "react";
 import { ProjectOrderType } from "./projects-service";
 
 export type OrderChangedEvent = {
-  orderBy?: ProjectOrderType;
-  ascending?: boolean;
+  orderBy: ProjectOrderType;
+  ascending: boolean;
 };
 
 const orderByArray: ProjectOrderType[] = [

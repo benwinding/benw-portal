@@ -3,7 +3,7 @@ import { Icon, IconName } from "components/icons/icons";
 
 export function ProjectsFilterItem(props: {
   enabled: boolean;
-  iconName: IconName;
+  iconName: IconName | undefined;
   iconLabel: string;
   clickedItem: () => void;
 }) {

@@ -91,7 +91,7 @@ export default function Page() {
 
 function GithubContributions() {
   const [loaded, setLoaded] = React.useState(false);
-  const image = React.useRef<HTMLImageElement>();
+  const image = React.useRef<HTMLImageElement>(null);
 
   React.useEffect(() => {
     if (image.current?.complete) setLoaded(true);

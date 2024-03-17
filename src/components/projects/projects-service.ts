@@ -30,16 +30,16 @@ export function GetProjectsAll() {
 }
 
 type FilterObj = {
-  years: number[];
-  tags: string[];
-  icons: string[];
+  years: number[] | undefined;
+  tags: string[] | undefined;
+  icons: string[] | undefined;
   order: ProjectOrderType;
-  ascending: boolean;
+  ascending: boolean | undefined;
   group: string | undefined;
-  searchText: string;
+  searchText: string | undefined;
 };
 
-export function FilterProjects(_allProjects: Project[], args: FilterObj) {
+export function FilterProjects(_allProjects: Project[], args: FilterObj): Project[] {
   const allProjects = [..._allProjects];
   const {
     years,
@@ -54,8 +54,9 @@ export function FilterProjects(_allProjects: Project[], args: FilterObj) {
   const iconsSet = new Set(icons);
 
   const HasNoFilters = !yearsSet.size && !tagsSet.size && !iconsSet.size && !searchText;
+  const orderDir = ascending ? "asc" : "desc";
   if (HasNoFilters) {
-    return orderBy(allProjects, [order], [ascending? "asc" : "desc"]);
+    return orderBy(allProjects, [order], [orderDir]);
   }
 
   function MatchItem(p: Project): boolean {
@@ -81,7 +82,7 @@ export function FilterProjects(_allProjects: Project[], args: FilterObj) {
     return false;
   }
   const projectsFiltered = allProjects.filter(p => MatchItem(p));
-  return orderBy(projectsFiltered, [order], [ascending? "asc" : "desc"]);
+  return orderBy(projectsFiltered, [order], [orderDir]);
 }
 
 function TextMatches(
