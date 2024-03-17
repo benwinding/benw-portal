@@ -15,7 +15,7 @@ async function getBlogPosts() {
 }
 
 export function useBlogPosts() {
-  const [blogPosts, setBlogPosts] = React.useState([]);
+  const [blogPosts, setBlogPosts] = React.useState<BlogPost[]>([]);
 
   React.useEffect(() => {
     let mounted = true;
