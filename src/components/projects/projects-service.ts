@@ -4,6 +4,7 @@ import projects from "./projects.json";
 
 export interface Project {
   name: string;
+  slug: string;
   description: string;
   year: number;
   wip?: boolean;

@@ -1,3 +1,4 @@
+"use client"
 import classNames from "classnames";
 import { Icon, IconName } from "components/icons/icons";
 import React from "react";
@@ -11,7 +12,7 @@ export type AddFilterEvent = {
 };
 
 export function CardProject(
-  { project, onAddFilterClick }: { project: Project; onAddFilterClick: (event: AddFilterEvent) => void },
+  { project, onAddFilterClick }: { project: Project; onAddFilterClick?: (event: AddFilterEvent) => void },
 ) {
   const links: ProjectLinkProps[] = [
     {
@@ -53,14 +54,14 @@ export function CardProject(
       <div className="flex">
         {project.icons?.map(icon => (
           <div key={icon} className="mx-1">
-            <Icon onClick={() => onAddFilterClick({ icon })} iconName={icon as any} />
+            <Icon onClick={() => onAddFilterClick?.({ icon })} iconName={icon as any} />
           </div>
         ))}
       </div>
       <div className="mt-2 text-black flex justify-around">
         <span
           className="px-2 rounded-xl bg-gray-400"
-          onClick={() => onAddFilterClick({ year: project.year })}
+          onClick={() => onAddFilterClick?.({ year: project.year })}
         >
           {project.year}
         </span>
@@ -75,7 +76,7 @@ export function CardProject(
 }
 
 type ProjectLinkProps = {
-  href: string;
+  href: string | undefined;
   label: string;
   iconName: IconName;
   iconColor: string;

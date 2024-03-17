@@ -2,6 +2,7 @@
   "all": [
     {
       "name": "Open GL - Terrain Demo",
+      "slug": "open_gl_terrain_demo",
       "tags": ["3d", "fun", "demo"],
       "year": 2024,
       "description": "A 3D demo of an open world with procedural terrain",
@@ -11,6 +12,7 @@
     },
     {
       "name": "Saltbush Farm",
+      "slug": "saltbush_farm",
       "tags": ["web site", "airbnb"],
       "year": 2022,
       "description": "Luxury farmhouse accomodation",
@@ -20,6 +22,7 @@
     },
     {
       "name": "Trickhub",
+      "slug": "trickhub",
       "tags": ["web site", "fun"],
       "year": 2022,
       "description": "Share and view tricks from extreme sports",
@@ -30,6 +33,7 @@
     },
     {
       "name": "Everything's Normal",
+      "slug": "everything's_normal",
       "tags": ["web site", "3d", "fun"],
       "year": 2022,
       "description": "Visualize a rotating normal map",
@@ -39,6 +43,7 @@
     },
     {
       "name": "Surprise Bread",
+      "slug": "surprise_bread",
       "tags": ["web site", "fun"],
       "year": 2022,
       "description": "Delicious handmade sourdough bread, delivered to your door!",
@@ -48,6 +53,7 @@
     },
     {
       "name": "Task Barrel",
+      "slug": "task_barrel",
       "tags": ["productivity", "web app"],
       "year": 2021,
       "description": "Simple task collaboration, inspired by 'Github Issues'",
@@ -58,6 +64,7 @@
     },
     {
       "name": "WolfpackDogTraining.com",
+      "slug": "wolfpackdogtrainingcom",
       "tags": ["web site"],
       "year": 2021,
       "description": "Website for a friend's dog training business",
@@ -67,6 +74,7 @@
     },
     {
       "name": "PDF Stamp",
+      "slug": "pdf_stamp",
       "tags": ["cli", "pdf"],
       "year": 2017,
       "description": "Automate adding signatures to a PDF via terminal.",
@@ -76,6 +84,7 @@
     },
     {
       "name": "Command Pal",
+      "slug": "command_pal",
       "tags": ["fun", "cli", "library"],
       "year": 2020,
       "description": "The hackable command palette for the web, inspired by Visual Studio Code.",
@@ -87,6 +96,7 @@
     },
     {
       "name": "Ngext",
+      "slug": "ngext",
       "tags": ["tool", "cli", "library"],
       "year": 2020,
       "description": "A routing framework for angular inspired by React's next.js.",
@@ -97,6 +107,7 @@
     },
     {
       "name": "3D Laptop",
+      "slug": "3d_laptop",
       "tags": ["fun", "3d", "web app"],
       "year": 2021,
       "description": "A 3D version of this website!",
@@ -108,6 +119,7 @@
     },
     {
       "name": "Eat The Donut",
+      "slug": "eat_the_donut",
       "tags": ["fun", "3d", "web app", "game"],
       "year": 2021,
       "description": "A 3D game where you eat a donut!",
@@ -118,6 +130,7 @@
     },
     {
       "name": "Newsit",
+      "slug": "newsit",
       "tags": ["hn", "extension"],
       "year": 2018,
       "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
@@ -128,6 +141,7 @@
     },
     {
       "name": "SVG 2 Clipboard",
+      "slug": "svg_2_clipboard",
       "tags": ["extension"],
       "year": 2020,
       "description": "A simple browser extension to help copy SVG's directly from the web!",
@@ -138,6 +152,7 @@
     },
     {
       "name": "Wealth Visualizer",
+      "slug": "wealth_visualizer",
       "tags": ["fun", "3d", "web app"],
       "year": 2020,
       "description": "A physical visualization of money!",
@@ -148,6 +163,7 @@
     },
     {
       "name": "YComments",
+      "slug": "ycomments",
       "tags": ["hn", "library"],
       "year": 2018,
       "description": "Embedded discussions from Hacker News",
@@ -159,6 +175,7 @@
     },
     {
       "name": "Cloud HTML 2 PDF",
+      "slug": "cloud_html_2_pdf",
       "tags": ["cloud", "library"],
       "year": 2019,
       "description": "Convert HTML to PDF efficiently using google cloud infrastructure",
@@ -168,6 +185,7 @@
     },
     {
       "name": "benwinding.com",
+      "slug": "benwinding.com",
       "tags": ["fun", "web site"],
       "year": 2018,
       "description": "Ben winding's web portal, to show off him and his work!",
@@ -178,6 +196,7 @@
     },
     {
       "name": "3D Cricket Lanes",
+      "slug": "3d_cricket_lanes",
       "tags": ["fun", "web app", "3d"],
       "year": 2017,
       "description": "A 3D demo of a cricket lane system, form Quin's Sport's Nets",
@@ -188,6 +207,7 @@
     },
     {
       "name": "Bootleg Wakeboarding Event",
+      "slug": "bootleg_wakeboarding_event",
       "tags": ["fun", "web app", "3d"],
       "year": 2017,
       "description": "A 3D demo showcasing wakeboarding obstacles",
@@ -198,6 +218,7 @@
     },
     {
       "name": "My Blog",
+      "slug": "my_blog",
       "tags": ["fun", "web site"],
       "year": 2018,
       "description": "Checkout my blog, where I speak my mind",
@@ -207,6 +228,7 @@
     },
     {
       "name": "Formzy",
+      "slug": "formzy",
       "tags": ["fun", "web app", "pdf"],
       "year": 2017,
       "description": "A automated PDF filler, for the Solar Industry",
@@ -216,6 +238,7 @@
     },
     {
       "name": "Canvas Scraper",
+      "slug": "canvas_scraper",
       "tags": ["fun", "library"],
       "year": 2018,
       "description": "Download all files from a specific course on the MyUni system.",
@@ -226,6 +249,7 @@
     },
     {
       "name": "Frank The Collie",
+      "slug": "frank_the_collie",
       "tags": ["fun", "web site"],
       "year": 2019,
       "description": "A high-performance website for \"Frank\" my Border Collie",
@@ -236,6 +260,7 @@
     },
     {
       "name": "Outback Odyssey Site",
+      "slug": "outback_odyssey_site",
       "tags": ["fun", "web site"],
       "year": 2017,
       "description": "An event website for an annual car adventure for charity.",
@@ -245,6 +270,7 @@
     },
     {
       "name": "Rachel Darling's Site",
+      "slug": "rachel_darling's_site",
       "tags": ["fun", "web site"],
       "year": 2016,
       "description": "A portfolio website for a talented artist.",
@@ -254,6 +280,7 @@
     },
     {
       "name": "Kova Engineering Site",
+      "slug": "kova_engineering_site",
       "tags": ["fun", "web site"],
       "year": 2014,
       "description": "An engineering firm in Vancouver, Canada.",
@@ -263,6 +290,7 @@
     },
     {
       "name": "Down Subs",
+      "slug": "down_subs",
       "tags": ["fun", "web app"],
       "year": 2018,
       "description": "Search videos from youtube, by text in the subtitles",
@@ -272,6 +300,7 @@
     },
     {
       "name": "Seeing Sarawak Site",
+      "slug": "seeing_sarawak_site",
       "tags": ["fun", "web site"],
       "year": 2017,
       "description": "Travel blog, created for my sister",
@@ -281,6 +310,7 @@
     },
     {
       "name": "BSC Shed Maker",
+      "slug": "bsc_shed_maker",
       "tags": ["fun", "web app"],
       "year": 2017,
       "description": "A demo 3D shed builder that runs in the browser",
@@ -291,6 +321,7 @@
     },
     {
       "name": "Bender",
+      "slug": "bender",
       "tags": ["fun", "web app"],
       "year": 2021,
       "description": "A dating app to meet cool guys like me, inspired by Tinder!",
@@ -301,6 +332,7 @@
     },
     {
       "name": "Zoomore",
+      "slug": "zoomore",
       "tags": ["fun", "mobile app"],
       "year": 2021,
       "description": "Turn pictures into videos",
@@ -311,6 +343,7 @@
     },
     {
       "name": "Memebot",
+      "slug": "memebot",
       "tags": ["fun", "chatbot"],
       "year": 2017,
       "description": "A messenger bot which finds and sends you memes.",
@@ -323,6 +356,7 @@
   "not_implemented": [
     {
       "name": "History",
+      "slug": "history",
       "tags": ["fun"],
       "year": 2019,
       "description": "A historical view of THIS website, all versions captured",
