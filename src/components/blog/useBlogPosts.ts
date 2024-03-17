@@ -3,10 +3,17 @@ import React from "react";
 
 export type BlogPost = {
   title: string;
-  link: string;
+  permalink: string;
+  tags: BlogTag[];
   path: string;
   date: string;
 };
+
+type BlogTag = {
+  name: string,
+  slug: string,
+  permalink: string,
+}
 
 async function getBlogPosts() {
   const response = await fetch("https://blog.benwinding.com/feed.json")
