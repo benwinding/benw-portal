@@ -42,7 +42,12 @@ function ResultCard(props: { result: SearchResult }) {
   return (
     <a href={props.result.href} className="flex flex-col">
       <p>{props.result.title}</p>
-      <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
+      <div className="flex flex-row items-center gap-1">
+        <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
+        {props.result.tags.map(tag => (
+          <span key={tag} className="text-xs bg-amber-500 px-2 py-0 rounded-full">{tag}</span>
+        ))}
+      </div>
     </a>
   );
 }
