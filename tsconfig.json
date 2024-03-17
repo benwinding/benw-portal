@@ -37,15 +37,20 @@
       }
     ],
     "incremental": false,
+    "strictNullChecks": false
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "dist/types/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
-    "./**/*.spec.ts"
+    "./**/*.spec.ts",
+    "dist/**/*.ts",
+    ".next/**/*.ts"
   ]
 }
