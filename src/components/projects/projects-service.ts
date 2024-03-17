@@ -25,7 +25,7 @@ export enum ProjectOrderType {
 
 export function GetProjectsAll() {
   const projectsAll = projects.all as Project[];
-  const projectsOrdered = orderBy(projectsAll, ["year", "name"], ['desc', 'asc'])
+  const projectsOrdered = orderBy(projectsAll, ["year", "name"], ["desc", "asc"]);
   return projectsOrdered;
 }
 

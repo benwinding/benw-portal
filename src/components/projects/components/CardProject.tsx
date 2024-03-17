@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import classNames from "classnames";
 import { Icon, IconName } from "components/icons/icons";
 import React from "react";

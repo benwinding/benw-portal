@@ -19,7 +19,7 @@ const DEFAULT_FILTER: ProjectFilterValue = {
   years: [],
   icons: [],
   searchText: undefined,
-}
+};
 
 export default function Page() {
   const [filterEvent, setFilterEvent] = React.useState<ProjectFilterValue>(DEFAULT_FILTER);
@@ -44,11 +44,11 @@ export default function Page() {
   }, [filterEvent, orderEvent]);
 
   function onFilterChanged(newValue: ProjectFilterValue) {
-    setFilterEvent(curValue => ({...curValue, ...newValue}));
+    setFilterEvent(curValue => ({ ...curValue, ...newValue }));
   }
 
   function onOrderChanged(newValue: OrderChangedEvent): void {
-    setOrderEvent(curValue => ({...curValue, ...newValue}));
+    setOrderEvent(curValue => ({ ...curValue, ...newValue }));
   }
 
   function onAddFilterClick(event: AddFilterEvent): void {

@@ -13,7 +13,7 @@ function useTimeoutCount(delayMs: number, onInterval: () => void) {
     }, delayMs);
     return () => {
       clearInterval(interval);
-    }
+    };
   }, [delayMs, onInterval]);
 }
 
@@ -27,11 +27,12 @@ export default function Page() {
       setShowCount(c => c + 1);
     }
   });
-  const posts = React.useMemo(() => blogPostsAll.slice(0, showCount).map(item => ({
-    title: item.title,
-    date: new Date(item.date).toDateString(),
-    link: "https://blog.benwinding.com/" + item.path,
-  })), [blogPostsAll, showCount]);
+  const posts = React.useMemo(() =>
+    blogPostsAll.slice(0, showCount).map(item => ({
+      title: item.title,
+      date: new Date(item.date).toDateString(),
+      link: "https://blog.benwinding.com/" + item.path,
+    })), [blogPostsAll, showCount]);
 
   return (
     <>

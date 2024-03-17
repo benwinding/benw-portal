@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 
 export type BlogPost = {
@@ -10,13 +10,13 @@ export type BlogPost = {
 };
 
 type BlogTag = {
-  name: string,
-  slug: string,
-  permalink: string,
-}
+  name: string;
+  slug: string;
+  permalink: string;
+};
 
 async function getBlogPosts() {
-  const response = await fetch("https://blog.benwinding.com/feed.json")
+  const response = await fetch("https://blog.benwinding.com/feed.json");
   const data = await response.json() as BlogPost[];
   return data;
 }

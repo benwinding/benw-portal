@@ -17,7 +17,7 @@ export type ProjectFilterValue = {
 export function ProjectsFilter(props: {
   projectsAll: Project[];
   foundCount: number;
-  value: ProjectFilterValue,
+  value: ProjectFilterValue;
   onFilterChanged: (value: ProjectFilterValue) => void;
 }) {
   const {
@@ -38,30 +38,35 @@ export function ProjectsFilter(props: {
 
   const hasAnyEnabled = selectedYears?.length || selectedTags?.length || selectedIcons?.length;
 
-  const onTextChanged = (text: string) => props.onFilterChanged({
-    searchText: text,
-  });
-  const clickedClearSearch = () => props.onFilterChanged({
-    searchText: '',
-  });
-  const clickedIconStr = (icon: string) => props.onFilterChanged({ 
-    icons: toggleInArray(selectedIcons, icon)
-  });
-  const clickedYearStr = (year: string) => props.onFilterChanged({ 
-    years: toggleInArray(selectedYears, parseInt(year))
-  });
-  const clickedTagStr = (tag: string) => props.onFilterChanged({ 
-    tags: toggleInArray(selectedTags, tag)
-  });
+  const onTextChanged = (text: string) =>
+    props.onFilterChanged({
+      searchText: text,
+    });
+  const clickedClearSearch = () =>
+    props.onFilterChanged({
+      searchText: "",
+    });
+  const clickedIconStr = (icon: string) =>
+    props.onFilterChanged({
+      icons: toggleInArray(selectedIcons, icon),
+    });
+  const clickedYearStr = (year: string) =>
+    props.onFilterChanged({
+      years: toggleInArray(selectedYears, parseInt(year)),
+    });
+  const clickedTagStr = (tag: string) =>
+    props.onFilterChanged({
+      tags: toggleInArray(selectedTags, tag),
+    });
 
-  const selectedYearsStr = selectedYears.map(y => y+'');
+  const selectedYearsStr = selectedYears.map(y => y + "");
 
   const clickedClearAll = () => {
     props.onFilterChanged({
       years: [],
       tags: [],
       icons: [],
-    })
+    });
   };
 
   return (
@@ -243,7 +248,7 @@ function parseProjectsIntoTags(projectsAll: Project[]) {
       count: tag.count,
     };
   }
-  const tagCountsSorted = orderBy(tagCounts, "count", 'asc');
+  const tagCountsSorted = orderBy(tagCounts, "count", "asc");
   const tags = tagCountsSorted.map(TagToFilter);
   // Icons
   function IconToFilter(iconName: IconName): FilterItem {
