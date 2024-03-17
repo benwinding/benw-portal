@@ -27,6 +27,7 @@
     "babel-loader": "^8.2.2",
     "classnames": "^2.3.1",
     "color-interpolate": "^1.0.2",
+    "dayjs": "^1.11.10",
     "dokku-pages": "^1.0.12",
     "dprint": "^0.35.3",
     "eslint": "^5.16.0",
