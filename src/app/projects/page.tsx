@@ -28,8 +28,6 @@ export default function Page() {
   const projectsEnabled = React.useMemo(() => {
     const { years, tags, icons, searchText } = filterEvent;
     const { orderBy, ascending } = orderEvent;
-    const group = undefined;
-    console.log({ filterEvent, orderEvent });
     const filteredProjects = FilterProjects(
       projectsAll,
       {
@@ -38,7 +36,7 @@ export default function Page() {
         icons,
         order: orderBy,
         ascending,
-        group,
+        group: undefined,
         searchText,
       },
     );
