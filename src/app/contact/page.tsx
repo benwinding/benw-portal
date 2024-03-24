@@ -74,7 +74,7 @@ const socials: Contact[] = [
     iconColor: "darkgreen",
   },
   {
-    link: "/Ben-Winding-2021-Resume.pdf",
+    link: "/Ben-Winding-2024-Resume.pdf",
     linkText: "Resume - Ben Winding",
     title: "Resume",
     icon: require("assets/icons/custom/cv.svg"),
