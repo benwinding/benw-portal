@@ -3,6 +3,9 @@ import { orderBy } from "lodash";
 import { SearchResult } from "./SearchResult";
 
 export function SearchResults(allResults: SearchResult[], opts: { searchText: string }): SearchResult[] {
+  if (!opts.searchText.trim()) {
+    return allResults;
+  }
   const filteredResults: (SearchResult & { rank: ResultRank })[] = [];
   // 1. Filter results
   allResults.forEach(result => {
@@ -47,15 +50,16 @@ function GetRecencyRank(date: Date) {
 }
 
 function tagsRank(tags: string[], searchPart: string): number {
-  const isInTags = tags.includes(searchPart);
+  const tagsLower = tags.map(t => t.toLowerCase());
+  const isInTags = tagsLower.includes(searchPart);
   if (isInTags) {
     return 1;
   }
-  const partialMatch = tags.find(tag => tag.includes(searchPart));
+  const partialMatch = tagsLower.find(tag => tag.includes(searchPart));
   if (partialMatch) {
     return 0.5;
   }
-  const partialMatchInverse = tags.find(tag => searchPart.includes(tag));
+  const partialMatchInverse = tagsLower.find(tag => searchPart.includes(tag));
   if (partialMatchInverse) {
     return 0.4;
   }
@@ -67,7 +71,7 @@ function GetTagsRank(result: SearchResult, searchParts: string[]): number {
   const tagMatchCount = searchParts.reduce((count, searchPart) => {
     const res = tagsRank(result.tags, searchPart);
     let tools = 0;
-    if (result.type === 'project') {
+    if (result.type === "project") {
       tools += tagsRank(result.project.tools, searchPart) * TOOLS_WEIGHTING;
       tools += tagsRank(result.project.tags, searchPart) * TOOLS_WEIGHTING;
     }
@@ -106,6 +110,6 @@ function GetTitleRank(title: string, searchText: string, searchParts: string[]):
 
 function getSearchParts(searchTextLower: string) {
   return searchTextLower.split(" ")
-    .map(searchPart => searchPart.trim())
+    .map(searchPart => searchPart.trim().toLowerCase())
     .filter(searchPart => !!searchPart);
 }

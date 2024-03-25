@@ -35,7 +35,9 @@ function useAllResults(): SearchResult[] {
       ...itemsProjects,
       ...itemsBlog,
     ];
-    return orderBy(allResults, ["date"], ["desc"]);
+    const ordered = orderBy(allResults, ["date"], ["desc"]);
+    // console.log({allResults, ordered})
+    return ordered;
   }, [blogPosts]);
 
   return allResults;
@@ -46,9 +48,11 @@ export function useSearch() {
   const allResults = useAllResults();
 
   const results = React.useMemo(() => {
-    return SearchResults(allResults, {
+    const searched = SearchResults(allResults, {
       searchText,
     });
+    // console.log({allResults, searched});
+    return searched;
   }, [allResults, searchText]);
   return { setSearchText, results };
 }
