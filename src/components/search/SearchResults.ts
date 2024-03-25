@@ -29,35 +29,54 @@ export type ResultRank = {
   tagsRank: number;
 };
 
-const MAX_DATE = Number(new Date());
 export function GetResultRank(result: SearchResult, searchText: string): ResultRank {
-  const titleRank = GetTitleRank(result.title, searchText);
-  const recencyRank = 1 - ((MAX_DATE - Number(result.date)) / MAX_DATE);
-  const tagsRank = GetTagsRank(result.tags, searchText);
+  const searchParts = getSearchParts(searchText.toLowerCase());
+  const titleRank = GetTitleRank(result.title, searchText, searchParts);
+  const tagsRank = GetTagsRank(result, searchParts);
+  const recencyRank = GetRecencyRank(result.date);
   return {
     titleRank,
-    recencyRank,
     tagsRank,
+    recencyRank,
   };
 }
 
-function GetTagsRank(tags: string[], searchText: string): number {
-  const searchTextLower = searchText.toLowerCase();
-  const tagMatchCount = getSearchParts(searchTextLower).reduce((count, part) => {
-    const isInTags = tags.includes(part);
-    if (isInTags) {
-      return count + 1;
-    }
-    const partialMatch = tags.find(tag => tag.includes(part));
-    if (partialMatch) {
-      return count + 0.5;
-    }
-    return count;
-  }, 0);
-  return tagMatchCount;
+const MAX_DATE = Number(new Date());
+function GetRecencyRank(date: Date) {
+  return 1 - ((MAX_DATE - Number(date)) / MAX_DATE);
 }
 
-function GetTitleRank(title: string, searchText: string): number {
+function tagsRank(tags: string[], searchPart: string): number {
+  const isInTags = tags.includes(searchPart);
+  if (isInTags) {
+    return 1;
+  }
+  const partialMatch = tags.find(tag => tag.includes(searchPart));
+  if (partialMatch) {
+    return 0.5;
+  }
+  const partialMatchInverse = tags.find(tag => searchPart.includes(tag));
+  if (partialMatchInverse) {
+    return 0.4;
+  }
+  return 0;
+}
+
+const TOOLS_WEIGHTING = 0.6;
+function GetTagsRank(result: SearchResult, searchParts: string[]): number {
+  const tagMatchCount = searchParts.reduce((count, searchPart) => {
+    const res = tagsRank(result.tags, searchPart);
+    let tools = 0;
+    if (result.type === 'project') {
+      tools += tagsRank(result.project.tools, searchPart) * TOOLS_WEIGHTING;
+      tools += tagsRank(result.project.tags, searchPart) * TOOLS_WEIGHTING;
+    }
+    return count + res + tools;
+  }, 0);
+  return tagMatchCount / searchParts.length;
+}
+
+function GetTitleRank(title: string, searchText: string, searchParts: string[]): number {
   const startsWithCase = title.startsWith(searchText);
   if (startsWithCase) {
     return 1;
@@ -76,7 +95,7 @@ function GetTitleRank(title: string, searchText: string): number {
   if (titleReverseMatches) {
     return 0.6;
   }
-  const wordsInTitleCount = getSearchParts(searchTextLower)
+  const wordsInTitleCount = searchParts
     .reduce((prev, searchPart) => {
       const hasSearchPart = titleLower.includes(searchPart);
       return hasSearchPart ? prev + 1 : prev;
