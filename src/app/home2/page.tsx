@@ -1,5 +1,6 @@
 "use client";
-import { SearchResult, useSearch } from "components/search/useSearch";
+import { SearchResult } from "components/search/SearchResult";
+import { useSearch } from "components/search/useSearch";
 import dayjs from "dayjs";
 import React from "react";
 
