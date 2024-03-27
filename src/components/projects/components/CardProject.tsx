@@ -12,8 +12,9 @@ export type AddFilterEvent = {
 };
 
 export function CardProject(
-  { project, onAddFilterClick }: { project: Project; onAddFilterClick?: (event: AddFilterEvent) => void },
+  props: { project: Project; onAddFilterClick?: (event: AddFilterEvent) => void },
 ) {
+  const { project, onAddFilterClick } = props;
   const links: ProjectLinkProps[] = [
     {
       href: project.deploy_link,

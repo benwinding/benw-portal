@@ -1,7 +1,7 @@
-import { Project } from "components/projects";
 import { LayoutProject } from "components/projects/LayoutProject";
-import { GetProjectsAll2 } from "components/projects/projects-service2";
+import { getProjectFromSlug, GetProjectsAll2 } from "components/projects/projects-service2";
 import React from "react";
+import "github-markdown-css/github-markdown.css";
 
 type PageInitialProps = {
   params: {
@@ -10,8 +10,15 @@ type PageInitialProps = {
 };
 
 const Page = async (props: PageInitialProps) => {
-  const project = await getProjectFromSlug(props.params.slug);
-  return <LayoutProject project={project} />;
+  const item = await getProjectFromSlug(props.params.slug);
+  const markdownRendered = (
+    <article
+      className="markdown-body w-full mx-auto pt-4"
+      dangerouslySetInnerHTML={{ __html: item.contentHtml }}
+    >
+    </article>
+  );
+  return <LayoutProject project={item.metadata} content={markdownRendered} />;
 };
 export default Page;
 
@@ -21,12 +28,3 @@ export async function generateStaticParams() {
     slug: project.slug,
   }));
 }
-
-const getProjectFromSlug = async (slug: string): Promise<Project> => {
-  const projects = await GetProjectsAll2();
-  const post = projects.find((project) => project.slug === slug);
-  if (!post) {
-    throw new Error(`No project found with slug ${slug}`);
-  }
-  return post;
-};
