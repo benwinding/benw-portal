@@ -1,8 +1,7 @@
-import { GetProjectsAll, Project } from "components/projects";
+import { Project } from "components/projects";
 import { LayoutProject } from "components/projects/LayoutProject";
+import { GetProjectsAll2 } from "components/projects/projects-service2";
 import React from "react";
-
-const allProjects = GetProjectsAll();
 
 type PageInitialProps = {
   params: {
@@ -17,13 +16,15 @@ const Page = async (props: PageInitialProps) => {
 export default Page;
 
 export async function generateStaticParams() {
-  return allProjects.map((project) => ({
+  const projects = await GetProjectsAll2();
+  return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
 const getProjectFromSlug = async (slug: string): Promise<Project> => {
-  const post = allProjects.find((project) => project.slug === slug);
+  const projects = await GetProjectsAll2();
+  const post = projects.find((project) => project.slug === slug);
   if (!post) {
     throw new Error(`No project found with slug ${slug}`);
   }

@@ -225,7 +225,7 @@ function parseProjectsIntoTags(projectsAll: Project[]) {
       if (!tagsUniqueCount[tag]) tagsUniqueCount[tag] = 0;
       tagsUniqueCount[tag]++;
     });
-    project.icons?.map(icon => iconsUnique.add(icon));
+    project.icons?.map(icon => iconsUnique.add(icon as IconName));
   });
   const yearsStrings = Array.from(yearsUnique).sort().reverse();
   const iconsString = Array.from(iconsUnique).sort();

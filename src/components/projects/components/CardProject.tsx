@@ -34,12 +34,12 @@ export function CardProject(
       iconName: "book",
       iconColor: "maroon",
     },
-    {
-      href: project.presentation_link,
-      label: "View Presentation",
-      iconName: "play",
-      iconColor: "maroon",
-    },
+    // {
+    //   href: project.presentation_link,
+    //   label: "View Presentation",
+    //   iconName: "play",
+    //   iconColor: "maroon",
+    // },
   ];
 
   return (
@@ -52,9 +52,9 @@ export function CardProject(
       {project.wip && <p className="text-xs -mt-3 italic text-orange-600">^ Work In Progress</p>}
       <p className="text-xl font-bold truncate w-full" title="project.name">{project.name}</p>
       <div className="flex">
-        {project.icons?.map(icon => (
+        {project.icons?.map((icon: React.Key) => (
           <div key={icon} className="mx-1">
-            <Icon onClick={() => onAddFilterClick?.({ icon })} iconName={icon as any} />
+            <Icon onClick={() => onAddFilterClick?.({ icon: icon as IconName })} iconName={icon as IconName} />
           </div>
         ))}
       </div>

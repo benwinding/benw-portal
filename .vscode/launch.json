@@ -11,5 +11,5 @@
       "command": "yarn next dev",
       "console": "integratedTerminal"
     }
- ]
+  ]
 }

@@ -1,7 +1,21 @@
 import classNames from "classnames";
 import styles from "./icons.module.css";
 
-export type IconName = keyof typeof IconRequireMap;
+import { ICONS } from "../../projects.generated";
+
+export type IconName =
+  | "checkall"
+  | "firebase"
+  | "github"
+  | "arrowsupdown"
+  | "book"
+  | "closex"
+  | "live"
+  | "play"
+  | "plus"
+  | "search"
+  | "uparrow"
+  | typeof ICONS[number];
 
 type IconProps = { className?: string; onClick?: () => void; iconName: IconName; color?: string; width?: number };
 export function Icon(props: IconProps) {
@@ -47,7 +61,7 @@ const IconColorMap: Partial<FullIconColorMap> = {
   next: "#000",
 };
 
-const IconRequireMap = {
+const IconRequireMap: Record<IconName, any> = {
   three: require("assets/icons/custom/three-js.svg"),
 
   checkall: require("assets/icons/material/check-box-multiple-outline.svg"),

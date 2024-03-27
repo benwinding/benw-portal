@@ -1,22 +1,7 @@
-import { IconName } from "components/icons/icons";
 import { orderBy } from "lodash";
-import projects from "./projects.json";
+import { PROJECTS } from "../../projects.generated";
 
-export interface Project {
-  name: string;
-  slug: string;
-  description: string;
-  year: number;
-  wip?: boolean;
-  tags?: string[];
-  code_link?: string;
-  deploy_link?: string;
-  article_link?: string;
-  presentation_link?: string;
-  tools?: string[];
-  icons?: IconName[];
-  open_same_page?: boolean;
-}
+export type Project = (typeof PROJECTS)[number];
 
 export enum ProjectOrderType {
   NAME = "name",
@@ -24,7 +9,7 @@ export enum ProjectOrderType {
 }
 
 export function GetProjectsAll() {
-  const projectsAll = projects.all as Project[];
+  const projectsAll: Project[] = PROJECTS;
   const projectsOrdered = orderBy(projectsAll, ["year", "name"], ["desc", "asc"]);
   return projectsOrdered;
 }
