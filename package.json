@@ -9,7 +9,8 @@
     "clean": "rimraf dist",
     "start": "next dev",
     "test": "yarn jest",
-    "build": "rm -rf dist && next build",
+    "build": "rm -rf dist && yarn build-gen-projects && next build",
+    "build-gen-projects": "node ./scripts/gen-projects.js",
     "build-3d": "yarn webpack -c ./public/3d/webpack.config.js",
     "build-sitemap": "next-sitemap --config ./next-sitemap.config.mjs",
     "deploy": "dokku-pages deploy -g dokku@benwinding.com:portal -d dist --minimal --allow-cors '.+\\.benwinding.com|localhost:.+'",
@@ -68,5 +69,5 @@
   "resolutions": {
     "wrap-ansi": "7.0.0",
     "string-width": "4.1.0"
-  }  
+  }
 }

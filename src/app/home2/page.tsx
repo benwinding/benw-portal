@@ -47,13 +47,33 @@ function ResultCard(props: { result: SearchResult }) {
         <p>{props.result.title}</p>
         <div className="flex flex-row items-center gap-1">
           <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
-          {props.result.tags.map(tag => (
-            <span key={tag} className="text-xs bg-amber-500 px-2 py-0 rounded-full">{tag}</span>
-          ))}
+          <TinyResultType type={props.result.type} />
+          {props.result.tags.map(tag => <Tag label={tag} classNames="border-gray-500 text-gray-500" />)}
         </div>
       </div>
     </a>
   );
+}
+
+function TinyResultType(props: { type: SearchResult["type"] }) {
+  let colorClasses;
+  let label;
+  switch (props.type) {
+    case "project":
+      colorClasses = "border-green-500 text-green-500";
+      label = "Project";
+      break;
+    case "blog":
+    default:
+      colorClasses = "border-blue-500 text-blue-500";
+      label = "Blog";
+      break;
+  }
+  return <Tag label={label} classNames={colorClasses} />;
+}
+
+function Tag(props: { label: string; classNames: string }) {
+  return <span className={`text-xs border-2 ${props.classNames} px-2 py-0 rounded-full`}>{props.label}</span>;
 }
 
 function formatDate(date: Date) {
