@@ -69,7 +69,7 @@ function tagsRank(tags: string[], searchPart: string): number {
 const TOOLS_WEIGHTING = 0.6;
 function GetTagsRank(result: SearchResult, searchParts: string[]): number {
   const tagMatchCount = searchParts.reduce((count, searchPart) => {
-    const res = tagsRank(result.tags, searchPart);
+    const res = tagsRank(result.tags.map(t => t.label), searchPart);
     let tools = 0;
     if (result.type === "project") {
       tools += tagsRank(result.project.tools, searchPart) * TOOLS_WEIGHTING;
