@@ -3,16 +3,16 @@ const path = require("path");
 const matter = require("gray-matter");
 const { orderBy } = require("lodash");
 
-// Path to the projects mdx src files
+// Path to the projects md src files
 const PROJECTS_DIR = path.join(__dirname, "../src/projects");
 // Path to the projects.json file
 const PROJECTS_TS_TARGET = path.join(__dirname, "../src/projects.generated.ts");
 
-const mdxFileNames = fs.readdirSync(PROJECTS_DIR);
+const mdFileNames = fs.readdirSync(PROJECTS_DIR);
 
-const projectsAll = mdxFileNames.map(fileName => {
-  // Remove ".mdx" from file name to get slug
-  const slug = fileName.replace(/\.mdx$/, "");
+const projectsAll = mdFileNames.map(fileName => {
+  // Remove ".md" from file name to get slug
+  const slug = fileName.replace(/\.md$/, "");
 
   // Read markdown file as string
   const fullPath = path.join(PROJECTS_DIR, fileName);
