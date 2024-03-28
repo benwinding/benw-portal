@@ -15,4 +15,5 @@ icons:
   - pdf
   - puppeteer
   - docker
+thumbnail: /imgur/projects/_resized/qdwabiub1234.jpg
 ---

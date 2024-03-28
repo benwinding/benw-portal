@@ -15,4 +15,5 @@ icons:
   - next
   - typescript
   - tailwind
+thumbnail: /imgur/projects/_resized/i8hdawubiad.jpg
 ---

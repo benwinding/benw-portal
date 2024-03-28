@@ -16,4 +16,5 @@ icons:
   - javascript
   - tailwind
   - three
+thumbnail: /imgur/projects/_resized/adowubbja213.jpg
 ---

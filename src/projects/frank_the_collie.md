@@ -14,4 +14,5 @@ tools:
 icons:
   - angular
   - instagram
+thumbnail: /imgur/projects/_resized/farawjdbaw.jpg
 ---

@@ -11,6 +11,7 @@ tools:
   - Shell
 icons:
   - python
+thumbnail: /imgur/projects/_resized/
 ---
 
 # OKAY

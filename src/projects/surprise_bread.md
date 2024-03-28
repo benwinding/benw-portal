@@ -14,4 +14,5 @@ tools:
 icons:
   - react
   - javascript
+thumbnail: /imgur/projects/_resized/98yadubwdw.jpg
 ---

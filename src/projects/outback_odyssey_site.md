@@ -10,4 +10,5 @@ tools:
   - Wordpress
 icons:
   - wordpress
+thumbnail: /imgur/projects/_resized/
 ---

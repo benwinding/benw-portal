@@ -16,4 +16,5 @@ icons:
   - flutter
   - android
   - apple
+thumbnail: /imgur/projects/_resized/qdwajknbkhq2e.jpg
 ---

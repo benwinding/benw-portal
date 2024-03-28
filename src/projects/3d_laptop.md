@@ -15,4 +15,5 @@ icons:
   - react
   - three
 open_same_page: true
+thumbnail: /imgur/projects/_resized/hdiuawd78awd.jpg
 ---

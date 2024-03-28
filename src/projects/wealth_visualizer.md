@@ -15,4 +15,5 @@ tools:
 icons:
   - vue
   - three
+thumbnail: /imgur/projects/_resized/12e2kjbadhwabd.jpg
 ---

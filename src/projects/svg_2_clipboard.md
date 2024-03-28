@@ -15,4 +15,5 @@ tools:
 icons:
   - chrome
   - firefox
+thumbnail: /imgur/projects/_resized/awdwqawd21.jpg
 ---

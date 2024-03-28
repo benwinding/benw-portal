@@ -15,4 +15,5 @@ tools:
 icons:
   - vue
   - tailwind
+thumbnail: /imgur/projects/_resized/i2euh1eb2h1e.jpg
 ---

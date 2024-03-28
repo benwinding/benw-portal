@@ -14,7 +14,8 @@ icons:
   - next
   - typescript
 wip: true
+thumbnail: /imgur/projects/_resized/u7gdawdbu8766.jpg
 ---
 
 ## Trickhub
-You!
+It's not a thing yet!

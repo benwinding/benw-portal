@@ -15,5 +15,5 @@ tools:
 icons:
   - cpp
   - opengl
-thumbnail: /imgur/thumbs/87gbachjk.jpeg
+thumbnail: /imgur/projects/_resized/87gbachjk.jpg
 ---

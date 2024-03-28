@@ -15,4 +15,5 @@ tools:
   - Firefox
 icons:
   - hackernews
+thumbnail: /imgur/projects/_resized/
 ---

@@ -15,4 +15,5 @@ tools:
   - File-based routing
 icons:
   - angular
+thumbnail: /imgur/projects/_resized/ngexwadubaiuwdb.jpg
 ---

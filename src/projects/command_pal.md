@@ -16,4 +16,5 @@ tools:
   - fuse.js
 icons:
   - svelte
+thumbnail: /imgur/projects/_resized/adwquig21e.jpg
 ---

@@ -12,4 +12,5 @@ tools:
   - PDFs
 icons:
   - pdf
+thumbnail: /imgur/projects/_resized/
 ---

@@ -11,4 +11,5 @@ tools:
 icons:
   - next
   - contentful
+thumbnail: /imgur/projects/_resized/21bekadhcavs.jpg
 ---

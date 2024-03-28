@@ -13,4 +13,5 @@ tools:
   - Messenger
 icons:
   - messenger
+thumbnail: /imgur/projects/_resized/
 ---

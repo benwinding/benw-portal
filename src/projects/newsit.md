@@ -17,4 +17,5 @@ icons:
   - chrome
   - firefox
   - hackernews
+thumbnail: /imgur/projects/_resized/
 ---

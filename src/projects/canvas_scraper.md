@@ -12,4 +12,5 @@ tools:
   - Web Scraping
 icons:
   - python
+thumbnail: /imgur/projects/_resized/
 ---

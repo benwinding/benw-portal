@@ -15,4 +15,5 @@ tools:
 icons:
   - react
   - three
+thumbnail: /imgur/projects/_resized/
 ---

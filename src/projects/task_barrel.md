@@ -15,4 +15,5 @@ icons:
   - react
   - javascript
 wip: true
+thumbnail: /imgur/projects/_resized/123objkbadwbhad.jpg
 ---

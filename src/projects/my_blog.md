@@ -12,4 +12,5 @@ tools:
   - Static Site
 icons:
   - pen
+thumbnail: /imgur/projects/_resized/
 ---

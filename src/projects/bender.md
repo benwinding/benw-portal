@@ -14,4 +14,5 @@ tools:
 icons:
   - javascript
   - tailwind
+thumbnail: /imgur/projects/_resized/aaijwdak12361.jpg
 ---

@@ -126,7 +126,7 @@ export const PROJECTS = [
       "cpp",
       "opengl"
     ],
-    "thumbnail": "/imgur/thumbs/87gbachjk.jpeg"
+    "thumbnail": "/imgur/projects/_resized/87gbachjk.jpg"
   },
   {
     "slug": "everything's_normal",
@@ -146,7 +146,8 @@ export const PROJECTS = [
     "icons": [
       "three",
       "javascript"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/kbwda787dwa.jpg"
   },
   {
     "slug": "saltbush_farm",
@@ -168,7 +169,8 @@ export const PROJECTS = [
       "next",
       "typescript",
       "tailwind"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/i8hdawubiad.jpg"
   },
   {
     "slug": "surprise_bread",
@@ -189,7 +191,8 @@ export const PROJECTS = [
     "icons": [
       "react",
       "javascript"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/98yadubwdw.jpg"
   },
   {
     "slug": "trickhub",
@@ -210,7 +213,8 @@ export const PROJECTS = [
       "next",
       "typescript"
     ],
-    "wip": true
+    "wip": true,
+    "thumbnail": "/imgur/projects/_resized/u7gdawdbu8766.jpg"
   },
   {
     "slug": "3d_laptop",
@@ -232,7 +236,8 @@ export const PROJECTS = [
       "react",
       "three"
     ],
-    "open_same_page": true
+    "open_same_page": true,
+    "thumbnail": "/imgur/projects/_resized/hdiuawd78awd.jpg"
   },
   {
     "slug": "bender",
@@ -253,7 +258,8 @@ export const PROJECTS = [
     "icons": [
       "javascript",
       "tailwind"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/aaijwdak12361.jpg"
   },
   {
     "slug": "eat_the_donut",
@@ -275,7 +281,8 @@ export const PROJECTS = [
       "javascript",
       "tailwind",
       "three"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/adowubbja213.jpg"
   },
   {
     "slug": "task_barrel",
@@ -297,7 +304,8 @@ export const PROJECTS = [
       "react",
       "javascript"
     ],
-    "wip": true
+    "wip": true,
+    "thumbnail": "/imgur/projects/_resized/123objkbadwbhad.jpg"
   },
   {
     "slug": "wolfpackdogtrainingcom",
@@ -315,7 +323,8 @@ export const PROJECTS = [
     "icons": [
       "next",
       "contentful"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/21bekadhcavs.jpg"
   },
   {
     "slug": "zoomore",
@@ -338,7 +347,8 @@ export const PROJECTS = [
       "flutter",
       "android",
       "apple"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/qdwajknbkhq2e.jpg"
   },
   {
     "slug": "command_pal",
@@ -361,7 +371,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "svelte"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/adwquig21e.jpg"
   },
   {
     "slug": "ngext",
@@ -383,7 +394,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "angular"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/ngexwadubaiuwdb.jpg"
   },
   {
     "slug": "svg_2_clipboard",
@@ -404,7 +416,8 @@ export const PROJECTS = [
     "icons": [
       "chrome",
       "firefox"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/awdwqawd21.jpg"
   },
   {
     "slug": "wealth_visualizer",
@@ -426,7 +439,8 @@ export const PROJECTS = [
     "icons": [
       "vue",
       "three"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/12e2kjbadhwabd.jpg"
   },
   {
     "slug": "cloud_html_2_pdf",
@@ -448,7 +462,8 @@ export const PROJECTS = [
       "pdf",
       "puppeteer",
       "docker"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/qdwabiub1234.jpg"
   },
   {
     "slug": "frank_the_collie",
@@ -469,7 +484,8 @@ export const PROJECTS = [
     "icons": [
       "angular",
       "instagram"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/farawjdbaw.jpg"
   },
   {
     "slug": "canvas_scraper",
@@ -488,7 +504,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "python"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "down_subs",
@@ -506,7 +523,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "python"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "my_blog",
@@ -525,7 +543,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "pen"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "newsit",
@@ -549,7 +568,8 @@ export const PROJECTS = [
       "chrome",
       "firefox",
       "hackernews"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "ycomments",
@@ -571,7 +591,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "hackernews"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "benwinding.com",
@@ -593,7 +614,8 @@ export const PROJECTS = [
     "icons": [
       "vue",
       "tailwind"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/i2euh1eb2h1e.jpg"
   },
   {
     "slug": "3d_cricket_lanes",
@@ -615,7 +637,8 @@ export const PROJECTS = [
     "icons": [
       "react",
       "three"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "bsc_shed_maker",
@@ -636,7 +659,8 @@ export const PROJECTS = [
       "angular",
       "three"
     ],
-    "open_same_page": false
+    "open_same_page": false,
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "bootleg_wakeboarding_event",
@@ -658,7 +682,8 @@ export const PROJECTS = [
     "icons": [
       "angular",
       "three"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "formzy",
@@ -677,7 +702,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "pdf"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "memebot",
@@ -697,7 +723,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "messenger"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "outback_odyssey_site",
@@ -714,7 +741,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "wordpress"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "pdf_stamp",
@@ -734,7 +762,8 @@ export const PROJECTS = [
     "icons": [
       "typescript",
       "pdf"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "seeing_sarawak_site",
@@ -751,7 +780,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "wordpress"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "rachel_darling's_site",
@@ -768,7 +798,8 @@ export const PROJECTS = [
     ],
     "icons": [
       "wordpress"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   },
   {
     "slug": "kova_engineering_site",
@@ -785,6 +816,7 @@ export const PROJECTS = [
     ],
     "icons": [
       "wordpress"
-    ]
+    ],
+    "thumbnail": "/imgur/projects/_resized/"
   }
 ];
