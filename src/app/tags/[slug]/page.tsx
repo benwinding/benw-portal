@@ -2,6 +2,7 @@ import { ResultsList } from "components/search/ResultsList";
 import { makePathSafe, project2Result } from "components/search/SearchResult";
 import React from "react";
 import { PROJECTS, TAGS } from "src/projects.generated";
+import { HeadingTag } from "./HeadingTag";
 
 type PageParams = {
   slug: string;
@@ -30,12 +31,4 @@ export default Page;
 
 export async function generateStaticParams(): Promise<PageParams[]> {
   return TAGS.map((tag) => ({ slug: makePathSafe(tag) }));
-}
-
-function HeadingTag(props: { value: string }) {
-  return (
-    <span className="text-2xl border-4 border-red-500 text-red-500 rounded-full px-3 py-0">
-      {props.value}
-    </span>
-  );
 }
