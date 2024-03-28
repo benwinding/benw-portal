@@ -8,6 +8,7 @@ export type SearchResult =
     date: Date;
     href: string;
     tags: string[];
+    image: string | undefined;
   }
   & ({
     type: "project";

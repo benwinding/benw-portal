@@ -6,6 +6,7 @@ export type BlogPost = {
   permalink: string;
   tags: BlogTag[];
   path: string;
+  photos?: string[];
   date: string;
 };
 
@@ -15,10 +16,16 @@ type BlogTag = {
   permalink: string;
 };
 
+const BLOG_BASE_URL = "https://blog.benwinding.com";
+
 async function getBlogPosts() {
-  const response = await fetch("https://blog.benwinding.com/feed.json");
+  const response = await fetch(`${BLOG_BASE_URL}/feed.json`);
   const data = await response.json() as BlogPost[];
-  return data;
+  const dataWithPhotoUrls = data.map(post => ({
+    ...post,
+    photos: post.photos.map(photoPath => photoPath.startsWith("http") ? photoPath : `${BLOG_BASE_URL}/${photoPath}`),
+  }));
+  return dataWithPhotoUrls;
 }
 
 export function useBlogPosts() {

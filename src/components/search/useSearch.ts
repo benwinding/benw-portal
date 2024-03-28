@@ -20,6 +20,7 @@ function useAllResults(): SearchResult[] {
       href: `/projects/${project.slug}`,
       date: dayjs(`${project.year}`).toDate(),
       tags: project.tags || [],
+      image: undefined,
       type: "project",
       project: project,
     }));
@@ -28,6 +29,7 @@ function useAllResults(): SearchResult[] {
       href: BLOG_BASE_URL + blog.path,
       date: dayjs(`${blog.date}`).toDate(),
       tags: blog?.tags.map(t => t.name) || [],
+      image: blog?.photos?.[0],
       type: "blog",
       blog: blog,
     }));
