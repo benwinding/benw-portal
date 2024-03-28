@@ -13,11 +13,16 @@ type PageInitialProps = {
 
 const Page = (props: PageInitialProps) => {
   const slug = props.params.slug;
+  const tagLabel = TAGS.find((tag) => makePathSafe(tag) === slug);
   const matchingResults = PROJECTS.filter(post => post.tags.some(t => makePathSafe(t) === slug)).map(project2Result);
   return (
-    <div>
-      <h1>Tag: {props.params.slug}</h1>
-      <ResultsList results={matchingResults} />
+    <div className="flex flex-col gap-3">
+      <h1 className="flex flex-row gap-2 items-center">
+        <span>Tag</span>
+        <span>→</span>
+        <span className="text-2xl border-4 border-red-500 text-red-500 rounded-full px-3 py-0">{slug}</span>
+      </h1>
+      <ResultsList results={matchingResults} selectedTagLabel={tagLabel} />
     </div>
   );
 };

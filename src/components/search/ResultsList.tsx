@@ -4,17 +4,19 @@ import Link from "next/link";
 import styles from "./ResultsList.module.css";
 import { SearchResult } from "./SearchResult";
 
-export function ResultsList(props: { results: SearchResult[] }) {
+export function ResultsList(props: { results: SearchResult[]; selectedTagLabel?: string }) {
   return (
     <div className="w-full">
       <div className="flex flex-col gap-2">
-        {props.results.map(result => <ResultCard key={result.href} result={result} />)}
+        {props.results.map(result => (
+          <ResultCard key={result.href} result={result} selectedTagLabel={props.selectedTagLabel} />
+        ))}
       </div>
     </div>
   );
 }
 
-function ResultCard(props: { result: SearchResult }) {
+function ResultCard(props: { result: SearchResult; selectedTagLabel?: string }) {
   return (
     <div className="flex flex-row items-center gap-2">
       {props.result.image
@@ -28,14 +30,29 @@ function ResultCard(props: { result: SearchResult }) {
         <MultiLink href={props.result.href}>{props.result.title}</MultiLink>
         <div className="flex flex-row items-center gap-1">
           <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
-          <TinyResultType type={props.result.type} />
-          {props.result.type === "project" && props.result.project.wip ? <WipTag /> : null}
-          {props.result.tags.map(tag => (
-            <Tag key={tag.href} href={tag.href} label={tag.label} classNames="border-gray-500 text-gray-500" />
-          ))}
+          <ResultTagList result={props.result} selectedTagLabel={props.selectedTagLabel} />
         </div>
       </div>
     </div>
+  );
+}
+
+function ResultTagList(props: { result: SearchResult; selectedTagLabel?: string }) {
+  return (
+    <>
+      <TinyResultType type={props.result.type} />
+      {props.result.type === "project" && props.result.project.wip ? <WipTag /> : null}
+      {props.result.tags.map(tag => (
+        <Tag
+          key={tag.href}
+          href={tag.href}
+          label={tag.label}
+          classNames={props.selectedTagLabel === tag.label
+            ? "border-red-500 text-red-500"
+            : "border-gray-500 text-gray-500"}
+        />
+      ))}
+    </>
   );
 }
 
