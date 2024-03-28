@@ -27,6 +27,7 @@ export default function Page() {
       setShowCount(c => c + 1);
     }
   });
+  const cssNodeRef = React.useRef(null);
   const posts = React.useMemo(() =>
     blogPostsAll.slice(0, showCount).map(item => ({
       title: item.title,
@@ -69,6 +70,7 @@ export default function Page() {
             {posts.map((blog) => (
               <CSSTransition
                 key={blog.title}
+                nodeRef={cssNodeRef}
                 timeout={1000}
                 classNames={{
                   enterActive: styles.MyClassEnterActive,
@@ -94,9 +96,10 @@ function GithubContributions() {
   const [loaded, setLoaded] = React.useState(false);
   const image = React.useRef<HTMLImageElement>(null);
 
+  const imageComplete = image.current?.complete;
   React.useEffect(() => {
-    if (image.current?.complete) setLoaded(true);
-  }, []);
+    if (imageComplete) setLoaded(true);
+  }, [imageComplete]);
 
   return (
     <>

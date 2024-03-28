@@ -1,5 +1,6 @@
 "use client";
 import dayjs from "dayjs";
+import Link from "next/link";
 import styles from "./ResultsList.module.css";
 import { SearchResult } from "./SearchResult";
 
@@ -15,10 +16,16 @@ export function ResultsList(props: { results: SearchResult[] }) {
 
 function ResultCard(props: { result: SearchResult }) {
   return (
-    <a href={props.result.href} className="flex flex-row items-center gap-2">
-      {props.result.image ? <img src={props.result.image} className="w-14 h-14" /> : null}
+    <div className="flex flex-row items-center gap-2">
+      {props.result.image
+        ? (
+          <MultiLink href={props.result.href}>
+            <img src={props.result.image} className="w-14 h-14" />
+          </MultiLink>
+        )
+        : null}
       <div className="flex flex-col">
-        <p>{props.result.title}</p>
+        <MultiLink href={props.result.href}>{props.result.title}</MultiLink>
         <div className="flex flex-row items-center gap-1">
           <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
           <TinyResultType type={props.result.type} />
@@ -28,7 +35,7 @@ function ResultCard(props: { result: SearchResult }) {
           ))}
         </div>
       </div>
-    </a>
+    </div>
   );
 }
 
@@ -54,7 +61,18 @@ function TinyResultType(props: { type: SearchResult["type"] }) {
 }
 
 function Tag(props: { href: string; label: string; classNames: string }) {
-  return <div className={`text-xs border-2 ${props.classNames} px-2 py-0 rounded-full`}>{props.label}</div>;
+  return (
+    <MultiLink href={props.href} className={`text-xs border-2 ${props.classNames} px-2 py-0 rounded-full`}>
+      {props.label}
+    </MultiLink>
+  );
+}
+
+function MultiLink(props: { href: string; className?: string; children: React.ReactNode | React.ReactNode[] }) {
+  if (props.href.startsWith("http")) {
+    return <a {...props} />;
+  }
+  return <Link {...props} />;
 }
 
 function formatDate(date: Date) {
