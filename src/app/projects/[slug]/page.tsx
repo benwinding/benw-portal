@@ -1,5 +1,5 @@
 import { LayoutProject } from "components/projects/LayoutProject";
-import { getProjectFromSlug, GetProjectsAll2 } from "components/projects/projects-service2";
+import { getPostBySlug, GetProjectsAll2 } from "components/projects/projects-service2";
 import React from "react";
 import "github-markdown-css/github-markdown.css";
 
@@ -10,7 +10,7 @@ type PageInitialProps = {
 };
 
 const Page = async (props: PageInitialProps) => {
-  const item = await getProjectFromSlug(props.params.slug);
+  const item = await getPostBySlug(props.params.slug);
   const markdownRendered = (
     <article
       className="markdown-body w-full mx-auto pt-4"
