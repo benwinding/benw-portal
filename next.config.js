@@ -1,12 +1,10 @@
-const withMDX = require("@next/mdx")();
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
   experimental: {
     appDir: true,
   },
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  pageExtensions: ["js", "jsx", "md", "ts", "tsx"],
   output: "export",
   distDir: "dist",
   webpack(config) {
@@ -37,4 +35,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withMDX(nextConfig);
+module.exports = nextConfig;

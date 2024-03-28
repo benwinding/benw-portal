@@ -52,7 +52,7 @@ export const TOOLS = [
   "nuxt",
   "pts.js",
   "tailwind",
-  "tailwind.css",
+  "tailwind.css"
 ] as const;
 
 export const ICONS = [
@@ -81,7 +81,7 @@ export const ICONS = [
   "three",
   "typescript",
   "vue",
-  "wordpress",
+  "wordpress"
 ] as const;
 
 export const TAGS = [
@@ -101,7 +101,7 @@ export const TAGS = [
   "productivity",
   "tool",
   "web app",
-  "web site",
+  "web site"
 ] as const;
 
 export const PROJECTS = [
@@ -112,7 +112,7 @@ export const PROJECTS = [
     "tags": [
       "3d",
       "fun",
-      "demo",
+      "demo"
     ],
     "description": "A 3D demo of an open world with procedural terrain",
     "code_link": "https://github.com/benwinding/open-gl-terrain-example",
@@ -120,12 +120,12 @@ export const PROJECTS = [
       "C++",
       "OpenGL",
       "Clang",
-      "Make",
+      "Make"
     ],
     "icons": [
       "cpp",
-      "opengl",
-    ],
+      "opengl"
+    ]
   },
   {
     "slug": "everything's_normal",
@@ -134,18 +134,18 @@ export const PROJECTS = [
     "tags": [
       "web site",
       "3d",
-      "fun",
+      "fun"
     ],
     "description": "Visualize a rotating normal map",
     "deploy_link": "https://benwinding.com/everythings-normal/",
     "tools": [
       "Javascript",
-      "Three-Js",
+      "Three-Js"
     ],
     "icons": [
       "three",
-      "javascript",
-    ],
+      "javascript"
+    ]
   },
   {
     "slug": "saltbush_farm",
@@ -153,7 +153,7 @@ export const PROJECTS = [
     "year": 2022,
     "tags": [
       "web site",
-      "airbnb",
+      "airbnb"
     ],
     "description": "Luxury farmhouse accomodation",
     "deploy_link": "https://saltbush.farm",
@@ -161,13 +161,13 @@ export const PROJECTS = [
       "Typescript",
       "NextJs",
       "NodeJs",
-      "Tailwind",
+      "Tailwind"
     ],
     "icons": [
       "next",
       "typescript",
-      "tailwind",
-    ],
+      "tailwind"
+    ]
   },
   {
     "slug": "surprise_bread",
@@ -175,7 +175,7 @@ export const PROJECTS = [
     "year": 2022,
     "tags": [
       "web site",
-      "fun",
+      "fun"
     ],
     "description": "Delicious handmade sourdough bread, delivered to your door!",
     "deploy_link": "https://surprisebread.com.au",
@@ -183,12 +183,12 @@ export const PROJECTS = [
       "Javascript",
       "React",
       "NextJs",
-      "Tailwind",
+      "Tailwind"
     ],
     "icons": [
       "react",
-      "javascript",
-    ],
+      "javascript"
+    ]
   },
   {
     "slug": "trickhub",
@@ -196,20 +196,20 @@ export const PROJECTS = [
     "year": 2022,
     "tags": [
       "web site",
-      "fun",
+      "fun"
     ],
     "description": "Share and view tricks from extreme sports",
     "deploy_link": "https://trickhub.co",
     "tools": [
       "Typescript",
       "NextJs",
-      "NodeJs",
+      "NodeJs"
     ],
     "icons": [
       "next",
-      "typescript",
+      "typescript"
     ],
-    "wip": true,
+    "wip": true
   },
   {
     "slug": "3d_laptop",
@@ -218,20 +218,20 @@ export const PROJECTS = [
     "tags": [
       "fun",
       "3d",
-      "web app",
+      "web app"
     ],
     "description": "A 3D version of this website!",
     "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/3d/",
     "deploy_link": "https://benwinding.com/3d",
     "tools": [
       "React",
-      "Three-Js",
+      "Three-Js"
     ],
     "icons": [
       "react",
-      "three",
+      "three"
     ],
-    "open_same_page": true,
+    "open_same_page": true
   },
   {
     "slug": "bender",
@@ -239,7 +239,7 @@ export const PROJECTS = [
     "year": 2021,
     "tags": [
       "fun",
-      "web app",
+      "web app"
     ],
     "description": "A dating app to meet cool guys like me, inspired by Tinder!",
     "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/bender.html",
@@ -247,12 +247,12 @@ export const PROJECTS = [
     "tools": [
       "Plain JavaScript",
       "hammer.js",
-      "tailwind.css",
+      "tailwind.css"
     ],
     "icons": [
       "javascript",
-      "tailwind",
-    ],
+      "tailwind"
+    ]
   },
   {
     "slug": "eat_the_donut",
@@ -262,19 +262,19 @@ export const PROJECTS = [
       "fun",
       "3d",
       "web app",
-      "game",
+      "game"
     ],
     "description": "A 3D game where you eat a donut!",
     "code_link": "https://github.com/benwinding/benw-portal/blob/master/static/eat-the-donut.html",
     "deploy_link": "https://benwinding.com/eat-the-donut.html",
     "tools": [
-      "Plain JavaScript",
+      "Plain JavaScript"
     ],
     "icons": [
       "javascript",
       "tailwind",
-      "three",
-    ],
+      "three"
+    ]
   },
   {
     "slug": "task_barrel",
@@ -282,7 +282,7 @@ export const PROJECTS = [
     "year": 2021,
     "tags": [
       "productivity",
-      "web app",
+      "web app"
     ],
     "description": "Simple task collaboration, inspired by 'Github Issues'",
     "deploy_link": "https://taskbarrel.com",
@@ -290,31 +290,31 @@ export const PROJECTS = [
       "Javascript",
       "React",
       "NextJs",
-      "Tailwind",
+      "Tailwind"
     ],
     "icons": [
       "react",
-      "javascript",
+      "javascript"
     ],
-    "wip": true,
+    "wip": true
   },
   {
     "slug": "wolfpackdogtrainingcom",
     "name": "WolfpackDogTraining.com",
     "year": 2021,
     "tags": [
-      "web site",
+      "web site"
     ],
     "description": "Website for a friend's dog training business",
     "deploy_link": "https://wolfpackdogtraining.com",
     "tools": [
       "NextJs",
-      "Contentful",
+      "Contentful"
     ],
     "icons": [
       "next",
-      "contentful",
-    ],
+      "contentful"
+    ]
   },
   {
     "slug": "zoomore",
@@ -322,7 +322,7 @@ export const PROJECTS = [
     "year": 2021,
     "tags": [
       "fun",
-      "mobile app",
+      "mobile app"
     ],
     "description": "Turn pictures into videos",
     "code_link": "https://github.com/benwinding/zoomore",
@@ -331,13 +331,13 @@ export const PROJECTS = [
       "Flutter",
       "Android",
       "IOS",
-      "Graphics",
+      "Graphics"
     ],
     "icons": [
       "flutter",
       "android",
-      "apple",
-    ],
+      "apple"
+    ]
   },
   {
     "slug": "command_pal",
@@ -346,7 +346,7 @@ export const PROJECTS = [
     "tags": [
       "fun",
       "cli",
-      "library",
+      "library"
     ],
     "description": "The hackable command palette for the web, inspired by Visual Studio Code.",
     "code_link": "https://github.com/benwinding/command-pal",
@@ -356,11 +356,11 @@ export const PROJECTS = [
       "Javascript",
       "Svelte",
       "hotkeys.js",
-      "fuse.js",
+      "fuse.js"
     ],
     "icons": [
-      "svelte",
-    ],
+      "svelte"
+    ]
   },
   {
     "slug": "ngext",
@@ -369,7 +369,7 @@ export const PROJECTS = [
     "tags": [
       "tool",
       "cli",
-      "library",
+      "library"
     ],
     "description": "A routing framework for angular inspired by React's next.js.",
     "code_link": "https://github.com/benwinding/ngext",
@@ -378,18 +378,18 @@ export const PROJECTS = [
       "Angular",
       "SSR",
       "NodeJs",
-      "File-based routing",
+      "File-based routing"
     ],
     "icons": [
-      "angular",
-    ],
+      "angular"
+    ]
   },
   {
     "slug": "svg_2_clipboard",
     "name": "SVG 2 Clipboard",
     "year": 2020,
     "tags": [
-      "extension",
+      "extension"
     ],
     "description": "A simple browser extension to help copy SVG's directly from the web!",
     "code_link": "https://github.com/benwinding/svg-2-clipboard",
@@ -398,12 +398,12 @@ export const PROJECTS = [
       "JavaScript",
       "SVG",
       "Chrome",
-      "Firefox",
+      "Firefox"
     ],
     "icons": [
       "chrome",
-      "firefox",
-    ],
+      "firefox"
+    ]
   },
   {
     "slug": "wealth_visualizer",
@@ -412,7 +412,7 @@ export const PROJECTS = [
     "tags": [
       "fun",
       "3d",
-      "web app",
+      "web app"
     ],
     "description": "A physical visualization of money!",
     "code_link": "https://github.com/benwinding/wealth-visualizer",
@@ -420,12 +420,12 @@ export const PROJECTS = [
     "tools": [
       "VueJs",
       "Tailwind",
-      "Three-Js",
+      "Three-Js"
     ],
     "icons": [
       "vue",
-      "three",
-    ],
+      "three"
+    ]
   },
   {
     "slug": "cloud_html_2_pdf",
@@ -433,7 +433,7 @@ export const PROJECTS = [
     "year": 2019,
     "tags": [
       "cloud",
-      "library",
+      "library"
     ],
     "description": "Convert HTML to PDF efficiently using google cloud infrastructure",
     "code_link": "https://github.com/benwinding/cloud-html2pdf",
@@ -441,13 +441,13 @@ export const PROJECTS = [
       "Typescript",
       "PDF",
       "Puppeteer",
-      "Google Cloud Run",
+      "Google Cloud Run"
     ],
     "icons": [
       "pdf",
       "puppeteer",
-      "docker",
-    ],
+      "docker"
+    ]
   },
   {
     "slug": "frank_the_collie",
@@ -455,7 +455,7 @@ export const PROJECTS = [
     "year": 2019,
     "tags": [
       "fun",
-      "web site",
+      "web site"
     ],
     "description": "A high-performance website for \"Frank\" my Border Collie",
     "code_link": "https://github.com/benwinding/frank-the-collie",
@@ -463,12 +463,12 @@ export const PROJECTS = [
     "tools": [
       "Svelte",
       "Tailwind",
-      "Instagram API",
+      "Instagram API"
     ],
     "icons": [
       "angular",
-      "instagram",
-    ],
+      "instagram"
+    ]
   },
   {
     "slug": "canvas_scraper",
@@ -476,18 +476,18 @@ export const PROJECTS = [
     "year": 2018,
     "tags": [
       "fun",
-      "library",
+      "library"
     ],
     "description": "Download all files from a specific course on the MyUni system.",
     "code_link": "https://github.com/benwinding/myuni-dl",
     "article_link": "https://blog.benwinding.com/scraping_myuni",
     "tools": [
       "Python",
-      "Web Scraping",
+      "Web Scraping"
     ],
     "icons": [
-      "python",
-    ],
+      "python"
+    ]
   },
   {
     "slug": "down_subs",
@@ -495,17 +495,17 @@ export const PROJECTS = [
     "year": 2018,
     "tags": [
       "fun",
-      "web app",
+      "web app"
     ],
     "description": "Search videos from youtube, by text in the subtitles",
     "deploy_link": "https://github.com/benwinding/down-subs",
     "tools": [
       "Python",
-      "Shell",
+      "Shell"
     ],
     "icons": [
-      "python",
-    ],
+      "python"
+    ]
   },
   {
     "slug": "my_blog",
@@ -513,18 +513,18 @@ export const PROJECTS = [
     "year": 2018,
     "tags": [
       "fun",
-      "web site",
+      "web site"
     ],
     "description": "Checkout my blog, where I speak my mind",
     "deploy_link": "https://blog.benwinding.com/",
     "tools": [
       "JavaScript",
       "Hexo",
-      "Static Site",
+      "Static Site"
     ],
     "icons": [
-      "pen",
-    ],
+      "pen"
+    ]
   },
   {
     "slug": "newsit",
@@ -532,7 +532,7 @@ export const PROJECTS = [
     "year": 2018,
     "tags": [
       "hn",
-      "extension",
+      "extension"
     ],
     "description": "Newsit can find the top voted Reddit or Hacker News discussion!",
     "code_link": "https://github.com/benwinding/newsit",
@@ -542,13 +542,13 @@ export const PROJECTS = [
       "Bulma",
       "Chrome",
       "Firefox",
-      "Hacker News API",
+      "Hacker News API"
     ],
     "icons": [
       "chrome",
       "firefox",
-      "hackernews",
-    ],
+      "hackernews"
+    ]
   },
   {
     "slug": "ycomments",
@@ -556,7 +556,7 @@ export const PROJECTS = [
     "year": 2018,
     "tags": [
       "hn",
-      "library",
+      "library"
     ],
     "description": "Embedded discussions from Hacker News",
     "code_link": "https://github.com/benwinding/ycomments",
@@ -566,11 +566,11 @@ export const PROJECTS = [
       "JavaScript",
       "Bulma",
       "Chrome",
-      "Firefox",
+      "Firefox"
     ],
     "icons": [
-      "hackernews",
-    ],
+      "hackernews"
+    ]
   },
   {
     "slug": "benwinding.com",
@@ -578,7 +578,7 @@ export const PROJECTS = [
     "year": 2018,
     "tags": [
       "fun",
-      "web site",
+      "web site"
     ],
     "description": "Ben winding's web portal, to show off him and his work!",
     "code_link": "https://github.com/benwinding/benw-portal",
@@ -587,12 +587,12 @@ export const PROJECTS = [
       "Vue",
       "nuxt",
       "pts.js",
-      "tailwind",
+      "tailwind"
     ],
     "icons": [
       "vue",
-      "tailwind",
-    ],
+      "tailwind"
+    ]
   },
   {
     "slug": "3d_cricket_lanes",
@@ -601,7 +601,7 @@ export const PROJECTS = [
     "tags": [
       "fun",
       "web app",
-      "3d",
+      "3d"
     ],
     "description": "A 3D demo of a cricket lane system, form Quin's Sport's Nets",
     "deploy_link": "https://benwinding.github.io/CricketNet-Demo/",
@@ -609,12 +609,12 @@ export const PROJECTS = [
     "tools": [
       "JavaScript",
       "React",
-      "Three-Js",
+      "Three-Js"
     ],
     "icons": [
       "react",
-      "three",
-    ],
+      "three"
+    ]
   },
   {
     "slug": "bsc_shed_maker",
@@ -622,20 +622,20 @@ export const PROJECTS = [
     "year": 2017,
     "tags": [
       "fun",
-      "web app",
+      "web app"
     ],
     "description": "A demo 3D shed builder that runs in the browser",
     "deploy_link": "https://benwinding.github.io/BSC-Shed-Configurator/",
     "tools": [
       "JavaScript",
       "AngularJs",
-      "Three-Js",
+      "Three-Js"
     ],
     "icons": [
       "angular",
-      "three",
+      "three"
     ],
-    "open_same_page": false,
+    "open_same_page": false
   },
   {
     "slug": "bootleg_wakeboarding_event",
@@ -644,7 +644,7 @@ export const PROJECTS = [
     "tags": [
       "fun",
       "web app",
-      "3d",
+      "3d"
     ],
     "description": "A 3D demo showcasing wakeboarding obstacles",
     "code_link": "https://github.com/benwinding/angular2-wakepark-teaser",
@@ -652,12 +652,12 @@ export const PROJECTS = [
     "tools": [
       "JavaScript",
       "AngularJs",
-      "Three-Js",
+      "Three-Js"
     ],
     "icons": [
       "angular",
-      "three",
-    ],
+      "three"
+    ]
   },
   {
     "slug": "formzy",
@@ -666,17 +666,17 @@ export const PROJECTS = [
     "tags": [
       "fun",
       "web app",
-      "pdf",
+      "pdf"
     ],
     "description": "A automated PDF filler, for the Solar Industry",
     "deploy_link": "https://formzy.herokuapp.com/",
     "tools": [
       "NodeJs",
-      "PDFs",
+      "PDFs"
     ],
     "icons": [
-      "pdf",
-    ],
+      "pdf"
+    ]
   },
   {
     "slug": "memebot",
@@ -684,7 +684,7 @@ export const PROJECTS = [
     "year": 2017,
     "tags": [
       "fun",
-      "chatbot",
+      "chatbot"
     ],
     "description": "A messenger bot which finds and sends you memes.",
     "code_link": "https://github.com/benwinding/Meme-Bot-Messenger-Client",
@@ -692,11 +692,11 @@ export const PROJECTS = [
     "tools": [
       "JavaScript",
       "GraphQL",
-      "Messenger",
+      "Messenger"
     ],
     "icons": [
-      "messenger",
-    ],
+      "messenger"
+    ]
   },
   {
     "slug": "outback_odyssey_site",
@@ -704,16 +704,16 @@ export const PROJECTS = [
     "year": 2017,
     "tags": [
       "fun",
-      "web site",
+      "web site"
     ],
     "description": "An event website for an annual car adventure for charity.",
     "deploy_link": "https://ozoutbackodyssey.com.au",
     "tools": [
-      "Wordpress",
+      "Wordpress"
     ],
     "icons": [
-      "wordpress",
-    ],
+      "wordpress"
+    ]
   },
   {
     "slug": "pdf_stamp",
@@ -721,19 +721,19 @@ export const PROJECTS = [
     "year": 2017,
     "tags": [
       "cli",
-      "pdf",
+      "pdf"
     ],
     "description": "Automate adding signatures to a PDF via terminal.",
     "code_link": "https://github.com/benwinding/pdfstamp",
     "tools": [
       "Typescript",
       "PDFkit",
-      "ImageMagick",
+      "ImageMagick"
     ],
     "icons": [
       "typescript",
-      "pdf",
-    ],
+      "pdf"
+    ]
   },
   {
     "slug": "seeing_sarawak_site",
@@ -741,16 +741,16 @@ export const PROJECTS = [
     "year": 2017,
     "tags": [
       "fun",
-      "web site",
+      "web site"
     ],
     "description": "Travel blog, created for my sister",
     "deploy_link": "https://seeingsarawak.com/",
     "tools": [
-      "Wordpress",
+      "Wordpress"
     ],
     "icons": [
-      "wordpress",
-    ],
+      "wordpress"
+    ]
   },
   {
     "slug": "rachel_darling's_site",
@@ -758,16 +758,16 @@ export const PROJECTS = [
     "year": 2016,
     "tags": [
       "fun",
-      "web site",
+      "web site"
     ],
     "description": "A portfolio website for a talented artist.",
     "deploy_link": "https://rachelkatedarling.com",
     "tools": [
-      "Wordpress",
+      "Wordpress"
     ],
     "icons": [
-      "wordpress",
-    ],
+      "wordpress"
+    ]
   },
   {
     "slug": "kova_engineering_site",
@@ -775,15 +775,15 @@ export const PROJECTS = [
     "year": 2014,
     "tags": [
       "fun",
-      "web site",
+      "web site"
     ],
     "description": "An engineering firm in Vancouver, Canada.",
     "deploy_link": "http://kova.com/",
     "tools": [
-      "Wordpress",
+      "Wordpress"
     ],
     "icons": [
-      "wordpress",
-    ],
-  },
+      "wordpress"
+    ]
+  }
 ];

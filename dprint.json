@@ -11,7 +11,8 @@
     "public",
     "dist*",
     "**/*-lock.json",
-    ".next"
+    ".next",
+    "src/*.generated.ts"
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.83.0.wasm",
