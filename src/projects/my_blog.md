@@ -12,5 +12,5 @@ tools:
   - Static Site
 icons:
   - pen
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/axskjn21edxas.jpg
 ---

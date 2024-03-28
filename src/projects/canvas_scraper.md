@@ -12,5 +12,5 @@ tools:
   - Web Scraping
 icons:
   - python
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/dwqjn12ejnawdxs.jpg
 ---

@@ -13,5 +13,5 @@ tools:
   - Messenger
 icons:
   - messenger
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/dwakjbhwad.jpg
 ---

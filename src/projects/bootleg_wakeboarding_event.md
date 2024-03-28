@@ -15,5 +15,5 @@ tools:
 icons:
   - angular
   - three
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/acklsn23e2qax.jpg
 ---

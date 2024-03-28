@@ -15,5 +15,5 @@ tools:
   - Firefox
 icons:
   - hackernews
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/wdoiewdo12ednw.jpg
 ---

@@ -14,5 +14,5 @@ icons:
   - angular
   - three
 open_same_page: false
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/adlwkawjnd.jpg
 ---

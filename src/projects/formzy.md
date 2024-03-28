@@ -12,5 +12,5 @@ tools:
   - PDFs
 icons:
   - pdf
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/adwadwbua12312.jpg
 ---

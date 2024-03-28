@@ -13,5 +13,5 @@ tools:
 icons:
   - typescript
   - pdf
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/adkmwqad12wqwda.jpg
 ---

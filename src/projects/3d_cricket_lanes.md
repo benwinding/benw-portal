@@ -15,5 +15,5 @@ tools:
 icons:
   - react
   - three
-thumbnail: /imgur/projects/_resized/
+thumbnail: /imgur/projects/_resized/jklnadb123e1.jpg
 ---

@@ -505,7 +505,7 @@ export const PROJECTS = [
     "icons": [
       "python"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/dwqjn12ejnawdxs.jpg"
   },
   {
     "slug": "down_subs",
@@ -524,7 +524,7 @@ export const PROJECTS = [
     "icons": [
       "python"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/xalnxjnawjn12.jpg"
   },
   {
     "slug": "my_blog",
@@ -544,7 +544,7 @@ export const PROJECTS = [
     "icons": [
       "pen"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/axskjn21edxas.jpg"
   },
   {
     "slug": "newsit",
@@ -569,7 +569,7 @@ export const PROJECTS = [
       "firefox",
       "hackernews"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/xalksjnq2edjkqwx.jpg"
   },
   {
     "slug": "ycomments",
@@ -592,7 +592,7 @@ export const PROJECTS = [
     "icons": [
       "hackernews"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/wdoiewdo12ednw.jpg"
   },
   {
     "slug": "benwinding.com",
@@ -638,7 +638,7 @@ export const PROJECTS = [
       "react",
       "three"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/jklnadb123e1.jpg"
   },
   {
     "slug": "bsc_shed_maker",
@@ -660,7 +660,7 @@ export const PROJECTS = [
       "three"
     ],
     "open_same_page": false,
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/adlwkawjnd.jpg"
   },
   {
     "slug": "bootleg_wakeboarding_event",
@@ -683,7 +683,7 @@ export const PROJECTS = [
       "angular",
       "three"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/acklsn23e2qax.jpg"
   },
   {
     "slug": "formzy",
@@ -703,7 +703,7 @@ export const PROJECTS = [
     "icons": [
       "pdf"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/adwadwbua12312.jpg"
   },
   {
     "slug": "memebot",
@@ -724,7 +724,7 @@ export const PROJECTS = [
     "icons": [
       "messenger"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/dwakjbhwad.jpg"
   },
   {
     "slug": "outback_odyssey_site",
@@ -742,7 +742,7 @@ export const PROJECTS = [
     "icons": [
       "wordpress"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/wdaiuy213wh.jpg"
   },
   {
     "slug": "pdf_stamp",
@@ -763,7 +763,7 @@ export const PROJECTS = [
       "typescript",
       "pdf"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/adkmwqad12wqwda.jpg"
   },
   {
     "slug": "seeing_sarawak_site",
@@ -774,14 +774,14 @@ export const PROJECTS = [
       "web site"
     ],
     "description": "Travel blog, created for my sister",
-    "deploy_link": "https://seeingsarawak.com/",
+    "deploy_link": "https://web.archive.org/web/20180826235151/https://seeingsarawak.com/",
     "tools": [
       "Wordpress"
     ],
     "icons": [
       "wordpress"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/adwskj213edqais.jpg"
   },
   {
     "slug": "rachel_darling's_site",
@@ -799,7 +799,7 @@ export const PROJECTS = [
     "icons": [
       "wordpress"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/dwqlk13290d.jpg"
   },
   {
     "slug": "kova_engineering_site",
@@ -810,13 +810,13 @@ export const PROJECTS = [
       "web site"
     ],
     "description": "An engineering firm in Vancouver, Canada.",
-    "deploy_link": "http://kova.com/",
+    "deploy_link": "https://web.archive.org/web/20150801181953/http://kova.com/",
     "tools": [
       "Wordpress"
     ],
     "icons": [
       "wordpress"
     ],
-    "thumbnail": "/imgur/projects/_resized/"
+    "thumbnail": "/imgur/projects/_resized/awdklnj21ejascx.jpg"
   }
 ];
