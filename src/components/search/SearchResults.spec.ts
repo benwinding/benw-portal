@@ -8,6 +8,7 @@ function aBlog(opts: Partial<SearchResult>): SearchResult {
     href: "",
     date: new Date(),
     tags: [],
+    image: undefined,
     ...opts,
     type: "blog",
     blog: {} as BlogPost,
