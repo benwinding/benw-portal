@@ -35,8 +35,9 @@ jobs:
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"          
+      - name: Tests...
+        run: yarn test
       - name: Deploy to Dokku! 🚀
         run: |
-          yarn test
           yarn build
           yarn deploy
