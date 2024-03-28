@@ -125,7 +125,8 @@ export const PROJECTS = [
     "icons": [
       "cpp",
       "opengl"
-    ]
+    ],
+    "thumbnail": "/imgur/thumbs/87gbachjk.jpeg"
   },
   {
     "slug": "everything's_normal",

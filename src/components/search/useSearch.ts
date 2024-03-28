@@ -20,7 +20,7 @@ function useAllResults(): SearchResult[] {
       href: `/projects/${project.slug}`,
       date: dayjs(`${project.year}`).toDate(),
       tags: project.tags || [],
-      image: undefined,
+      image: project.thumbnail,
       type: "project",
       project: project,
     }));

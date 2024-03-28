@@ -48,7 +48,7 @@ function ResultCard(props: { result: SearchResult }) {
         <div className="flex flex-row items-center gap-1">
           <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
           <TinyResultType type={props.result.type} />
-          {props.result.tags.map(tag => <Tag label={tag} classNames="border-gray-500 text-gray-500" />)}
+          {props.result.tags.map(tag => <Tag key={tag} label={tag} classNames="border-gray-500 text-gray-500" />)}
         </div>
       </div>
     </a>
