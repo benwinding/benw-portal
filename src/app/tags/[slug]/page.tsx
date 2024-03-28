@@ -20,7 +20,7 @@ const Page = (props: PageInitialProps) => {
       <h1 className="flex flex-row gap-2 items-center">
         <span>Tag</span>
         <span>→</span>
-        <span className="text-2xl border-4 border-red-500 text-red-500 rounded-full px-3 py-0">{slug}</span>
+        <HeadingTag value={tagLabel} />
       </h1>
       <ResultsList results={matchingResults} selectedTagLabel={tagLabel} />
     </div>
@@ -30,4 +30,12 @@ export default Page;
 
 export async function generateStaticParams(): Promise<PageParams[]> {
   return TAGS.map((tag) => ({ slug: makePathSafe(tag) }));
+}
+
+function HeadingTag(props: { value: string }) {
+  return (
+    <span className="text-2xl border-4 border-red-500 text-red-500 rounded-full px-3 py-0">
+      {props.value}
+    </span>
+  );
 }
