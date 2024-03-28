@@ -3,12 +3,13 @@ import { SearchResult } from "components/search/SearchResult";
 import { useSearch } from "components/search/useSearch";
 import dayjs from "dayjs";
 import React from "react";
+import styles from "./home2.module.css";
 
 export default function Page() {
   const { setSearchText, results } = useSearch();
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 pt-2">
       <Search onSearchChange={setSearchText} />
       <Results results={results} />
     </div>
@@ -17,11 +18,11 @@ export default function Page() {
 
 function Search(props: { onSearchChange: (searchText: string) => void }) {
   return (
-    <div className="bg-orange-300 block w-full">
+    <div className="block w-full">
       <input
         onChange={e => props.onSearchChange(e.target.value)}
         type="text"
-        className="w-full p-2"
+        className="w-full p-2 border-2 rounded-lg border-gray-500"
         placeholder="Search for stuff here"
       >
       </input>
@@ -48,11 +49,16 @@ function ResultCard(props: { result: SearchResult }) {
         <div className="flex flex-row items-center gap-1">
           <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
           <TinyResultType type={props.result.type} />
+          {props.result.type === 'project' && props.result.project.wip ? <WipTag/> : null}
           {props.result.tags.map(tag => <Tag key={tag} label={tag} classNames="border-gray-500 text-gray-500" />)}
         </div>
       </div>
     </a>
   );
+}
+
+function WipTag() {
+  return <Tag label="wip" classNames={styles.hazardBorder + " border-gray-900 text-gray-900"} />;
 }
 
 function TinyResultType(props: { type: SearchResult["type"] }) {

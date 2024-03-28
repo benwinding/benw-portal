@@ -1,0 +1,9 @@
+.hazardBorder {
+  background-image: repeating-linear-gradient(
+    -55deg,
+    #ddd,
+    #ddd 10px,
+    #ffb101 10px,
+    #ffb101 20px
+  );
+}

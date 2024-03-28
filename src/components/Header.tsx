@@ -16,7 +16,7 @@ function useIsActiveRoute(href: string): boolean {
 function HeadLink(props: { href: string; children: React.ReactNode }) {
   const isActive = useIsActiveRoute(props.href);
   return (
-    <Link href={props.href} className={classNames("mr-3", isActive && "border-b-2 border-blue-800")}>
+    <Link href={props.href} className={classNames("ml-3", isActive && "border-b-2 border-blue-800")}>
       {props.children}
     </Link>
   );
@@ -30,7 +30,7 @@ export function Header() {
         <HeadLink href="/about/">About</HeadLink>
         <HeadLink href="/projects/">Projects</HeadLink>
         <HeadLink href="/contact/">Contact</HeadLink>
-        <a className="mr-3" href="/3d/">3D</a>
+        <a className="ml-3" href="/3d/">3D</a>
       </div>
       <a
         className="fixed border-8 border-red-400 opacity-50 bottom-0 left-0 w-6 h-6 m-2 rounded-full"
