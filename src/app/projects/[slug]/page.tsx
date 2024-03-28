@@ -1,12 +1,15 @@
 import { LayoutProject } from "components/projects/LayoutProject";
-import { getPostBySlug, GetProjectsAll2 } from "components/projects/projects-service2";
+import { getPostBySlug } from "components/projects/projects-service2";
 import React from "react";
+import { PROJECTS } from "src/projects.generated";
 import "github-markdown-css/github-markdown.css";
 
+type PageParams = {
+  slug: string;
+};
+
 type PageInitialProps = {
-  params: {
-    slug: string;
-  };
+  params: PageParams;
 };
 
 const Page = async (props: PageInitialProps) => {
@@ -22,9 +25,6 @@ const Page = async (props: PageInitialProps) => {
 };
 export default Page;
 
-export async function generateStaticParams() {
-  const projects = await GetProjectsAll2();
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+export async function generateStaticParams(): Promise<PageParams[]> {
+  return PROJECTS.map(({ slug }) => ({ slug }));
 }
