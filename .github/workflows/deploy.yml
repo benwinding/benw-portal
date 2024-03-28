@@ -22,7 +22,7 @@ jobs:
           key: ${{ runner.OS }}-build-node_modules-${{ hashFiles('yarn.lock') }}
       - name: Install Dependencies
         if: steps.cache-modules.outputs.cache-hit != 'true'
-        run: yarn
+        run: yarn install --pure-lockfile
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
