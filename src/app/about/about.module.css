@@ -1,9 +1,8 @@
-.MyClassEnterActive {
-  opacity: 0;
-  transform: translateX(30px);
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
-.MyClassEnterDone {
-  transition: all 300ms ease-in;
-  opacity: 1;
-  transform: translateX(0px);
+
+.fadeEnterActive {
+  animation: fadeIn 1s forwards;
 }

@@ -1,40 +1,12 @@
 "use client";
+import classNames from "classnames";
 import { useBlogPosts } from "components/blog/useBlogPosts";
 import { Loading } from "components/Loading";
 import { RainbowText } from "components/RainbowText";
 import React from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styles from "./about.module.css";
 
-function useTimeoutCount(delayMs: number, onInterval: () => void) {
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      onInterval();
-    }, delayMs);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [delayMs, onInterval]);
-}
-
-const TRANSITION_DELAY = 300;
-
 export default function Page() {
-  const blogPostsAll = useBlogPosts();
-  const [showCount, setShowCount] = React.useState(0);
-  useTimeoutCount(TRANSITION_DELAY, () => {
-    if (blogPostsAll.length && showCount <= 6) {
-      setShowCount(c => c + 1);
-    }
-  });
-  const cssNodeRef = React.useRef(null);
-  const posts = React.useMemo(() =>
-    blogPostsAll.slice(0, showCount).map(item => ({
-      title: item.title,
-      date: new Date(item.date).toDateString(),
-      link: "https://blog.benwinding.com/" + item.path,
-    })), [blogPostsAll, showCount]);
-
   return (
     <>
       <RainbowText text="About"></RainbowText>
@@ -65,27 +37,7 @@ export default function Page() {
           </p>
           <GithubContributions />
           <h2 className="text-2xl">Writing</h2>
-          {!posts?.length && <Loading text="Loading Posts..."></Loading>}
-          <TransitionGroup>
-            {posts.map((blog) => (
-              <CSSTransition
-                key={blog.title}
-                nodeRef={cssNodeRef}
-                timeout={1000}
-                classNames={{
-                  enterActive: styles.MyClassEnterActive,
-                  enterDone: styles.MyClassEnterDone,
-                }}
-              >
-                <div className="mb-1" key={blog.title}>
-                  <a className="flex flex-col" href={blog.link}>
-                    <p className="-mb-2 text-gray-600 text-xs">{blog.date}</p>
-                    <p className="m-0 title">{blog.title}</p>
-                  </a>
-                </div>
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
+          <BlogPosts />
         </div>
       </div>
     </>
@@ -115,6 +67,51 @@ function GithubContributions() {
           alt="Ben Winding's Github Contributions"
         />
       </a>
+    </>
+  );
+}
+
+function useTimeoutCount(delayMs: number, onInterval: () => void) {
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      onInterval();
+    }, delayMs);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [delayMs, onInterval]);
+}
+
+const TRANSITION_DELAY = 300;
+
+function BlogPosts() {
+  const blogPostsAll = useBlogPosts();
+  const [showCount, setShowCount] = React.useState(0);
+  useTimeoutCount(TRANSITION_DELAY, () => {
+    if (blogPostsAll.length && showCount <= 6) {
+      setShowCount(c => c + 1);
+    }
+  });
+  const posts = React.useMemo(() =>
+    blogPostsAll.slice(0, showCount).map(item => ({
+      title: item.title,
+      date: new Date(item.date).toDateString(),
+      link: "https://blog.benwinding.com/" + item.path,
+    })), [blogPostsAll, showCount]);
+
+  return (
+    <>
+      {!posts?.length && <Loading text="Loading Posts..."></Loading>}
+      <ul>
+        {posts.map((blog) => (
+          <div key={blog.title} className={classNames("mb-1", styles.fadeEnterActive)}>
+            <a className="flex flex-col" href={blog.link}>
+              <p className="-mb-2 text-gray-600 text-xs">{blog.date}</p>
+              <p className="m-0 title">{blog.title}</p>
+            </a>
+          </div>
+        ))}
+      </ul>
     </>
   );
 }
