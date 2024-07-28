@@ -39,7 +39,7 @@ export const blog2Result = (blog: BlogPost): SearchResult => ({
   title: blog.title,
   href: BLOG_BASE_URL + blog.path,
   date: dayjs(`${blog.date}`).toDate(),
-  tags: (blog.tags || []).map(tag => ({ label: tag.name, href: tag.permalink })),
+  tags: (blog.tags || []).map(tag => ({ label: tag.name, href: `/tags/${makePathSafe(tag.name)}` })),
   image: blog?.thumbnail,
   type: "blog",
   blog: blog,

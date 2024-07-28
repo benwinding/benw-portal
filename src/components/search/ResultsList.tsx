@@ -40,7 +40,7 @@ function ResultCard(props: { result: SearchResult; selectedTagLabel?: string }) 
 function ResultTagList(props: { result: SearchResult; selectedTagLabel?: string }) {
   return (
     <>
-      <TinyResultType type={props.result.type} />
+      <TinyResultType type={props.result.type} isSelected={props.selectedTagLabel === props.result.type} />
       {props.result.type === "project" && props.result.project.wip ? <WipTag /> : null}
       {props.result.tags.map(tag => (
         <Tag
@@ -60,7 +60,7 @@ function WipTag() {
   return <Tag href="" label="wip" classNames={styles.hazardBorder + " border-gray-900 text-gray-900"} />;
 }
 
-function TinyResultType(props: { type: SearchResult["type"] }) {
+function TinyResultType(props: { type: SearchResult["type"]; isSelected: boolean }) {
   let colorClasses;
   let label;
   switch (props.type) {
@@ -74,7 +74,10 @@ function TinyResultType(props: { type: SearchResult["type"] }) {
       label = "Blog";
       break;
   }
-  return <Tag label={label} href="" classNames={colorClasses} />;
+  if (props.isSelected) {
+    colorClasses = "border-red-500 text-red-500";
+  }
+  return <Tag label={label} href={`/tags/${props.type}`} classNames={colorClasses} />;
 }
 
 function Tag(props: { href: string; label: string; classNames: string }) {

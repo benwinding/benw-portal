@@ -17,7 +17,9 @@ const Page = async (props: PageInitialProps) => {
   const slug = props.params.slug;
 
   const { allResults, allTags } = await fetchAllResults();
-  const matchingResults = allResults.filter(result => result.tags.some(tag => makePathSafe(tag.label) === slug));
+  const matchingResults = allResults.filter(result =>
+    result.type === slug || result.tags.some(tag => makePathSafe(tag.label) === slug)
+  );
 
   return (
     <div className="flex flex-col gap-3">
@@ -42,7 +44,6 @@ export async function generateStaticParams(): Promise<PageParams[]> {
 const fetchAllResults = async () => {
   const allBlogPosts = await cachedFetchAllBlogPosts();
   const blogPostTags = allBlogPosts.flatMap(post => post.tags).map(tag => tag.name);
-  const allTags = Array.from(new Set([...TAGS, ...blogPostTags])).sort();
 
   const allProjects = PROJECTS.map(project2Result);
   const allItemsBlog = allBlogPosts.map(blog2Result);
@@ -53,5 +54,13 @@ const fetchAllResults = async () => {
       ...allItemsBlog,
     ]),
   );
+  const allTags = Array.from(
+    new Set([
+      ...TAGS,
+      ...blogPostTags,
+      "blog",
+      "project",
+    ]),
+  ).sort();
   return { allResults, allTags };
 };
