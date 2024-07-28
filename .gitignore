@@ -10,6 +10,7 @@ npm-debug.log
 
 # Nuxt generate
 dist*
+.cache*
 
 static/sitemap.xml*
 package-lock.json
