@@ -6,7 +6,7 @@ export type BlogPost = {
   permalink: string;
   tags: BlogTag[];
   path: string;
-  photos?: string[];
+  thumbnail?: string;
   date: string;
 };
 
@@ -23,7 +23,7 @@ async function getBlogPosts() {
   const data = await response.json() as BlogPost[];
   const dataWithPhotoUrls = data.map(post => ({
     ...post,
-    photos: post.photos.map(photoPath => photoPath.startsWith("http") ? photoPath : `${BLOG_BASE_URL}/${photoPath}`),
+    thumbnail: post.thumbnail?.startsWith("http") ? post.thumbnail : `${BLOG_BASE_URL}/${post.thumbnail}`,
   }));
   return dataWithPhotoUrls;
 }

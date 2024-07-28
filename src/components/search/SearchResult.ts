@@ -40,7 +40,7 @@ export const blog2Result = (blog: BlogPost): SearchResult => ({
   href: BLOG_BASE_URL + blog.path,
   date: dayjs(`${blog.date}`).toDate(),
   tags: (blog.tags || []).map(tag => ({ label: tag.name, href: tag.permalink })),
-  image: blog?.photos?.[0],
+  image: blog?.thumbnail,
   type: "blog",
   blog: blog,
 });
