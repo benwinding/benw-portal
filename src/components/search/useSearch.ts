@@ -1,8 +1,7 @@
 "use client";
-import { BlogPost, useBlogPosts } from "components/blog/useBlogPosts";
-import { GetProjectsAll, Project } from "components/projects";
-import dayjs from "dayjs";
-import { orderBy } from "lodash";
+import { useBlogPosts } from "components/blog/useBlogPosts";
+import { GetProjectsAll } from "components/projects";
+import { debounce, orderBy } from "lodash";
 import React from "react";
 import { blog2Result, project2Result, SearchResult } from "./SearchResult";
 import { SearchResults } from "./SearchResults";
@@ -39,5 +38,7 @@ export function useSearch() {
     // console.log({allResults, searched});
     return searched;
   }, [allResults, searchText]);
-  return { setSearchText, results };
+
+  const setSearchTextDebounced = debounce(setSearchText, 200);
+  return { setSearchText: setSearchTextDebounced, results };
 }
