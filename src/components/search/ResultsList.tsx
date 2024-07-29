@@ -22,7 +22,13 @@ function ResultCard(props: { result: SearchResult; selectedTagLabel?: string }) 
       {props.result.image
         ? (
           <MultiLink href={props.result.href} className="shrink-0">
-            <img src={props.result.image} className="w-14 h-14" />
+            <div
+              className="w-14 h-14 bg-cover"
+              style={{
+                backgroundImage: `url(${props.result.image})`,
+              }}
+            >
+            </div>
           </MultiLink>
         )
         : null}
