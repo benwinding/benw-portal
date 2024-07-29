@@ -21,14 +21,14 @@ function ResultCard(props: { result: SearchResult; selectedTagLabel?: string }) 
     <div className="flex flex-row items-center gap-2">
       {props.result.image
         ? (
-          <MultiLink href={props.result.href}>
+          <MultiLink href={props.result.href} className="shrink-0">
             <img src={props.result.image} className="w-14 h-14" />
           </MultiLink>
         )
         : null}
       <div className="flex flex-col">
         <MultiLink href={props.result.href}>{props.result.title}</MultiLink>
-        <div className="flex flex-row items-center gap-1">
+        <div className="flex flex-row flex-wrap items-center gap-1">
           <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
           <ResultTagList result={props.result} selectedTagLabel={props.selectedTagLabel} />
         </div>
