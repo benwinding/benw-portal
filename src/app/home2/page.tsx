@@ -1,15 +1,23 @@
 "use client";
+import classNames from "classnames";
 import { ResultsList } from "components/search/ResultsList";
 import { useSearch } from "components/search/useSearch";
 import React from "react";
 
 export default function Page() {
-  const { setSearchText, results } = useSearch();
+  const { setSearchText, results, blogsLoaded } = useSearch();
 
   return (
     <div className="flex flex-col gap-3 pt-2">
       <Search onSearchChange={setSearchText} />
-      <ResultsList results={results} />
+      <div
+        className={classNames("transition-opacity", {
+          "opacity-0": !blogsLoaded,
+          "opacity-100": blogsLoaded,
+        })}
+      >
+        <ResultsList results={results} />
+      </div>
     </div>
   );
 }

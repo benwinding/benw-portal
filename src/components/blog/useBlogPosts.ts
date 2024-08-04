@@ -6,16 +6,19 @@ export type { BlogPost };
 
 export function useBlogPosts() {
   const [blogPosts, setBlogPosts] = React.useState<BlogPost[]>([]);
+  const [loaded, setLoaded] = React.useState(false);
 
   React.useEffect(() => {
     let mounted = true;
     fetchAllBlogPosts().then(data => {
-      mounted && setBlogPosts(data);
+      if (!mounted) return;
+      setBlogPosts(data);
+      setLoaded(true);
     });
     return () => {
       mounted = false;
     };
   }, []);
 
-  return blogPosts;
+  return { blogPosts, loaded };
 }

@@ -8,8 +8,8 @@ import { SearchResults } from "./SearchResults";
 
 const projects = GetProjectsAll();
 
-function useAllResults(): SearchResult[] {
-  const blogPosts = useBlogPosts();
+function useAllResults() {
+  const { blogPosts, loaded: blogsLoaded } = useBlogPosts();
 
   const allResults = React.useMemo(() => {
     const itemsProjects = projects.map(project2Result);
@@ -24,12 +24,12 @@ function useAllResults(): SearchResult[] {
     return ordered;
   }, [blogPosts]);
 
-  return allResults;
+  return { allResults, blogsLoaded };
 }
 
 export function useSearch() {
   const [searchText, setSearchText] = React.useState("");
-  const allResults = useAllResults();
+  const { allResults, blogsLoaded } = useAllResults();
 
   const results = React.useMemo(() => {
     const searched = SearchResults(allResults, {
@@ -40,5 +40,5 @@ export function useSearch() {
   }, [allResults, searchText]);
 
   const setSearchTextDebounced = debounce(setSearchText, 200);
-  return { setSearchText: setSearchTextDebounced, results };
+  return { setSearchText: setSearchTextDebounced, results, blogsLoaded };
 }
