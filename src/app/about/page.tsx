@@ -85,7 +85,7 @@ function useTimeoutCount(delayMs: number, onInterval: () => void) {
 const TRANSITION_DELAY = 300;
 
 function BlogPosts() {
-  const blogPostsAll = useBlogPosts();
+  const { blogPosts: blogPostsAll } = useBlogPosts();
   const [showCount, setShowCount] = React.useState(0);
   useTimeoutCount(TRANSITION_DELAY, () => {
     if (blogPostsAll.length && showCount <= 6) {
