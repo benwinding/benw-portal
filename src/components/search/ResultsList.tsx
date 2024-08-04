@@ -33,7 +33,12 @@ function ResultCard(props: { result: SearchResult; selectedTagLabel?: string }) 
         )
         : null}
       <div className="flex flex-col">
-        <MultiLink href={props.result.href}>{props.result.title}</MultiLink>
+        <MultiLink href={props.result.href}>
+          <span>{props.result.title}</span>
+          {props.result.type === "blog"
+            ? <span className="ml-2 text-xs underline text-gray-400">(blog.benwinding.com)</span>
+            : null}
+        </MultiLink>
         <div className="flex flex-row flex-wrap items-center gap-1">
           <span className="text-xs text-gray-500">{formatDate(props.result.date)}</span>
           <ResultTagList result={props.result} selectedTagLabel={props.selectedTagLabel} />
