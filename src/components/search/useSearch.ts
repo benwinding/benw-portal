@@ -3,7 +3,7 @@ import { useBlogPosts } from "components/blog/useBlogPosts";
 import { GetProjectsAll } from "components/projects";
 import { debounce, orderBy } from "lodash";
 import React from "react";
-import { blog2Result, project2Result, SearchResult } from "./SearchResult";
+import { blog2Result, project2Result } from "./SearchResult";
 import { SearchResults } from "./SearchResults";
 
 const projects = GetProjectsAll();
