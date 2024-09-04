@@ -27,14 +27,37 @@ export default function Page() {
           "opacity-100": blogsLoaded,
         })}
       >
-        <h2
-          className={classNames("transition-opacity italic text-gray-500", {
-            "opacity-0": hasText,
-            "opacity-100": !hasText,
-          })}
-        >
-          Some recent stuff
+        <h2 className="italic text-gray-500 flex">
+          <span className="pr-1">List of</span>
+          <span className="flex flex-col relative">
+            <span
+              className="absolute h-6 w-40 transition-all duration-1000"
+              style={{
+                bottom: hasText ? "1.5rem" : 0,
+                opacity: hasText ? 0 : 1,
+              }}
+            >
+              recent stuff
+            </span>
+            <span
+              className="absolute h-6 w-40 transition-all duration-1000"
+              style={{
+                bottom: hasText ? "0" : "-1.5rem",
+                opacity: hasText ? 1 : 0,
+              }}
+            >
+              {results.length + " matches"}
+            </span>
+          </span>
         </h2>
+        {results.length < 1
+          ? (
+            <h2 className="text-xl mt-10 text-gray-600">
+              Nothing... yet
+            </h2>
+          )
+          : null}
+
         <ResultsList results={results} />
       </div>
     </div>
