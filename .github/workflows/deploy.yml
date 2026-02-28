@@ -1,10 +1,9 @@
-name: Deploy 🚀 Landing Page
+name: Deploy 🚀 Portal
 
 on:
   push:
     branches: [master]
     paths:
-      - "landing-page/**"
       - ".github/workflows/**"
 
 permissions:
@@ -24,7 +23,6 @@ jobs:
           cache-dependency-path: yarn.lock
 
       - name: Install
-        working-directory: landing-page
         run: yarn install --frozen-lockfile
 
       - name: Build
