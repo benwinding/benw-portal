@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Everything's Normal</title>
+  <meta property="og:image" content="/imgur/PJY4GTb.jpg"></meta>
+  <meta property="og:title" content="Everything's Normal"></meta>
+  <meta property="og:description" content="This is an interactive rendering of a rotating 'normal map'..."></meta>
+  <!--  Simple reset to delete the margins  -->
+  <style>
+    body { margin: 0; }
+    canvas { width: 100%; height: 100% }
+  </style>
+  <!--  Three.js CDN  -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.121.1/examples/js/controls/OrbitControls.js"></script>
+  <style>
+    /* https://stackoverflow.com/a/65211073/2419584 */
+    canvas {
+      outline: none;
+      border: none;
+    }
+    .tinyContainer {
+      position: absolute;
+      z-index: 99;
+      left: 0;
+      bottom: 0;
+      margin-left: 10px;
+      margin-bottom: 40px;
+    }
+    .tinyContainer p {
+      bottom: -40;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      background-color: rgba(255, 255, 255, 0.544);
+    }
+  </style>
+</head>
+<body>
+  <!-- Tiny View -->
+  <div class="tinyContainer" style="">
+    <canvas id="tinyCanvas"></canvas>
+    <p style="">Normal Map Orientation</p>
+  </div>
+
+  <script src="app.js"></script>
+
+  <!-- Trigger/Open The Modal -->
+  <button id="aboutBtn">?</button>
+
+  <!-- The Modal -->
+  <div id="aboutModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>What the heck is this?</h2>
+      </div>
+      <div class="modal-body">
+        <p>This is an interactive rendering of a rotating "normal map"...</p>
+        <h2>What's a "normal map"?</h2>
+        <p>A "normal map" is when a surface is given different colors for each different "normal vector"</p>
+        <img src="./normal-map-example.png" width="500px"/>
+        <h2>What's a "normal vector"?</h2>
+        <p>A "normal vector" is a line perpendicular to a surface at a specific point</p>
+        <img src="./normal-vector.png" width="500px"/>
+        <h2>So why make this?</h2>
+        <p>Thought it might be cool...</p>
+      </div>
+      <div class="modal-footer">
+        <div style="display: flex; justify-content: space-between;">
+          <a href="https://benwinding.com"><h3>Built by Ben Winding</h3></a>
+          <a href="https://github.com/benwinding/benw-portal/tree/master/public/everythings-normal"><h3>Source Code</h3></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <link href="./popup.css" rel="stylesheet"/>
+  <script src="./popup.js" ></script>
+</body>
+</html>

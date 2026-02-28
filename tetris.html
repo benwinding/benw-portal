@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ben's Tetris</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38440481-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-38440481-1');
+    </script>
+  </head>
+  <body>
+    
+    <script>
+      const c = document.createElement('canvas')
+      document.body.appendChild(c);
+      const ctx = c.getContext('2d');
+      c.width = 400;
+      c.height = 400;
+      c.style.border = '1px solid black'
+
+      class Piece {
+        blocksX = 1;
+        blocksY = 4;
+        x = 0;
+        y = 0;
+      }
+
+      const GRIDSIZE = 10
+      function DrawPiece(piece) {
+        ctx.beginPath();
+        ctx.rect(100 - piece.x, 100 - piece.y, piece.blocksX * GRIDSIZE, piece.blocksY * GRIDSIZE);
+        ctx.fillStyle = "red";
+        ctx.fill();
+      }
+
+      const state = {
+        currentPiece: new Piece(),
+        placedPieces: [],
+      }
+
+      const fps = 40;
+      let i = 1;
+      let seconds = 0;
+      const render = () => {
+        i++;
+        if (i % fps === 0) {
+          seconds++;
+          console.log('second:', seconds)
+          state.currentPiece.y += GRIDSIZE;
+        }
+        DrawPiece(state.currentPiece);
+      }
+      setInterval(render, 1000/fps);
+    </script>
+  </body>
+</html>

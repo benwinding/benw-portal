@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="./styles.css" />    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38440481-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-38440481-1');
+    </script>
+  </head>
+  <body>
+    <div>
+      <style>.back { width: fit-content; background: #8080803b; color: white; margin: 15px; padding: 10px; border-radius: 4px; position: absolute; z-index: 99; }</style>
+      <a class="back" href="/" >Home</a>
+    </div>
+    <div id="loader">
+      <div class="loader-inner">
+        <iframe
+          height="413"
+          width="650"
+          src="./loading-iframe.html"
+        ></iframe>
+        <h1>Loading</h1>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script src="./out/main.js" ></script>
+  </body>
+</html>
