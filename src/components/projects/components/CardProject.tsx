@@ -51,6 +51,7 @@ export function CardProject(
       )}
     >
       {project.wip && <p className="text-xs -mt-3 italic text-orange-600">^ Work In Progress</p>}
+      <img src={props.project.thumbnail} className="w-24 max-w-full" />
       <p className="text-xl font-bold truncate w-full" title="project.name">{project.name}</p>
       <div className="flex">
         {project.icons?.map((icon: React.Key) => (
