@@ -1,4 +1,5 @@
 import { LayoutProject } from "components/projects/LayoutProject";
+import { PhotoGallery } from "components/projects/PhotoGallery";
 import { getPostBySlug } from "components/projects/projects-service2";
 import React from "react";
 import { PROJECTS } from "src/projects.generated";
@@ -21,7 +22,13 @@ const Page = async (props: PageInitialProps) => {
     >
     </article>
   );
-  return <LayoutProject project={item.metadata} content={markdownRendered} />;
+  const gallery = item.metadata.gallery != null
+    ? <PhotoGallery photoUrls={item.metadata.gallery} />
+    : null;
+  return <LayoutProject project={item.metadata} >
+    {gallery}
+    {markdownRendered}
+  </LayoutProject>;
 };
 export default Page;
 

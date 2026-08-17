@@ -26,7 +26,7 @@ const projectsAll = mdFileNames.map(fileName => {
 const projects = orderBy(projectsAll, ["year", "name"], ["desc", "asc"]);
 
 function arrsToUnique(arr) {
-  return Array.from(new Set(arr.flat())).sort();
+  return Array.from(new Set(arr.flat().filter(value => value != null))).sort();
 }
 
 const tools = arrsToUnique(projects.map(post => post.tools));

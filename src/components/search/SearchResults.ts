@@ -49,8 +49,8 @@ function GetRecencyRank(date: Date) {
   return 1 - ((MAX_DATE - Number(date)) / MAX_DATE);
 }
 
-function tagsRank(tags: string[], searchPart: string): number {
-  const tagsLower = tags.map(t => t.toLowerCase());
+function tagsRank(tags: string[] | undefined, searchPart: string): number {
+  const tagsLower = (tags || []).map(t => t.toLowerCase());
   const isInTags = tagsLower.includes(searchPart);
   if (isInTags) {
     return 1;

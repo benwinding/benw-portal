@@ -1,0 +1,20 @@
+.dialog {
+  width: min(94vw, 1100px);
+  max-width: none;
+  height: min(92vh, 900px);
+  max-height: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.dialog::backdrop {
+  background: rgb(0 0 0 / 88%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

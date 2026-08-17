@@ -29,6 +29,7 @@ export function Header() {
         <HeadLink href="/">Home</HeadLink>
         <HeadLink href="/about/">About</HeadLink>
         <HeadLink href="/projects/">Projects</HeadLink>
+        <HeadLink href="/craft/">Craft</HeadLink>
         <HeadLink href="/contact/">Contact</HeadLink>
         <a className="ml-3" href="/3d/">3D</a>
       </div>
