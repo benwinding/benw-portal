@@ -66,18 +66,21 @@ function CraftProjectItem(props: { project: Project }) {
   );
 }
 
-function MiniGalleryPreview(props: { name: string; photoUrls?: string[] }) {
-  const galleryPreview = props.photoUrls && props.photoUrls.length > 4
-    ? [...props.photoUrls.slice(0, 2), ...props.photoUrls.slice(-3, -1)]
-    : props.photoUrls;
 
-  if (!galleryPreview?.length) return null;
+function MiniGalleryPreview(props: { name: string; photoUrls?: string[] }) {
+  if (!props.photoUrls?.length) {
+    return null;
+  }
+  const jpgUrls = props.photoUrls.filter(url => url.endsWith('.jpg'))
+  const galleryPreviewUrls = jpgUrls.length > 4
+    ? [...jpgUrls.slice(0, 2), ...jpgUrls.slice(-3, -1)]
+    : jpgUrls;
 
   return (
     <div className="mt-2 grid grid-cols-3 gap-1 md:grid-cols-4" aria-label={`${props.name} photos`}>
-      {galleryPreview.map((photoUrl, index) => (
+      {galleryPreviewUrls.map((photoUrl, index) => (
         <img
-          className={`h-32 w-full rounded object-cover ${index === 3 ? "col-span-3 md:col-span-1" : ""}`}
+          className={`h-32 md:h-auto md:aspect-square w-full rounded object-cover ${index === 3 ? "col-span-3 md:col-span-1" : ""}`}
           src={photoUrl}
           alt={`${props.name} photo ${index + 1}`}
           loading="lazy"

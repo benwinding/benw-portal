@@ -1,3 +1,6 @@
+import { makePathSafe } from "components/search/SearchResult";
+import Link from "next/link";
+
 import { Icon, IconName } from "../icons/icons";
 import { Project } from "./projects-service";
 
@@ -23,6 +26,19 @@ export function LayoutProject(props: { project: Project; children: React.ReactNo
           <h1 className="text-4xl font-bold">{project.name}</h1>
           <p className="mt-2">{project.description}</p>
           <p className="mt-3 text-sm text-gray-600">{project.year}</p>
+          {project.tags?.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1" aria-label="Project tags">
+              {project.tags.map(tag => (
+                <Link
+                  className="rounded-full border-2 border-gray-500 px-2 py-0 text-xs text-gray-500 hover:border-red-700 hover:text-red-700"
+                  href={`/tags/${makePathSafe(tag)}`}
+                  key={tag}
+                >
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          )}
           {project.tools?.length > 0 && <p className="mt-1">{project.tools.join(", ")}</p>}
           {project.icons?.length > 0 && (
             <div className="mt-3 flex gap-2" aria-label="Technologies">

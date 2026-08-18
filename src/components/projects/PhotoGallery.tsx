@@ -8,9 +8,11 @@ export function PhotoGallery(props: { photoUrls: string[] }) {
   const { photoUrls } = props;
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   const showPhoto = (index: number) => {
     setSelectedIndex(index);
+    setIsOpen(true);
     dialogRef.current?.showModal();
   };
 
@@ -42,14 +44,26 @@ export function PhotoGallery(props: { photoUrls: string[] }) {
             key={photoUrl}
             onClick={() => showPhoto(index)}
             type="button"
-            aria-label={`Open photo ${index + 1} of ${photoUrls.length}`}
+            aria-label={`Open media ${index + 1} of ${photoUrls.length}`}
           >
-            <img
-              className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
-              src={photoUrl}
-              alt={`Project photo ${index + 1}`}
-              loading="lazy"
-            />
+            {isVideo(photoUrl)
+              ? (
+                <video
+                  className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
+                  src={photoUrl}
+                  muted
+                  playsInline
+                  preload="metadata"
+                />
+              )
+              : (
+                <img
+                  className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
+                  src={photoUrl}
+                  alt={`Project photo ${index + 1}`}
+                  loading="lazy"
+                />
+              )}
           </button>
         ))}
       </div>
@@ -60,14 +74,30 @@ export function PhotoGallery(props: { photoUrls: string[] }) {
         onClick={event => {
           if (event.target === event.currentTarget) event.currentTarget.close();
         }}
-        aria-label={`Photo ${selectedIndex + 1} of ${photoUrls.length}`}
+        onClose={() => setIsOpen(false)}
+        aria-label={`Media ${selectedIndex + 1} of ${photoUrls.length}`}
       >
         <div className="relative h-full w-full">
-          <img
-            className={styles.image}
-            src={photoUrls[selectedIndex]}
-            alt={`Project photo ${selectedIndex + 1} of ${photoUrls.length}`}
-          />
+          {isOpen && (isVideo(photoUrls[selectedIndex])
+            ? (
+              <video
+                className={styles.image}
+                src={photoUrls[selectedIndex]}
+                autoPlay
+                muted
+                playsInline
+                controls
+                key={photoUrls[selectedIndex]}
+              />
+            )
+            : (
+              <img
+                className={styles.image}
+                src={photoUrls[selectedIndex]}
+                alt={`Project photo ${selectedIndex + 1} of ${photoUrls.length}`}
+                loading="lazy"
+              />
+            ))}
           <button
             className="absolute right-0 top-0 m-2 h-10 w-10 rounded-full bg-black/70 text-2xl text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-white"
             type="button"
@@ -103,4 +133,8 @@ export function PhotoGallery(props: { photoUrls: string[] }) {
       </dialog>
     </section>
   );
+}
+
+function isVideo(url: string) {
+  return url.split(/[?#]/, 1)[0].toLowerCase().endsWith(".mp4");
 }
