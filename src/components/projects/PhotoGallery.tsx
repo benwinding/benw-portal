@@ -135,6 +135,6 @@ export function PhotoGallery(props: { photoUrls: string[] }) {
   );
 }
 
-function isVideo(url: string) {
+export function isVideo(url: string) {
   return url.split(/[?#]/, 1)[0].toLowerCase().endsWith(".mp4");
 }

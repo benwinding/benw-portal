@@ -88,6 +88,7 @@ export const TAGS = [
   "3d",
   "airbnb",
   "chatbot",
+  "chopping-board",
   "cli",
   "cloud",
   "craft",
@@ -109,6 +110,29 @@ export const TAGS = [
 ] as const;
 
 export const PROJECTS = [
+  {
+    "slug": "chopping_board_gabi",
+    "name": "Chopping Board for Gabi",
+    "year": 2026,
+    "tags": [
+      "craft",
+      "chopping-board",
+      "wood-working"
+    ],
+    "description": "My first chopping board! made for Gabi's Birthday",
+    "thumbnail": "/images/_resized/IMG_4572.jpg",
+    "gallery": [
+      "/images/IMG_4561.jpeg",
+      "/images/IMG_4562.jpeg",
+      "/images/IMG_4563.jpeg",
+      "/images/IMG_4564.jpeg",
+      "/images/IMG_4565.jpeg",
+      "/images/IMG_4568.jpeg",
+      "/images/IMG_4569.jpeg",
+      "/images/IMG_4571.jpeg",
+      "/images/IMG_4572.jpeg"
+    ]
+  },
   {
     "slug": "shoe_box",
     "name": "Shoe Box",

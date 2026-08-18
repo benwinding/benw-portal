@@ -1,5 +1,6 @@
 "use client";
 import { GetProjectsAll, Project } from "components/projects";
+import { isVideo } from "components/projects/PhotoGallery";
 import { RainbowText } from "components/RainbowText";
 import { project2Result, SearchResult } from "components/search/SearchResult";
 import dayjs from "dayjs";
@@ -43,7 +44,7 @@ function CraftProjects() {
 function CraftProjectItem(props: { project: Project }) {
   const { tags, href, date } = project2Result(props.project);
   return (
-    <div className="relative p-2 border-2 border-gray-200 rounded-lg hover:bg-red-200 focus-within:bg-red-200">
+    <div className="relative p-2 border-2 border-gray-200 rounded-lg hover:bg-cyan-400 hover:bg-opacity-50 hover:border-cyan-400 focus-within:bg-red-200">
       <MultiLink href={href} className="absolute inset-0">
         <span className="sr-only">View {props.project.name}</span>
       </MultiLink>
@@ -71,7 +72,7 @@ function MiniGalleryPreview(props: { name: string; photoUrls?: string[] }) {
   if (!props.photoUrls?.length) {
     return null;
   }
-  const jpgUrls = props.photoUrls.filter(url => url.endsWith('.jpg'))
+  const jpgUrls = props.photoUrls.filter(url => !isVideo(url))
   const galleryPreviewUrls = jpgUrls.length > 4
     ? [...jpgUrls.slice(0, 2), ...jpgUrls.slice(-3, -1)]
     : jpgUrls;

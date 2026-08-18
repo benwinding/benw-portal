@@ -26,8 +26,8 @@ const Page = async (props: PageInitialProps) => {
     ? <PhotoGallery photoUrls={item.metadata.gallery} />
     : null;
   return <LayoutProject project={item.metadata} >
-    {gallery}
     {markdownRendered}
+    {gallery}
   </LayoutProject>;
 };
 export default Page;
