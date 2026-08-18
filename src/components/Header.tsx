@@ -5,12 +5,13 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 function useIsActiveRoute(href: string): boolean {
-  const [isActive, setIsActive] = React.useState(false);
   const pathname = usePathname();
-  React.useEffect(() => {
-    setIsActive(pathname === href);
-  }, [pathname]);
-  return isActive;
+  const route = href.replace(/\/+$/, "") || "/";
+  const currentRoute = pathname.replace(/\/+$/, "") || "/";
+
+  return route === "/"
+    ? currentRoute === route
+    : currentRoute === route || currentRoute.startsWith(`${route}/`);
 }
 
 function HeadLink(props: { href: string; children: React.ReactNode }) {
