@@ -3,8 +3,6 @@ name: Deploy 🚀 Portal
 on:
   push:
     branches: [master]
-    paths:
-      - ".github/workflows/**"
 
 permissions:
   contents: write
