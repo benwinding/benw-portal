@@ -17,8 +17,9 @@ const Page = async (props: PageInitialProps) => {
   const slug = props.params.slug;
 
   const { allResults, allTags } = await fetchAllResults();
+  const slugLabel = allTags.find(tag => makePathSafe(tag) === slug);
   const matchingResults = allResults.filter(result =>
-    result.type === slug || result.tags.some(tag => makePathSafe(tag.label) === slug)
+    result.type === slug || result.tags.some(tag => tag.label === slugLabel)
   );
 
   return (
@@ -26,7 +27,7 @@ const Page = async (props: PageInitialProps) => {
       <h1 className="flex flex-row gap-2 items-center">
         <span>Tag</span>
         <span>→</span>
-        <HeadingTag allTags={allTags || []} value={slug} />
+        <HeadingTag allTags={allTags || []} value={slugLabel} />
       </h1>
       <ResultsList results={matchingResults || []} selectedTagLabel={slug} />
     </div>
