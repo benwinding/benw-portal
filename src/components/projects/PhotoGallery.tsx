@@ -77,7 +77,12 @@ export function PhotoGallery(props: { photoUrls: string[] }) {
         onClose={() => setIsOpen(false)}
         aria-label={`Media ${selectedIndex + 1} of ${photoUrls.length}`}
       >
-        <div className="relative h-full w-full">
+        <div
+          className="relative flex h-full w-full items-center justify-center"
+          onClick={event => {
+            if (event.target === event.currentTarget) dialogRef.current?.close();
+          }}
+        >
           {isOpen && (isVideo(photoUrls[selectedIndex])
             ? (
               <video
