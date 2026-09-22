@@ -78,7 +78,7 @@ export function PhotoGallery(props: { photoUrls: string[] }) {
         aria-label={`Media ${selectedIndex + 1} of ${photoUrls.length}`}
       >
         <div
-          className="relative flex h-full w-full items-center justify-center"
+          className="relative h-full w-full"
           onClick={event => {
             if (event.target === event.currentTarget) dialogRef.current?.close();
           }}
