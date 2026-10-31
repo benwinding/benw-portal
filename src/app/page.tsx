@@ -29,9 +29,9 @@ export default function Page() {
       >
         <h2 className="italic text-gray-500 flex">
           <span className="pr-1">List of</span>
-          <span className="flex flex-col relative">
+          <span className="flex flex-col relative h-6 w-40 overflow-hidden">
             <span
-              className="absolute h-6 w-40 transition-all duration-1000"
+              className="pointer-events-none absolute left-0 h-6 w-40 transition-all duration-1000"
               style={{
                 bottom: hasText ? "1.5rem" : 0,
                 opacity: hasText ? 0 : 1,
@@ -40,7 +40,7 @@ export default function Page() {
               recent stuff
             </span>
             <span
-              className="absolute h-6 w-40 transition-all duration-1000"
+              className="pointer-events-none absolute left-0 h-6 w-40 transition-all duration-1000"
               style={{
                 bottom: hasText ? "0" : "-1.5rem",
                 opacity: hasText ? 1 : 0,
