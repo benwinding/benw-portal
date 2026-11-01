@@ -68,8 +68,9 @@ function tagsRank(tags: string[] | undefined, searchPart: string): number {
 
 const TOOLS_WEIGHTING = 0.6;
 function GetTagsRank(result: SearchResult, searchParts: string[]): number {
+  const chipLabels = getChipLabels(result);
   const tagMatchCount = searchParts.reduce((count, searchPart) => {
-    const res = tagsRank(result.tags.map(t => t.label), searchPart);
+    const res = tagsRank([...result.tags.map(t => t.label), ...chipLabels], searchPart);
     let tools = 0;
     if (result.type === "project") {
       tools += tagsRank(result.project.tools, searchPart) * TOOLS_WEIGHTING;
@@ -78,6 +79,16 @@ function GetTagsRank(result: SearchResult, searchParts: string[]): number {
     return count + res + tools;
   }, 0);
   return tagMatchCount / searchParts.length;
+}
+
+// The chips shown next to each result (e.g. "Blog", "Project", "wip") are also searchable
+function getChipLabels(result: SearchResult): string[] {
+  const typeLabel = result.type === "project" ? "Project" : "Blog";
+  const chips = [typeLabel];
+  if (result.type === "project" && result.project.wip) {
+    chips.push("wip");
+  }
+  return chips;
 }
 
 function GetTitleRank(title: string, searchText: string, searchParts: string[]): number {
