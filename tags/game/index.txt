@@ -1,5 +1,5 @@
 1:HL["/_next/static/css/f6b7f43d2b803766.css","style",{"crossOrigin":""}]
-0:["pFdQzX-_XLY7Z_rtKSTRJ",[[["",{"children":["tags",{"children":[["slug","game","d"],{"children":["__PAGE__?{\"slug\":\"game\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f6b7f43d2b803766.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+0:["AGxbGu_g2o7OHvVkcKaWU",[[["",{"children":["tags",{"children":[["slug","game","d"],{"children":["__PAGE__?{\"slug\":\"game\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f6b7f43d2b803766.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
 4:HL["/_next/static/css/840104c1f9b05a25.css","style",{"crossOrigin":""}]
 5:I[5846,["122","static/chunks/122-5e2852a4f569d686.js","185","static/chunks/app/layout-e710fdd264a0a867.js"],"Header"]
 6:I[6954,[],""]
